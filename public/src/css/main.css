@@ -1,0 +1,20 @@
+body {
+    font-family: 'Lato';
+}
+
+.glyphicon, .fa-btn {
+    margin: 0 6px;
+}
+
+/* Form Textarea */
+
+FORM #body {
+    max-width: 100%;
+}
+
+/* Panels */
+
+.panel-heading {
+	font-weight: bold;
+	font-size: larger;
+}

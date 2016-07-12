@@ -1,0 +1,552 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"User",
+				"UserLoginEvent"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"padding-",
+				"padding-right"
+			],
+			[
+				"bootstrap",
+				"bootstrap-switch"
+			],
+			[
+				"javasript",
+				"javascript"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"fot",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"Post",
+				"PostController"
+			],
+			[
+				"vali",
+				"validate"
+			],
+			[
+				"Lar",
+				"LaravelCollective"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Contro",
+				"Controller"
+			],
+			[
+				"border-ot",
+				"border-bottom-width"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"border-bottom",
+				"border-bottom-width"
+			],
+			[
+				"background",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/matt/public_html/js-bubble-shooter/index.html",
+		"/home/matt/public_html/js-bubble-shooter/preview.html",
+		"/home/matt/public_html/forum/resources/views/partials/user-info.blade.com",
+		"/home/matt/public_html/forum/app/Providers/EventServiceProvider.php",
+		"/home/matt/public_html/forum/resources/views/users/view.blade.php",
+		"/home/matt/public_html/forum/app/User.php",
+		"/home/matt/public_html/forum/app/Listeners/UserLoginListener.php",
+		"/home/matt/public_html/forum/app/Events/UserLoginEvent.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/Auth/AuthController.php",
+		"/home/matt/public_html/forum/resources/views/home.blade.php",
+		"/home/matt/public_html/forum/app/Http/Middleware/AdminMiddleware.php",
+		"/home/matt/public_html/forum/app/Http/Middleware/Authenticate.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/UserController.php",
+		"/home/matt/public_html/forum/app/Http/routes.php",
+		"/home/matt/public_html/forum/app/Events/SomeEvent.php",
+		"/home/matt/public_html/forum/app/Listeners/UserEventListener.php",
+		"/home/matt/public_html/forum/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/home/matt/public_html/forum/resources/views/users/list.blade.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/AccountController.php",
+		"/home/matt/public_html/forum/public/src/css/comment.css",
+		"/home/matt/public_html/forum/resources/views/tags/list.blade.php",
+		"/home/matt/public_html/forum/resources/views/partials/header.blade.php",
+		"/home/matt/public_html/forum/resources/views/account/profile.blade.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/HomeController.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/TagController.php",
+		"/home/matt/public_html/forum/resources/views/posts/list.blade.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/PostController.php",
+		"/home/matt/public_html/forum/resources/views/posts/author.blade.php",
+		"/home/matt/public_html/forum/resources/views/postcreate.blade.php",
+		"/home/matt/public_html/forum/resources/views/users/profile.blade.php",
+		"/home/matt/public_html/forum/resources/views/list.blade.php",
+		"/home/matt/public_html/forum/resources/views/posts.blade.php",
+		"/home/matt/public_html/forum/resources/views/welcome.blade.php",
+		"/home/matt/public_html/forum/resources/views/post.blade.php",
+		"/home/matt/public_html/forum/resources/views/account/edit.blade.php",
+		"/home/matt/public_html/forum/resources/views/partials/post.blade.php",
+		"/home/matt/public_html/forum/resources/views/tags.blade.php",
+		"/home/matt/public_html/forum/resources/views/auth/login.blade.php",
+		"/home/matt/public_html/forum/public/src/css/main.css",
+		"/home/matt/public_html/forum/resources/views/myprofile_edit.blade.php",
+		"/home/matt/public_html/forum/resources/views/myprofile.blade.php",
+		"/home/matt/public_html/forum/public/src/css/myprofile.css",
+		"/home/matt/public_html/forum/resources/views/postedit.blade.php",
+		"/home/matt/public_html/forum/resources/views/partials/comment.blade.php",
+		"/home/matt/public_html/forum/resources/views/tag.blade.php",
+		"/home/matt/public_html/forum/public/src/css/post.css",
+		"/home/matt/public_html/forum/resources/views/layouts/master.blade.php",
+		"/home/matt/public_html/forum/public/src/css/nav.css",
+		"/home/matt/public_html/forum/public/src/css/tag.css",
+		"/home/matt/public_html/forum/resources/views/partials/footer.blade.php",
+		"/home/matt/public_html/forum/public/src/css/posts.css",
+		"/home/matt/public_html/forum/public/src/css/comments.css",
+		"/home/matt/public_html/forum/public/src/css/themes/slate.,in.css",
+		"/home/matt/public_html/forum/public/src/css/themes/darkly.min.css",
+		"/home/matt/public_html/forum/public/src/css/themes/simplex.min.css",
+		"/home/matt/public_html/forum/public/src/css/themes/sandstone.min.css",
+		"/home/matt/public_html/forum/public/src/css/themes/journal.min.css",
+		"/home/matt/public_html/forum/public/src/css/themes/superhero.min.css",
+		"/home/matt/public_html/forum/public/src/css/themes/united.min.css",
+		"/home/matt/public_html/forum/resources/views/users.blade.php",
+		"/home/matt/public_html/forum/public/src/css/themes/flatly.min.css",
+		"/home/matt/public_html/forum/database/seeds/CommentsTableSeeder.php",
+		"/home/matt/public_html/forum/database/seeds/post_tagTableSeeder.php",
+		"/home/matt/public_html/forum/database/seeds/DatabaseSeeder.php",
+		"/home/matt/public_html/forum/database/seeds/PostsTableSeeder.php",
+		"/home/matt/public_html/forum/database/seeds/UsersTableSeeder.php",
+		"/home/matt/public_html/forum/database/seeds/TagsTableSeeder.php",
+		"/home/matt/public_html/forum/resources/views/includes/header.blade.php",
+		"/home/matt/public_html/forum/database/seeds/PostTagPivotTableSeeder.php",
+		"/home/matt/public_html/forum/database/seeds/TagTableSeeder.php",
+		"/home/matt/public_html/forum/database/migrations/2016_07_01_153624_create_tags_table.php",
+		"/home/matt/public_html/forum/database/migrations/2016_07_01_153625_create_post_tag_table.php",
+		"/home/matt/public_html/forum/public/src/js/tether.min.js",
+		"/home/matt/public_html/forum/public/assets/js/tether.min.js",
+		"/home/matt/public_html/forum/resources/views/includes/footer.blade.php",
+		"/home/matt/public_html/forum/resources/assets/js/tether.min.js",
+		"/home/matt/public_html/forum/app/Post.php",
+		"/home/matt/public_html/forum/public/src/css/tags.css",
+		"/home/matt/public_html/forum/app/Tag.php",
+		"/home/matt/public_html/forum/resources/views/editpost.blade.php",
+		"/home/matt/public_html/forum/config/app.php",
+		"/home/matt/public_html/forum/resources/views/editcomment.blade.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/CommentController.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/UsersController.php",
+		"/home/matt/public_html/forum/app/Http/Controllers/TagsController.php",
+		"/home/matt/public_html/forum/resources/views/profile.blade.php",
+		"/home/matt/public_html/forum/database/migrations/2016_06_29_201517_create_posts_table.php",
+		"/home/matt/public_html/forum/resources/views/show-post.blade.php",
+		"/home/matt/public_html/forum/app/Comment.php",
+		"/home/matt/public_html/forum/database/migrations/2016_06_30_203021_create_comments_table.php",
+		"/home/matt/public_html/forum/resources/views/post-form.blade.php",
+		"/home/matt/public_html/forum/.env",
+		"/home/matt/public_html/questions/resources/views/post.blade.php",
+		"/home/matt/public_html/questions/app/Http/Controllers/PostController.php",
+		"/home/matt/public_html/questions/app/Http/routes.php",
+		"/home/matt/public_html/questions/resources/views/includes/message.blade.php",
+		"/home/matt/public_html/questions/resources/views/posts.blade.php",
+		"/home/matt/public_html/questions/resources/views/home.blade.php",
+		"/home/matt/public_html/questions/resources/views/profile.blade.php",
+		"/home/matt/public_html/questions/resources/views/users.blade.php",
+		"/home/matt/public_html/questions/public/src/css/main.css",
+		"/home/matt/public_html/questions/resources/views/includes/header.blade.php",
+		"/home/matt/public_html/questions/resources/views/auth/passwords/email.blade.php",
+		"/home/matt/public_html/questions/resources/views/auth/passwords/reset.blade.php",
+		"/home/matt/public_html/questions/app/User.php",
+		"/home/matt/public_html/questions/app/Post.php",
+		"/home/matt/public_html/questions/resources/views/auth/register.blade.php",
+		"/home/matt/public_html/questions/resources/views/auth/login.blade.php",
+		"/home/matt/public_html/questions/resources/views/welcome.blade.php",
+		"/home/matt/public_html/questions/resources/views/myprofile.blade.php",
+		"/home/matt/public_html/questions/resources/views/layouts/app.blade.php",
+		"/home/matt/public_html/questions/database/migrations/2016_06_29_201517_create_posts_table.php",
+		"/home/matt/public_html/questions/app/Http/Controllers/UsersController.php",
+		"/home/matt/public_html/questions/app/Http/Controllers/UserController.php",
+		"/home/matt/public_html/questions/app/Http/Kernel.php",
+		"/home/matt/public_html/questions/app/Http/Middleware/AdminMiddleware.php",
+		"/home/matt/public_html/questions/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/home/matt/public_html/questions/config/app.php",
+		"/home/matt/public_html/questions/.env",
+		"/home/matt/public_html/application/resources/views/form.blade.php",
+		"/home/matt/public_html/application/app/Http/routes.php",
+		"/home/matt/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/matt/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/matt/public_html/application2/database/migrations/2016_06_28_210802_create_customers_table.php",
+		"/home/matt/public_html/application2/.env",
+		"/home/matt/public_html/auth/app/Http/routes.php",
+		"/home/matt/public_html/auth/app/Http/Kernel.php",
+		"/home/matt/public_html/auth/app/Http/Middleware/AdminMiddleware.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/home/matt/www/mathwatson/data/pages/course"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"  ",
+			"}}</",
+			"login",
+			"col-xs-",
+			";",
+			"col-sm-",
+			"col-xs-",
+			"col-md-",
+			"info",
+			"col-sm-",
+			"col-sm--",
+			"col-md",
+			"\n                                ",
+			">';\n",
+			"create",
+			"$post->tags",
+			"-md-",
+			"');",
+			"-md-",
+			"-sm-",
+			"-md-",
+			"\n                ",
+			"-user-inf",
+			"-user-info",
+			"post",
+			"glyphicon",
+			"\";\n",
+			"img-rounded",
+			"Posts",
+			"6",
+			"                    \n",
+			"filename",
+			"width",
+			"   	\n",
+			" ''",
+			";\n",
+			"User",
+			"topology",
+			"page>topology",
+			"topology",
+			"topo",
+			"\n  ",
+			"|The",
+			"|the",
+			"0",
+			"h1",
+			"[[",
+			"\n",
+			"Hopi",
+			"hopital",
+			"hopit",
+			"hover",
+			"heading",
+			"<wrap body>text text text text text \ntext text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text ",
+			"\n<wrap body>text text text text text \ntext text text text text text text text text text text ",
+			"text text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text",
+			"10px",
+			"<wrap body>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text ]]</wrap>\n",
+			"<wrap body>text text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text</wrap>\n",
+			"<wrap body>[[course:golden-ratio:|text text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text \ntext text text text text</wrap>\n",
+			"text text text text text ]]</wrap>",
+			" ]]</",
+			"{{wiki:dokuwiki-128.png?600x200}}",
+			"{{wiki:dokuwiki-128.png?800x200}}",
+			"40px",
+			"<WRAP preview>\n",
+			"<WRAP preview>",
+			">\n",
+			"<WRAP preview>\n<wrap body>\n",
+			"\n<",
+			"600x100",
+			"100x100",
+			"?100x100}",
+			"<wrap body>\nsome text about some stuff will be here or an image\n</wrap>\n",
+			";\n",
+			"WRAP",
+			"wrap",
+			"WRAP",
+			"right",
+			"\n  ",
+			"\n}",
+			"color",
+			"068",
+			"text-align",
+			");\n",
+			"WRAP",
+			">\n",
+			"differential",
+			"====\n",
+			"\n  ",
+			"+",
+			"  ",
+			"times",
+			"  * ",
+			"===",
+			"=== ",
+			" ===",
+			"]]",
+			"[[.:",
+			"vector",
+			"=====",
+			"  : ",
+			"div#breadcrumbs",
+			"100px",
+			"500",
+			"200px",
+			"  *",
+			"view",
+			"calculus:",
+			"fuserm",
+			"fusermount",
+			"fuser",
+			"Week",
+			"\n  ",
+			"\n",
+			"neq",
+			"\n              ",
+			"====",
+			"font",
+			"\n  ",
+			"col-md-4",
+			"col",
+			"2px",
+			";\n",
+			"links",
+			"tpl_content",
+			"WRAP math",
+			"$\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"col-md-",
+			"col-xs-",
+			"col-sm-",
+			"-sm-",
+			"-xs-",
+			"-sm-",
+			"comment",
+			"  - ",
+			"====",
+			"",
+			" =====",
+			"===== ",
+			"====",
+			"  * ",
+			"#breadcrumbs",
+			"",
+			"→",
+			".:",
+			" =====\n===== ",
+			"===== \n =====",
+			"=====\n=====",
+			"=====",
+			"WRAP",
+			" {\n	",
+			"}",
+			", ",
+			", \n	",
+			"}\n	",
+			"\n	",
+			";\n	",
+			"",
+			"}\n\n",
+			"}\\n\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "js-bubble-shooter.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 414.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

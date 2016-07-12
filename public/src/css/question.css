@@ -1,0 +1,83 @@
+/* Posts List*/
+
+.questions .question {
+	padding-bottom: 30px;
+}
+
+.questions .question heading {
+	font-size: 200%;
+}
+
+.questions .question .comment-count {
+	border-radius: 6px;
+	font-size: 8pt;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 5px;
+	margin-top: 20px;
+	display: inline;
+}
+
+.questions .question .details {
+	color: #aaa;
+	font-size: smaller;
+}
+
+.questions .question .tag {
+	font-size: 75%;
+}
+
+.questions .question .comment-count {
+	position: relative;
+	top: 10px;
+	padding: 3px 10px;
+	color: #fff;
+	border-radius: 6px;
+	background-color: #ccc;
+}
+
+.questions .question .comment-count:after {
+	content: "";
+	position: absolute;
+	bottom: -8px; 					/* value = - border-top-width - border-bottom-width */
+	left: 5px;						/* controls horizontal position */
+	border-width: 8px 8px 0 0;		/* vary these values to change the angle of the vertex */
+	border-style: solid;
+	border-color: #ccc transparent;
+}
+
+/* Post */
+
+#question header {
+	font-size: larger;
+	font-weight: bold;
+}
+
+#question {
+	/*padding-left: 10px;*/
+	/*border-left: 1px solid #ccd;*/
+	/*margin-bottom: 30px;*/
+}
+
+#question .user-info {
+	text-align: center;
+}
+
+#question .user-info .avatar {
+	width: 120px;
+	height: 120px;
+	border: 8px solid #286090;
+	border-radius:50%;
+}
+
+#question .details {
+	color: #aaa;
+	font-size: smaller;
+}
+
+/* Post Edit Dropdown */
+
+#question .dropdown a:hover {
+	color: #000;
+}
