@@ -114,10 +114,8 @@ class QuestionController extends Controller
      * @param  integer $question_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($question_id)
+    public function destroy(Question $question)
     {
-        $question = Question::find($question_id);
-        
         if ( (Auth::user() != $question->user) && (!Auth::user()->admin) ) {
             return redirect()->back();
         }
