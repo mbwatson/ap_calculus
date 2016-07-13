@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use App\Tag;
+use App\Standard;
 use App\Question;
 use App\Form;
 use App\Html;
@@ -13,13 +13,19 @@ use Illuminate\Http\Request;
 class QuestionController extends Controller
 {
     /**
-     * Show form to create new question
+     * Show list of questions
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function index()
     {
-        return view('questions.create', ['tags' => Tag::all()]);
+        // ... ->get() or ->paginate(N) or ->simplePaginate(N)
+        $questions = Question::orderBy('created_at', 'desc')->paginate(10);
+        
+        return view('questions.index', [
+            'questions' => $questions,
+            'standards' => Standard::orderBy('name', 'asc')->get()
+        ]);
     }
 
     /**
@@ -41,19 +47,13 @@ class QuestionController extends Controller
     }
 
     /**
-     * Show list of questioned questions
+     * Show form to create new question
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function create()
     {
-        // ... ->get() or ->paginate(N) or ->simplePaginate(N)
-        $questions = Question::orderBy('created_at', 'desc')->paginate(10);
-        
-        return view('questions.index', [
-            'questions' => $questions,
-            'tags' => Tag::orderBy('name', 'asc')->get()
-        ]);
+        return view('questions.create', ['standards' => Standard::all()]);
     }
 
     /**
@@ -68,19 +68,22 @@ class QuestionController extends Controller
         // body can be no longer than 1000 characters
         $this->validate($request, [
             'title' => 'required|max:50',
-            'body' => 'required|max:1000'
+            'body' => 'required|max:1000',
+            'standards' => 'required'
         ]);
+
+
         // Question is valid; store in database
         $question = new Question();
         $question->title = $request['title'];
         $question->body = $request['body'];
         $request->user()->questions()->save($question);
         
-        // Add question-tag relationship to pivot table if any were chosen
-        if ($request->tags) {
-            foreach ($request->tags as $tag_id) {
-                $tag = Tag::find($tag_id);
-                $question->tags()->attach($tag->id);
+        // Add question-standard relationship to pivot table if any were chosen
+        if ($request->standards) {
+            foreach ($request->standards as $standard_id) {
+                $standard = Standard::find($standard_id);
+                $question->standards()->attach($standard->id);
             }
         }
 
@@ -97,9 +100,10 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        $question = Question::findOrFail($id);
-        $tags = Tag::all();
-        return view('questions.edit', ['question' => $question, 'tags' => $tags]);
+        return view('questions.edit', [
+            'question' => Question::findOrFail($id),
+            'standards' => Standard::all()
+        ]);
     }
 
     /**
@@ -124,14 +128,14 @@ class QuestionController extends Controller
         $question->body = $request['body'];
         $question->save();
 
-        // Remove all question-tag relationships in pivot table
-        $question->tags()->detach();
+        // Remove all question-standard relationships in pivot table
+        $question->standards()->detach();
 
-        // Add question-tag relationship to pivot table if any were chosen
-        if ($request->tags) {
-            foreach ($request->tags as $tag_id) {
-                $tag = Tag::find($tag_id);
-                $question->tags()->attach($tag->id);
+        // Add question-standard relationship to pivot table if any were chosen
+        if ($request->standards) {
+            foreach ($request->standards as $standard_id) {
+                $standard = Standard::find($standard_id);
+                $question->standards()->attach($standard->id);
             }
         }
 
@@ -156,8 +160,8 @@ class QuestionController extends Controller
 
         $question->delete();
         
-        // Remove all question-tag relationship in pivot table
-        $question->tags()->detach();
+        // Remove all question-standard relationship in pivot table
+        $question->standards()->detach();
         
         session()->flash('flash_message', 'Question successfully deleted!');
 

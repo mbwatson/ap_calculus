@@ -5,10 +5,10 @@
         </div>
         <div class="col-md-9" style="height:100%">
             <heading><a href="{{ route('questions.show', $question->id) }}">{{ $question->title }}</a></heading>
-            <ul class="tags list-inline">
-                @foreach ($question->tags as $tag)
-                    <li><a href="{{ route('tags.show', $tag->id) }}" class="btn btn-primary btn-xs tag"
-                    data-toggle="tooltip" data-placement="top" title="{{ $tag-> description }}">{{ $tag->name }}</a></li>
+            <ul class="standards list-inline">
+                @foreach ($question->standards as $standard)
+                    <li><a href="{{ route('standards.show', $standard->id) }}" class="btn btn-primary btn-xs standard"
+                    data-toggle="tooltip" data-placement="top" title="{{ $standard-> description }}">{{ $standard->name }}</a></li>
                 @endforeach
             </ul>
             <p class="details">

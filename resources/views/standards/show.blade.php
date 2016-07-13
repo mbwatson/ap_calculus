@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
 
-    <!-- Tag & its Description -->
+    <!-- Standard & its Description -->
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ $tag->name }}
+                    {{ $standard->name }}
                 </div>
                 <div class="panel-body">
-                    {{ $tag->description }}
+                    {{ $standard->description }}
                 </div>
             </div>
         </div>
@@ -22,12 +22,12 @@
         <div class="col-sm-10 col-sm-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Questions Tagged with {{ $tag->name }}
+                    Questions Standardged with {{ $standard->name }}
                 </div>
                 <div class="panel-body">
                     <section class="row questions">
                         <div class="col-md-12">
-                            @foreach ($tag->questions as $question)
+                            @foreach ($standard->questions as $question)
                                 @include('partials.question', $question)
                             @endforeach
                         </div>

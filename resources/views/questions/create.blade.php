@@ -10,7 +10,6 @@
         <div class="col-md-10 col-md-offset-1">
             <h1>Create a New Question</h1>
             {!! Form::open(['route' => 'questions.store']) !!}
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Question
@@ -34,33 +33,42 @@
                 <div class="panel-heading">
                     Standards
                 </div>
-                <div class="panel-body tags">
+                <div class="panel-body standards">
                         <h4>Mathematical Practices for AP Calculus (MPACs)</h4>
-                        @foreach ($tags->where('type', 'MPAC') as $tag)
-                            <p class="row tag">
-                                <div class="col-md-2 name">
-                                    <a href="{{ route('tags.show', $tag->id) }}" class="btn btn-xs btn-primary" role="button">MPAC {{ $tag->name }}</a>
+                        @foreach ($standards->where('type', 'MPAC') as $mpac)
+                            <div class="row standard">
+                                <div class="col-md-2" data-toggle="buttons">
+                                    <label class="btn btn-primary btn-xs">
+                                        <input type="checkbox" autocomplete="off" name="standards[]" value="{{ $mpac->id }}">{{ $mpac->name }}
+                                    </label>
                                 </div>
-                                <div class="col-md-8 description">
-                                    {{ $tag->description }}
+                                <div class="col-md-10 description">
+                                    {{ $mpac->description }}
                                 </div>
-                            </p>
+                            </div>
                         @endforeach
                 </div>
                 <div class="panel-body">
-                    @foreach ($tags->where('type', 'Big Idea') as $bi)
-                        <h4>Big Idea {{ $bi->name }}</h4>
-                        @foreach ($tags->where('parent_id', strval($bi->id))->where('type', 'Enduring Understanding') as $eu)
+                    @foreach ($standards->where('type', 'Big Idea') as $bi)
+                        <h4>{{ $bi->name }}</h4>
+                        @foreach ($standards->where('parent_id', strval($bi->id))->where('type', 'Enduring Understanding') as $eu)
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        EU {{ $eu->name }} : {{ $eu->description }}
+                                        {{ $eu->name }} : {{ $eu->description }}
                                     </div>
-                                    <div class="col-md-7">
-                                        @foreach ($tags->where('parent_id', strval($eu->id))->where('type', 'Learning Objective') as $lo)
-                                            <p>
-                                                <a href="{{ route('tags.show', $lo->id) }}" class="btn btn-xs btn-primary" role="button">LO {{ $lo->name }}</a> {{ $lo->description }}
-                                            </p>
+                                    <div class="col-md-9">
+                                        @foreach ($standards->where('parent_id', strval($eu->id))->where('type', 'Learning Objective') as $lo)
+                                            <div class="row standard">
+                                                <div class="col-md-2" data-toggle="buttons">
+                                                    <label class="btn btn-primary btn-xs">
+                                                        <input type="checkbox" autocomplete="off" name="standards[]" value="{{ $lo->id }}">{{ $lo->name }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-10 description">
+                                                    {{ $lo->description }}
+                                                </div>
+                                            </div>
                                         @endforeach
                                     </div>
                                 </div>
@@ -69,7 +77,7 @@
                     @endforeach
                 </div>
             </div>
-            {!! Form::submit('Question!', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('Post Question', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>

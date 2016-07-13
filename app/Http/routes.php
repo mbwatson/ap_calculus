@@ -56,7 +56,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('questions', 'QuestionController');
 
-	Route::resource('tags', 'TagController', [
+	Route::resource('standards', 'StandardController', [
 		'only' => ['index', 'show', 'store']
 	]);
 

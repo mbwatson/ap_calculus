@@ -21,10 +21,10 @@ class Question extends Model
     	return $this->hasMany('App\Comment');
     }
 
-    // Get tags associated with the post
+    // Get standards associated with the post
     
-    public function tags()
+    public function standards()
     {
-        return $this->belongsToMany('App\Tag');
+        return $this->belongsToMany('App\Standard');
     }
 }

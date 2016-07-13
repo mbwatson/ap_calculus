@@ -21,7 +21,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-comment"></span>Questions</a></li>
-                    <li><a href="{{ url('/tags') }}"><span class="glyphicon glyphicon-tags"></span>Tags</a></li>
+                    <li><a href="{{ url('/standards') }}"><span class="glyphicon glyphicon-tags"></span>Standards</a></li>
                     <li><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
                 </ul>
 

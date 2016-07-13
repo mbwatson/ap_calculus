@@ -4,6 +4,7 @@
 <div class="container">
 
     <!-- Question -->
+
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default" id="question">
@@ -36,10 +37,10 @@
                             <p>
                                 {!! nl2br(e($question->body)) !!}
                             </p>
-                            <ul class="tags list-inline">
-                                @foreach ($question->tags as $tag)
-                                    <li><a href="{{ route('tags.show', $tag->id) }}" class="btn btn-primary btn-xs"
-                                    data-toggle="tooltip" data-placement="top" title="{{ $tag-> description }}">{{ $tag->name }}</a></li>
+                            <ul class="standards list-inline">
+                                @foreach ($question->standards as $standard)
+                                    <li><a href="{{ route('standards.show', $standard->id) }}" class="btn btn-primary btn-xs"
+                                    data-toggle="tooltip" data-placement="top" title="{{ $standard-> description }}">{{ $standard->name }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -65,6 +66,7 @@
     </div>
 
     <!-- New Comment Form -->
+    
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
