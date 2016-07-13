@@ -24,7 +24,7 @@ class Standard extends Model
      */
     public function parent()
     {
-    	return Standard::find($this->parent_id);
+    	return $this->belongsTo('App\Standard')->where('id', $this->parent_id);
     }
 
     /**

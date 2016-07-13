@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    
+    protected $fillable = [
+        'title',
+        'body',
+        'standards'
+    ];
     /**
      * Get the user that owns the post
      *

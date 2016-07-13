@@ -9,6 +9,7 @@ use App\Form;
 use App\Html;
 use App\Comment;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateQuestionRequest;
 
 class QuestionController extends Controller
 {
@@ -20,7 +21,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questions.index', [
-            'questions' => Question::orderBy('created_at', 'desc')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
+            'questions' => Question::latest('created_at')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
             'standards' => Standard::orderBy('name', 'asc')->get()
         ]);
     }
@@ -31,10 +32,8 @@ class QuestionController extends Controller
      * @param  integer $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Question $question)
     {
-        $question = Question::findOrFail($id);
-
         return view('questions.show', ['question' => $question]);
     }
 
@@ -56,28 +55,15 @@ class QuestionController extends Controller
      * @param  array $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateQuestionRequest $request)
     {
-        // Question title and body are required fields and 
-        // body can be no longer than 1000 characters
-        $this->validate($request, [
-            'title' => 'required|max:50',
-            'body' => 'required|max:1000',
-            'standards' => 'required'
-        ]);
-
-        // Question is valid; store in database
-        $question = new Question();
-        $question->title = $request['title'];
-        $question->body = $request['body'];
-        $request->user()->questions()->save($question);
+        Question::create($request->all());
         
         // Add question-standard relationship to pivot table if any were chosen
         $question->standards()->sync($request->input('standards'));
-
         session()->flash('flash_message', 'Question successfully created!');
-
-        return redirect()->route('questions.index');
+        
+        return redirect('questions');
     }
 
     /**
@@ -86,10 +72,10 @@ class QuestionController extends Controller
      * @param  integer $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Question $question)
     {
         return view('questions.edit', [
-            'question' => Question::findOrFail($id),
+            'question' => $question,
             'standards' => Standard::all()
         ]);
     }
@@ -101,7 +87,7 @@ class QuestionController extends Controller
      * @param  array   $request
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request)
+    public function update(Question $question, Request $request)
     {
         // Question title and body are required fields and 
         // body can be no longer than 1000 characters
@@ -111,7 +97,6 @@ class QuestionController extends Controller
             'standard_ids' => 'required'
         ]);
         // Question is valid; store in database
-        $question = Question::find($id);
         $question->title = $request['title'];
         $question->body = $request['body'];
         $question->save();

@@ -13,7 +13,8 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Forum
+                    AP Calculus
+                    <small class="text-info" style="position: relative; left: -50px; top: 10px;">question forum</small>
                 </a>
             </div>
 
