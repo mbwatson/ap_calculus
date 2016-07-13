@@ -10,7 +10,7 @@ class QuestionsTableSeeder extends Seeder {
 		$seeds = array(
 			array(
 				'title' => 'A Differential Equation',
-				'body' => 'Which of the following is the solution to the differential equation $\frac{dy}{dx} = y \sec^2(x)$ with the initial condition $y = \Big(\frac{\pi}{4}\Big)=-1$?
+				'body' => 'Which of the following is the solution to the differential equation $\frac{dy}{dx} = y \sec^2(x)$ with the initial condition $y\Big(\frac{\pi}{4}\Big)=-1$?
 					(A) $y = -e^{\tan(x)}$
 					(B) $y = -e^{(-1+\tan(x))}$
 					(C) $y = -e^{(\sec^3(x)-2\sqrt{2})/3}$
