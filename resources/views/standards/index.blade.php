@@ -68,7 +68,7 @@
                         @foreach ($standards->where('type', 'MPAC') as $standard)
                             <p class="row standard">
                                 <div class="col-md-2 name">
-                                    <a href="{{ route('standards.show', $standard->id) }}" class="btn btn-xs btn-primary" role="button">{{ $standard->name }}</a>
+                                    <a href="{{ route('standards.show', $standard) }}" class="btn btn-xs btn-primary" role="button">{{ $standard->name }}</a>
                                 </div>
                                 <div class="col-md-8 description">
                                     {{ $standard->description }}

@@ -33,11 +33,9 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        if($question = Question::find($id)){
-            return view('questions.show', ['question' => $question]);
-        } else {
-            return redirect()->back();
-        }
+        $question = Question::findOrFail($id);
+
+        return view('questions.show', ['question' => $question]);
     }
 
     /**
@@ -49,7 +47,7 @@ class QuestionController extends Controller
     {
         $standards = Standard::all();
 
-        return view('questions.create', compact('standards'));
+        return view('questions.create', ['standards' => $standards]);
     }
 
     /**

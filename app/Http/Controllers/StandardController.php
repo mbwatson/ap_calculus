@@ -17,14 +17,8 @@ class StandardController extends Controller
     }
 
     public function show($id) {
-        if($standard = Standard::find($id)){
-            return view('standards.show', [
-                'standard' => $standard,
-                'questions' => $standard->questions
-            ]);
-        } else {
-            return redirect()->back();
-        }
+        $standard = Standard::findOrFail($id);
+        return view('standards.show', [ 'standard' => $standard ]);
     }
     
     public function store(Request $request)
@@ -44,4 +38,5 @@ class StandardController extends Controller
     	
         return redirect()->back();
     }
+
 }

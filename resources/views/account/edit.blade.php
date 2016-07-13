@@ -37,6 +37,10 @@
                         {!! Form::label('location', 'Location', ['class' => 'control-label']) !!}
                         {!! Form::text('location', $user->location, ['class' => 'form-control']) !!}
                     </div>
+                    <div class="form-group">
+                        {!! Form::label('birthday', 'Birthday', ['class' => 'control-label']) !!}
+                        {!! Form::input('date', 'birthday', null, ['class' => 'form-control']) !!}
+                    </div>
                     <br />
                     {!! Form::submit('Update Profile', ['class' => 'btn btn-primary btn-sm']) !!}
                     {!! Form::close() !!}

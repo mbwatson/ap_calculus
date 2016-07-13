@@ -27,14 +27,7 @@
                             </div>
                             <div class="form-group">
                                 {!! Form::label('standards', 'Standards', ['class' => 'control-label']) !!}
-                                <select id="standard_list" class="form-control" multiple>
-                                    @foreach ($standards->where('type', 'MPAC') as $standard)
-                                        <option value="{{ $standard->id }}">{{ $standard->name }} : {{ $standard->description }}</option>
-                                    @endforeach
-                                    @foreach ($standards->where('type', 'Learning Objective') as $standard)
-                                        <option value="{{ $standard->id }}">{{ $standard->name }} : {{ $standard->description }}</option>
-                                    @endforeach
-                                </select>
+                                {!! Form::select('standards[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
                             </div>
                         </div>
                     </section>
