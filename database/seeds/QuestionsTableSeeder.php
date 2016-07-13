@@ -9,20 +9,26 @@ class QuestionsTableSeeder extends Seeder {
 
 		$seeds = array(
 			array(
-				'title' => 'Sample Title',
-				'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+				'title' => 'A Differential Equation',
+				'body' => 'Which of the following is the solution to the differential equation $\frac{dy}{dx} = y \sec^2(x)$ with the initial condition $y = \Big(\frac{\pi}{4}\Big)=-1$?
+					(A) $y = -e^{\tan(x)}$
+					(B) $y = -e^{(-1+\tan(x))}$
+					(C) $y = -e^{(\sec^3(x)-2\sqrt{2})/3}$
+					(D) $y = -\sqrt{2\tan(x)-1}$',
 				'user_id' => 1,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
 			),
-
 			array(
-				'title' => 'Another Title',
-				'body' => 'Question body. Question body. Question body. Question body. Question body.',
+				'title' => 'An Improper Integral',
+				'body' => 'Consider the function $f$ given by $f(x) = xe^{-2x}$ for all $x \geq 0$.
+					(A) Find $\lim_{x\to\infty}f(x)$
+					(B) Find the maximum value of $f$ for $x \geq 0$. Justify your answer.
+					(C) Evaluate $\int_0^\infty f(x)\,dx$, or show that the integral diverges.',
 				'user_id' => 2,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
-			)
+			),
 		);
 
 		DB::table('questions')->insert($seeds);

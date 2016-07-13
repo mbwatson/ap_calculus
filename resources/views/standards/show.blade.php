@@ -4,6 +4,7 @@
 <div class="container">
 
     <!-- Standard & its Description -->
+
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <div class="panel panel-default">
@@ -18,11 +19,12 @@
     </div>
 
     <!-- Questions List -->
+
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Questions Standardged with {{ $standard->name }}
+                    Questions Addressing {{ $standard->name }}
                 </div>
                 <div class="panel-body">
                     <section class="row questions">

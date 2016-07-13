@@ -6,9 +6,17 @@
         <div class="col-md-9" style="height:100%">
             <heading><a href="{{ route('questions.show', $question->id) }}">{{ $question->title }}</a></heading>
             <ul class="standards list-inline">
-                @foreach ($question->standards as $standard)
+                <b>MPACs</b>
+                @foreach ($question->standards->where('type', 'MPAC') as $standard)
                     <li><a href="{{ route('standards.show', $standard->id) }}" class="btn btn-primary btn-xs standard"
-                    data-toggle="tooltip" data-placement="top" title="{{ $standard-> description }}">{{ $standard->name }}</a></li>
+                    data-toggle="tooltip" data-placement="top" title="{{ $standard->description }}">{{ $standard->name }}</a></li>
+                @endforeach
+            </ul>
+            <ul class="standards list-inline">
+                <b>Learning Outcomes</b>
+                @foreach ($question->standards->where('type', 'Learning Objective') as $standard)
+                    <li><a href="{{ route('standards.show', $standard->id) }}" class="btn btn-primary btn-xs standard"
+                    data-toggle="tooltip" data-placement="top" title="{{ $standard->description }}">{{ $standard->name }}</a></li>
                 @endforeach
             </ul>
             <p class="details">
