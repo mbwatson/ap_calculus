@@ -23,6 +23,20 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-comment"></span>Questions</a></li>
                     <li><a href="{{ url('/standards') }}"><span class="glyphicon glyphicon-tags"></span>Standards</a></li>
+<!--                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="glyphicon glyphicon-tags"></span>Standards
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><i class="glyphicon glyphicon-list"></i>MPACs</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-list"></i>Big Ideas</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-list"></i>Enduring Understandings</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-list"></i>Learning Objectives</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-list"></i>Essential Knowledge</a></li>
+                        </ul>
+                    </li>
+ -->
                     <li><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
                 </ul>
 

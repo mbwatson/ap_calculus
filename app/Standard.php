@@ -16,7 +16,7 @@ class Standard extends Model
     {
         return $this->belongsToMany('App\Question')->orderBy('created_at', 'desc');
     }
-
+    
     /**
      * Get the parent of the current standard
      *
@@ -36,16 +36,4 @@ class Standard extends Model
     {
         return $this->attributes['name'] . ': ' . $this->attributes['description'];
     }
-
-    /**
-     * Get only standards that are mpacs
-     * @param string
-     * @return collection
-     */
-    public function scopeOfType($query, $type)
-    {
-        return $query->where('type', $type);
-    }
-
-
 }
