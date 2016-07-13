@@ -37,17 +37,20 @@
                             <p>
                                 {!! nl2br(e($question->body)) !!}
                             </p>
+                            <hr />
                             <ul class="standards list-inline">
-                                @foreach ($question->standards as $standard)
-                                    <li><a href="{{ route('standards.show', $standard->id) }}" class="btn btn-primary btn-xs"
-                                    data-toggle="tooltip" data-placement="top" title="{{ $standard-> description }}">{{ $standard->name }}</a></li>
-                                @endforeach
+                                <b>MPACs:</b>
+                                @include('partials.list-standards', ['standards' => $question->mpacs])
+                            </ul>
+                            <ul class="standards list-inline">
+                                <b>Learning Objectives:</b>
+                                @include('partials.list-standards', ['standards' => $question->learningObjectives])
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="panel-footer details">
-                    <i class="glyphicon glyphicon-calendar"></i> Questioned 
+                    <i class="glyphicon glyphicon-calendar"></i> Posted 
                     <?php
                         $format = 'Y-m-d H:i:s';
                         $date = DateTime::createFromFormat($format, $question->created_at);
@@ -91,7 +94,7 @@
                                 <div class="form-group">
                                     <textarea class="form-control" name="body" id="body" rows="5" placeholder="Comment"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Question Comment</button>
+                                <button type="submit" class="btn btn-primary">Post Comment</button>
                                 <input type="hidden" name="question_id" value="{{ $question->id }}">
                                 <input type="hidden" name="_token" value="{{ Session::token() }}">
                             </form>
@@ -110,8 +113,8 @@
                     <span class="glyphicon glyphicon-comment"></span>Comments
                 </div>
                 <div class="panel-body">
-                    @if (count($comments) > 0)
-                        @foreach ($comments as $comment)
+                    @if (count($question->comments) > 0)
+                        @foreach ($question->comments as $comment)
                             @include('partials.comment', $comment)
                         @endforeach
                     @else

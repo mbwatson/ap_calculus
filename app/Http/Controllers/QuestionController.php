@@ -19,11 +19,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        // ... ->get() or ->paginate(N) or ->simplePaginate(N)
-        $questions = Question::orderBy('created_at', 'desc')->paginate(10);
-        
         return view('questions.index', [
-            'questions' => $questions,
+            'questions' => Question::orderBy('created_at', 'desc')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
             'standards' => Standard::orderBy('name', 'asc')->get()
         ]);
     }
@@ -37,10 +34,7 @@ class QuestionController extends Controller
     public function show($id)
     {
         if($question = Question::find($id)){
-            return view('questions.show', [
-                'question' => $question,
-                'comments' => Comment::where('question_id', $question->id)->get()
-            ]);
+            return view('questions.show', ['question' => $question]);
         } else {
             return redirect()->back();
         }
@@ -80,12 +74,7 @@ class QuestionController extends Controller
         $request->user()->questions()->save($question);
         
         // Add question-standard relationship to pivot table if any were chosen
-        if ($request->standards) {
-            foreach ($request->standards as $standard_id) {
-                $standard = Standard::find($standard_id);
-                $question->standards()->attach($standard->id);
-            }
-        }
+        $question->standards()->sync($request['standards']);
 
         session()->flash('flash_message', 'Question successfully created!');
 
@@ -119,28 +108,19 @@ class QuestionController extends Controller
         // body can be no longer than 1000 characters
         $this->validate($request, [
             'title' => 'required|max:50',
-            'body' => 'required|max:1000'
+            'body' => 'required|max:1000',
+            'standards' => 'required'
         ]);
-        
         // Question is valid; store in database
         $question = Question::find($id);
         $question->title = $request['title'];
         $question->body = $request['body'];
         $question->save();
-
-        // Remove all question-standard relationships in pivot table
-        $question->standards()->detach();
-
-        // Add question-standard relationship to pivot table if any were chosen
-        if ($request->standards) {
-            foreach ($request->standards as $standard_id) {
-                $standard = Standard::find($standard_id);
-                $question->standards()->attach($standard->id);
-            }
-        }
-
+        // Update question-standard relationships in pivot table
+        $question->standards()->sync($request['standards']);
+        // Positive reinforcement
         session()->flash('flash_message', 'Question successfully updated!');
-
+        // See ya!
         return redirect()->route('questions.show', ['question' => $question]);
     }
 

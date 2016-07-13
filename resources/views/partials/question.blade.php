@@ -6,18 +6,12 @@
         <div class="col-md-9" style="height:100%">
             <heading><a href="{{ route('questions.show', $question->id) }}">{{ $question->title }}</a></heading>
             <ul class="standards list-inline">
-                <b>MPACs</b>
-                @foreach ($question->standards->where('type', 'MPAC') as $standard)
-                    <li><a href="{{ route('standards.show', $standard->id) }}" class="btn btn-primary btn-xs standard"
-                    data-toggle="tooltip" data-placement="top" title="{{ $standard->description }}">{{ $standard->name }}</a></li>
-                @endforeach
+                <b>MPACs:</b>
+                @include('partials.list-standards', ['standards' => $question->mpacs])
             </ul>
             <ul class="standards list-inline">
-                <b>Learning Outcomes</b>
-                @foreach ($question->standards->where('type', 'Learning Objective') as $standard)
-                    <li><a href="{{ route('standards.show', $standard->id) }}" class="btn btn-primary btn-xs standard"
-                    data-toggle="tooltip" data-placement="top" title="{{ $standard->description }}">{{ $standard->name }}</a></li>
-                @endforeach
+                <b>Learning Objectives:</b>
+                @include('partials.list-standards', ['standards' => $question->learningObjectives])
             </ul>
             <p class="details">
                 <span class="glyphicon glyphicon-calendar"></span>Posted {{ $question->created_at->diffForHumans() }}

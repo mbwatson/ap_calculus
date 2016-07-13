@@ -44,5 +44,5 @@ class StandardController extends Controller
     	
         return redirect()->back();
     }
-
+    
 }

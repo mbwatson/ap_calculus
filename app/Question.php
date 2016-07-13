@@ -25,6 +25,17 @@ class Question extends Model
     
     public function standards()
     {
-        return $this->belongsToMany('App\Standard');
+        return $this->belongsToMany('App\Standard')->orderBy('name');
     }
+
+    public function mpacs()
+    {
+        return $this->standards()->where('type', 'MPAC');
+    }
+
+    public function learningObjectives()
+    {
+        return $this->standards()->where('type', 'Learning Objective');
+    }
+
 }
