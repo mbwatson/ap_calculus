@@ -14,6 +14,9 @@
   <!-- Latest compiled and minified CSS for Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   
+  <!-- Select2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
   <!-- Custom Styles -->
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/main.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
@@ -27,6 +30,7 @@
   @include('partials.header')
   @include('partials.errors')
   @yield('content')
+  @yield('footer')
   @include('partials.footer')
   
   <!-- Tether for Bootstrap Tooltips -->
@@ -47,6 +51,9 @@
   <!-- Latest compiled and minified JavaScript for Bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+  <!-- Select2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
   <!-- MathJax -->
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -66,12 +73,15 @@
       });
     });
   </script>
-
   
+  <!-- Flash message retreat -->
   <script type="text/javascript">
     $('div.alert-success').delay(3000).slideUp(200);
   </script>
   
+<script type="text/javascript">
+    $('#standard_list').select2();
+</script>
   {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

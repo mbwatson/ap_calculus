@@ -28,6 +28,10 @@
                                 {!! Form::label('body', 'Body', ['class' => 'control-label']) !!}
                                 {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
                             </div>
+                            <div class="form-group">
+                                {!! Form::label('standard_ids', 'Standards', ['class' => 'control-label']) !!}
+                                {!! Form::select('standard_ids[]', $standards->lists('name','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
+                            </div>
                         </div>
                     </section>
                 </div>

@@ -47,7 +47,9 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('questions.create', ['standards' => Standard::all()]);
+        $standards = Standard::all();
+
+        return view('questions.create', compact('standards'));
     }
 
     /**
@@ -66,7 +68,6 @@ class QuestionController extends Controller
             'standards' => 'required'
         ]);
 
-
         // Question is valid; store in database
         $question = new Question();
         $question->title = $request['title'];
@@ -74,7 +75,7 @@ class QuestionController extends Controller
         $request->user()->questions()->save($question);
         
         // Add question-standard relationship to pivot table if any were chosen
-        $question->standards()->sync($request['standards']);
+        $question->standards()->sync($request->input('standards'));
 
         session()->flash('flash_message', 'Question successfully created!');
 
@@ -109,7 +110,7 @@ class QuestionController extends Controller
         $this->validate($request, [
             'title' => 'required|max:50',
             'body' => 'required|max:1000',
-            'standards' => 'required'
+            'standard_ids' => 'required'
         ]);
         // Question is valid; store in database
         $question = Question::find($id);
@@ -117,7 +118,7 @@ class QuestionController extends Controller
         $question->body = $request['body'];
         $question->save();
         // Update question-standard relationships in pivot table
-        $question->standards()->sync($request['standards']);
+        $question->standards()->sync($request->input('standard_ids'));
         // Positive reinforcement
         session()->flash('flash_message', 'Question successfully updated!');
         // See ya!

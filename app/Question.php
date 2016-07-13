@@ -32,10 +32,19 @@ class Question extends Model
     {
         return $this->standards()->where('type', 'MPAC');
     }
-
+    
     public function learningObjectives()
     {
         return $this->standards()->where('type', 'Learning Objective');
     }
 
+    /**
+     * Get a list of standard ids associated with current question
+     *
+     * @return array
+     */
+    public function getStandardIdsAttribute()
+    {
+        return $this->standards->lists('id')->toArray();
+    }
 }
