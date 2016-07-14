@@ -8,9 +8,15 @@ class question_standardTableSeeder extends Seeder {
 		DB::table('question_standard')->delete();
 
 		$seeds = array(
+			[ 'question_id' => 1, 'standard_id' => 1 ],
 			[ 'question_id' => 1, 'standard_id' => 2 ],
 			[ 'question_id' => 1, 'standard_id' => 3 ],
-			[ 'question_id' => 1, 'standard_id' => 58 ],
+			[ 'question_id' => 1, 'standard_id' => 5 ],
+			[ 'question_id' => 1, 'standard_id' => 6 ],
+			[ 'question_id' => 1, 'standard_id' => 60 ],
+			[ 'question_id' => 1, 'standard_id' => 61 ],
+			[ 'question_id' => 1, 'standard_id' => 62 ],
+			[ 'question_id' => 1, 'standard_id' => 64 ],
 			[ 'question_id' => 2, 'standard_id' => 1 ],
 			[ 'question_id' => 2, 'standard_id' => 2 ],
 			[ 'question_id' => 2, 'standard_id' => 3 ],

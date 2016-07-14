@@ -64,4 +64,8 @@ Route::group(['middleware' => 'auth'], function() {
 		'only' => ['store']
 	]);
 
+	Route::resource('search', 'SearchController', [
+		'only' => ['index']
+	]);
+
 });

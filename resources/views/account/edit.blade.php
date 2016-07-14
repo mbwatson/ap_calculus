@@ -56,8 +56,8 @@
                     </div>
                     <div class="col-xs-7">
                         <form enctype="multipart/form-data" action="/account/update/avatar" method="POST" class="form-inline">
-                            <label>Change avatar
-                                <input type="file" name="avatar" label="asd">
+                            <label class="file">Change avatar
+                                <input type="file" name="avatar">
                             </label>
                             <input type="hidden" name="_token" value="{{ Session::token() }}">
                             <input type="submit" value="Update" class="btn btn-sm btn-primary">

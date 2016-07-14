@@ -6,10 +6,14 @@ body {
     margin: 0 6px;
 }
 
-/* Form Textarea */
+/* Forms */
 
 FORM #body {
     max-width: 100%;
+}
+
+.btn {
+	border-radius: 3px;
 }
 
 /* Panels */
@@ -17,4 +21,15 @@ FORM #body {
 .panel-heading {
 	font-weight: bold;
 	font-size: larger;
+}
+
+.panel {
+	border-radius: 3px;
+	border: 1px solid #ddd;
+}
+
+/* Flash Messages */
+
+.alert {
+	border-radius: 3px;
 }

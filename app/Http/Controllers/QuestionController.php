@@ -29,7 +29,7 @@ class QuestionController extends Controller
     /**
      * Show question
      *
-     * @param  integer $id
+     * @param  Question $question
      * @return \Illuminate\Http\Response
      */
     public function show(Question $question)
@@ -52,15 +52,22 @@ class QuestionController extends Controller
     /**
      * Create a new question instance.
      *
-     * @param  array $request
+     * @param  CreateQuestionRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(CreateQuestionRequest $request)
     {
-        Question::create($request->all());
-        
+        //Question::create($request->all()); <-- This tries to save an array into a string field, 
+        //                                       so I'll save in this more verbose way until I learn better.
+        $question = new Question;
+        $question->title = $request['title'];
+        $question->body = $request['body'];
+        $request->user()->questions()->save($question);
+
+
         // Add question-standard relationship to pivot table if any were chosen
         $question->standards()->sync($request->input('standards'));
+
         session()->flash('flash_message', 'Question successfully created!');
         
         return redirect('questions');
@@ -83,7 +90,7 @@ class QuestionController extends Controller
     /**
      * Update question in database
      *
-     * @param  integer $id
+     * @param  Question $question
      * @param  array   $request
      * @return \Illuminate\Http\Response
      */
@@ -111,7 +118,7 @@ class QuestionController extends Controller
     /**
      * Delete a question from database.
      *
-     * @param  integer $question_id
+     * @param  Question $question
      * @return \Illuminate\Http\Response
      */
     public function destroy(Question $question)

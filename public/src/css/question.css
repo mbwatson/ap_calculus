@@ -5,7 +5,7 @@
 }
 
 .questions .question heading {
-	font-size: 200%;
+	font-size: 150%;
 }
 
 .questions .question .comment-count {
@@ -19,13 +19,22 @@
 	display: inline;
 }
 
-.questions .question .details {
+.question .details {
 	color: #aaa;
 	font-size: smaller;
 }
 
-.questions .question .standard {
-	font-size: 75%;
+.question .standards {
+	font-size: 90%;
+}
+
+.standards .btn {
+	font-size: 80%;
+	padding: 1px 4px;
+}
+
+.standards li {
+	padding: 0;
 }
 
 .questions .question .comment-count {
@@ -78,6 +87,19 @@
 
 /* Post Edit Dropdown */
 
-#question .dropdown a:hover {
-	color: #000;
+#question .dropdown .btn {
+	color: #fff;
+}
+
+/* Question Create Form */
+
+.question-form .title,
+.question-form .title:focus {
+	background-color: transparent;
+	outline: none;
+	box-shadow: none;
+	font-size: 200%;
+	font-weight: bolder;
+	padding: 30px 0;
+	border: none;
 }

@@ -17,14 +17,15 @@
   <!-- Select2 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
   
-  <!-- Custom Styles -->
+  <!-- Bootswatch Theme -->
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/themes/yeti.min.css') }}">
+
+  <!-- Custom Styling -->
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/main.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/user.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/question.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
-  <!-- Bootswatch Theme -->
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/themes/flatly.min.css') }}">
 </head>
 <body id="app-layout">
   @include('partials.header')
@@ -79,9 +80,13 @@
     $('div.alert-success').delay(3000).slideUp(200);
   </script>
   
-<script type="text/javascript">
-    $('#standard_list').select2();
-</script>
+  <!-- Select2 list -->
+  <script type="text/javascript">
+      $('#standard_list').select2({
+        placeholder: "Choose Standard(s)"
+      });
+  </script>
+  
   {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
