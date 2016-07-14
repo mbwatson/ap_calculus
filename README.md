@@ -9,6 +9,7 @@ Users marked as Administrators can delete posts and create standards.
 ### Future Additions/Fixes
 
 - bootstrap breaking point for navbar
+- process markdown in all posts
 - upload image with question
 - implement the addition of scoring guidelines with question
 - regular conversation forum

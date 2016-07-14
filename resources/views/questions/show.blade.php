@@ -34,7 +34,10 @@
                         @include('partials.user-card', ['user' => $question->user])
                     </div>
                     <div class="col-md-10">
-                        <p>{!! nl2br(e($question->body)) !!}</p>
+                        <p>
+                            {{-- nl2br(e($question->body)) --}}
+                            {!! $question->renderMarkdown() !!}
+                        </p>
                         <hr />
                         <div class="row">
                             <div class="col-lg-5 col-sm-10">

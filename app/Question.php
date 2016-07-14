@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Markdown;
 
 class Question extends Model
 {
@@ -11,6 +12,18 @@ class Question extends Model
         'body',
         'standards'
     ];
+
+    /**
+     * Return body of question with markdown rendered.
+     * 
+     * @param 
+     * @return 
+     */
+    public function renderMarkdown()
+    {
+        return Markdown::convertToHtml($this->body);
+    }
+
     /**
      * Get the user that owns the post
      *
