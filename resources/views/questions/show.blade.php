@@ -54,19 +54,14 @@
                 </div>
             </div>
             <div class="panel-footer details">
-                <i class="glyphicon glyphicon-calendar"></i> Posted 
-                <?php
-                    $format = 'Y-m-d H:i:s';
-                    $date = DateTime::createFromFormat($format, $question->created_at);
-                    echo $date->format('F d, Y') . ' at ' . $date->format('h:i:s a');
-                ?>
-                @if ($question->created_at != $question->updated_at)
-                    - Edited 
-                    <?php
-                        $date = DateTime::createFromFormat($format, $question->updated_at);
-                        echo $date->format('F d, Y') . ' at ' . $date->format('h:i:s a');
-                    ?>
-                @endif
+                <span class="glyphicon glyphicon-calendar"></span>
+                Posted {{ $question->created_at->diffForHumans() }}
+                {{ ($question->created_at != $question->updated_at) ? ' (Edited ' . $question->updated_at->diffForHumans() . ')' : '' }}
+                <div class="pull-right">
+                    @if ($question->user != Auth::user())
+                        <a href="#"><i class="glyphicon glyphicon-heart"></i></a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
