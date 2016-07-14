@@ -4,40 +4,27 @@
 
 <div class="container">
 
-    <!-- New Question Form -->
+    <header>Edit Your Question</header>
+    
+    <!-- Edit Question Form -->
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
             {!! Form::model($question, [
                 'method' => 'PATCH',
-                'route' => ['questions.update', $question->id]
+                'route' => ['questions.update', $question->id],
+                'class' => 'question-form'
             ]) !!}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Edit Question
-                </div>
-                <div class="panel-body">
-                    <section class="row">
-                        <div class="form-group" >
-                            {!! Form::label('title', 'Title', ['class' => 'control-label']) !!}
-                            {!! Form::text('title', null, ['class' => 'form-control']) !!}
-                        </div>
-                        <div class="form-group" >
-                            {!! Form::label('body', 'Body', ['class' => 'control-label']) !!}
-                            {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('standard_ids', 'Standards', ['class' => 'control-label']) !!}
-                            {!! Form::select('standard_ids[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
-                        </div>
-                    </section>
-                </div>
+            {!! Form::text('title', null, ['class' => 'form-control title']) !!}
+            {!! Form::textarea('body', null, ['class' => 'form-control body']) !!}
+            <div class="form-group">
+                {!! Form::label('standard_ids', 'Standards', ['class' => 'control-label']) !!}
+                {!! Form::select('standard_ids[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
             </div>
-            {!! Form::submit('Update Question', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('Update Question', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
-    </div>
-    
+    </div>    
 </div>
 
 @endsection

@@ -4,17 +4,16 @@
 
 <div class="container">
 
+    <!-- Question -->
+
     <div class="row">
-
-        <!-- Question -->
-
         <div class="panel panel-default" id="question">
             <div class="panel-heading">
                 {{ $question->title }}
                 <div class="btn-group pull-right">
                     @if ($question->user == Auth::user() || Auth::user()->admin)
                         <div class="dropdown">
-                            <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="editdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="editdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="editdropdown">

@@ -4,10 +4,14 @@
 
 <div class="container">
 
+    <header>Standards</header>
+    
     @if (Auth::user()->admin)
+        
         <!-- New Standard Form -->
+        
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Add a New Standard
@@ -59,22 +63,22 @@
     <!-- Standards list -->
     
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Mathematical Practices for AP Calculus (MPACs)
                 </div>
                 <div class="panel-body standards">
-                        @foreach ($standards->where('type', 'MPAC') as $standard)
-                            <p class="row standard">
-                                <div class="col-md-2 name">
-                                    <a href="{{ route('standards.show', $standard) }}" class="btn btn-xs btn-primary" role="button">{{ $standard->name }}</a>
-                                </div>
-                                <div class="col-md-8 description">
-                                    {{ $standard->description }}
-                                </div>
-                            </p>
-                        @endforeach
+                    @foreach ($standards->where('type', 'MPAC') as $standard)
+                        <p class="row standard">
+                            <div class="col-xs-2 name">
+                                <a href="{{ route('standards.show', $standard) }}" class="btn btn-xs btn-primary" role="button">{{ $standard->name }}</a>
+                            </div>
+                            <div class="col-xs-10 description">
+                                {{ $standard->description }}
+                            </div>
+                        </p>
+                    @endforeach
                 </div>
                 @foreach ($standards->where('type', 'Big Idea') as $bi)
                     <div class="panel-heading">
@@ -83,19 +87,19 @@
                     @foreach ($standards->where('parent_id', strval($bi->id))->where('type', 'Enduring Understanding') as $eu)
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-sm-3 col-xs-12">
                                     <b>{{ $eu->name }}</b> : {{ $eu->description }}
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-sm-9 col-xs-12">
                                     @foreach ($standards->where('parent_id', strval($eu->id))->where('type', 'Learning Objective') as $lo)
-                                        <p class="row standard">
-                                            <div class="col-md-2">
+                                        <div class="row standard">
+                                            <div class="col-sm-2 col-xs-12">
                                                 <a href="{{ route('standards.show', $lo->id) }}" class="btn btn-xs btn-primary" role="button">{{ $lo->name }}</a>
                                             </div>
-                                            <div class="col-md-10 description">
+                                            <div class="col-sm-10 col-xs-12 description">
                                                 {{ $lo->description }}
                                             </div>
-                                        </p>
+                                        </div>
                                     @endforeach
                                 </div>
                             </div>

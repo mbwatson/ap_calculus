@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-xs-10 col-xs-offset-1">
+        <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Public Profile
@@ -42,7 +42,7 @@
                         {!! Form::input('date', 'birthday', null, ['class' => 'form-control']) !!}
                     </div>
                     <br />
-                    {!! Form::submit('Update Profile', ['class' => 'btn btn-primary btn-sm']) !!}
+                    {!! Form::submit('Update Profile', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
                     {!! Form::close() !!}
                 </div>
 
@@ -54,7 +54,7 @@
                     <div class="col-xs-3">
                         <img class="avatar" src="{{ URL::to('uploads/avatars/' . $user->avatar) }}">
                     </div>
-                    <div class="col-xs-7">
+                    <div class="col-xs-9">
                         <form enctype="multipart/form-data" action="/account/update/avatar" method="POST" class="form-inline">
                             <label class="file">Change avatar
                                 <input type="file" name="avatar">

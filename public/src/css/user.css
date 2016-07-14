@@ -36,3 +36,8 @@
 	height: 150px;
 	border-width: 10px;
 }
+
+.profile header {
+	font-size: 300%;
+	font-weight: bolder;
+}

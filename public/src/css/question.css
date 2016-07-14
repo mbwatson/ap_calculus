@@ -56,10 +56,10 @@
 	border-color: #ccc transparent;
 }
 
-/* Post */
+/* Single Post */
 
-#question header {
-	font-size: larger;
+#question .panel-heading {
+	font-size: 250%;
 	font-weight: bold;
 }
 

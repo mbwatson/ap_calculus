@@ -12,7 +12,7 @@
                         @include('partials.list-standards', ['standards' => $question->mpacs])
                     </ul>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <ul class="standards list-inline">
                         <b>Learning Objectives:</b>
                         @include('partials.list-standards', ['standards' => $question->learningObjectives])

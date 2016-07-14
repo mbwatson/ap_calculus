@@ -5,18 +5,18 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-xs-10 col-xs-offset-1">
+        <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Profile <a class="small pull-right" href="{{ route('account.edit', $user) }}"><span class="glyphicon glyphicon-edit"></span>Edit</a>
                 </div>
 
                 <div class="panel-body profile">
-                    <div class="col-md-3 user-card">
+                    <div class="col-sm-3 user-card">
                         <img class="avatar" src="{{ URL::to('uploads/avatars/' . $user->avatar) }}"><br />
                         {{ $user->name }}
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-sm-9">
                         <div class="table-responsive">
                             <table class="table">
                                 <tr>
