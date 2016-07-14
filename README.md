@@ -1,4 +1,4 @@
-# Laravel 5.2 Forum 
+# AP Calculus Question Forum 
 
 ## Rough Description
 
@@ -11,7 +11,9 @@ Users marked as Administrators can delete posts and create standards.
 - bootstrap breaking point for navbar
 - upload image with question
 - implement the addition of scoring guidelines with question
-- tag other users (with @-symbol?)
-- favorite or 'like' questions
 - regular conversation forum
-
+- tag other users (with @-symbol?) in question comments or in regular conversation forum
+- tag standards in comments
+- favorite or 'like' questions
+- search
+- browse over union of standards
