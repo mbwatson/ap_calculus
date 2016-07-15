@@ -136,4 +136,5 @@ class QuestionController extends Controller
 
         return redirect()->route('questions.index');
     }
+
 }
