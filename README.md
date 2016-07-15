@@ -9,12 +9,12 @@ Users marked as Administrators can delete posts and create standards.
 ### Future Additions/Fixes
 
 - bootstrap breaking point for navbar
-- process markdown in all posts
-- upload image with question
+- form footer is the only one needing the select2 js code
+- upload image with question or figure out another option for creating images on the fly
 - implement the addition of scoring guidelines with question
-- regular conversation forum
-- tag other users (with @-symbol?) in question comments or in regular conversation forum
-- tag standards in comments
-- favorite or 'like' questions
-- search
-- browse over union of standards
+- regular conversation forum with categories
+- tag/mention other users (with @-symbol?) in question comments or in regular conversation forum
+- tag standards [[LO 1.2A(b)]] or similar in comments
+- favorite or 'like' system for questions
+- question search
+- browse questions over union of standards

@@ -37,3 +37,9 @@ FORM #body {
 .alert {
 	border-radius: 3px;
 }
+
+/* Search */
+
+.search-form input {
+    border-radius: 3px;
+}

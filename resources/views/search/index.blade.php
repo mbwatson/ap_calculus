@@ -10,13 +10,9 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Search</div>
-
-                <div class="panel-body">
-                    Search form...
-                </div>
-            </div>
+            {!! Form::open(['route' => 'search.index', 'class' => 'search-form']) !!}
+            {!! Form::text('query', null, ['class' => 'form-control', 'placeholder' => 'Search Query']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

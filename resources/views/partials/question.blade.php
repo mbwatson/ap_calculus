@@ -4,7 +4,9 @@
             @include('partials.user-card', ['user' => $question->user])
         </div>
         <div class="col-xs-11 col-md-9 col-sm-9" style="height:100%">
-            <heading><a href="{{ route('questions.show', $question->id) }}">{{ $question->title }}</a></heading>
+            <div class="row title">
+                <a href="{{ route('questions.show', $question->id) }}">{{ $question->title }}</a>
+            </div>
             <div class="row">
                 <div class="col-md-5">
                     <ul class="standards list-inline">

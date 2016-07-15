@@ -21,10 +21,11 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-comment"></span>Questions</a></li>
+                    <!-- <li><a href="{{ url('/discussions') }}" ="disabled"><span class="glyphicon glyphicon-comment"></span>Discussions</a></li> -->
+                    <li><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
                     <li><a href="{{ url('/standards') }}"><span class="glyphicon glyphicon-tags"></span>Standards</a></li>
-                    <li><a href="{{ url('/search') }}"><span class="glyphicon glyphicon-search"></span>Search</a></li>
                     <li><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
+                    <li><a href="{{ url('/search') }}"><span class="glyphicon glyphicon-search"></span>Search</a></li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
