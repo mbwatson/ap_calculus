@@ -65,10 +65,13 @@
             <div class="panel-footer details">
                 <span class="glyphicon glyphicon-calendar"></span>
                 Posted {{ $question->created_at->diffForHumans() }}
-                {{ ($question->created_at != $question->updated_at) ? ' (Edited ' . $question->updated_at->diffForHumans() . ')' : '' }}<br />
+                {{ ($question->created_at != $question->updated_at) ? ' (Edited ' . $question->updated_at->diffForHumans() . ')' : '' }}
                 <div class="pull-right">
-                    @if ($question->favorites->count() > 0)
-                        <i class="glyphicon glyphicon-heart"></i>This question is a favorite of {{ $question->favorites->count() }} users.
+                    <!-- (Un)Favorite Button -->
+                    @if ($question->favorites->contains(Auth::user()))
+                        <a href="{{ route('unfavorite.question', $question->id) }}" role="button" class="text-primary" data-toggle="tooltip" data-placement="top" title="Remove from favorites"><i class="glyphicon glyphicon-heart"></i></a>
+                    @else
+                        <a href="{{ route('favorite.question', $question->id) }}" role="button" class="text-muted" data-toggle="tooltip" data-placement="top" title="Add to favorites"><i class="glyphicon glyphicon-heart"></i></a>
                     @endif
                 </div>
             </div>
