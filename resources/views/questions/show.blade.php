@@ -17,19 +17,15 @@
                             </button>
                             <div class="dropdown-menu pull-right" aria-labelledby="editdropdown">
                                 <!-- Favorite Button -->
-                                {!! Form::open(['route' => ['unfavorite.question', $question->id], 'method' => 'get']) !!}
-                                    @if ($question->favorites->contains(Auth::user()))
-                                        <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-heart"></i>Remove from Favorites</button>
-                                    @else
-                                        <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-heart"></i>Add to Favorites</button>
-                                    @endif
-                                {!! Form::close() !!}
+                                @if ($question->favorites->contains(Auth::user()))
+                                    <a href="{{ route('unfavorite.question', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-heart"></i>Remove from Favorites</a>
+                                @else
+                                    <a href="{{ route('favorite.question', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-heart"></i>Add to Favorites</a>
+                                @endif
                                 @if ($question->user == Auth::user() || Auth::user()->admin)
-                                    <!-- Edit Button -->
-                                    {!! Form::open(['route' => ['questions.edit', $question->id], 'method' => 'get']) !!}
-                                        <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</button>
-                                    {!! Form::close() !!}
-                                    <!-- Delete Button -->
+                                    <!-- Edit -->
+                                    <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
+                                    <!-- Delete -->
                                     {!! Form::open(['route' => ['questions.destroy', $question->id], 'method' => 'delete']) !!}
                                         <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Question</button>
                                     {!! Form::close() !!}
