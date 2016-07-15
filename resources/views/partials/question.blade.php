@@ -5,7 +5,7 @@
         </div>
         <div class="col-xs-11 col-md-9 col-sm-9" style="height:100%">
             <div class="row title">
-                <a href="{{ route('questions.show', $question->id) }}">{{ $question->title }}</a>
+                <a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a>
             </div>
             <div class="row">
                 <div class="col-md-5">
