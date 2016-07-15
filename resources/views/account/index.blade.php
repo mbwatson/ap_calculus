@@ -3,14 +3,14 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
 
+    <header>My Profile</header>
+
+    <!-- Profile -->
+
+    <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Profile <a class="small pull-right" href="{{ route('account.edit', $user) }}"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-                </div>
-
                 <div class="panel-body profile">
                     <div class="col-sm-3 user-card">
                         <img class="avatar" src="{{ URL::to('uploads/avatars/' . $user->avatar) }}"><br />
@@ -43,14 +43,18 @@
                                     <th><p class="text-right">Location:</p></th>
                                     <td>{{ $user->location }}</td>
                                 </tr>
+                                <tr>
+                                    <th><p class="text-right">Favorites:</p></th>
+                                    <td>{{ $user->favorites->count() }}</td>
+                                </tr>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+
 </div>
 
 @endsection

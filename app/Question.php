@@ -84,4 +84,9 @@ class Question extends Model
         return $this->standards->lists('id')->toArray();
     }
 
+    public function favorites()
+    {
+        return $this->belongsToMany('App\User', 'favorites')->withTimestamps();
+    }
+    
 }
