@@ -17,11 +17,6 @@
                             </button>
                             <div class="dropdown-menu pull-right" aria-labelledby="editdropdown">
                                 <!-- Favorite Button -->
-                                @if ($question->favorites->contains(Auth::user()))
-                                    <a href="{{ route('unfavorite.question', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-heart"></i>Remove from Favorites</a>
-                                @else
-                                    <a href="{{ route('favorite.question', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-heart"></i>Add to Favorites</a>
-                                @endif
                                 @if ($question->user == Auth::user() || Auth::user()->admin)
                                     <!-- Edit -->
                                     <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
@@ -68,11 +63,9 @@
                 {{ ($question->created_at != $question->updated_at) ? ' (Edited ' . $question->updated_at->diffForHumans() . ')' : '' }}
                 <div class="pull-right">
                     <!-- (Un)Favorite Button -->
-                    @if ($question->favorites->contains(Auth::user()))
-                        <a href="{{ route('unfavorite.question', $question->id) }}" role="button" class="text-primary" data-toggle="tooltip" data-placement="top" title="Remove from favorites"><i class="glyphicon glyphicon-heart"></i></a>
-                    @else
-                        <a href="{{ route('favorite.question', $question->id) }}" role="button" class="text-muted" data-toggle="tooltip" data-placement="top" title="Add to favorites"><i class="glyphicon glyphicon-heart"></i></a>
-                    @endif
+                    <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite 
+                    {{ ($question->favorites->contains(Auth::user())) ? 'text-primary' : 'text-muted' }}"
+                    title="Toggle Favorite" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
                 </div>
             </div>
         </div>

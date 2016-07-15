@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Standard extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'type', 'name', 'description', 'parent_id'
+    ];
 
 	/**
      * Get the questions associated to the current standard

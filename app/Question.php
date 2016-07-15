@@ -7,10 +7,13 @@ use Markdown;
 
 class Question extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'title',
-        'body',
-        'standards'
+        'title', 'body', 'user_id'
     ];
 
     /**

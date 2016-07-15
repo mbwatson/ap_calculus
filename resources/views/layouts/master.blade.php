@@ -87,6 +87,9 @@
       });
   </script>
   
+  <!-- My JS -->
+  <script type="text/javascript" src="{{ asset('src/js/favorites.js') }}"></script>
+
   {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

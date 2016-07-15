@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Question;
 use App\User;
 use Session;
 use Auth;
@@ -101,23 +102,18 @@ class AccountController extends Controller
     	return view('account.index', ['user' => Auth::user()]);
     }
 
-    public function favorite($id)
+    public function favorite_toggle($id)
     {
-        // Update relationship in favorites pivot table
-        Auth::user()->favorites()->attach([$id]);
+        $question = Question::find($id);
 
-        session()->flash('flash_message', 'The question has been added to your favorites.');
+        if ($question->favorites->contains(Auth::user())){
+            Auth::user()->favorites()->detach([$id]);
+            return response()->json(['message' => 'Un-favorited question!']);
+        } else {
+            Auth::user()->favorites()->attach([$id]);
+            return response()->json(['message' => 'Favorited question!']);
+        }
 
-        return redirect()->back();
+
     }
-
-    public function unfavorite($id)
-    {
-        // Update relationship in favorites pivot table
-        Auth::user()->favorites()->detach([$id]);
-        
-        session()->flash('flash_message', 'The question has been removed from your favorites.');
-        return redirect()->back();
-    }
-
 }

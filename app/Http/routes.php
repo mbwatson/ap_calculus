@@ -72,7 +72,6 @@ Route::group(['middleware' => 'auth'], function() {
 		'only' => ['index']
 	]);
 
-	Route::get('favorites/{id}', ['uses' => 'AccountController@favorite', 'as' => 'favorite.question']);
-	Route::get('unfavorites/{id}', ['uses' => 'AccountController@unfavorite', 'as' => 'unfavorite.question']);
+	Route::get('favorites/toggle/{id}', ['uses' => 'AccountController@favorite_toggle', 'as' => 'favorite.toggle']);
 
 });
