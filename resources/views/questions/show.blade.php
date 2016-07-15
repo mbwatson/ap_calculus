@@ -95,3 +95,10 @@
 </div>
 
 @endsection
+
+@section('footer')
+
+<!-- My Favorites JS -->
+<script type="text/javascript" src="{{ asset('src/js/favorites.js') }}"></script>
+
+@endsection

@@ -25,3 +25,14 @@
 </div>
 
 @endsection
+
+@section('footer')
+
+<!-- Select2 list -->
+<script type="text/javascript">
+    $('#standard_list').select2({
+      placeholder: "Choose Standard(s)"
+    });
+</script>
+
+@endsection

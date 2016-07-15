@@ -11,8 +11,8 @@ Users marked as Administrators can delete posts and create standards.
 
 ### Future Additions/Fixes
 
-- bootstrap breaking point for navbar
-- form footer is the only one needing the select2 js code
+- nice-looking pdf export of questions
+- live WYSIWYG editor (Ajax, Vue?)
 - upload image with question or figure out another option for creating images on the fly
 - implement the addition of scoring guidelines with question
 - regular conversation forum with categories
@@ -20,3 +20,4 @@ Users marked as Administrators can delete posts and create standards.
 - tag standards [[LO 1.2A(b)]] or similar in comments
 - question search
 - browse questions over union of standards
+- bootstrap breaking point for navbar--probably need to finalize navbar first
