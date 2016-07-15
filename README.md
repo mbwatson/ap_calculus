@@ -15,6 +15,6 @@ Users marked as Administrators can delete posts and create standards.
 - regular conversation forum with categories
 - tag/mention other users (with @-symbol?) in question comments or in regular conversation forum
 - tag standards [[LO 1.2A(b)]] or similar in comments
-- favorite or 'like' system for questions
+- favorite or 'like' system for questions [DONE]
 - question search
 - browse questions over union of standards
