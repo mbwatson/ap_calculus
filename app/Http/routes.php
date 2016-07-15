@@ -42,6 +42,10 @@ Route::post('/account/update/avatar', [
 	'uses' => 'AccountController@update_avatar'
 ]);
 
+Route::get('/favorites', function() {
+	return view('account.favorites', ['user' => Auth::user()]);
+});
+
 Route::resource('account', 'AccountController', [
 	'only' => ['index', 'edit', 'update']
 ]);
@@ -67,5 +71,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::resource('search', 'SearchController', [
 		'only' => ['index']
 	]);
+
+	Route::get('favorites/{id}', ['uses' => 'AccountController@favorite', 'as' => 'favorite.question']);
+	Route::get('unfavorites/{id}', ['uses' => 'AccountController@unfavorite', 'as' => 'unfavorite.question']);
 
 });

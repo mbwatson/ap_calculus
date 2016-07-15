@@ -101,4 +101,23 @@ class AccountController extends Controller
     	return view('account.index', ['user' => Auth::user()]);
     }
 
+    public function favorite($id)
+    {
+        // Update relationship in favorites pivot table
+        Auth::user()->favorites()->attach([$id]);
+
+        session()->flash('flash_message', 'The question has been added to your favorites.');
+
+        return redirect()->back();
+    }
+
+    public function unfavorite($id)
+    {
+        // Update relationship in favorites pivot table
+        Auth::user()->favorites()->detach([$id]);
+        
+        session()->flash('flash_message', 'The question has been removed from your favorites.');
+        return redirect()->back();
+    }
+
 }
