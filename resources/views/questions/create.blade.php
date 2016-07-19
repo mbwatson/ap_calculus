@@ -21,7 +21,17 @@
             {!! Form::close() !!}
         </div>
     </div>
-    
+
+    <br />
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="pull-right text-right">
+                <a href="#">Help with Markdown</a> <br />
+                <a href="#">Help with MathJAX</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection
