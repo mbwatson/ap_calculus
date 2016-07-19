@@ -9,7 +9,12 @@ body {
 
 .container header {
 	font-size: 250%;
-	padding-bottom: 25px;
+	padding-bottom: 40px;
+}
+
+.container header small {
+	font-size: 50%;
+	display: block;
 }
 
 /* Forms */

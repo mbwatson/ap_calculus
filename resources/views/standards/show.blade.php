@@ -6,8 +6,13 @@
 
     <!-- Standard & its Description -->
 
-    <header>{{ $standard->name }}</header>
-    {{ $standard->description }}
+    <header>
+        {{ $standard->name }}
+        <small>
+            {{ $standard->description }}
+        </small>
+    </header>
+    
 
     <!-- Questions List -->
 

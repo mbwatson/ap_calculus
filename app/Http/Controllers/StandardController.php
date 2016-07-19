@@ -10,17 +10,35 @@ use Auth;
 
 class StandardController extends Controller
 {
+    /**
+     * 
+     * 
+     * @param 
+     * @return 
+     */
     public function index()
     {
         $standards = Standard::orderBy('name', 'asc')->get();
         return view('standards.index', ['standards' => $standards]);
     }
 
-    public function show($id) {
-        $standard = Standard::findOrFail($id);
+    /**
+     * 
+     * 
+     * @param 
+     * @return 
+     */
+    public function show(Standard $standard)
+    {
         return view('standards.show', [ 'standard' => $standard ]);
     }
-    
+
+    /**
+     * 
+     * 
+     * @param 
+     * @return 
+     */
     public function store(Request $request)
     {
         $this->validate($request, [

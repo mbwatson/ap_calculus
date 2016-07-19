@@ -94,7 +94,7 @@
                                     @foreach ($standards->where('parent_id', strval($eu->id))->where('type', 'Learning Objective') as $lo)
                                         <div class="row standard">
                                             <div class="col-sm-2 col-xs-12">
-                                                <a href="{{ route('standards.show', $lo->id) }}" class="btn btn-xs btn-primary" role="button">{{ $lo->name }}</a>
+                                                <a href="{{ route('standards.show', $lo) }}" class="btn btn-xs btn-primary" role="button">{{ $lo->name }}</a>
                                             </div>
                                             <div class="col-sm-10 col-xs-12 description">
                                                 {{ $lo->description }}
