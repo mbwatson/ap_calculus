@@ -12,7 +12,7 @@ header {
 }
 /* Forms */
 
-FORM #body {
+FORM textarea {
     max-width: 100%;
 }
 
@@ -42,4 +42,7 @@ FORM #body {
 
 .search-form input {
     border-radius: 3px;
+    padding-left: 20px;
+    font-size: 16px;
+    height: 39px;
 }

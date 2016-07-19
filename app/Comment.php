@@ -14,6 +14,7 @@ class Comment extends Model
     protected $fillable = [
         'question_id', 'user_id', 'body'
     ];
+    
 	/**
 	 * Get the question that owns the comment
 	*/

@@ -51,6 +51,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="pull-right">
+                    <!-- Edit Lnk -->
+                    <a href="{{ route('account.edit', $user) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+                </div>
             </div>
         </div>
     </div>

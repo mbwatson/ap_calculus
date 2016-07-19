@@ -68,10 +68,19 @@ Route::group(['middleware' => 'auth'], function() {
 		'only' => ['store']
 	]);
 
-	Route::resource('search', 'SearchController', [
-		'only' => ['index']
+	Route::get('favorites/toggle/{id}', [
+		'uses' => 'AccountController@favorite_toggle',
+		'as' => 'favorite.toggle'
 	]);
 
-	Route::get('favorites/toggle/{id}', ['uses' => 'AccountController@favorite_toggle', 'as' => 'favorite.toggle']);
+	Route::post('/search/results', [
+		'uses' => 'SearchController@results',
+		'as' => 'search.results',
+	]);
+
+	Route::get('/search', [
+		'uses' => 'SearchController@index',
+		'as' => 'search.index',
+	]);
 
 });

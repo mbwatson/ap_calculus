@@ -19,8 +19,7 @@ class Question extends Model
     /**
      * Return body of question with markdown rendered.
      * 
-     * @param 
-     * @return 
+     * @return String
      */
     public function renderMarkdown()
     {
@@ -87,6 +86,11 @@ class Question extends Model
         return $this->standards->lists('id')->toArray();
     }
 
+    /**
+     * Return users who have favorited this question.
+     *
+     * @return Array
+     */
     public function favorites()
     {
         return $this->belongsToMany('App\User', 'favorites')->withTimestamps();

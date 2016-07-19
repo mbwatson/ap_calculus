@@ -1,19 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
+
+<header>Markdown</header>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
             <div class="panel">
                 <div class="panel-body">
-                    @if (Auth::user())
-                        'You are logged in!'
-                    @else
-                        <a href="login">Login</a>
-                    @endif
-                </div>
-                <div class="panel-footer">
-                    sdfkjlh
+                    Markdown Cheat Sheet
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@ class Standard extends Model
     /**
      * Get information about the current standard in the form [ 'name: description' ]
      *
-     * @return string
+     * @return String
      */
     public function getStandardInfoAttribute()
     {

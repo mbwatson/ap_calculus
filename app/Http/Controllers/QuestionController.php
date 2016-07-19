@@ -21,7 +21,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questions.index', [
-            'questions' => Question::latest('created_at')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
+            'questions' => Question::latest('created_at')->paginate(5), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
             'standards' => Standard::orderBy('name', 'asc')->get()
         ]);
     }
