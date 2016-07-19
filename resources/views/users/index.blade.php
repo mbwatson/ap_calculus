@@ -6,22 +6,23 @@
 
 <div class="container">
 
-    <header>Users</header>
+    <header>
+        Users
+        <small>All users registered on this site.</small>
+    </header>
 
     <!-- Users List -->
     
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    @foreach($users as $user)
-                        <div class="col-xs-12 col-sm-2">
+        @foreach($users as $user)
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
                             @include('partials.user-card', ['user' => $user])
-                        </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
