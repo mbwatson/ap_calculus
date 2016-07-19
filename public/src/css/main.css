@@ -7,14 +7,21 @@ body {
     margin: 0 6px;
 }
 
-header {
+.container header {
 	font-size: 250%;
+	padding-bottom: 25px;
 }
 
 /* Forms */
 
 FORM textarea {
     max-width: 100%;
+}
+
+FORM label {
+	font-size: 110%;
+	text-align: right;
+	margin-top: 6px;
 }
 
 .btn {

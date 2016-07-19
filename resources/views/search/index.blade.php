@@ -20,8 +20,6 @@
             </div>
 
            	<br />
-            <h3>OR</h3>
-            <br />
             
             <div class="form-group row" >
                 {!! Form::label('standard_ids', 'Filter by Standards:', ['class' => 'form-control-label col-xs-2']) !!}
@@ -30,7 +28,7 @@
                 </div>
             </div>
 
-            <br /><br />
+            <br />
 
             {!! Form::submit('Search', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
@@ -46,7 +44,7 @@
 <!-- Select2 list -->
 <script type="text/javascript">
     $('#standard_list').select2({
-      placeholder: "Search by Standard"
+      placeholder: "Select Standard(s)"
     });
 </script>
 
