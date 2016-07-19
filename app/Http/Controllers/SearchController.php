@@ -11,21 +11,31 @@ class SearchController extends Controller
 {
     public function index()
     {
-        return view('search.index');
+        return view('search.index', [
+        	'standards' => Standard::all()
+        ]);
     }
 
     public function results(Request $request)
     {
-    	$query = $request->input('query');
-    	$results = Question::where('title', 'LIKE', '%'.$query.'%')
-    						->orWhere('body', 'LIKE', '%'.$query.'%')->get();
+    	$keywords = $request->input('keywords');
+
+    	$results = Question::withKeywords($keywords)
+    						->withStandards($request->input('standard_ids'))->get();
 
     	return view('search.results', [
-    		'query' => $query,
-    		'results' => $results
+    		'keywords' => $keywords,
+    		'questions' => $results,
+        	'standards' => Standard::all(),
+        	'selected_standard_ids' => $request->input('standard_ids')
     	]);
     }
 
+
+    public function byStandard()
+    {
+        
+    }
 }
 
 //////////////////////////////////////////////////////////////////////

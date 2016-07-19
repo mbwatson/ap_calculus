@@ -73,14 +73,14 @@ Route::group(['middleware' => 'auth'], function() {
 		'as' => 'favorite.toggle'
 	]);
 
-	Route::post('/search/results', [
-		'uses' => 'SearchController@results',
-		'as' => 'search.results',
-	]);
-
 	Route::get('/search', [
 		'uses' => 'SearchController@index',
 		'as' => 'search.index',
+	]);
+
+	Route::post('/search/results', [
+		'uses' => 'SearchController@results',
+		'as' => 'search.results',
 	]);
 
 });

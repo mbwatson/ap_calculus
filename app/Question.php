@@ -96,4 +96,27 @@ class Question extends Model
         return $this->belongsToMany('App\User', 'favorites')->withTimestamps();
     }
     
+    public function scopeWithKeywords($query, $keywords)
+    {
+        if ($keywords) {
+            $keywords = explode(' ', $keywords);
+            
+            foreach ($keywords as $keyword) {
+                $query->orWhere('title', 'LIKE', '%'.$keyword.'%')->orWhere('body', 'LIKE', '%'.$keyword.'%');
+            }
+        }
+
+        return $query;
+    }
+
+    public function scopeWithStandards($query, $ids)
+    {
+        if ($ids) {
+            $query->whereHas('standards', function($query) use ($ids) {
+                $query->whereIn('standard_id', $ids);
+            });
+        }
+
+        return $query;
+    }
 }

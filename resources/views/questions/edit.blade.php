@@ -17,10 +17,10 @@
             ]) !!}
             {!! Form::text('title', null, ['class' => 'form-control title']) !!}
             {!! Form::textarea('body', null, ['class' => 'form-control body']) !!}
+            
             <br />
-            <div class="form-group">
-                {!! Form::select('standard_ids[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
-            </div>
+
+            {!! Form::select('standard_ids[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
             {!! Form::submit('Update Question', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
