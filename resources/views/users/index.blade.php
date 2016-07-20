@@ -24,6 +24,8 @@
             </div>
         @endforeach
     </div>
+
+    <footer><span class="fa fa-check-circle"></span> indicates a user is currently logged in.</footer>
 </div>
 
 @endsection
