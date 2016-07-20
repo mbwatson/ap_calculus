@@ -18,6 +18,6 @@ Users marked as Administrators can delete posts and create standards.
 - regular conversation forum with categories
 - tag/mention other users (with @-symbol?) in question comments or in regular conversation forum
 - tag standards [[LO 1.2A(b)]] or similar in comments
-- question search by tags (by keywords: done)
+- question search (now: (union keywords) intersect (union standards))
 - browse questions over union of standards
 - bootstrap breaking point for navbar--probably need to finalize navbar first
