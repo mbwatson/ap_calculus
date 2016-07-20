@@ -12,25 +12,25 @@
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-body profile">
-                    <div class="col-xs-12 col-sm-3 col-md-2">
+                    <div class="col-xs-12 col-sm-3 text-center">
                         <br />
                         @include('partials.user-card', ['user' => $user])
-                        <br />
                         <small>{{ $user->admin ? '( Admin )' : '' }}</small>
+                        <br />
                     </div>
-                    <div class="col-xs-12 col-sm-9 col-md-10">
-                        <div><span class="glyphicon glyphicon-sunglasses"></span>A.K.A. {{ $user->first_name }} {{ $user->last_name }}</div>
+
+                    <div class="col-xs-12 col-sm-5 col-md-4">
+                        <h4>Personal Information</h4>
+
+                        <div><span class="glyphicon glyphicon-sunglasses"></span>A.K.A. {{ ($user->first_name || $user->last_name) ? $user->first_name . ' ' . $user->last_name : '' }}</div>
                         <div><span class="glyphicon glyphicon-envelope"></span>{{ $user->email }}</div>
                         <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
                         <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
+                    </div>
 
-                        <br />
-                        <div>{{ $user->bio }}</div>
-
-                        <h4>Contributions</h4>
-                        {{ count($user->questions()->get()) }} Questions
-                        <br />
-                        {{ count($user->comments()->get()) }} Comments
+                    <div class="col-xs-12 col-sm-4 col-md-5">
+                        <h4>About Me</h4>
+                        {{ $user->bio }}
                     </div>
                 </div>
                 <div class="panel-footer">

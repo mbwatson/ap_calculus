@@ -12,7 +12,14 @@
             {{ $standard->description }}
         </small>
     </header>
+
+    <!-- Details -->
     
+    <div class="row">
+        <div class="col-xs-12">
+            {!! $standard->renderMarkdown() !!}
+        </div>
+    </div>
 
     <!-- Questions List -->
 

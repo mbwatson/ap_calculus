@@ -17,6 +17,7 @@ class CreateStandardsTable extends Migration
             $table->string('type');
             $table->string('name');
             $table->text('description');
+            $table->text('details')->nullable();
             $table->integer('parent_id')->unsigned()->nullable();
             $table->timestamps();
         });

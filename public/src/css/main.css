@@ -4,7 +4,7 @@ body {
     background-color: #f5f5f1;
 }
 
-.glyphicon, .fa-btn {
+.glyphicon, .fa, .fa-btn {
     margin: 0 6px;
 }
 
@@ -16,6 +16,11 @@ body {
 .container header small {
 	font-size: 50%;
 	display: block;
+}
+
+.container footer {
+	font-size: 90%;
+	padding-top: 30px;
 }
 
 /* Forms */
@@ -31,7 +36,7 @@ FORM label {
 }
 
 .btn {
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 /* Panels */
@@ -42,13 +47,13 @@ FORM label {
 }
 
 .panel {
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 /* Flash Messages */
 
 .alert {
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 /* Search */

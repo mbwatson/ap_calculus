@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Markdown;
 
 class Standard extends Model
 {
@@ -43,5 +44,15 @@ class Standard extends Model
     public function getStandardInfoAttribute()
     {
         return $this->attributes['name'] . ': ' . $this->attributes['description'];
+    }
+
+    /**
+     * Return details of standard with markdown rendered.
+     * 
+     * @return String
+     */
+    public function renderMarkdown()
+    {
+        return Markdown::convertToHtml($this->details);
     }
 }
