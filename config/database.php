@@ -43,22 +43,7 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
-    // construct credentials from App secrets, when running on fortrabbit in production
-    if (isset($_SERVER['APP_SECRETS'])) {
-        $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-        $mysql = [
-            'driver'    => 'mysql',
-            'host'      => $secrets['MYSQL']['HOST'],
-            'port'      => $secrets['MYSQL']['PORT'],
-            'database'  => $secrets['MYSQL']['DATABASE'],
-            'username'  => $secrets['MYSQL']['USER'],
-            'password'  => $secrets['MYSQL']['PASSWORD'],
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-        ];
-    }
+    
     'connections' => [
 
         'sqlite' => [
