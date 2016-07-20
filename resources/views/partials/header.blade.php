@@ -14,12 +14,14 @@
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     AP Calculus
-                    <small class="text-info" style="position: relative; left: -50px; top: 10px;">question forum</small>
+                    <small class="text-info">question forum</small>
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                
                 <!-- Left Side Of Navbar -->
+                
                 <ul class="nav navbar-nav">
                     <!-- <li><a href="{{ url('/discussions') }}" ="disabled"><span class="glyphicon glyphicon-comment"></span>Discussions</a></li> -->
                     <li><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
@@ -27,15 +29,19 @@
                     <li><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
                     <li><a href="{{ url('/search') }}"><span class="glyphicon glyphicon-search"></span>Search</a></li>
                 </ul>
+
                 <!-- Right Side Of Navbar -->
+                
                 <ul class="nav navbar-nav navbar-right">
+                    
                     <!-- Authentication Links -->
+                    
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
                         <li><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-user"></i>Register</a></li>
                     @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 <img class="avatar" src="{{ url('/') }}/uploads/avatars/{{ Auth::user()->avatar }}">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>

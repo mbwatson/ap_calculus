@@ -8,9 +8,37 @@ body {
     margin: 0 6px;
 }
 
+/* Jumbotron*/
+
+.jumbotron {
+	background-color: #008cba;
+	/*background-color: #666;*/
+	padding: 60px 30px;
+	color: #000;
+}
+
+.jumbotron header {
+	font-weight: bolder;
+	color: #dde;
+	font-size: 350%;
+	margin-bottom: 20px;
+}
+
+.jumbotron header small {
+	font-size: 50%;
+	color: #ccd;
+	display: block;
+}
+
+.jumbotron .standard-details {
+	color: #dde;
+}
+
+/* Page Headings */
+
 .container header {
 	font-size: 250%;
-	padding-bottom: 40px;
+	padding: 20px 0;
 }
 
 .container header small {

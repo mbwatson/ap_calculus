@@ -1,14 +1,33 @@
-.nav.navbar-nav li:hover {
-	/*background-color: #000;*/
+.navbar li a,
+.navbar-nav li a {
+	padding: 25px 10px;
+}
+
+.navbar-nav li.dropdown ul li a {
+	padding: 10px 10px;
+}
+
+.navbar .navbar-brand {
+	font-size: 200%;
+	padding: 20px 0;
+}
+
+.navbar .navbar-brand small {
+	position: relative;
+	left: -79px;
+	top: 14px;
 }
 
 .nav .avatar {
-	width: 32px;
-	height: 32px;
+	width: 48px;
+	height: 48px;
 	position: absolute;
-	top: 5px;
-	left: 10px;
+	top: 12px;
+	left: -50px;
 	border: 3px solid #333;
 	border-radius: 50%;
 }
 
+.navbar {
+	margin-bottom: 0;
+}
