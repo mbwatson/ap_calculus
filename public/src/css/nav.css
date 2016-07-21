@@ -1,6 +1,7 @@
 .navbar li a,
 .navbar-nav li a {
 	padding: 25px 10px;
+	font-size: 110%;
 }
 
 .navbar-nav li.dropdown ul li a {
@@ -30,4 +31,21 @@
 
 .navbar {
 	margin-bottom: 0;
+}
+
+/* Search Bar */
+
+#search {
+	margin-top: 15px;
+}
+
+#search input {
+	height: 40px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+#search .btn {
+	height: 40px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 }

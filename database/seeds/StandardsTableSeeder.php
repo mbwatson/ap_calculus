@@ -261,7 +261,24 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.1A(a)',
 				'description' => 'Express limits symbolically using correct notation.',
-				'details' => '',
+				'details' => '**EK 1.1A1:** Given a function $f$, the limit of $f(x)$ as $x$ approaches $c$, is a real number $R$ if $f(x)$ can be made arbitrarily close to $R$ by taking $x$ sufficiently close to $c$ (but not equal to $c$). If the limit exists and is a real number, then the common notation is $\lim_{x\to c}f(x)=R$.
+
+>**EXCLUSION STATEMENT (EK 1.1A1):**
+The epsilon-delta definition of a limit is not assessed
+on the AP Calculus AB or BC Exam. However, teachers
+may include this topic in the course if time permits.
+
+**EK 1.1A2:** The concept of a limit can be extended to include one-sided limits, limits at infinity, and infinite limits.
+
+**EK 1.1A3:**
+A limit might not exist for some functions at particular values of . Some ways that the limit might not exist are if the function is unbounded, if the function is oscillating near this value, or if the limit from the left does not equal the limit from the right.
+
+>**EXAMPLES OF LIMITS THAT DO NOT EXIST**
+>- $\lim_{x\to0}\frac{1}{x^2} = \infty$
+>- $\lim_{x\to0}\frac{\vert x \vert}{x}$ does not exist
+>- $\lim-{x\to0}\sin\Big(\frac{1}{x}\Big)$ does not exist
+>- $\lim_{x\to0}\frac{1}{x}$ does not exist
+',
 				'parent_id' => 11,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")

@@ -27,9 +27,21 @@
                     <li><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
                     <li><a href="{{ url('/standards') }}"><span class="glyphicon glyphicon-tags"></span>Standards</a></li>
                     <li><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
-                    <li><a href="{{ url('/search') }}"><span class="glyphicon glyphicon-search"></span>Search</a></li>
                 </ul>
 
+                <!-- Search -->
+
+                <div class="hidden-sm col-md-2 col-lg-3 col-lg-offset-1" id="search">
+                    {!! Form::open(['route' => ['search.results'], 'class' => 'search-form', 'role' => 'search']) !!}
+                    <div class="input-group">
+                        {!! Form::text('keywords', null, ['class' => 'form-control', 'placeholder' => 'Search for questions']) !!}
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+            
                 <!-- Right Side Of Navbar -->
                 
                 <ul class="nav navbar-nav navbar-right">

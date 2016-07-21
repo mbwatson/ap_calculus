@@ -16,7 +16,6 @@
                                 <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu pull-right" aria-labelledby="editdropdown">
-                                <!-- Favorite Button -->
                                 @if ($question->user == Auth::user() || Auth::user()->admin)
                                     <!-- Edit -->
                                     <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
@@ -36,8 +35,7 @@
                     </div>
                     <div class="col-md-10">
                         <p>
-                            {{-- nl2br(e($question->body)) --}}
-                            {!! $question->renderMarkdown() !!}
+                            {!! Markdown::convertToHtml($question->body) !!}
                         </p>
                         <hr />
                         <div class="row">

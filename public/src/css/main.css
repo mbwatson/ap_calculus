@@ -30,8 +30,16 @@ body {
 	display: block;
 }
 
-.jumbotron .standard-details {
+.jumbotron .standard-details * {
 	color: #dde;
+	font-size: 100%;
+	font-weight: normal;
+}
+
+.jumbotron .standard-details blockquote {
+	border: 0;
+	background-color: #109cca;
+	border-radius: 5px;
 }
 
 /* Page Headings */
