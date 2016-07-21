@@ -17,18 +17,22 @@ class SearchController extends Controller
     }
 
     public function results(Request $request)
-    {
-    	$keywords = $request->input('keywords');
+    {   
+        if ($keywords = $request->input('keywords')) {
+            $results = Question::withKeywords($keywords)
+                                ->withStandards($request->input('standard_ids'))->get();
 
-    	$results = Question::withKeywords($keywords)
-    						->withStandards($request->input('standard_ids'))->get();
+            return view('search.results', [
+                'keywords' => $keywords,
+                'questions' => $results,
+                'standards' => Standard::all(),
+                'selected_standard_ids' => $request->input('standard_ids')
+            ]);
+        }
 
-    	return view('search.results', [
-    		'keywords' => $keywords,
-    		'questions' => $results,
-        	'standards' => Standard::all(),
-        	'selected_standard_ids' => $request->input('standard_ids')
-    	]);
+        session()->flash('flash_message', 'Please enter keywords before you search!');
+
+        return redirect()->back();
     }
 
 
