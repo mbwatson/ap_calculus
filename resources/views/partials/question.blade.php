@@ -4,21 +4,17 @@
             @include('partials.user-card', ['user' => $question->user])
         </div>
         <div class="col-xs-11 col-md-9 col-sm-9" style="height:100%">
-            <div class="row title">
+            <div class="title">
                 <a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a>
             </div>
             <div class="row">
-                <div class="col-md-5">
-                    <ul class="standards list-inline">
-                        <b>MPACs:</b>
-                        @include('partials.list-standards', ['standards' => $question->mpacs])
-                    </ul>
+                <div class="col-md-5 standards">
+                    <b>MPACs:</b>
+                    @include('partials.list-standards', ['standards' => $question->mpacs])
                 </div>
-                <div class="col-md-6">
-                    <ul class="standards list-inline">
-                        <b>Learning Objectives:</b>
-                        @include('partials.list-standards', ['standards' => $question->learningObjectives])
-                    </ul>
+                <div class="col-md-6 standards">
+                    <b>Learning Objectives:</b>
+                    @include('partials.list-standards', ['standards' => $question->learningObjectives])
                 </div>
             </div>
             <p class="details">
@@ -26,7 +22,7 @@
                 {{ ($question->created_at == $question->updated_at) ? '' : ' (Edited ' . $question->updated_at->diffForHumans() . ')'}}
             </p>
         </div>
-        <div class="col-sm-1 hidden-xs">
+        <div class="col-sm-1 hidden-sm hidden-xs">
             <span class="comment-count">
                 {{ count($question->comments) }}
             </span>

@@ -39,17 +39,13 @@
                         </p>
                         <hr />
                         <div class="row">
-                            <div class="col-lg-5 col-sm-10">
-                                <ul class="standards list-inline">
-                                    <b>MPACs:</b>
-                                    @include('partials.list-standards', ['standards' => $question->mpacs])
-                                </ul>
+                            <div class="col-lg-5 col-sm-10 standards">
+                                <b>MPACs:</b>
+                                @include('partials.list-standards', ['standards' => $question->mpacs])
                             </div>
-                            <div class="col-lg-5 col-sm-10">
-                                <ul class="standards list-inline">
-                                    <b>Learning Objectives:</b>
-                                    @include('partials.list-standards', ['standards' => $question->learningObjectives])
-                                </ul>
+                            <div class="col-lg-5 col-sm-10 standards">
+                                <b>Learning Objectives:</b>
+                                @include('partials.list-standards', ['standards' => $question->learningObjectives])
                             </div>
                         </div>
                     </div>

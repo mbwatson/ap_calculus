@@ -1,12 +1,11 @@
-/* Posts List*/
+/* Questions List*/
 
 .questions .question {
 	padding-bottom: 30px;
 }
 
-.questions .question .title {
-	padding-left: 10px;
-	font-size: 175%;
+.questions .question .title a {
+	font-size: 125%;
 }
 
 .questions .question .comment-count {
@@ -38,19 +37,19 @@
 }
 
 .question .standards {
-	font-size: 90%;
+	font-size: 85%;
 }
 
-.standards .btn {
-	font-size: 80%;
-	padding: 1px 4px;
+.question .standards ul {
+	display: inline;
+	margin-left: 4px;
 }
 
 .standards li {
 	padding: 0;
 }
 
-/* Single Post */
+/* Single Question */
 
 #question .panel-heading {
 	font-size: 250%;
@@ -63,6 +62,11 @@
 	/*margin-bottom: 30px;*/
 }
 
+#question .panel-heading {
+	background-color: #fff;
+	border-width: 0;
+}
+
 #question .user-info {
 	text-align: center;
 }
@@ -72,6 +76,15 @@
 	height: 120px;
 	border: 8px solid #286090;
 	border-radius:50%;
+}
+
+#question .standards {
+	font-size: 85%;
+}
+
+#question .standards ul {
+	display: inline;
+	margin-left: 4px;
 }
 
 #question .details {
