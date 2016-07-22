@@ -6,6 +6,7 @@
 
 .questions .question .title a {
 	font-size: 125%;
+	font-weight: bold;
 }
 
 .questions .question .comment-count {
@@ -47,6 +48,10 @@
 
 .standards li {
 	padding: 0;
+}
+
+.standards li a {
+	text-decoration: underline;
 }
 
 /* Single Question */

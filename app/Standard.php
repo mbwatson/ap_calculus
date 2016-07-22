@@ -78,4 +78,5 @@ class Standard extends Model
     {
         return $this->attributes['name'] . ': ' . $this->attributes['description'];
     }
+
 }

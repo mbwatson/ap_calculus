@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('questions', 'QuestionController');
 
+	Route::get('standards/group/{group}', 'StandardController@showGroup');
 	Route::resource('standards', 'StandardController', [
 		'only' => ['index', 'show', 'store']
 	]);
