@@ -1,6 +1,7 @@
 body {
     color: #666;
     background-color: #f5f5f1;
+    padding-bottom: 20px;
 }
 
 .glyphicon, .fa, .fa-btn {
@@ -24,19 +25,20 @@ body {
 }
 
 .jumbotron header small p {
-	font-size: 65%;
-	color: #bbc;
+	font-size: 85%;
+	color: #ccd;
 	display: inline;
-	font-weight: normal;
+	font-weight: bold;
 }
 
-.jumbotron .standard-details * {
+.jumbotron .details,
+.jumbotron .details * {
 	color: #dde;
 	font-size: 100%;
 	font-weight: normal;
 }
 
-.jumbotron .standard-details blockquote {
+.jumbotron .details blockquote {
 	border: 0;
 	background-color: #109cca;
 	border-radius: 5px;

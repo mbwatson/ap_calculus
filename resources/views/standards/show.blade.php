@@ -17,7 +17,7 @@
 
     @if ($standard->details)
         <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 standard-details">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
                 {!! Markdown::convertToHtml($standard->details) !!}
             </div>
         </div>
@@ -25,7 +25,7 @@
 
     @if ($standard->children()->get())
         <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 standard-details">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
                 <ul>
                     @foreach ($standard->children()->get() as $child)
                         <li><a href="{{ route('standards.show', $child) }}">{{ $child->name }}</a> : {{ $child->description }}</li>

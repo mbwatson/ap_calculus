@@ -60,7 +60,14 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('questions', 'QuestionController');
 
-	Route::get('standards/group/{group}', 'StandardController@showGroup');
+	// Route group here?
+	Route::get('standards/mpacs', function() {
+		return view('standards.mpacs', ['mpacs' => App\Standard::where('type','MPAC')->get()]);
+	});
+	Route::get('standards/big-ideas', function() {
+		return view('standards.big-ideas', ['bigideas' => App\Standard::where('type','Big Idea')->get()]);
+	});
+
 	Route::resource('standards', 'StandardController', [
 		'only' => ['index', 'show', 'store']
 	]);
