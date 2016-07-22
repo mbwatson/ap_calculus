@@ -107,8 +107,11 @@ class StandardsTableSeeder extends Seeder {
 				'name' => 'Big Idea 1: Limits',
 				'description' => '',
 				'details' => 'Many calculus concepts are developed by first considering a discrete model and then the consequences of a limiting case. Therefore, the idea of limits is essential for discovering and developing important ideas, definitions, formulas, and theorems in calculus.
+
 ### Students must have a solid, intuitive understanding of limits and be able to compute various limits, including one-sided limits, limits at infinity, the limit of a sequence, and infinite limits. They should be able to work with tables and graphs in order to estimate the limit of a function at a point. 
+
 ### Students should know the algebraic properties of limits and techniques for finding limits of indeterminate forms, and they should be able to apply limits to understand the behavior of a function near a point.
+
 ### Students must also understand how limits are used to determine continuity, a fundamental property of functions.',
 				'parent_id' => NULL,
 				'created_at' => date("Y-m-d H:i:s"),
@@ -119,6 +122,7 @@ class StandardsTableSeeder extends Seeder {
 				'name' => 'Big Idea 2: Derivatives',
 				'description' => '',
 				'details' => 'Using derivatives to describe the rate of change of one variable with respect to another variable allows students to understand change in a ariety of contexts. In AP Calculus, students build the derivative using the concept of limits and use the derivative primarily to compute the instantaneous rate of change of a function. Applications of the derivative include finding the slope of a tangent line to a graph at a point, analyzing the graph of a function (for example, determining whether a function is increasing or decreasing and finding concavity and extreme values), and solving problems involving rectilinear motion. 
+
 ### Students should be able to use different definitions of the derivative, estimate derivatives from tables and graphs, and apply various derivative rules and properties. In addition, students should be able to solve separable differential equations, understand and be able to apply the Mean Value Theorem, and be familiar with a variety of real-world applications, including related rates, optimization, and growth and decay models.',
 				'parent_id' => NULL,
 				'created_at' => date("Y-m-d H:i:s"),
@@ -129,6 +133,7 @@ class StandardsTableSeeder extends Seeder {
 				'name' => 'Big Idea 3: Integrals and the Fundamental Theorem of Calculus',
 				'description' => '',
 				'details' => 'Integrals are used in a wide variety of practical and theoretical applications. AP Calculus students should understand the definition of a definite integral involving a Riemann sum, be able to approximate a definite integral using different methods, and be able to compute definite integrals using geometry. They should be familiar with basic techniques of integration and properties of integrals. The interpretation of a definite integral is an important skill, and students should be familiar with area, volume, and motion applications, as well as with the use of the definite integral as an accumulation function. It is critical that students grasp the relationship between integration and differentiation as expressed in the Fundamental Theorem of Calculus — a central idea in AP Calculus. 
+
 ### Students should be able to work with and analyze functions defined by an integral.',
 				'parent_id' => NULL,
 				'created_at' => date("Y-m-d H:i:s"),

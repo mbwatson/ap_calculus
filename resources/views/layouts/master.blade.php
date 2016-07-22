@@ -24,7 +24,7 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/main.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/user.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/question.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/standard.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
