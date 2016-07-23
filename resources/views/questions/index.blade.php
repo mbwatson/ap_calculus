@@ -6,7 +6,7 @@
     
     <!-- Link to Post a New Question -->
     
-    <h3><a href="{{ route('questions.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Question</a></h3>
+    <h1><a href="{{ route('questions.create') }}"><i class="glyphicon glyphicon-plus"></i>Create New Question</a></h1>
     
     <!-- Question List -->
     

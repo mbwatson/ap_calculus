@@ -4,7 +4,7 @@
 
 <div class="container">
     
-    <header>Search</header>
+    <h1>Search</h1>
     
     <!-- Search Form -->
 

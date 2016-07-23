@@ -4,18 +4,13 @@
 
 <div class="jumbotron">
     <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 standard-header">
-            <header>
-                AP Calculus AB and AP Calculus BC
-                <small>Curriculum Framework</small>
-            </header>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 name">
+            <h1>AP Calculus AB and AP Calculus BC</h1>
+            <h2>Curriculum Framework</h2>
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 standard-details">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
                 The AP Calculus AB and AP Calculus BC Curriculum Framework specifies the curriculum — what students must know, be able to do, and understand — for both courses. AP Calculus AB is structured around three big ideas: limits, derivatives, and integrals and the Fundamental Theorem of Calculus. AP Calculus BC explores these ideas in additional contexts and also adds the big idea of series. In both courses, the concept of limits is foundational; the understanding of this fundamental tool leads to the development of more advanced tools and concepts that prepare students to grasp the Fundamental Theorem of Calculus, a central idea of AP Calculus.
-
-            </div>
-        </div>  
+        </div>
     </div>
 </div>
 
@@ -77,7 +72,7 @@
     
     <!-- General Information -->
 
-    <header>Overview</header>
+    <h1>Overview</h1>
 
     <div class="row">
         <div class="col-xs-12">

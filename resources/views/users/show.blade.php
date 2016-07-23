@@ -4,7 +4,7 @@
 
 <div class="container">
     
-    <header>{{ $user->name }}</header>
+    <h1>{{ $user->name }}</h1>
     
     <!-- User Profile -->
 

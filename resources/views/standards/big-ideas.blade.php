@@ -4,16 +4,12 @@
 
 <div class="jumbotron">
     <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 standard-header">
-            <header>
-                Big Ideas
-            </header>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 name">
+            <h1>Big Ideas</h1>
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
-                The courses are organized around big ideas, which correspond to foundational concepts of calculus: limits, derivatives, integrals and the Fundamental Theorem of Calculus, and (for AP Calculus BC) series.
-            </div>
-        </div>  
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
+            The courses are organized around big ideas, which correspond to foundational concepts of calculus: limits, derivatives, integrals and the Fundamental Theorem of Calculus, and (for AP Calculus BC) series.
+        </div>
     </div>
 </div>
 
@@ -21,7 +17,7 @@
 
     @foreach ($bigideas as $bigidea)
         
-        <header>{{ $bigidea->name }}: {{ $bigidea->description }}</header>
+        <h1>{{ $bigidea->name }}: {{ $bigidea->description }}</h1>
         {!! Markdown::convertToHtml($bigidea->details) !!}
         
         <!-- <h3>Enduring Understandings</h3> -->

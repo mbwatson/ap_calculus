@@ -7,40 +7,32 @@
     <!-- Standard & its Description -->
     
     <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 standard-header">
-            <header>
-                {{ $standard->name }}
-                <small>{!! Markdown::convertToHtml($standard->description) !!}</small>
-            </header>
-        </div>    
-    </div>
-
-    @if ($standard->details)
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
-                {!! Markdown::convertToHtml($standard->details) !!}
-            </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 name">
+            <h1>{{ $standard->name }}</h1>
+            <h2>{!! Markdown::convertToHtml($standard->description) !!}</h2>
         </div>
-    @endif
-
-    @if ($standard->children()->get())
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 details">
+            {!! Markdown::convertToHtml($standard->details) !!}
+            @if ($standard->children()->get())
                 <ul>
                     @foreach ($standard->children()->get() as $child)
                         <li><a href="{{ route('standards.show', $child) }}">{{ $child->name }}</a> : {{ $child->description }}</li>
                     @endforeach
                 </ul>
-            </div>
+            @endif
         </div>
-    @endif
+    
+    </div>
+
 </div>
 
 <div class="container">
 
-    <header>
+    <h1>
         Questions Addressing {{ $standard->name }}
-    </header>
+    </h1>
 
     <!-- Questions List -->
 
@@ -59,4 +51,5 @@
     </div>
 
 </div>
+
 @endsection

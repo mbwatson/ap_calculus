@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <header>Edit Your Question</header>
+    <h1>Edit Your Question</h1>
     
     <!-- Edit Question Form -->
 

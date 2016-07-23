@@ -4,13 +4,13 @@
 
 <div class="container">
     
-    <header>
+    <h1>
         Search
         <small>
             The questions listed below contain at least one of the queried keywords: "{{ join('", "',explode(' ', $keywords)) }}".
             You may further narrow your results according to specific <a href="{{ URL::to('standards') }}">standards</a>.
         </small>
-    </header>
+    </h1>
     
     <!-- Search Form -->
 

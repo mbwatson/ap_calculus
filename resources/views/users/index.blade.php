@@ -6,10 +6,10 @@
 
 <div class="container">
 
-    <header>
+    <h1>
         Users
         <small>All users registered on this site.</small>
-    </header>
+    </h1>
 
     <!-- Users List -->
     

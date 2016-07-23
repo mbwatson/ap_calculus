@@ -12,22 +12,19 @@ body {
 
 .jumbotron {
 	background-color: #008cba;
-	/*background-color: #666;*/
 	padding: 60px 30px;
-	color: #000;
+	color: #fff;
 }
 
-.jumbotron header {
+.jumbotron .name h1 {
 	font-weight: bolder;
 	color: #dde;
 	font-size: 350%;
 	margin-bottom: 20px;
 }
 
-.jumbotron header small p {
-	font-size: 85%;
+.jumbotron .name {
 	color: #ccd;
-	display: inline;
 	font-weight: bold;
 }
 

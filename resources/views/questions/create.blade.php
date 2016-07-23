@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <header>Create a New Question</header>
+    <h1>Create a New Question</h1>
     
     <!-- New Question Form -->
 

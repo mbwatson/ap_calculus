@@ -17,7 +17,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Search Bar -->
-                    <div class="col-sm-5 col-md-6 col-lg-7" id="search">
+                    <div class="col-sm-4 col-md-6 col-lg-7" id="search">
                         {!! Form::open(['route' => ['search.results'], 'class' => 'search-form', 'role' => 'search']) !!}
                         <div class="input-group">
                             {!! Form::text('keywords', null, ['class' => 'form-control', 'placeholder' => 'Search for questions']) !!}
@@ -28,7 +28,7 @@
                         {!! Form::close() !!}
                     </div>
                     <!-- Authentication Links -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right navbar-auth">
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
                             <li><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-user"></i>Register</a></li>
