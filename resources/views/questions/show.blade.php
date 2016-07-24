@@ -10,23 +10,23 @@
         <div class="panel panel-default" id="question">
             <div class="panel-heading">
                 {{ $question->title }}
-                <div class="btn-group pull-right">
+                @if ($question->user == Auth::user() || Auth::user()->admin)
+                    <div class="btn-group pull-right">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" id="editdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu pull-right" aria-labelledby="editdropdown">
-                                @if ($question->user == Auth::user() || Auth::user()->admin)
-                                    <!-- Edit -->
-                                    <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
-                                    <!-- Delete -->
-                                    {!! Form::open(['route' => ['questions.destroy', $question->id], 'method' => 'delete']) !!}
-                                        <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Question</button>
-                                    {!! Form::close() !!}
-                                @endif
+                                <!-- Edit -->
+                                <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
+                                <!-- Delete -->
+                                {!! Form::open(['route' => ['questions.destroy', $question->id], 'method' => 'delete']) !!}
+                                    <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Question</button>
+                                {!! Form::close() !!}
                             </div>
                         </div>
-                </div>
+                    </div>
+                @endif
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -56,10 +56,18 @@
                 Posted {{ $question->created_at->diffForHumans() }}
                 {{ ($question->created_at != $question->updated_at) ? ' (Edited ' . $question->updated_at->diffForHumans() . ')' : '' }}
                 <div class="pull-right">
+                    <!-- Thumbs Up/Down -->
+                    <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    <a href="#" title="-1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                     | 
                     <!-- (Un)Favorite Button -->
-                    <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite 
-                    {{ ($question->favorites->contains(Auth::user())) ? 'text-primary' : 'text-muted' }}"
-                    title="Toggle Favorite" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
+                    @if ($question->favorites->contains(Auth::user()))
+                        <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-primary"
+                        title="Remove from Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
+                    @else
+                        <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-muted"
+                        title="Add to Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
+                    @endif
                 </div>
             </div>
         </div>

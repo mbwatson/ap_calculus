@@ -4,7 +4,8 @@
 
 <div class="container">
 
-    <header>Favorites</header>
+    <h1>Favorites</h1>
+    
     <!-- My Favorite Questions -->
 
     <div class="row">

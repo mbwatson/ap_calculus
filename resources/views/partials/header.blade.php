@@ -6,6 +6,7 @@
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
+                        <br />
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -38,9 +39,9 @@
                                     <img class="avatar" src="{{ url('/') }}/uploads/avatars/{{ Auth::user()->avatar }}">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ url('/account') }}"><i class="glyphicon glyphicon-user"></i>Profile</a></li>
+                                    <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
                                     <li><a href="{{ url('/favorites') }}"><i class="glyphicon glyphicon-heart"></i>Favorites</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
@@ -50,12 +51,24 @@
                     </ul>
                     <!-- Links -->
                     <div class="col-xs-12 navbar-links">
+                        <div class="col-sm-offset-3 ">
                         <ul class="nav navbar-nav">
                             <!-- <li><a href="{{ url('/discussions') }}" ="disabled"><span class="glyphicon glyphicon-comment"></span>Discussions</a></li> -->
-                            <li class="navbar-link"><a href="{{ url('/standards') }}"><span class="glyphicon glyphicon-tags"></span>Curriculum Framework</a></li>
+                            <!-- <li class="navbar-link"><a href="{{ url('/standards') }}"><span class="glyphicon glyphicon-tags"></span>Curriculum Framework</a></li> -->
+                            <li class="navbar-link dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-tags"></span>Curriculum Framework <span class="caret"></span></a></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="navbar-link"><a href="{{ url('standards') }}"><span class="glyphicon glyphicon-list"></span>Overview</a></li>
+                                    <li class="navbar-link"><a href="{{ url('standards/mpacs') }}"><span class="glyphicon glyphicon-check"></span>MPACs</a></li>
+                                    <li class="navbar-link"><a href="{{ url('standards/big-ideas') }}"><span class="glyphicon glyphicon-check"></span>Big Ideas</a></li>
+                                </ul>
+                            </li>
                             <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
                             <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
                         </ul>
+                        </div>
                     </div>
                 </div>
             </div>

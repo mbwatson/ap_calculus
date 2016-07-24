@@ -17,6 +17,7 @@ body {
 }
 
 .jumbotron .name h1 {
+	margin-top: 0;
 	font-weight: bolder;
 	color: #dde;
 	font-size: 350%;
@@ -28,11 +29,15 @@ body {
 	font-weight: bold;
 }
 
-.jumbotron .details,
-.jumbotron .details * {
+.jumbotron .details {
 	color: #dde;
-	font-size: 100%;
 	font-weight: normal;
+	font-size: 110%;
+}
+
+.jumbotron .details * {
+	color: inherit;
+	font-size: inherit;
 }
 
 .jumbotron .details blockquote {
@@ -41,34 +46,14 @@ body {
 	border-radius: 5px;
 }
 
-/* Page Headings */
-
-.container #question {
-	margin-top: 20px;
-}
-
-.container header {
-	font-size: 250%;
-	padding: 20px 0;
-}
-
-.container header small {
-	font-size: 50%;
-	display: block;
-}
-
-.container footer {
-	font-size: 90%;
-	padding-top: 30px;
-}
-
 /* Forms */
 
 FORM textarea {
     max-width: 100%;
 }
 
-FORM label {
+FORM label,
+FORM .control-label {
 	font-size: 110%;
 	text-align: right;
 	margin-top: 6px;

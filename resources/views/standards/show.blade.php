@@ -7,13 +7,13 @@
     <!-- Standard & its Description -->
     
     <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 name">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 name">
             <h1>{{ $standard->name }}</h1>
             <h2>{!! Markdown::convertToHtml($standard->description) !!}</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 details">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 details">
             {!! Markdown::convertToHtml($standard->details) !!}
             @if ($standard->children()->get())
                 <ul>
@@ -23,7 +23,6 @@
                 </ul>
             @endif
         </div>
-    
     </div>
 
 </div>

@@ -13,7 +13,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'MPAC',
 				'name' => 'MPAC 1',
 				'description' => 'Reasoning with definitions and theorems',
-				'details' => '### Students can:
+				'details' => '
+### Students can:
 
 1.	 use definitions and theorems to build arguments, to justify conclusions or answers, and to prove results;
 2.	 confirm that hypotheses have been satisfied in order to apply the conclusion of a theorem;
@@ -29,7 +30,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'MPAC',
 				'name' => 'MPAC 2',
 				'description' => 'Connecting concepts',
-				'details' => '### Students can:
+				'details' => '
+### Students can:
 
 1.	 relate the concept of a limit to all aspects of calculus;
 2.	 use the connection between concepts (e.g., rate of change and accumulation) or processes (e.g., differentiation and its inverse process, antidifferentiation) to solve problems;
@@ -43,7 +45,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'MPAC',
 				'name' => 'MPAC 3',
 				'description' => 'Implementing algebraic/computational processes',
-				'details' => '### Students can:
+				'details' => '
+### Students can:
 
 1.	 select appropriate mathematical strategies;
 2.	 sequence algebraic/computational procedures logically;
@@ -59,7 +62,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'MPAC',
 				'name' => 'MPAC 4',
 				'description' => 'Connecting multiple representations',
-				'details' => '### Students can:
+				'details' => '
+### Students can:
 
 1.	 associate tables, graphs, and symbolic representations of functions;
 2.	 develop concepts using graphical, symbolical, verbal, or numerical representations with and without technology;
@@ -75,7 +79,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'MPAC',
 				'name' => 'MPAC 5',
 				'description' => 'Building notational fluency',
-				'details' => '### Students can:
+				'details' => '
+### Students can:
 
 1.	 know and use a variety of notations (e.g., $f\'(x)$, $y\'$, $\tfrac{dy}{dx}$ );
 2.	 connect notation to definitions (e.g., relating the notation for the definite integral to that of the limit of a Riemann sum);
@@ -89,7 +94,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'MPAC',
 				'name' => 'MPAC 6',
 				'description' => 'Communicating',
-				'details' => '### Students can:
+				'details' => '
+### Students can:
 
 1.	 clearly present methods, reasoning, justifications, and conclusions;
 2.	 use accurate and precise language and notation;
@@ -106,7 +112,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'Big Idea',
 				'name' => 'Big Idea 1',
 				'description' => 'Limits',
-				'details' => '#### Many calculus concepts are developed by first considering a discrete model and then the consequences of a limiting case. Therefore, the idea of limits is essential for discovering and developing important ideas, definitions, formulas, and theorems in calculus.
+				'details' => '
+#### Many calculus concepts are developed by first considering a discrete model and then the consequences of a limiting case. Therefore, the idea of limits is essential for discovering and developing important ideas, definitions, formulas, and theorems in calculus.
 
 #### Students must have a solid, intuitive understanding of limits and be able to compute various limits, including one-sided limits, limits at infinity, the limit of a sequence, and infinite limits. They should be able to work with tables and graphs in order to estimate the limit of a function at a point. 
 
@@ -121,7 +128,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'Big Idea',
 				'name' => 'Big Idea 2',
 				'description' => 'Derivatives',
-				'details' => '#### Using derivatives to describe the rate of change of one variable with respect to another variable allows students to understand change in a ariety of contexts. In AP Calculus, students build the derivative using the concept of limits and use the derivative primarily to compute the instantaneous rate of change of a function. Applications of the derivative include finding the slope of a tangent line to a graph at a point, analyzing the graph of a function (for example, determining whether a function is increasing or decreasing and finding concavity and extreme values), and solving problems involving rectilinear motion. 
+				'details' => '
+#### Using derivatives to describe the rate of change of one variable with respect to another variable allows students to understand change in a ariety of contexts. In AP Calculus, students build the derivative using the concept of limits and use the derivative primarily to compute the instantaneous rate of change of a function. Applications of the derivative include finding the slope of a tangent line to a graph at a point, analyzing the graph of a function (for example, determining whether a function is increasing or decreasing and finding concavity and extreme values), and solving problems involving rectilinear motion. 
 
 #### Students should be able to use different definitions of the derivative, estimate derivatives from tables and graphs, and apply various derivative rules and properties. In addition, students should be able to solve separable differential equations, understand and be able to apply the Mean Value Theorem, and be familiar with a variety of real-world applications, including related rates, optimization, and growth and decay models.',
 				'parent_id' => NULL,
@@ -132,7 +140,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'Big Idea',
 				'name' => 'Big Idea 3',
 				'description' => 'Integrals and the Fundamental Theorem of Calculus',
-				'details' => '#### Integrals are used in a wide variety of practical and theoretical applications. AP Calculus students should understand the definition of a definite integral involving a Riemann sum, be able to approximate a definite integral using different methods, and be able to compute definite integrals using geometry. They should be familiar with basic techniques of integration and properties of integrals. The interpretation of a definite integral is an important skill, and students should be familiar with area, volume, and motion applications, as well as with the use of the definite integral as an accumulation function. It is critical that students grasp the relationship between integration and differentiation as expressed in the Fundamental Theorem of Calculus — a central idea in AP Calculus. 
+				'details' => '
+#### Integrals are used in a wide variety of practical and theoretical applications. AP Calculus students should understand the definition of a definite integral involving a Riemann sum, be able to approximate a definite integral using different methods, and be able to compute definite integrals using geometry. They should be familiar with basic techniques of integration and properties of integrals. The interpretation of a definite integral is an important skill, and students should be familiar with area, volume, and motion applications, as well as with the use of the definite integral as an accumulation function. It is critical that students grasp the relationship between integration and differentiation as expressed in the Fundamental Theorem of Calculus — a central idea in AP Calculus. 
 
 #### Students should be able to work with and analyze functions defined by an integral.',
 				'parent_id' => NULL,
@@ -143,7 +152,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'Big Idea',
 				'name' => 'Big Idea 4',
 				'description' => 'Series',
-				'details' => '#### The AP Calculus BC curriculum includes the study of series of numbers, power series, and various methods to determine convergence or divergence of a series. 
+				'details' => '
+#### The AP Calculus BC curriculum includes the study of series of numbers, power series, and various methods to determine convergence or divergence of a series. 
 
 #### Students should be familiar with Maclaurin series for common functions and general Taylor series representations. Other topics include the radius and interval of convergence and operations on power series. The technique of using power series to approximate an arbitrary function near a specific value allows for an important connection to the tangent-line problem and is a natural extension that helps achieve a better approximation. The concept of approximation is a common theme throughout AP Calculus, and power series provide a unifying, comprehensive conclusion.',
 				'parent_id' => NULL,
@@ -273,7 +283,8 @@ class StandardsTableSeeder extends Seeder {
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.1A(a)',
 				'description' => 'Express limits symbolically using correct notation.',
-				'details' => '**EK 1.1A1:** Given a function $f$, the limit of $f(x)$ as $x$ approaches $c$, is a real number $R$ if $f(x)$ can be made arbitrarily close to $R$ by taking $x$ sufficiently close to $c$ (but not equal to $c$). If the limit exists and is a real number, then the common notation is $\lim_{x\to c}f(x)=R$.
+				'details' => '
+**EK 1.1A1:** Given a function $f$, the limit of $f(x)$ as $x$ approaches $c$, is a real number $R$ if $f(x)$ can be made arbitrarily close to $R$ by taking $x$ sufficiently close to $c$ (but not equal to $c$). If the limit exists and is a real number, then the common notation is $\lim_{x\to c}f(x)=R$.
 
 >**EXCLUSION STATEMENT (EK 1.1A1):**
 The epsilon-delta definition of a limit is not assessed
@@ -289,8 +300,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 >- $\lim_{x\to0}\frac{1}{x^2} = \infty$
 >- $\lim_{x\to0}\frac{\vert x \vert}{x}$ does not exist
 >- $\lim-{x\to0}\sin\Big(\frac{1}{x}\Big)$ does not exist
->- $\lim_{x\to0}\frac{1}{x}$ does not exist
-',
+>- $\lim_{x\to0}\frac{1}{x}$ does not exist',
 				'parent_id' => 11,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -299,7 +309,23 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.1A(b)',
 				'description' => 'Interpret limits expressed symbolically.',
-				'details' => '',
+				'details' => '
+**EK 1.1A1:** Given a function $f$, the limit of $f(x)$ as $x$ approaches $c$, is a real number $R$ if $f(x)$ can be made arbitrarily close to $R$ by taking $x$ sufficiently close to $c$ (but not equal to $c$). If the limit exists and is a real number, then the common notation is $\lim_{x\to c}f(x)=R$.
+
+>**EXCLUSION STATEMENT (EK 1.1A1):**
+The epsilon-delta definition of a limit is not assessed
+on the AP Calculus AB or BC Exam. However, teachers
+may include this topic in the course if time permits.
+
+**EK 1.1A2:** The concept of a limit can be extended to include one-sided limits, limits at infinity, and infinite limits.
+
+**EK 1.1A3:** A limit might not exist for some functions at particular values of . Some ways that the limit might not exist are if the function is unbounded, if the function is oscillating near this value, or if the limit from the left does not equal the limit from the right.
+
+>**EXAMPLES OF LIMITS THAT DO NOT EXIST**
+>- $\lim_{x\to0}\frac{1}{x^2} = \infty$
+>- $\lim_{x\to0}\frac{\vert x \vert}{x}$ does not exist
+>- $\lim-{x\to0}\sin\Big(\frac{1}{x}\Big)$ does not exist
+>- $\lim_{x\to0}\frac{1}{x}$ does not exist',
 				'parent_id' => 11,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -308,7 +334,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.1B',
 				'description' => 'Estimate limits of functions.',
-				'details' => '',
+				'details' => '**EK 1.1B1:** Numerical and graphical information can be used to estimate limits.',
 				'parent_id' => 11,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -317,7 +343,12 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.1C',
 				'description' => 'Determine limits of functions.',
-				'details' => '',
+				'details' => '
+**EK1.1C1:** Limits of sums, differences, products, quotients, and composite functions can be found using the basic theorems of limits and algebraic rules.
+
+**EK 1.1C2:** The limit of a function may be found by using algebraic manipulation, alternate forms of trigonometric functions, or the squeeze theorem.
+
+**EK 1.1C3:** Limits of the indeterminate forms $\tfrac{0}{0}$ and $\tfrac{\infty}{\infty}$ may be evaluated using L’H&ocirc;pital’s Rule.',
 				'parent_id' => 11,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -326,7 +357,10 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.1D',
 				'description' => 'Deduce and interpret behavior of functions using limits.',
-				'details' => '',
+				'details' => '
+**EK 1.1D1:** Asymptotic and unbounded behavior of functions can be explained and described using limits.
+
+**EK 1.1D2:** Relative magnitudes of functions and their rates of change can be compared using limits.',
 				'parent_id' => 11,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -335,7 +369,12 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.2A',
 				'description' => 'Analyze functions for intervals of continuity or points of discontinuity.',
-				'details' => '',
+				'details' => '
+**EK 1.2A1:** A function $f$ is continuous at $x=c$ provided that $f(c)$ exists, $\lim_{x \to c}f(x)$ exists and $\lim_{x \to c}f(x) = f(c)$.
+
+**EK 1.2A2:** Polynomial, rational, power, exponential, logarithmic, and trigonometric functions are continuous at all points in their domains.
+
+**EK 1.2A3:** Types of discontinuities include removable discontinuities, jump discontinuities, and discontinuities due to vertical asymptotes.',
 				'parent_id' => 12,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -344,7 +383,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 1.2B',
 				'description' => 'Determine the applicability of important calculus theorems using continuity.',
-				'details' => '',
+				'details' => '**EK 1.2B1:** Continuity is an essential condition for theorems such as the Intermediate Value Theorem, the Extreme Value Theorem, and the Mean Value Theorem.',
 				'parent_id' => 12,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -353,7 +392,16 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.1A',
 				'description' => 'Identify the derivative of a function as the limit of a difference quotient.',
-				'details' => '',
+				'details' => '
+**EK 2.1A1:** The difference quotients $\frac{f(a+h)-f(a)}{h}$ and $\frac{f(x)-f(a)}{x-a}$ express the average rate of change of a function over an interval.
+
+**EK 2.1A2:** The instantaneous rate of change of a function at a point can be expressed by $\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}$ or $\lim_{x \to a}\frac{f(x)-f(a)}{x-a}$, provided that the limit exists. These are common forms of the definition of the derivative and are denoted $f\'(a)$.
+
+**EK 2.1A3:** The derivative of $f$ is the function whose value at $x$ is $\lim_{h \to 0}\frac{f(x+h)-f(x)}{h}$, provided this limit exists.
+
+**EK 2.1A4:** For $y = f(x)$, notations for the derivative include $\frac{dy}{dx}$, $f\'(x)$, and $y\'$.
+
+**EK 2.1A5:** The derivative can be represented graphically, numerically, analytically, and verbally.',
 				'parent_id' => 13,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -362,7 +410,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.1B',
 				'description' => 'Estimate derivatives.',
-				'details' => '',
+				'details' => '**EK 2.1B1:** The derivative at a point can be estimated from information given in tables or graphs.',
 				'parent_id' => 13,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -371,7 +419,20 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.1C',
 				'description' => 'Calculate derivatives.',
-				'details' => '',
+				'details' => '
+**EK 2.1C1:** Direct application of the definition of the derivative can be used to find the derivative for selected functions, including polynomial, power, sine, cosine, exponential, and logarithmic functions.
+
+**EK 2.1C2:** Specific rules can be used to calculate derivatives for classes of functions, including polynomial, rational, power, exponential, logarithmic, trigonometric, and inverse trigonometric.
+
+**EK 2.1C3:** Sums, differences, products, and quotients of functions can be differentiated using derivative rules.
+
+**EK 2.1C4:** The chain rule provides a way to differentiate composite functions.
+
+**EK 2.1C5:** The chain rule is the basis for implicit differentiation.
+
+**EK 2.1C6:** The chain rule can be used to find the derivative of an inverse function, provided the derivative of that function exists.
+
+**EK 2.1C7: (BC)** Methods for calculating derivatives of real-valued functions can be extended to vector-valued functions, parametric functions, and functions in polar coordinates.',
 				'parent_id' => 13,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -380,7 +441,10 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.1D',
 				'description' => 'Determine higher order derivatives.',
-				'details' => '',
+				'details' => '
+**EK 2.1D1:** Differentiating $f\'$ produces the second derivative $f\'\'$, provided the derivative of $f\'$ exists; repeating this process produces higher order derivatives of $f$.
+
+**EK 2.1D2:** Higher order derivatives are represented with a variety of notations. For $y = f(x)$, notations for the second derivative include $\frac{d^2y}{dx^2}$, $f\'\'(x)$, and $y\'\'$. Higher order derivatives can be denoted $\frac{d^ny}{dx^n}$ or $f^{(n)(x)}$.',
 				'parent_id' => 13,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -389,7 +453,14 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.2A',
 				'description' => 'Use derivatives to analyze properties of a function.',
-				'details' => '',
+				'details' => '
+**EK 2.2A1:** First and second derivatives of a function can derivatives to analyze provide information about the function and its graph properties of a function, including intervals of increase or decrease, local (relative) and global (absolute) extrema, intervals of upward or downward concavity, and points of inflection.
+
+**EK 2.2A2:** Key features of functions and their derivatives can be identified and related to their graphical, numerical, and analytical representations.
+
+**EK 2.2A3:** Key features of the graphs of $f$, $f\'$, and $f\'\'$ are related to one another.
+
+**EK 2.2A4: (BC)** For a curve given by a polar equation $r = f(\theta)$, derivatives of $r$, $x$, and $y$ with respect to $\theta$ and first and second derivatives of $y$ with respect to $x$ can provide information about the curve.',
 				'parent_id' => 14,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -398,7 +469,10 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.2B',
 				'description' => 'Recognize the connection between differentiability and continuity.',
-				'details' => '',
+				'details' => '
+**EK 2.2B1:** A continuous function may fail to be differentiable at a point in its domain.
+
+**EK 2.2B2:** If a function is differentiable at a point, then it is continuous at that point.',
 				'parent_id' => 14,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -407,7 +481,10 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.3A',
 				'description' => 'Interpret the meaning of a derivative within a problem.',
-				'details' => '',
+				'details' => '
+**EK 2.3B1:** The derivative at a point is the slope of the line tangent to a graph at that point on the graph.
+
+**EK 2.3B2:** The tangent line is the graph of a locally linear approximation of the function near the point of tangency.',
 				'parent_id' => 15,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -425,7 +502,14 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.3C',
 				'description' => 'Solve problems involving related rates, optimization, rectilinear motion, (BC) and planar motion.',
-				'details' => '',
+				'details' => '
+**EK 2.3C1:** The derivative can be used to solve rectilinear motion problems involving position, speed, velocity, and acceleration.
+
+**EK 2.3C2:** The derivative can be used to solve related rates problems, that is, finding a rate at which one quantity is changing by relating it to other quantities whose rates of change are known.
+
+**EK 2.3C3:** The derivative can be used to solve optimization problems, that is, finding a maximum or minimum value of a function over a given interval.
+
+**EK 2.3C4: (BC)** Derivatives can be used to determine velocity, speed, and acceleration for a particle moving along curves given by parametric or vector-valued functions.',
 				'parent_id' => 15,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -434,7 +518,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.3D',
 				'description' => 'Solve problems involving rates of change in applied contexts.',
-				'details' => '',
+				'details' => '**EK 2.3D1:** The derivative can be used to express information about rates of change in applied contexts.',
 				'parent_id' => 15,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -443,7 +527,10 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.3E',
 				'description' => 'Verify solutions to differential equations.',
-				'details' => '',
+				'details' => '
+**EK 2.3E1:** Solutions to differential equations are functions or families of functions.
+
+**EK 2.3E2:** Derivatives can be used to verify that a function is a solution to a given differential equation.',
 				'parent_id' => 15,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -452,7 +539,10 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.3F',
 				'description' => 'Estimate solutions to differential equations.',
-				'details' => '',
+				'details' => '
+**EK 2.3F1:** Slope fields provide visual clues to the behavior of solutions to first order differential equations.
+
+**EK 2.3F2: (BC)** For differential equations, Euler’s method provides a procedure for approximating a solution or a point on a solution curve.',
 				'parent_id' => 15,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -461,7 +551,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'type' => 'Learning Objective',
 				'name' => 'LO 2.4A',
 				'description' => 'Apply the Mean Value Theorem to describe the behavior of a function over an interval.',
-				'details' => '',
+				'details' => '**EK 2.4A1:** If a function is continuous over the interval $[a,b]$ and differentiable over the interval $(a,b)$, the Mean Value Theorem guarantees a point within that open interval where the instantaneous rate of change equals the average rate of change over the interval.',
 				'parent_id' => 16,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")

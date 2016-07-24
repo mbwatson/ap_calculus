@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <header>My Profile</header>
+    <h1>My Profile</h1>
 
     <!-- Profile -->
 
