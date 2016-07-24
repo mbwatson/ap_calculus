@@ -10,23 +10,25 @@
         <div class="panel panel-default" id="question">
             <div class="panel-heading">
                 {{ $question->title }}
-                @if ($question->user == Auth::user() || Auth::user()->admin)
-                    <div class="btn-group pull-right">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="editdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="caret"></span>
-                            </button>
-                            <div class="dropdown-menu pull-right" aria-labelledby="editdropdown">
+                <div class="btn-group pull-right">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="question-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu pull-right" aria-labelledby="question-dropdown">
+                            <a href="#" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-file"></i>Export PDF</a>
+                            <div role="separator" class="divider"></div>
+                            @if ($question->user == Auth::user() || Auth::user()->admin)
                                 <!-- Edit -->
                                 <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
                                 <!-- Delete -->
                                 {!! Form::open(['route' => ['questions.destroy', $question->id], 'method' => 'delete']) !!}
                                     <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Question</button>
                                 {!! Form::close() !!}
-                            </div>
+                            @endif
                         </div>
                     </div>
-                @endif
+                </div>
             </div>
             <div class="panel-body">
                 <div class="row">

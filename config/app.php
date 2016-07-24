@@ -152,7 +152,6 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
-
         /*
          * Application Service Providers...
          */

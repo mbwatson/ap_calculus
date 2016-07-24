@@ -28,6 +28,9 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/standard.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
+
+  <link rel="stylesheet" type="text/css" href="/css/jquery.atwho.min.css">
+  
 </head>
 <body id="app-layout">
   @include('partials.header')
