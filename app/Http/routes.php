@@ -52,6 +52,17 @@ Route::resource('account', 'AccountController', [
 
 // Everything Else
 
+Route::get('standards/mpacs', function() {
+	return view('standards.mpacs', ['mpacs' => App\Standard::where('type','MPAC')->get()]);
+});
+Route::get('standards/big-ideas', function() {
+	return view('standards.big-ideas', ['bigideas' => App\Standard::where('type','Big Idea')->get()]);
+});
+
+Route::resource('standards', 'StandardController', [
+	'only' => ['index', 'show']
+]);
+
 Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('users', 'UserController', [
@@ -59,18 +70,6 @@ Route::group(['middleware' => 'auth'], function() {
 	]);
 
 	Route::resource('questions', 'QuestionController');
-
-	// Route group here?
-	Route::get('standards/mpacs', function() {
-		return view('standards.mpacs', ['mpacs' => App\Standard::where('type','MPAC')->get()]);
-	});
-	Route::get('standards/big-ideas', function() {
-		return view('standards.big-ideas', ['bigideas' => App\Standard::where('type','Big Idea')->get()]);
-	});
-
-	Route::resource('standards', 'StandardController', [
-		'only' => ['index', 'show', 'store']
-	]);
 
 	Route::resource('comments', 'CommentController', [
 		'only' => ['store']
