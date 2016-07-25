@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
 
 		$seeds = array(
 			array(
+				'id' => 1,
 				'name' => 'adminname',
 				'email' => 'email@ddress.com',
 				'admin' => true,
@@ -23,6 +24,7 @@ class UsersTableSeeder extends Seeder
 				'updated_at' => date("Y-m-d H:i:s")
 			),
 			array(
+				'id' => 2,
 				'name' => 'username',
 				'email' => 'email@ddress.net',
 				'admin' => false,
