@@ -54,7 +54,7 @@ class User extends Authenticatable
      */
     public function isOnline()
     {
-        return Cache::has('user-activity-' . $this->id);
+        return Cache::has('user-activity-' . $this->id) ?: false;
     }
 
     public function favorites()
