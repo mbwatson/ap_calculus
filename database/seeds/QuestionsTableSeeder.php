@@ -9,6 +9,7 @@ class QuestionsTableSeeder extends Seeder {
 
 		$seeds = array(
 			array(
+				'id' => 1,
 				'title' => 'Power Series: Convergence & Error Bound',
 				'body' => 'The function $f$ is defined by the power series
 					$$f(x) = \sum_{n=0}^\infty\frac{(x-2)^n}{3^n(n+1)} = 1 + \frac{x-2}{3 \cdot 2} + \frac{(x-2)^2}{3^2\cdot 3} + \frac{(x-2)^3}{3^3\cdot 4} + \cdots  + \frac{(x-2)^n}{3^n(n+1)} + \cdots$$
@@ -23,6 +24,7 @@ class QuestionsTableSeeder extends Seeder {
 				'updated_at' => date("Y-m-d H:i:s")
 			),
 			array(
+				'id' => 2,
 				'title' => 'An Improper Integral',
 				'body' => 'Consider the function $f$ given by $f(x) = xe^{-2x}$ for all $x \geq 0$.
 					
@@ -36,6 +38,7 @@ class QuestionsTableSeeder extends Seeder {
 				'updated_at' => date("Y-m-d H:i:s")
 			),
 			array(
+				'id' => 3,
 				'title' => 'Power series and $\sin(x)/x$',
 				'body' => '
 Consider the function defined by $f(x)=\frac{\sin(x)}{x}$.
@@ -50,6 +53,7 @@ Consider the function defined by $f(x)=\frac{\sin(x)}{x}$.
 				'updated_at' => date("Y-m-d H:i:s")
 			),
 			array(
+				'id' => 4,
 				'title' => 'Function Analysis via its Taylor Series',
 				'body' => '
 The function $f$ has a Taylor series about $x=2$ that converges to $f(x)$ for all $x$ in the interval of convergence.
@@ -68,6 +72,7 @@ Write the first four terms and the general term of the Taylor series for $g$ abo
 				'updated_at' => date("Y-m-d H:i:s")
 			),
 			array(
+				'id' => 5,
 				'title' => 'Analyzing a Maclaurin Series',
 				'body' => '
 The Maclaurin series for the function $f$ is given by 

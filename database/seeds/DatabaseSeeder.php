@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(QuestionsTableSeeder::class);
         $this->call(question_standardTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
-       // $this->call(FavoritesTableSeeder::class);
+        $this->call(FavoritesTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
