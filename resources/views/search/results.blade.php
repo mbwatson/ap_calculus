@@ -8,7 +8,7 @@
     
     <div class="row">
         <div class="col-xs-12">
-            The questions listed below contain at least one of the queried keywords: "{{ join('", "',explode(' ', $keywords)) }}".
+            The questions listed below contain at least one of the queried keyword(s): "{{ join('", "',explode(' ', $keywords)) }}".
             You may further narrow your results according to specific <a href="{{ URL::to('standards') }}">standards</a>.
         </div>
     </div>    
