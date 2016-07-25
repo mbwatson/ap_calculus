@@ -5,7 +5,9 @@ use Illuminate\Database\Seeder;
 class question_standardTableSeeder extends Seeder {
 	public function run()
 	{
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		DB::table('question_standard')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
 		$seeds = array(
 			[ 'question_id' => 1, 'standard_id' => 1 ],
