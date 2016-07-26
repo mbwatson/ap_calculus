@@ -310,10 +310,7 @@ class StandardsTableSeeder extends Seeder {
 				'details' => '
 **EK 1.1A1:** Given a function $f$, the limit of $f(x)$ as $x$ approaches $c$, is a real number $R$ if $f(x)$ can be made arbitrarily close to $R$ by taking $x$ sufficiently close to $c$ (but not equal to $c$). If the limit exists and is a real number, then the common notation is $\lim_{x\to c}f(x)=R$.
 
->**EXCLUSION STATEMENT (EK 1.1A1):**
-The epsilon-delta definition of a limit is not assessed
-on the AP Calculus AB or BC Exam. However, teachers
-may include this topic in the course if time permits.
+>**EXCLUSION STATEMENT (EK 1.1A1):** The epsilon-delta definition of a limit is not assessed on the AP Calculus AB or BC Exam. However, teachers may include this topic in the course if time permits.
 
 **EK 1.1A2:** The concept of a limit can be extended to include one-sided limits, limits at infinity, and infinite limits.
 
@@ -337,10 +334,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'details' => '
 **EK 1.1A1:** Given a function $f$, the limit of $f(x)$ as $x$ approaches $c$, is a real number $R$ if $f(x)$ can be made arbitrarily close to $R$ by taking $x$ sufficiently close to $c$ (but not equal to $c$). If the limit exists and is a real number, then the common notation is $\lim_{x\to c}f(x)=R$.
 
->**EXCLUSION STATEMENT (EK 1.1A1):**
-The epsilon-delta definition of a limit is not assessed
-on the AP Calculus AB or BC Exam. However, teachers
-may include this topic in the course if time permits.
+>**EXCLUSION STATEMENT (EK 1.1A1):** The epsilon-delta definition of a limit is not assessed on the AP Calculus AB or BC Exam. However, teachers may include this topic in the course if time permits.
 
 **EK 1.1A2:** The concept of a limit can be extended to include one-sided limits, limits at infinity, and infinite limits.
 
@@ -620,7 +614,7 @@ may include this topic in the course if time permits.
 				'details' => '
 **EK 3.2A1:** A Riemann sum, which requires a partition of an interval $I$, is the sum of products, each of which is the value of the function at a point in a subinterval multiplied by the length of that subinterval of the partition.
 
-**EK 3.2A2:** The definite integral of a continuous function $f$ over the interval $[a,b]$, denoted by $\int_a^bf(x)dx$, is the limit of Riemann sums as the widths of the subintervals approach 0. That is $\int_a^bf(x)dx = \lim_{\max\Delta x_i\to0}\sum_{i=1}^n f(x_i^*)\Delta x_i$, where $x_i^*$ is a value in the $i$th subinterval, $\Delta x_i$ is the width of the $i$th subinterval, $n$ is the number of subintervals, and $\max\Delta x_i$ is the width of the largest subinterval. Another form of the definition is $\int_a^b f(x)dx = \lim_{n\to\infty}\sum({i=1}^n f(x_i^*)\Delta x_i$, where $\Delta x_i = \frac{b-a}{n}$ and $x_i^*$ is a value in the $i$th subinterval.
+**EK 3.2A2:** The definite integral of a continuous function $f$ over the interval $[a,b]$, denoted by $\int_a^bf(x)dx$, is the limit of Riemann sums as the widths of the subintervals approach 0. That is $\int_a^b f(x)dx = \lim_{\max\Delta x_i\to0}\sum_{i=1}^n f(x_i^\*)\Delta x_i$, where $x_i^\*$ is a value in the $i$th subinterval, $\Delta x_i$ is the width of the $i$th subinterval, $n$ is the number of subintervals, and $\max\Delta x_i$ is the width of the largest subinterval. Another form of the definition is $\int_a^b f(x)dx = \lim_{n\to\infty}\sum({i=1}^n f(x_i^\*)\Delta x_i$, where $\Delta x_i = \frac{b-a}{n}$ and $x_i^\*$ is a value in the $i$th subinterval.
 
 **EK 3.2A3:** The information in a definite integral can be translated into the limit of a related Riemann sum, and the limit of a Riemann sum can be written as a definite integral.',
 				'parent_id' => 18,
@@ -635,7 +629,7 @@ may include this topic in the course if time permits.
 				'details' => '
 **EK 3.2A1:** A Riemann sum, which requires a partition of an interval $I$, is the sum of products, each of which is the value of the function at a point in a subinterval multiplied by the length of that subinterval of the partition.
 
-**EK 3.2A2:** The definite integral of a continuous function $f$ over the interval $[a,b]$, denoted by $\int_a^bf(x)dx$, is the limit of Riemann sums as the widths of the subintervals approach 0. That is $\int_a^bf(x)dx = \lim_{\max\Delta x_i\to0}\sum_{i=1}^n f(x_i^*)\Delta x_i$, where $x_i^*$ is a value in the $i$th subinterval, $\Delta x_i$ is the width of the $i$th subinterval, $n$ is the number of subintervals, and $\max\Delta x_i$ is the width of the largest subinterval. Another form of the definition is $\int_a^b f(x)dx = \lim_{n\to\infty}\sum({i=1}^n f(x_i^*)\Delta x_i$, where $\Delta x_i = \frac{b-a}{n}$ and $x_i^*$ is a value in the $i$th subinterval.
+**EK 3.2A2:** The definite integral of a continuous function $f$ over the interval $[a,b]$, denoted by $\int_a^bf(x)dx$, is the limit of Riemann sums as the widths of the subintervals approach 0. That is $\int_a^bf(x)dx = \lim_{\max\Delta x_i\to0}\sum_{i=1}^n f(x_i^\*)\Delta x_i$, where $x_i^\*$ is a value in the $i$th subinterval, $\Delta x_i$ is the width of the $i$th subinterval, $n$ is the number of subintervals, and $\max\Delta x_i$ is the width of the largest subinterval. Another form of the definition is $\int_a^b f(x)dx = \lim_{n\to\infty}\sum({i=1}^n f(x_i^\*)\Delta x_i$, where $\Delta x_i = \frac{b-a}{n}$ and $x_i^\*$ is a value in the $i$th subinterval.
 
 **EK 3.2A3:** The information in a definite integral can be translated into the limit of a related Riemann sum, and the limit of a Riemann sum can be written as a definite integral.',
 				'parent_id' => 18,
@@ -830,7 +824,20 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 4.1A',
 				'description' => 'Determine whether a series converges or diverges.',
-				'details' => '',
+				'details' => '
+**EK 4.1A1:** The $n$th partial sum is defined as the sum of the first n terms of a sequence.
+
+**EK 4.1A2:** An infinite series of numbers converges to a real number $S$ (or has sum $S$), if and only if the limit of its sequence of partial sums exists and equals $S$.
+
+**EK 4.1A3:** Common series of numbers include geometric series, the harmonic series, and $p$-series.
+
+**EK 4.1A4:** A series may be absolutely convergent, conditionally convergent, or divergent.
+
+**EK 4.1A5:** If a series converges absolutely, then it converges.
+
+**EK 4.1A6:** In addition to examining the limit of the sequence of partial sums of the series, methods for determining whether a series of numbers converges or diverges are the $n$th term test, the comparison test, the limit comparison test, the integral test, the ratio test, and the alternating series test.
+
+> **EXCLUSION STATEMENT (EK 4.1A6):** Other methods for determining convergence or divergence of a series of numbers are not assessed on the AP Calculus AB or BC Exam. However, teachers may include these topics in the course if time permits.',
 				'parent_id' => 22,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -840,7 +847,12 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 4.1B',
 				'description' => 'Determine or estimate the sum of a series.',
-				'details' => '',
+				'details' => '
+**EK 4.1B1:** If $a$ is a real number and $r$ is a real number such that $\vert r \vert < 1$, then the geometric series $\sum_{n=0}^\infty ar^n = \frac{a}{1-r}$.
+
+**EK 4.1B2:** If an alternating series converges by the alternating series test, then the alternating series error bound can be used to estimate how close a partial sum is to the value of the infinite series.
+
+**EK 4.1B3:** If a series converges absolutely, then any series obtained from it by regrouping or rearranging the terms has the same value.',
 				'parent_id' => 22,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -850,7 +862,16 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 4.2A',
 				'description' => 'Construct and use Taylor polynomials.',
-				'details' => '',
+				'details' => '
+**EK 4.2A1:** The coefficient of the $n$th-degree term in a Taylor polynomial centered at $x=a$ is for the function $f$ is $\frac{f^{(n)}(a)}{n!}$.
+
+**EK 4.2A2:** Taylor polynomials for a function $f$ centered at $x=a$ can be used to approximate function values of near $x=a$.
+
+**EK 4.2A3:** In many cases, as the degree of a Taylor polynomial increases, the $n$th-degree polynomial will converge to the original function over some interval.
+
+**EK 4.2A4:** The Lagrange error bound can be used to bound the error of a Taylor polynomial approximation to a function.
+
+**EK 4.2A5:** In some situations where the signs of a Taylor polynomial are alternating, the alternating series error bound can be used to bound the error of a Taylor polynomial approximation to the function.',
 				'parent_id' => 23,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -860,7 +881,14 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 4.2B',
 				'description' => 'Write a power series representing a given function.',
-				'details' => '',
+				'details' => '
+**EK 4.2B1:** A power series is a series of the form $\sum_{n=0}^\infty a_n(x-r)^n$, where $n$ is a non-negative integer, $\{a_n\}$ is a sequence of real numbers, and $r$ is a real number.
+
+**EK 4.2B2:** The Maclaurin series for $\sin(x)$, $\cos(x)$, and $e^x$ provide the foundation for constructing the Maclaurin series for other functions.
+
+**EK 4.2B3:** The Maclaurin series for $\frac{1}{1-x}$ is a geometric series.
+
+**EK 4.2B4:** A Taylor polynomial for $f(x)$ is a partial sum of the Taylor series for $f(x)$.',
 				'parent_id' => 23,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -870,7 +898,16 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 4.2C',
 				'description' => 'Determine the radius and interval of convergence of a power series.',
-				'details' => '',
+				'details' => '
+**EK 4.2B5:** A power series for a given function can be derived by various methods (e.g., algebraic processes, substitutions, using properties of geometric series, and operations on known series such as term-by-term integration or term-by-term differentiation).
+
+**EK 4.2C1:** If a power series converges, it either converges at a single point or has an interval of convergence.
+
+**EK 4.2C2:** The ratio test can be used to determine the radius of convergence of a power series.
+
+**EK 4.2C3:** If a power series has a positive radius of convergence, then the power series is the Taylor series of the function to which it converges over the open interval.
+
+**EK 4.2C4:** The radius of convergence of a power series obtained by term-by-term differentiation or term-by-term integration is the same as the radius of convergence of the original power series.',
 				'parent_id' => 23,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
