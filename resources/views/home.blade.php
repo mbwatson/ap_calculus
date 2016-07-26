@@ -15,6 +15,10 @@
                 Do yourself a favor: <a href="login">LOG IN</a>!
             @endif
 
+            <br /><br />
+
+            <h4>To Do List</h4>
+            
             <ul>
                 <li>nice-looking (pdf?) export of questions</li>
                 <li>live WYSIWYG editor (Ajax, Vue?)</li>
