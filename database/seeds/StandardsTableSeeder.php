@@ -604,7 +604,10 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.1A',
 				'description' => 'Recognize antiderivatives of basic functions.',
-				'details' => '',
+				'details' => '
+**EK 3.1A1:** An antiderivative of a function $f$ is a function $g$ whose derivative is $f$.
+
+**EK 3.1A2:** Differentiation rules provide the foundation for finding antiderivatives.',
 				'parent_id' => 17,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -614,7 +617,12 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.2A(a)',
 				'description' => 'Interpret the definite integral as the limits of a Riemann sum.',
-				'details' => '',
+				'details' => '
+**EK 3.2A1:** A Riemann sum, which requires a partition of an interval $I$, is the sum of products, each of which is the value of the function at a point in a subinterval multiplied by the length of that subinterval of the partition.
+
+**EK 3.2A2:** The definite integral of a continuous function $f$ over the interval $[a,b]$, denoted by $\int_a^bf(x)dx$, is the limit of Riemann sums as the widths of the subintervals approach 0. That is $\int_a^bf(x)dx = \lim_{\max\Delta x_i\to0}\sum_{i=1}^n f(x_i^*)\Delta x_i$, where $x_i^*$ is a value in the $i$th subinterval, $\Delta x_i$ is the width of the $i$th subinterval, $n$ is the number of subintervals, and $\max\Delta x_i$ is the width of the largest subinterval. Another form of the definition is $\int_a^b f(x)dx = \lim_{n\to\infty}\sum({i=1}^n f(x_i^*)\Delta x_i$, where $\Delta x_i = \frac{b-a}{n}$ and $x_i^*$ is a value in the $i$th subinterval.
+
+**EK 3.2A3:** The information in a definite integral can be translated into the limit of a related Riemann sum, and the limit of a Riemann sum can be written as a definite integral.',
 				'parent_id' => 18,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -624,7 +632,12 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.2A(b)',
 				'description' => 'Express the limit of a Riemann sum in integral notation.',
-				'details' => '',
+				'details' => '
+**EK 3.2A1:** A Riemann sum, which requires a partition of an interval $I$, is the sum of products, each of which is the value of the function at a point in a subinterval multiplied by the length of that subinterval of the partition.
+
+**EK 3.2A2:** The definite integral of a continuous function $f$ over the interval $[a,b]$, denoted by $\int_a^bf(x)dx$, is the limit of Riemann sums as the widths of the subintervals approach 0. That is $\int_a^bf(x)dx = \lim_{\max\Delta x_i\to0}\sum_{i=1}^n f(x_i^*)\Delta x_i$, where $x_i^*$ is a value in the $i$th subinterval, $\Delta x_i$ is the width of the $i$th subinterval, $n$ is the number of subintervals, and $\max\Delta x_i$ is the width of the largest subinterval. Another form of the definition is $\int_a^b f(x)dx = \lim_{n\to\infty}\sum({i=1}^n f(x_i^*)\Delta x_i$, where $\Delta x_i = \frac{b-a}{n}$ and $x_i^*$ is a value in the $i$th subinterval.
+
+**EK 3.2A3:** The information in a definite integral can be translated into the limit of a related Riemann sum, and the limit of a Riemann sum can be written as a definite integral.',
 				'parent_id' => 18,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -634,7 +647,10 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.2B',
 				'description' => 'Approximate a definite integral.',
-				'details' => '',
+				'details' => '
+**EK 3.2B1:** Definite integrals can be approximated for functions that are represented graphically, numerically, algebraically, and verbally.
+
+**EK 3.2B2:** Definite integrals can be approximated using a left Riemann sum, a right Riemann sum, a midpoint Riemann sum, or a trapezoidal sum; approximations can be computed using either uniform or nonuniform partitions.',
 				'parent_id' => 18,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -644,8 +660,13 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.2C',
 				'description' => 'Calculate a definite integralusing areas and properties of definite integrals.',
-				'details' => '',
-				'parent_id' => 18,
+				'details' => '
+**EK 3.2C1:** In some cases, a definite integral can be evaluated by using geometry and the connection between the definite integral and area.
+
+**EK 3.2C2:** Properties of definite integrals include the integral of a constant times a function, the integral of the sum of two functions, reversal of limits of integration, and the integral of a function over adjacent intervals.
+
+**EK 3.2C3:** The definition of the definite integral may be extended to functions with removable or jump discontinuities.',
+ 				'parent_id' => 18,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
 			),
@@ -654,7 +675,10 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.2D',
 				'description' => '(BC) Evaluate an improper integral or show that an improper integral diverges.',
-				'details' => '',
+				'details' => '
+**EK 3.2D1: (BC)** An improper integral is an integral that has one or both limits infinite or has an integrand that is unbounded in the interval of integration.
+
+**EK 3.2D2: (BC)** Improper integrals can be determined using limits of definite integrals.',
 				'parent_id' => 18,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -664,7 +688,12 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.3A',
 				'description' => 'Analyze functions defined by an integral.',
-				'details' => '',
+				'details' => '
+**EK 3.3A1:** The definite integral can be used to define new functions; for example, $f(x) = \int_0^x e^{-t^2}dt$.
+
+**EK 3.3A2:** If $f$ is a continuous function on the interval $[a,b]$, then $\frac{d}{dx}\Big(\int_a^x f(t)dt\Big) = f(x)$, where $x$ is between $a$ and $b$.
+
+**EK 3.3A3:** Graphical, numerical, analytical, and verbal representations of a function function $f$ provide information about the function $g$ defined as $g(x) = \int_z^x f(t)dt$.',
 				'parent_id' => 19,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -674,7 +703,16 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.3B(a)',
 				'description' => 'Calculate antiderivatives.',
-				'details' => '',
+				'details' => '
+**EK 3.3B1:** The function defined by $F(x) = \int_a^x f(t)dt$ is an antiderivative of $f$.
+
+**EK 3.3B2:** If $f$ is continuous on the interval $[a,b]$ and $F$ is an antiderivative of $f$, the $\int_a^b f(x)dx = F(b) - F(a)$.
+
+**EK 3.3B3:** The notation $\int f(x)dx = F(x) + C$ means that $F\'(x) = f(x)$, and $\int f(x)dx$ is called an indefinite integral of the function $f$.
+
+**EK 3.3B4:** Many functions do not have closed form antiderivatives.
+
+**EK 3.3B5:** Techniques for finding antiderivatives include algebraic manipulation such as long division and completing the square, substitution of variables, (BC) integration by parts, and nonrepeating linear partial fractions.',
 				'parent_id' => 19,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -684,7 +722,12 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.3B(b)',
 				'description' => 'Evalute definite integrals.',
-				'details' => '',
+				'details' => '
+**EK 3.4A1:** A function defined as an integral represents an accumulation of a rate of change.
+
+**EK 3.4A2:** The definite integral of the rate of change of a quantity over an interval gives the net change of that quantity over that interval.
+
+**EK 3.4A3:** The limit of an approximating Riemann sum can be interpreted as a definite integral.',
 				'parent_id' => 19,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -694,7 +737,12 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.4A',
 				'description' => 'Interpret the meaning of a definite integral within a problem.',
-				'details' => '',
+				'details' => '
+**EK 3.4A1:** A function defined as an integral represents an accumulation of a rate of change.
+
+**EK 3.4A2:** The definite integral of the rate of change of a quantity over an interval gives the net change of that quantity over that interval.
+
+**EK 3.4A3:** The limit of an approximating Riemann sum can be interpreted as a definite integral.',
 				'parent_id' => 20,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -704,7 +752,7 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.4B',
 				'description' => 'Apply definite integrals to problems involving the average value of a function.',
-				'details' => '',
+				'details' => '**EK 3.4B1:** The average value of a function $f$ over an interval $[a,b]$ is $\frac{1}{b-a}\int f(x)dx$.',
 				'parent_id' => 20,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -714,7 +762,10 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.4C',
 				'description' => 'Apply definite integrals to problems involving motion.',
-				'details' => '',
+				'details' => '
+**EK 3.4C1:** For a particle in rectilinear motion over an interval of time, the definite integral of velocity represents the particle\'s displacement over the interval of time, and the definite integral of speed represents the particle\'s total distance traveled over the interval of time.
+
+**EK 3.4C2: (BC)** The definite integral can be used to determine displacement, distance, and position of a particle moving along a curve given by parametric or vector-valued functions.',
 				'parent_id' => 20,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -724,7 +775,12 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.4D',
 				'description' => 'Apply definite integrals to problems involving area, volume, (BC) and length of a curve.',
-				'details' => '',
+				'details' => '
+**EK 3.4D1:** Areas of certain regions in the plane can be calculated with definite integrals. (BC) Areas bounded by polar curves can be calculated with definite integrals.
+
+**EK 3.4D2:** Volumes of solids with known cross sections, including discs and washers, can be calculated with definite integrals.
+
+**EK 3.4D3: (BC)** The length of a planar curve defined by a function or by a parametrically defined curve can be calculated using a definite integral.',
 				'parent_id' => 20,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -734,7 +790,7 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.4E',
 				'description' => 'Use the definite integral to solve problems in various contexts.',
-				'details' => '',
+				'details' => '**EK 3.4E1:** The definite integral can be used to express information about accumulation and net change in many applied contexts.',
 				'parent_id' => 20,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -744,7 +800,14 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.5A',
 				'description' => 'Analyze differential equations to obtain general and specific solutions.',
-				'details' => '',
+				'details' => '
+**EK 3.5A1:** Antidifferentiation can be used to find specific solutions to differential equations with given initial conditions, including applications to motion along a line, exponential growth and decay, (BC) and logistic growth.
+
+**EK 3.5A2:** Some differential equations can be solved by separation of variables.
+
+**EK 3.5A3:** Solutions to differential equations may be subject to domain restrictions.
+
+**EK 3.5A4:** The function $F$ defined by $F(x) = c + \int_a^x f(t)dt$ is a general solution to the differential equation $\frac{dy}{dx} = f(x)$, and $F(x) = y_0 + \int_a^x f(t)dt$ is a particular solution to the differential equation $\frac{dy}{dx} = f(x)$ satisfying $F(a) = y_0$.',
 				'parent_id' => 21,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -754,7 +817,10 @@ may include this topic in the course if time permits.
 				'type' => 'Learning Objective',
 				'name' => 'LO 3.5B',
 				'description' => 'Interpret, create, and solve differential equations from problems in context.',
-				'details' => '',
+				'details' => '
+**EK 3.5B1:** The model for exponential growth and decay that arises from the statement \"The rate of change of a quantity is proportional to the size of the quantity\" is $\frac{dy}{dx} = ky$.
+
+**EK 3.5B2: (BC)** The model for logistic growth that arises from the statement \"The rate of change of a quantity is jointly proportional to the size of the quantity and the difference between the quantity and the carrying capacity\" is $\frac{dy}{dx} = ky(a-y)$.',
 				'parent_id' => 21,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
