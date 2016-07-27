@@ -97,14 +97,23 @@ class Question extends Model
         return $this->belongsToMany('App\User', 'favorites')->withTimestamps();
     }
     
-    public function scopeWithKeywords($query, $keywords)
+    public function scopeWithAnyKeywords($query, $keywords)
     {
-        if ($keywords) {
-            $keywords = explode(' ', $keywords);
-            
-            foreach ($keywords as $keyword) {
-                $query->orWhere('title', 'LIKE', '%'.$keyword.'%')->orWhere('body', 'LIKE', '%'.$keyword.'%');
-            }
+        $keywords = explode(' ', $keywords);
+        
+        foreach ($keywords as $keyword) {
+            $query->orWhere('title', 'LIKE', '%'.$keyword.'%')->orWhere('body', 'LIKE', '%'.$keyword.'%');
+        }
+
+        return $query;
+    }
+
+    public function scopeWithAllKeywords($query, $keywords)
+    {
+        $keywords = explode(' ', $keywords);
+        
+        foreach ($keywords as $keyword) {
+            $query->where('title', 'LIKE', '%'.$keyword.'%')->orWhere('body', 'LIKE', '%'.$keyword.'%');
         }
 
         return $query;

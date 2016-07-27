@@ -6,6 +6,8 @@ use Auth;
 use App\Standard;
 use App\Question;
 use App\Form;
+use Image;
+use File;
 use App\Html;
 use App\Comment;
 use Illuminate\Http\Request;
@@ -63,8 +65,22 @@ class QuestionController extends Controller
         $question = new Question;
         $question->title = $request['title'];
         $question->body = $request['body'];
+        $image = $request->file('image');
+        $newfilename = time() . '.' . $image->getClientOriginalExtension();
+
+        // fit width, retain aspect ratio
+        Image::make($image)->resize(300, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save(public_path('/uploads/question_images/' . $newfilename));
+
+        $question->image = $newfilename;
         $request->user()->questions()->save($question);
 
+        // Save image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            Image::make($image)->encode('jpg', 100)->save(public_path('/uploads/question_images/' . $newfilename));
+        }
 
         // Add question-standard relationship to pivot table if any were chosen
         $question->standards()->sync($request->input('standards'));
@@ -104,14 +120,35 @@ class QuestionController extends Controller
             'body' => 'required|max:1000',
             'standard_ids' => 'required'
         ]);
+
         // Question is valid; store in database
         $question->title = $request['title'];
         $question->body = $request['body'];
+        // Upload/Replace image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $newfilename = time() . '.' . $image->getClientOriginalExtension();
+
+            // fit width, retain aspect ratio
+            Image::make($image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/uploads/question_images/' . $newfilename));
+
+            // Delete old image image
+            if ($question->image != '') {
+                File::delete(public_path('/uploads/question_images/' . $question->image));
+            }
+
+            $question->image = $newfilename;
+        }
         $question->save();
+        
         // Update question-standard relationships in pivot table
         $question->standards()->sync($request->input('standard_ids'));
+        
         // Positive reinforcement
         session()->flash('flash_message', 'Question successfully updated!');
+        
         // See ya!
         return redirect()->route('questions.show', ['question' => $question]);
     }
@@ -136,6 +173,30 @@ class QuestionController extends Controller
         session()->flash('flash_message', 'Question successfully deleted!');
 
         return redirect()->route('questions.index');
+    }
+
+    /**
+     * Delete image associated to a question.
+     *
+     * @param  Question $question
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteImage(Question $question)
+    {
+        if ( (Auth::user() != $question->user) && (!Auth::user()->admin) ) {
+            return redirect()->back();
+        }
+
+        // Delete old image image
+        if ($question->image != '') {
+            File::delete(public_path('/uploads/question_images/' . $question->image));
+            $question->image = '';
+            $question->save();
+        }
+        
+        session()->flash('flash_message', 'Image successfully deleted!');
+
+        return redirect()->back();
     }
 
     public function makePDF(Question $question)

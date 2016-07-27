@@ -19,7 +19,16 @@
                 </div>
             </div>
 
-           	<br />
+            <br /><br />
+
+            <label class="radio-inline">
+                <input type="radio" name="searchmethod" value="any" checked>Any of these keywords
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="searchmethod" value="all">All of these keywords
+            </label>
+
+            <br /><br />
             
             <div class="form-group row" >
                 {!! Form::label('standard_ids', 'Filter by Standards:', ['class' => 'form-control-label col-xs-2']) !!}
