@@ -16,7 +16,7 @@
                             <span class="caret"></span>
                         </button>
                         <div class="dropdown-menu pull-right" aria-labelledby="question-dropdown">
-                            <a href="#" role="button" class="btn btn-sm btn-link disabled"><i class="glyphicon glyphicon-file"></i>Export PDF</a>
+                            <a href="{{ route('questions.showprintable', $question) }}" target="_blank" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-print"></i>Printer-friendly</a>
                             <div role="separator" class="divider"></div>
                             @if ($question->user == Auth::user() || Auth::user()->admin)
                                 <!-- Edit -->

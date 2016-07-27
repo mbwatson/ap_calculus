@@ -65,26 +65,38 @@ Route::resource('standards', 'StandardController', [
 
 Route::group(['middleware' => 'auth'], function() {
 
+	// User Routes
 	Route::resource('users', 'UserController', [
 		'only' => ['index', 'show']
 	]);
 
+	// Question Routes
+	Route::get('questions/{questions}/pdf', [
+		'uses' => 'QuestionController@makePDF',
+		'as' => 'questions.makepdf'
+	]);
+	Route::get('questions/{questions}/printable', [
+		'uses' => 'QuestionController@showPrintable',
+		'as' => 'questions.showprintable'
+	]);
 	Route::resource('questions', 'QuestionController');
 
+	// Comment Routes
 	Route::resource('comments', 'CommentController', [
 		'only' => ['store']
 	]);
 
+	// Favorite Routes
 	Route::get('favorites/toggle/{id}', [
 		'uses' => 'AccountController@favorite_toggle',
 		'as' => 'favorite.toggle'
 	]);
 
+	// Search Routes
 	Route::get('/search', [
 		'uses' => 'SearchController@index',
 		'as' => 'search.index',
 	]);
-
 	Route::post('/search/results', [
 		'uses' => 'SearchController@results',
 		'as' => 'search.results',

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Markdown;
+use PDF;
 
 class Question extends Model
 {
@@ -119,4 +120,5 @@ class Question extends Model
 
         return $query;
     }
+
 }
