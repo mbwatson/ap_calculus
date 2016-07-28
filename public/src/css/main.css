@@ -14,6 +14,7 @@ body {
 	background-color: #008cba;
 	padding: 60px 30px;
 	color: #fff;
+	margin-bottom: 0;
 }
 
 .jumbotron .name h1 {
@@ -44,6 +45,19 @@ body {
 	border: 0;
 	background-color: #109cca;
 	border-radius: 5px;
+}
+
+.jumbotron-1 {
+	background-color: #008cba;
+}
+
+.jumbotron-2 {
+	background-color: #60d3f9;
+
+}
+
+.jumbotron-3 {
+	
 }
 
 /* Forms */

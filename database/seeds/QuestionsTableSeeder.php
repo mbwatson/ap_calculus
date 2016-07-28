@@ -91,6 +91,25 @@ on its interval of convergence.
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
 			),
+			array(
+				'id' => 6,
+				'title' => 'Graph Interpretation',
+				'body' => '
+Let $f$ be a continuous function defined on the closed interval $-1 \leq x \leq 4$.
+The graph of $f$, consisting of three line segments, is shown above.
+Let $g$ be the function defined by $g(x) = 5 + \int_2^x f(t)dt$ for $-1 \leq x \leq 4$.
+
+(a) Find $g(4)$.
+
+(b) On what intervals is $g$ increasing? Justify your answer.
+
+(c) On the closed interval $-1 \leq x \leq 4$, find the absolute minimum value of $g$ and find the absolute maximum value of $g$. Justify your answers.
+
+(d) Let $h(x) = x \cdot g(x)$. Find $h\'(2)$.',
+				'user_id' => '2',
+				'created_at' => date("Y-m-d H:i:s"),
+				'updated_at' => date("Y-m-d H:i:s")
+			),
 		);
 
 		DB::table('questions')->insert($seeds);
