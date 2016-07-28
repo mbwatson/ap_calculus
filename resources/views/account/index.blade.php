@@ -13,7 +13,7 @@
             <div class="panel panel-default">
                 <div class="panel-body profile">
                     <div class="col-sm-3 user-card">
-                        <img class="avatar" src="{{ URL::to('uploads/avatars/' . $user->avatar) }}"><br />
+                        <img class="avatar" src="{{ URL::to('avatars/' . $user->avatar) }}"><br />
                         {{ $user->name }}
                     </div>
                     <div class="col-sm-9">

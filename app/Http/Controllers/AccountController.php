@@ -85,11 +85,11 @@ class AccountController extends Controller
     	if ($request->hasFile('avatar')) {
     		$avatar = $request->file('avatar');
     		$newfilename = time() . '.' . $avatar->getClientOriginalExtension();
-    		Image::make($avatar)->fit(300, 300)->save(public_path('/uploads/avatars/' . $newfilename));
+    		Image::make($avatar)->fit(300, 300)->save(public_path('/avatars/' . $newfilename));
 
     		// Delete old avatar image
     		if (Auth::user()->avatar != 'default.jpg') {
-    			File::delete(public_path('/uploads/avatars/' . Auth::user()->avatar));
+    			File::delete(public_path('/avatars/' . Auth::user()->avatar));
     		}
 
     		$user = Auth::user();
