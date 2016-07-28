@@ -55,7 +55,7 @@
                 
                 <div class="panel-body profile avatar">
                     <div class="col-xs-3">
-                        <img class="avatar" src="{{ URL::to('uploads/avatars/' . $user->avatar) }}">
+                        <img class="avatar" src="{{ URL::to('/avatars/' . $user->avatar) }}">
                     </div>
                     <div class="col-xs-9">
                         <form enctype="multipart/form-data" action="/account/update/avatar" method="POST" class="form-inline">

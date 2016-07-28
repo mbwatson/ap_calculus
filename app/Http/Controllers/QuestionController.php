@@ -24,7 +24,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questions.index', [
-            'questions' => Question::latest('created_at')->paginate(5), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
+            'questions' => Question::latest('created_at')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
             'standards' => Standard::orderBy('name', 'asc')->get()
         ]);
     }
@@ -65,18 +65,6 @@ class QuestionController extends Controller
         $question = new Question;
         $question->title = $request['title'];
         $question->body = $request['body'];
-        if ($image = $request->hasFile('image')) {
-            $image_filename = time() . '.' . $image->getClientOriginalExtension();
-            $question->image = $image_filename;
-
-            // fit width, retain aspect ratio
-            Image::make($image)->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('/uploads/question_images/' . $image_filename));
-
-            Image::make($request->file('image'))->encode('jpg', 100)->save(public_path('/uploads/question_images/' . $image_filename));
-        }
-
         $request->user()->questions()->save($question);
 
         $question->standards()->sync($request->input('standards'));
@@ -111,31 +99,13 @@ class QuestionController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:50',
-            'body' => 'required|max:1000',
+            'body' => 'required|max:2500',
             'standard_ids' => 'required'
         ]);
 
         // Question is valid; store in database
         $question->title = $request['title'];
         $question->body = $request['body'];
-        
-        // Upload/Replace image
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $image_filename = time() . '.' . $image->getClientOriginalExtension();
-
-            // fit width, retain aspect ratio
-            Image::make($image)->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('/uploads/question_images/' . $image_filename));
-
-            // Delete old image image
-            if ($question->image != '') {
-                File::delete(public_path('/uploads/question_images/' . $question->image));
-            }
-
-            $question->image = $image_filename;
-        }
         $question->save();
         
         $question->standards()->sync($request->input('standard_ids'));
@@ -166,30 +136,6 @@ class QuestionController extends Controller
         session()->flash('flash_message', 'Question successfully deleted!');
 
         return redirect()->route('questions.index');
-    }
-
-    /**
-     * Delete image associated to a question.
-     *
-     * @param  Question $question
-     * @return \Illuminate\Http\Response
-     */
-    public function deleteImage(Question $question)
-    {
-        if ( (Auth::user() != $question->user) && (!Auth::user()->admin) ) {
-            return redirect()->back();
-        }
-
-        // Delete old image image
-        if ($question->image != '') {
-            File::delete(public_path('/uploads/question_images/' . $question->image));
-            $question->image = '';
-            $question->save();
-        }
-        
-        session()->flash('flash_message', 'Image successfully deleted!');
-
-        return redirect()->back();
     }
 
     public function makePDF(Question $question)
