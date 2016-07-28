@@ -82,7 +82,7 @@ f(x)= \sum_{n=0}^\infty\frac{(2x)^{n+1}}{n+1}
 $$
 on its interval of convergence.
 
-(b) Find the interval of convergence for the Maclaurin series for $f$. Justify your answer.
+(a) Find the interval of convergence for the Maclaurin series for $f$. Justify your answer.
 
 (b) Find the first four terms and the general term for the Maclaurin series for $f\'(x)$.
 
@@ -107,6 +107,24 @@ Let $g$ be the function defined by $g(x) = 5 + \int_2^x f(t)dt$ for $-1 \leq x \
 
 (d) Let $h(x) = x \cdot g(x)$. Find $h\'(2)$.',
 				'user_id' => '2',
+				'created_at' => date("Y-m-d H:i:s"),
+				'updated_at' => date("Y-m-d H:i:s")
+			),
+			array(
+				'id' => 7,
+				'title' => 'TBA',
+				'body' => '
+Let $R$ be the region in the first quadrant bounded by the graph of $g$, and let $S$ be the region in the first quadrant between the graphs of $f$ and $g$, as shown in the figure above.
+The region in the first quadrant bounded by the graph of $f$ and the coordinate axes has area 12.142.
+The function $g$ is given by $g(x) = (\sqrt{x+6})\cos\Big(\frac{\pi x}{8}\Big)$, and the function $f$ is not explicitly given.
+The graphs of $f$ and $g$ intersect at the point $(4,0)$.
+
+(a) Find the area of $S$.
+
+(b) A Solid is generated when $S$ is revolved about the horizontal line $y=5$. Write, but do not evaluate, an expression involving one or more integrals that gives the volume of the solid.
+
+(c) Region $R$ is the base of an art sculpture. At all points in $R$ at a distance $x$ from the $y$-axis, the height of the sculpture is given by $h(x) = 4 - x$. Find the volume of the art sculpture.',
+				'user_id' => '1',
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
 			),
