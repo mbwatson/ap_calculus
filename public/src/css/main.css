@@ -81,6 +81,7 @@ FORM .control-label {
 
 .panel {
 	border-radius: 5px;
+	padding-top: 15px;
 }
 
 .panel-heading {
