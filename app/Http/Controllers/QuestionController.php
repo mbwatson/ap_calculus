@@ -24,7 +24,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questions.index', [
-            'questions' => Question::latest('created_at')->paginate(5), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
+            'questions' => Question::latest('created_at')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
             'standards' => Standard::orderBy('name', 'asc')->get()
         ]);
     }
@@ -99,7 +99,7 @@ class QuestionController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:50',
-            'body' => 'required|max:1000',
+            'body' => 'required|max:2500',
             'standard_ids' => 'required'
         ]);
 

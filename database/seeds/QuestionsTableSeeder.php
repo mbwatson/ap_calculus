@@ -95,17 +95,12 @@ on its interval of convergence.
 				'id' => 6,
 				'title' => 'Graph Interpretation',
 				'body' => '
-Let $f$ be a continuous function defined on the closed interval $-1 \leq x \leq 4$.
-The graph of $f$, consisting of three line segments, is shown above.
-Let $g$ be the function defined by $g(x) = 5 + \int_2^x f(t)dt$ for $-1 \leq x \leq 4$.
-
-(a) Find $g(4)$.
-
-(b) On what intervals is $g$ increasing? Justify your answer.
-
-(c) On the closed interval $-1 \leq x \leq 4$, find the absolute minimum value of $g$ and find the absolute maximum value of $g$. Justify your answers.
-
-(d) Let $h(x) = x \cdot g(x)$. Find $h\'(2)$.',
+<p style="text-align: center;"><img src="/images/shares/579999daa3541.png" alt="" width="241" height="275" /></p>
+<p>Let $f$ be a continuous function defined on the closed interval $-1 \leq x \leq 4$. The graph of $f$, consisting of three line segments, is shown above. Let $g$ be the function defined by $g(x) = 5 + \int_2^x f(t)dt$ for $-1 \leq x \leq 4$.</p>
+<p>(a) Find $g(4)$.</p>
+<p>(b) On what intervals is $g$ increasing? Justify your answer.</p>
+<p>(c) On the closed interval $-1 \leq x \leq 4$, find the absolute minimum value of $g$ and find the absolute maximum value of $g$. Justify your answers.</p>
+<p>(d) Let $h(x) = x \cdot g(x)$. Find $h\'(2)$.</p>',
 				'user_id' => '2',
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
@@ -114,16 +109,11 @@ Let $g$ be the function defined by $g(x) = 5 + \int_2^x f(t)dt$ for $-1 \leq x \
 				'id' => 7,
 				'title' => 'TBA',
 				'body' => '
-Let $R$ be the region in the first quadrant bounded by the graph of $g$, and let $S$ be the region in the first quadrant between the graphs of $f$ and $g$, as shown in the figure above.
-The region in the first quadrant bounded by the graph of $f$ and the coordinate axes has area 12.142.
-The function $g$ is given by $g(x) = (\sqrt{x+6})\cos\Big(\frac{\pi x}{8}\Big)$, and the function $f$ is not explicitly given.
-The graphs of $f$ and $g$ intersect at the point $(4,0)$.
-
-(a) Find the area of $S$.
-
-(b) A Solid is generated when $S$ is revolved about the horizontal line $y=5$. Write, but do not evaluate, an expression involving one or more integrals that gives the volume of the solid.
-
-(c) Region $R$ is the base of an art sculpture. At all points in $R$ at a distance $x$ from the $y$-axis, the height of the sculpture is given by $h(x) = 4 - x$. Find the volume of the art sculpture.',
+<p style="text-align: center;"><img src="/images/shares/579a1485275c2.png" alt="" width="213" height="220" /></p>
+<p>Let $R$ be the region in the first quadrant bounded by the graph of $g$, and let $S$ be the region in the first quadrant between the graphs of $f$ and $g$, as shown in the figure above. The region in the first quadrant bounded by the graph of $f$ and the coordinate axes has area 12.142. The function $g$ is given by $g(x) = (\sqrt{x+6})\cos\Big(\frac{\pi x}{8}\Big)$, and the function $f$ is not explicitly given. The graphs of $f$ and $g$ intersect at the point $(4,0)$.</p>
+<p>(a) Find the area of $S$.</p>
+<p>(b) A Solid is generated when $S$ is revolved about the horizontal line $y=5$. Write, but do not evaluate, an expression involving one or more integrals that gives the volume of the solid.</p>
+<p>(c) Region $R$ is the base of an art sculpture. At all points in $R$ at a distance $x$ from the $y$-axis, the height of the sculpture is given by $h(x) = 4 - x$. Find the volume of the art sculpture.</p>',
 				'user_id' => '1',
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
