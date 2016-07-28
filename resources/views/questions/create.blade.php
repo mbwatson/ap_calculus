@@ -1,7 +1,20 @@
 @extends('layouts.master')
 
-@section('content')
+@section('header')
+<!-- TinyMCE -->
+<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+<script>
+    tinymce.init({
+        selector: '#question-textarea',
+        plugins: 'advlist autolink image lists charmap',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist| link image',
+        menubar: false,
+        skin: 'lightgray'
+    });
+</script>
+@endsection
 
+@section('content')
 <div class="container">
 
     <h1>Create a New Question</h1>
@@ -12,12 +25,7 @@
         <div class="col-xs-12">
             {!! Form::open(['route' => 'questions.store', 'files' => 'true', 'class' => 'question-form']) !!}
             {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
-            {!! Form::textarea('body', null, ['class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
-
-            <br />
-
-            <span class="glyphicon glyphicon-paperclip"></span> Attach Image
-            {!! Form::file('image','',array('id'=>'image','class'=>'form-control')) !!}
+            {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
 
             <br />
 
@@ -41,16 +49,13 @@
         </div>
     </div>
 </div>
-
 @endsection
 
 @section('footer')
-
 <!-- Select2 list -->
 <script type="text/javascript">
     $('#standard_list').select2({
       placeholder: "Choose Standard(s)"
     });
 </script>
-
 @endsection
