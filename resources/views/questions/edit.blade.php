@@ -31,7 +31,7 @@
             @endif
 
             <br /><br />
-            Upload Image
+            <span class="glyphicon glyphicon-paperclip"></span> Attach Image
             {!! Form::file('image','',array('id' => 'image','class' => 'form-control')) !!}
             <br />
 

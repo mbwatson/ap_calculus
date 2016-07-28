@@ -65,24 +65,20 @@ class QuestionController extends Controller
         $question = new Question;
         $question->title = $request['title'];
         $question->body = $request['body'];
-        $image = $request->file('image');
-        $newfilename = time() . '.' . $image->getClientOriginalExtension();
+        if ($image = $request->hasFile('image')) {
+            $image_filename = time() . '.' . $image->getClientOriginalExtension();
+            $question->image = $image_filename;
 
-        // fit width, retain aspect ratio
-        Image::make($image)->resize(300, null, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save(public_path('/uploads/question_images/' . $newfilename));
+            // fit width, retain aspect ratio
+            Image::make($image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/uploads/question_images/' . $image_filename));
 
-        $question->image = $newfilename;
-        $request->user()->questions()->save($question);
-
-        // Save image
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            Image::make($image)->encode('jpg', 100)->save(public_path('/uploads/question_images/' . $newfilename));
+            Image::make($request->file('image'))->encode('jpg', 100)->save(public_path('/uploads/question_images/' . $image_filename));
         }
 
-        // Add question-standard relationship to pivot table if any were chosen
+        $request->user()->questions()->save($question);
+
         $question->standards()->sync($request->input('standards'));
 
         session()->flash('flash_message', 'Question successfully created!');
@@ -113,8 +109,6 @@ class QuestionController extends Controller
      */
     public function update(Question $question, Request $request)
     {
-        // Question title and body are required fields and 
-        // body can be no longer than 1000 characters
         $this->validate($request, [
             'title' => 'required|max:50',
             'body' => 'required|max:1000',
@@ -124,29 +118,28 @@ class QuestionController extends Controller
         // Question is valid; store in database
         $question->title = $request['title'];
         $question->body = $request['body'];
+        
         // Upload/Replace image
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $newfilename = time() . '.' . $image->getClientOriginalExtension();
+            $image_filename = time() . '.' . $image->getClientOriginalExtension();
 
             // fit width, retain aspect ratio
             Image::make($image)->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path('/uploads/question_images/' . $newfilename));
+            })->save(public_path('/uploads/question_images/' . $image_filename));
 
             // Delete old image image
             if ($question->image != '') {
                 File::delete(public_path('/uploads/question_images/' . $question->image));
             }
 
-            $question->image = $newfilename;
+            $question->image = $image_filename;
         }
         $question->save();
         
-        // Update question-standard relationships in pivot table
         $question->standards()->sync($request->input('standard_ids'));
         
-        // Positive reinforcement
         session()->flash('flash_message', 'Question successfully updated!');
         
         // See ya!

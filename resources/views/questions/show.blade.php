@@ -41,6 +41,7 @@
                                 <img src="{{ url('/') }}/uploads/question_images/{{ $question->image }}">
                             </div>
                         @endif
+                        <br />
                         {!! Markdown::convertToHtml($question->body) !!}
                         <hr />
                         <div class="row">
