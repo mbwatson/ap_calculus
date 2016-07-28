@@ -15,11 +15,9 @@
 
 Route::auth();
 
-// Homepage Routes
+// Homepage Route
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', function () { return view('home'); });
 
 // Account routes // Auth required
 
@@ -71,6 +69,10 @@ Route::group(['middleware' => 'auth'], function() {
 	]);
 
 	// Question Routes
+	Route::get('questions/{questions}/deleteimage', [
+		'uses' => 'QuestionController@deleteImage',
+		'as' => 'questions.deleteimage'
+	]);
 	Route::get('questions/{questions}/pdf', [
 		'uses' => 'QuestionController@makePDF',
 		'as' => 'questions.makepdf'

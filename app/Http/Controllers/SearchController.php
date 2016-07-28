@@ -19,8 +19,13 @@ class SearchController extends Controller
     public function results(Request $request)
     {   
         if ($keywords = $request->input('keywords')) {
-            $results = Question::withKeywords($keywords)
-                                ->withStandards($request->input('standard_ids'))->get();
+            if ($request->input('searchmethod') == "any") {
+                $results = Question::withAnyKeywords($keywords)
+                                    ->withStandards($request->input('standard_ids'))->get();
+            } else {
+                $results = Question::withAllKeywords($keywords)
+                                    ->withStandards($request->input('standard_ids'))->get();
+            }
 
             return view('search.results', [
                 'keywords' => $keywords,

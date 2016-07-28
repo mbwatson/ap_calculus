@@ -12,6 +12,7 @@
         <div class="col-xs-12">
             {!! Form::model($question, [
                 'method' => 'PATCH',
+                'files' => 'true',
                 'route' => ['questions.update', $question->id],
                 'class' => 'question-form'
             ]) !!}
@@ -20,8 +21,25 @@
             
             <br />
 
+            Current Image: 
+            @if ($question->image != '')
+                <img src="{{ URL::to('uploads/question_images/' . $question->image) }}">
+                <a href="{{ route('questions.deleteimage', $question) }}" role="button" class="btn btn-primary btn-xs">Remove Image</a>
+                <!-- {{ Form::checkbox('removeimage', 'true') }} Remove Image -->
+            @else
+                None.
+            @endif
+
+            <br /><br />
+            <span class="glyphicon glyphicon-paperclip"></span> Attach Image
+            {!! Form::file('image','',array('id' => 'image','class' => 'form-control')) !!}
+            <br />
+
             {!! Form::select('standard_ids[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
-            {!! Form::submit('Update Question', ['class' => 'btn btn-primary btn-block']) !!}
+
+            <br /><br />
+            
+            {!! Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>    

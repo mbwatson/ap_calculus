@@ -14,6 +14,11 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
+                        @if ($question->image != '')
+                            <div class="question-image">
+                                <img src="{{ url('/') }}/uploads/question_images/{{ $question->image }}">
+                            </div>
+                        @endif
                         {!! Markdown::convertToHtml($question->body) !!}
                         <hr />
                     </div>

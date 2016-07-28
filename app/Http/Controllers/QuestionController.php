@@ -6,6 +6,8 @@ use Auth;
 use App\Standard;
 use App\Question;
 use App\Form;
+use Image;
+use File;
 use App\Html;
 use App\Comment;
 use Illuminate\Http\Request;
@@ -63,10 +65,20 @@ class QuestionController extends Controller
         $question = new Question;
         $question->title = $request['title'];
         $question->body = $request['body'];
+        if ($image = $request->hasFile('image')) {
+            $image_filename = time() . '.' . $image->getClientOriginalExtension();
+            $question->image = $image_filename;
+
+            // fit width, retain aspect ratio
+            Image::make($image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/uploads/question_images/' . $image_filename));
+
+            Image::make($request->file('image'))->encode('jpg', 100)->save(public_path('/uploads/question_images/' . $image_filename));
+        }
+
         $request->user()->questions()->save($question);
 
-
-        // Add question-standard relationship to pivot table if any were chosen
         $question->standards()->sync($request->input('standards'));
 
         session()->flash('flash_message', 'Question successfully created!');
@@ -97,21 +109,39 @@ class QuestionController extends Controller
      */
     public function update(Question $question, Request $request)
     {
-        // Question title and body are required fields and 
-        // body can be no longer than 1000 characters
         $this->validate($request, [
             'title' => 'required|max:50',
             'body' => 'required|max:1000',
             'standard_ids' => 'required'
         ]);
+
         // Question is valid; store in database
         $question->title = $request['title'];
         $question->body = $request['body'];
+        
+        // Upload/Replace image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image_filename = time() . '.' . $image->getClientOriginalExtension();
+
+            // fit width, retain aspect ratio
+            Image::make($image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/uploads/question_images/' . $image_filename));
+
+            // Delete old image image
+            if ($question->image != '') {
+                File::delete(public_path('/uploads/question_images/' . $question->image));
+            }
+
+            $question->image = $image_filename;
+        }
         $question->save();
-        // Update question-standard relationships in pivot table
+        
         $question->standards()->sync($request->input('standard_ids'));
-        // Positive reinforcement
+        
         session()->flash('flash_message', 'Question successfully updated!');
+        
         // See ya!
         return redirect()->route('questions.show', ['question' => $question]);
     }
@@ -136,6 +166,30 @@ class QuestionController extends Controller
         session()->flash('flash_message', 'Question successfully deleted!');
 
         return redirect()->route('questions.index');
+    }
+
+    /**
+     * Delete image associated to a question.
+     *
+     * @param  Question $question
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteImage(Question $question)
+    {
+        if ( (Auth::user() != $question->user) && (!Auth::user()->admin) ) {
+            return redirect()->back();
+        }
+
+        // Delete old image image
+        if ($question->image != '') {
+            File::delete(public_path('/uploads/question_images/' . $question->image));
+            $question->image = '';
+            $question->save();
+        }
+        
+        session()->flash('flash_message', 'Image successfully deleted!');
+
+        return redirect()->back();
     }
 
     public function makePDF(Question $question)

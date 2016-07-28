@@ -36,9 +36,13 @@
                         @include('partials.user-card', ['user' => $question->user])
                     </div>
                     <div class="col-md-10">
-                        <p>
-                            {!! Markdown::convertToHtml($question->body) !!}
-                        </p>
+                        @if ($question->image != '')
+                            <div class="question-image">
+                                <img src="{{ url('/') }}/uploads/question_images/{{ $question->image }}">
+                            </div>
+                        @endif
+                        <br />
+                        {!! Markdown::convertToHtml($question->body) !!}
                         <hr />
                         <div class="row">
                             <div class="col-lg-5 col-sm-10 standards">
