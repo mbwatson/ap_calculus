@@ -11,14 +11,13 @@ Users marked as Administrators can delete posts and create standards.
 
 ### Future Additions/Fixes
 
-- live WYSIWYG editor (Ajax, Vue?)
-- upload image with question or figure out another option for creating images on the fly
 - implement the addition of scoring guidelines with question
 - regular conversation forum with categories?
 - tag/mention other users (with @-symbol?) in question comments or in regular conversation forum
 - tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum
 - implement way to distinguish between free response and multiple choice questions. (this probably will be a necessity.)
 - if so, MC question creation form should provide form inputs for responses/distractors (and possibly marking the correct one)
+- implement way to distinguish between calculator active and inactive questions
 - make profile public, optional
 - Question ranking system +/- 1 buttons
 - simple way to "suggest" standards without having to write a comment? or is a comment better?
