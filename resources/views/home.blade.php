@@ -9,22 +9,20 @@
     <div class="row">
         <div class="col-xs-12">
             <h1>AP Calculus Question Forum</h1>
-            <div class="panel panel-default">
-                <div class="panel-body">
                     <h2>
-                        Welcome! This site is a collaboration space for teachers of AP Calculus.
+                        This site is a collaboration space for AP Calculus teachers.
 
-                        You and other experts in the field can design and collaborate on the best AP Calculus questions available.
+                        Create and collaborate with others in your field to design the best AP Calculus questions available.
 
-                        The tools provided and the community make it simple to shape questions that are aligned with the <a href="{{ route('standards.index') }}">Curriculum Framework</a> outlined by the CollegeBoard.
+                        The tools and expertise provided by this community of experts make it simple to shape questions that
+                        align with the <a href="{{ route('standards.index') }}">Curriculum Framework</a> outlined by the CollegeBoard.
                     </h2>
                     <div class="text-center" style="padding: 25px;">
                         <a class="btn btn-primary btn-lg" href="{{ route('questions.index') }}">Browse the Questions</a>
                         <span style="padding:0 50px">&nbsp;</span>
                         <a class="btn btn-primary btn-lg" href="{{ route('standards.index') }}">Curriculum Framework</a>
                     </div>
-                </div>
-            </div>
+            
         </div>
     </div>
     
