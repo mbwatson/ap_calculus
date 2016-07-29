@@ -2,6 +2,8 @@
 
 @section('content')
 
+@section('breadcrumbs', Breadcrumbs::render('standard', $standard))
+
 <div class="jumbotron">
     
     <!-- Standard & its Description -->

@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('breadcrumbs', Breadcrumbs::render('question', $question))
+
 @section('content')
 
 <div class="container">

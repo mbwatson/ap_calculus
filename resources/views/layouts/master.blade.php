@@ -33,6 +33,7 @@
 <body id="app-layout">
   @include('partials.header')
   @yield('header')
+  @yield('breadcrumbs')
   @include('partials.errors')
   @yield('content')
   @include('partials.footer')

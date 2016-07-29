@@ -73,11 +73,6 @@
                     </div>
                 </div>
             </div>
-            <div id="breadcrumbs" class="row">
-                <div class="col-xs-10 col-xs-offset-1">
-                    Questions
-                </div>
-            </div>
         </div>
     </nav>
 </header>
