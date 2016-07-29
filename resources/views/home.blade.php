@@ -4,37 +4,54 @@
 
 <div class="container">
     
+    <!-- Welcome -->
+
     <div class="row">
-        <div class="col-xs-12 col-md-10">
+        <div class="col-xs-12">
             <h1>AP Calculus Question Forum</h1>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>
+                        Welcome! This site is a collaboration space for teachers of AP Calculus.
+
+                        You and other experts in the field can design and collaborate on the best AP Calculus questions available.
+
+                        The tools provided and the community make it simple to shape questions that are aligned with the <a href="{{ route('standards.index') }}">Curriculum Framework</a> outlined by the CollegeBoard.
+                    </h2>
+                    <div class="text-center" style="padding: 25px;">
+                        <a class="btn btn-primary btn-lg" href="{{ route('questions.index') }}">Browse the Questions</a>
+                        <span style="padding:0 50px">&nbsp;</span>
+                        <a class="btn btn-primary btn-lg" href="{{ route('standards.index') }}">Curriculum Framework</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Latest Questions -->
+    
+    <h2>Latest Questions</h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body questions">
+                    <ul>
+                        @foreach (App\Question::take(3)->get() as $question)
+                            @include('partials.question', $question)
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Question List -->
-    
+    <!-- To Do List -->
+
     <div class="row">
-
-        <!-- Sidebar -->
-
-        <div class="col-xs-12 col-md-3 sidebar">
-            <ul>
-                <h4>Latest Questions</h4>
-                @foreach (App\Question::take(3)->get() as $question)
-                    <li><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a><br />
-                    <span class="text-muted">
-                        <a href="{{ route('users.show', $question->user) }}">{{ $question->user->name }}</a>
-                        - {{ $question->created_at->diffForHumans() }}
-                    </span></li>
-                @endforeach
-            </ul>
-        </div>
-
-        <!-- Main -->
-
-        <div class="col-xs-12 col-md-9">
+        <div class="col-xs-12">
+            <h1>To Do List / Fixes / Ideas</h1>
             <div class="panel panel-default">
-                <div class="panel-body questions">
-                    <h4>To Do List / Fixes / Ideas</h4>
+                <div class="panel-body">
                     <ul>
                         <li>implement the addition of scoring guidelines with question</li>
                         <li>regular conversation forum with categories?</li>
