@@ -20,21 +20,23 @@
         
             <a class="btn btn-primary btn-block" href="{{ route('questions.create') }}">New Question</a>
             <br />
-            <a class="btn btn-info btn-block hidden-sm" href="#">Filter Questions</a>
+            <a class="btn btn-info btn-block hidden-xs hidden-sm disabled" href="#">Filter Questions</a>
             <br />
-            <ul class="hidden-sm">
+            <a class="btn btn-info btn-block hidden-xs hidden-sm disabled" href="{{ route('questions.popular') }}">Popular Questions</a>
+            <br />
+            <ul class="hidden-xs hidden-sm">
                 <h4>MPACs</h4>
-                @foreach ($standards->where('type', 'MPAC') as $mpac)
-                    <li><a href="{{ route('standards.show', $mpac) }}">{{ $mpac->description }}</a></li>
+                @foreach ($mpacs as $mpac)
+                    <li><a href="{{ route('questions.withstandards', ['ids' => $mpac]) }}">{{ $mpac->description }}</a></li>
                 @endforeach
             </ul>
-            <ul class="hidden-sm">
+            <ul class="hidden-xs hidden-sm">
                 <h4>Concept Outline</h4>
-                @foreach ($standards->where('type', 'Big Idea') as $bigidea)
-                    <li><a href="{{ route('standards.show', $bigidea) }}">{{ $bigidea->description }}</a>
+                @foreach ($bigIdeas as $bigidea)
+                    <li><a href="{{ route('questions.withstandards', ['ids' => $bigidea]) }}">{{ $bigidea->description }}</a>
                         <ul>
                             @foreach ($bigidea->children()->get() as $eu)
-                                <li><a href="{{ route('standards.show', $eu) }}">{{ $eu->name }}</a></li>
+                                <li><a href="{{ route('questions.withstandards', ['ids' => $eu]) }}">{{ $eu->name }}</a></li>
                             @endforeach
                         </ul>
                     </li>

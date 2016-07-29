@@ -17,27 +17,28 @@ class SearchController extends Controller
     }
 
     public function results(Request $request)
-    {   
+    {
         if ($keywords = $request->input('keywords')) {
-            if ($request->input('searchmethod') == "any") {
-                $results = Question::withAnyKeywords($keywords)
-                                    ->withStandards($request->input('standard_ids'))->get();
+            if ($standard_ids = $request->input('standard_ids')) {
+                $results = Question::withAnyKeywords($keywords)->withStandards($request->input('standard_ids'))->get();
             } else {
-                $results = Question::withAllKeywords($keywords)
-                                    ->withStandards($request->input('standard_ids'))->get();
+                $results = Question::withAnyKeywords($keywords)->get();
             }
-
-            return view('search.results', [
-                'keywords' => $keywords,
-                'questions' => $results,
-                'standards' => Standard::all(),
-                'selected_standard_ids' => $request->input('standard_ids')
-            ]);
+        } else {
+            if ($standard_ids = $request->input('standard_ids')) {
+                $results = Question::withStandards($request->input('standard_ids'))->get();
+            } else {
+                session()->flash('flash_message', 'Please enter search criteria!');
+                return redirect()->route('search.index');
+            }
         }
-
-        session()->flash('flash_message', 'Please enter keywords before you search!');
-
-        return redirect()->back();
+        
+        return view('search.results', [
+            'keywords' => $keywords,
+            'questions' => $results,
+            'standards' => Standard::all(),
+            'selected_standard_ids' => $request->input('standard_ids')
+        ]);
     }
 
 

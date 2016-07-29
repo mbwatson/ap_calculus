@@ -66,7 +66,7 @@
             <br />
 
             <div class="form-group">
-                {!! Form::select('standards[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
+                {!! Form::select('standards[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
             </div>
 
             {!! Form::submit('Post Question', ['class' => 'btn btn-primary btn-block']) !!}
@@ -79,8 +79,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="pull-right text-right">
-                <a href="#">Help with Markdown</a> <br />
-                <a href="#">Help with MathJAX</a>
+                <a href="#">Help with $\LaTeX$</a>
             </div>
         </div>
     </div>

@@ -19,11 +19,11 @@ class QuestionController extends Controller
 {
     public function __construct()
     {
-        View::share(['standards' => Standard::get()]);
+        // View::share(['standards' => Standard::all()]);
     }
 
     /**
-     * Show list of questions
+     * Show list of all questions
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,11 +31,38 @@ class QuestionController extends Controller
     {
         return view('questions.index', [
             'questions' => Question::latest('created_at')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
+            'mpacs' => Standard::ofType('MPAC')->get(),             // For sidebar
+            'bigIdeas' => Standard::ofType('Big Idea')->get(),      // For sidebar
         ]);
     }
 
     /**
-     * Show question
+     * Show list of popular questions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showPopularQuestions()
+    {
+        return 'Not yet!';
+    }
+
+    /**
+     * Show list of questions with specified standards
+     * 
+     * @param 
+     * @return 
+     */
+    public function showQuestionsWithStandards($ids)
+    {
+        return view('questions.index', [
+            'questions' => Question::latest('updated_at')->withStandards([$ids])->paginate(10),
+            'mpacs' => Standard::ofType('MPAC')->get(),             // For sidebar
+            'bigIdeas' => Standard::ofType('Big Idea')->get(),      // For sidebar
+        ]);
+    }
+
+    /**
+     * Show a single question
      *
      * @param  Question $question
      * @return \Illuminate\Http\Response
@@ -52,9 +79,9 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        $standards = Standard::all();
-
-        return view('questions.create', ['standards' => $standards]);
+        return view('questions.create', [
+            'standards_list' => Standard::all()->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id')
+        ]);
     }
 
     /**
@@ -87,7 +114,10 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        return view('questions.edit', ['question' => $question]);
+        return view('questions.edit', [
+            'question' => $question,
+            'standards_list' => Standard::all()->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id')
+        ]);
     }
 
     /**

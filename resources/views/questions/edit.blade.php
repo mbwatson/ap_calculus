@@ -70,7 +70,7 @@
             
             <br />
 
-            {!! Form::select('standard_ids[]', $standards->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id'), null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
+            {!! Form::select('standard_ids[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
 
             <br /><br />
             

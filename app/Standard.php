@@ -79,4 +79,13 @@ class Standard extends Model
         return $this->attributes['name'] . ': ' . $this->attributes['description'];
     }
 
+    /**
+     * Scope a query to include only those of a given type
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOfType($query, $type)
+    {
+        return $query->where('type', $type);
+    }
 }

@@ -119,6 +119,12 @@ class Question extends Model
         return $query;
     }
 
+    /**
+     * Retrieve all questions with standards overlapping with those in a given array
+     * 
+     * @param 
+     * @return 
+     */
     public function scopeWithStandards($query, $ids)
     {
         if ($ids) {
