@@ -92,3 +92,13 @@
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
 }
+
+/* Breadcrumbs */
+
+#breadcrumbs {
+	background-color: #008cba;
+	padding: 10px 20px;
+	color: #fff;
+	font-size: 125%;
+	font-weight: bold;
+}
