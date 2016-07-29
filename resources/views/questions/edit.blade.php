@@ -7,10 +7,23 @@
   var editor_config = {
     path_absolute : "/",
     selector: '#question-textarea',
-    plugins: 'advlist autolink image lists charmap',
-    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist| link image',
+    plugins: 'advlist autolink image lists charmap preview textpattern',
+    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image | preview',
     menubar: false,
     relative_urls: false,
+    textpattern_patterns: [
+      {start: '*', end: '*', format: 'italic'},
+      {start: '**', end: '**', format: 'bold'},
+      {start: '#', format: 'h1'},
+      {start: '##', format: 'h2'},
+      {start: '###', format: 'h3'},
+      {start: '####', format: 'h4'},
+      {start: '#####', format: 'h5'},
+      {start: '######', format: 'h6'},
+      {start: '1. ', cmd: 'InsertOrderedList'},
+      {start: '* ', cmd: 'InsertUnorderedList'},
+      {start: '- ', cmd: 'InsertUnorderedList'}
+    ],
     file_browser_callback : function(field_name, url, type, win) {
       var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
       var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;

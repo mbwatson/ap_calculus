@@ -42,6 +42,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ url('/account') }}"><i class="glyphicon glyphicon-user"></i>Profile</a></li>
                                     <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
+                                    <li><a href="{{ url('/account/notifications') }}"><i class="glyphicon glyphicon-bell"></i>Notifications</a></li>
                                     <li><a href="{{ url('/favorites') }}"><i class="glyphicon glyphicon-heart"></i>Favorites</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>

@@ -13,9 +13,15 @@ use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateQuestionRequest;
 use PDF;
+use View;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        View::share(['standards' => Standard::get()]);
+    }
+
     /**
      * Show list of questions
      *
@@ -25,7 +31,6 @@ class QuestionController extends Controller
     {
         return view('questions.index', [
             'questions' => Question::latest('created_at')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
-            'standards' => Standard::orderBy('name', 'asc')->get()
         ]);
     }
 
@@ -82,10 +87,7 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        return view('questions.edit', [
-            'question' => $question,
-            'standards' => Standard::all()
-        ]);
+        return view('questions.edit', ['question' => $question]);
     }
 
     /**

@@ -81,7 +81,6 @@ FORM .control-label {
 
 .panel {
 	border-radius: 5px;
-	padding-top: 15px;
 }
 
 .panel-heading {
@@ -102,4 +101,30 @@ FORM .control-label {
 
 .search-form input {
     border-radius: 3px;
+}
+
+/* Sidebar */
+
+.sidebar {
+	font-size: 85%;
+}
+
+.sidebar ul,
+.sidebar li {
+	list-style: none;
+	padding: 0 0 10px 0;
+	text-indent: -1em;
+}
+.sidebar li:before {
+  content: "+";
+  padding-right: 5px;
+}
+.sidebar ul li ul li {
+	list-style: none;
+	padding: 0 0 0 1em;
+	text-indent: -1em;
+}
+.sidebar ul li ul li:before {
+  content: "+";
+  padding-right: 5px;
 }

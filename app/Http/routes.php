@@ -40,6 +40,10 @@ Route::post('/account/update/avatar', [
 	'uses' => 'AccountController@update_avatar'
 ]);
 
+Route::get('/account/notifications', function() {
+	return redirect()->back();
+});
+
 Route::get('/favorites', function() {
 	return view('account.favorites', ['user' => Auth::user()]);
 });
