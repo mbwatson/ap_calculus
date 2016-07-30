@@ -109,6 +109,10 @@
 .breadcrumb li {
 	color: #eee;
 }
+.breadcrumb li a {
+	margin: 0 10px;
+	content: "--";
+}
 .breadcrumb a {
 	color: #fff;
 	font-weight: bold;

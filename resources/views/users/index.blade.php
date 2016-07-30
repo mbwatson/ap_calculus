@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('breadcrumbs', Breadcrumbs::render('users.index'))
+
 @section('content')
 
 <!-- User List -->

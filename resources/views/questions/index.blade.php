@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('breadcrumbs', Breadcrumbs::render('questions'))
+@section('breadcrumbs', Breadcrumbs::render('questions.index'))
 
 @section('content')
 

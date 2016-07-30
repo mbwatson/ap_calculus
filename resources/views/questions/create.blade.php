@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('breadcrumbs', Breadcrumbs::render('questions.create'))
+
 @section('header')
 <!-- TinyMCE -->
 <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
