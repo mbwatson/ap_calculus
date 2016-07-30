@@ -13,7 +13,7 @@
                     </button>
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        AP Calculus<small class="text-info">question forum</small>
+                        <strong>AP Calculus</strong><small class="text-info">question forum</small>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -43,7 +43,7 @@
                                     <li><a href="{{ url('/account') }}"><i class="glyphicon glyphicon-user"></i>Profile</a></li>
                                     <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
                                     <li><a href="{{ url('/account/notifications') }}"><i class="glyphicon glyphicon-bell"></i>Notifications</a></li>
-                                    <li><a href="{{ url('/questions/mine') }}"><i class="glyphicon glyphicon-comment"></i>My Questions</a></li>
+                                    <li><a href="#"><i class="glyphicon glyphicon-hourglass"></i>Recent Activity</a></li>
                                     <li><a href="{{ url('/favorites') }}"><i class="glyphicon glyphicon-heart"></i>Favorites</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
@@ -56,7 +56,6 @@
                         <div class="col-sm-offset-3 ">
                         <ul class="nav navbar-nav">
                             <!-- <li><a href="{{ url('/discussions') }}" ="disabled"><span class="glyphicon glyphicon-comment"></span>Discussions</a></li> -->
-                            <!-- <li class="navbar-link"><a href="{{ url('/standards') }}"><span class="glyphicon glyphicon-tags"></span>Curriculum Framework</a></li> -->
                             <li class="navbar-link dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     <span class="glyphicon glyphicon-tags"></span>Curriculum Framework <span class="caret"></span></a></span>
