@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+    protected $touches = array('question');
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +22,7 @@ class Comment extends Model
 	*/
     public function question()
     {
-    	return $this->belongsTo('App\Post');
+    	return $this->belongsTo('App\Question');
     }
 
     /**

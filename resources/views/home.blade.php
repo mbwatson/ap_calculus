@@ -62,10 +62,11 @@
                         <li>if so, MC question creation form should provide form inputs for responses/distractors (and possibly marking the correct one)</li>
                         <li>implement way to distinguish between calculator active and inactive questions</li>
                         <li>make profile public, optional</li>
-                        <li>Question ranking system +/- 1 buttons</li>
+                        <li>Question voting system +/- 1 buttons</li>
                         <li>simple way to "suggest" standards without having to write a comment? or is a comment better?</li>
                         <li>bootstrap breaking point for navbar--probably need to finalize navbar first</li>
                         <li>search: should be able to toggle between union and intersection of keywords/standards</li>
+                        <li>user activity log or just query and view</li>
                     </ul>
                 </div>
             </div>

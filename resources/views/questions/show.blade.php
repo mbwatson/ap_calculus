@@ -59,9 +59,9 @@
                 {{ ($question->created_at != $question->updated_at) ? ' (Edited ' . $question->updated_at->diffForHumans() . ')' : '' }}
                 <div class="pull-right">
                     <!-- Thumbs Up/Down -->
-                    <!-- <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a> -->
-                    <!-- <a href="#" title="-1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-bottom"></i></a> -->
-                    <!-- |  -->
+                    <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    <a href="#" title="-1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    | 
                     <!-- (Un)Favorite Button -->
                     @if ($question->favorites->contains(Auth::user()))
                         <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-primary"
