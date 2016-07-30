@@ -1,23 +1,26 @@
 .jumbotron {
 	background-color: #008cba;
 	padding: 10px;
-	color: #fff;
 	margin-bottom: 0;
 }
 
-.jumbotron .name {
-	color: #ccd;
-	font-weight: bold;
+.jumbotron .heading {
+	color: #eef;
+	margin-bottom: 5px;
 }
 
 .jumbotron .details {
 	color: #dde;
-	font-size: 95%;
+	font-size: 110%;
+}
+
+.jumbotron .details li {
+	padding: 5px 0;
 }
 
 .jumbotron .details * {
 	color: inherit;
-	font-size: inherit;
+	font-size: 100%;
 }
 
 .jumbotron .details blockquote {

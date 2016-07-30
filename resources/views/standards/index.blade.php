@@ -25,7 +25,7 @@
     </div>
 </div>
 <div class="jumbotron-toggler">
-    <a href="#" id="jumbotronToggler"><span class="glyphicon glyphicon-menu-up"></span></a>
+    <a href="#" id="jumbotronToggler"><span class="fa fa-btn fa-angle-double-up"></span></a>
 </div>
 
 <div class="container">
@@ -42,7 +42,7 @@
         <div class="col-xs-12">
             <h3><a href="{{ URL::to('standards/big-ideas') }}">Big Ideas</a></h3>
             The courses are organized around big ideas, which correspond to foundational concepts of calculus: 
-            <a href="#">limits</a>, <a href="#">derivatives</a>, <a href="#">integrals</a> and the <a href="#">Fundamental Theorem of Calculus</a>, and (for AP Calculus BC) <a href="#">series</a>.
+            limits, derivatives, integrals and the Fundamental Theorem of Calculus</a>, and (for AP Calculus BC) series.
         </div>
         <div class="col-xs-12 col-md-3">
             <h3>Enduring Understandings</h3> Within each big idea are enduring understandings. These are the long-term takeaways related to the big ideas that a student should have after exploring the content and skills. These understandings are expressed as generalizations that specify what a student will come to understand about the key concepts in each course. Enduring understandings are labeled to correspond with the appropriate big idea.

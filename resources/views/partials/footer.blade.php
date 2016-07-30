@@ -49,7 +49,7 @@
   $(document).ready(function(){
       $("#jumbotronToggler").click(function(){
           $(".details").slideToggle();
-          $("#jumbotronToggler > span").toggleClass('glyphicon-menu-up glyphicon-menu-down');
+          $("#jumbotronToggler > span").toggleClass('fa-angle-double-down fa-angle-double-up');
       });
   });
 </script>
