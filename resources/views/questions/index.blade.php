@@ -21,11 +21,8 @@
         <div class="col-xs-12 col-md-2 sidebar">
         
             <a class="btn btn-primary btn-block" href="{{ route('questions.create') }}">New Question</a>
-            <br />
             <a class="btn btn-info btn-block hidden-xs hidden-sm disabled" href="#">Filter Questions</a>
-            <br />
             <a class="btn btn-info btn-block hidden-xs hidden-sm disabled" href="{{ route('questions.popular') }}">Popular Questions</a>
-            <br />
             <a class="btn btn-info btn-block hidden-xs hidden-sm" href="{{ route('questions.mine') }}">My Questions</a>
             <br />
             <ul class="hidden-xs hidden-sm">

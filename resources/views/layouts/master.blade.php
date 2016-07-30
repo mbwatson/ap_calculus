@@ -21,13 +21,13 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/themes/yeti.min.css') }}">
 
   <!-- Custom Styling -->
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/classic/main.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/classic/nav.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/classic/user.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/classic/question.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/classic/comment.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/classic/standard.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/classic/comment.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/main.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/user.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/question.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/standard.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
 
 </head>
 <body id="app-layout">

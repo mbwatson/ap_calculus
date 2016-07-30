@@ -17,7 +17,7 @@
             </h2>
             <h2>
                 The tools and expertise provided by this community of experts make it simple to shape questions that
-                align with the <a href="{{ route('standards.index') }}">Curriculum Framework</a> defining the AP Calculus curriculum, as laid out by the CollegeBoard.
+                align with the Curriculum Framework defining the AP Calculus curriculum, as laid out by the CollegeBoard.
             </h2>
             <div class="text-center" style="padding: 25px;">
                 <a class="btn btn-primary btn-lg" href="{{ route('questions.index') }}" style="margin:0 25px">Browse the Questions</a>
