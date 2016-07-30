@@ -12,7 +12,7 @@ class QuestionsTableSeeder extends Seeder {
 				'id' => 1,
 				'title' => 'Power Series: Convergence & Error Bound',
 				'body' => 'The function $f$ is defined by the power series
-					$$f(x) = \sum_{n=0}^\infty\frac{(x-2)^n}{3^n(n+1)} = 1 + \frac{x-2}{3 \cdot 2} + \frac{(x-2)^2}{3^2\cdot 3} + \frac{(x-2)^3}{3^3\cdot 4} + \cdots  + \frac{(x-2)^n}{3^n(n+1)} + \cdots$$
+					$$f(x) = \sum_{n=0}^\infty\frac{(x-2)^n}{3^n(n+1)} = 1 + \frac{x-2}{3 \cdot 2} + \frac{(x-2)^2}{3^2\cdot 3} + \frac{(x-2)^3}{3^3\cdot 4} + \cdots  + \frac{(x-2)^n}{3^n(n+1)} + \cdots.$$
 
 (a) Determine the interval of convergence of the power series for $f$. Show the work that leads to your answer.
 
