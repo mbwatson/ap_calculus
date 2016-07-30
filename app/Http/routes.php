@@ -54,13 +54,14 @@ Route::resource('account', 'AccountController', [
 
 // Everything Else
 
-Route::get('standards/mpacs', function() {
-	return view('standards.mpacs', ['mpacs' => App\Standard::where('type','MPAC')->get()]);
-});
-Route::get('standards/big-ideas', function() {
-	return view('standards.big-ideas', ['bigideas' => App\Standard::where('type','Big Idea')->get()]);
-});
-
+Route::get('standards/mpacs', [
+	'uses' => 'StandardController@showMpacs',
+	'as' => 'standards.mpacs'
+]);
+Route::get('standards/big-ideas', [
+	'uses' => 'StandardController@showBigIdeas',
+	'as' => 'standards.big-ideas'
+]);
 Route::resource('standards', 'StandardController', [
 	'only' => ['index', 'show']
 ]);

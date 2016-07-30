@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
-@section('content')
+@section('breadcrumbs', Breadcrumbs::render('mpacs'))
 
+@section('content')
 <div class="jumbotron">
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 name">
@@ -25,5 +26,4 @@
     </div>
 
 </div>
-
 @endsection

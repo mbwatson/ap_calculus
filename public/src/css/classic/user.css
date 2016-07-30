@@ -1,0 +1,43 @@
+.user-card {
+	text-align: center;
+}
+
+.user-card .avatar {
+	width: 50px;
+	height: 50px;
+	border: 5px solid #333;
+	border-radius: 50%;
+/*
+	max-width: 100%;
+	height: auto;
+*/
+}
+
+.active.user-card .username:after {
+	font-family: FontAwesome;
+	content: '\f058';
+	margin-left: 4px;
+}
+
+/*
+.active.user-card:before {
+	font-family: FontAwesome;
+	content: '\f058';
+	font-size: 120%;
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	left: 75%;
+}
+*/
+
+.profile .avatar {
+	width: 150px;
+	height: 150px;
+	border-width: 10px;
+}
+
+.profile header {
+	font-size: 300%;
+	font-weight: bolder;
+}

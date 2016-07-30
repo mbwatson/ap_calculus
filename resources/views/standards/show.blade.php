@@ -1,11 +1,10 @@
 @extends('layouts.master')
 
-@section('content')
+@section('breadcrumbs', Breadcrumbs::render('standard', $standard))
 
+@section('content')
 <div class="jumbotron">
-    
     <!-- Standard & its Description -->
-    
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 name">
             <h1>{{ $standard->name }}</h1>
@@ -24,7 +23,6 @@
             @endif
         </div>
     </div>
-
 </div>
 
 <div class="container">

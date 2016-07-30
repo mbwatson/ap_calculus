@@ -57,4 +57,13 @@ class StandardController extends Controller
         return redirect()->back();
     }
 
+    public function showMpacs() {
+        return view('standards.mpacs', [ 'mpacs' => Standard::ofType('MPAC')->get() ]);
+    }
+
+    public function showBigIdeas()
+    {
+        return view('standards.big-ideas', [ 'bigideas' => Standard::ofType('Big Idea')->get() ]);
+    }
+
 }

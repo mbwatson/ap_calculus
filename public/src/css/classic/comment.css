@@ -1,0 +1,27 @@
+/* Comments List */
+
+.comment {
+	/*padding-left: 10px;*/
+	/*border-left: 1px solid #ccd;*/
+	margin-bottom: 30px;
+}
+
+.comment .user-info {
+	text-align: center;
+}
+
+.comment .user-info .avatar {
+	width: 75px;
+	height: 75px;
+	border: 6px solid #286090;
+	border-radius:50%;
+}
+
+.comment .body {
+}
+
+.comment .details {
+	color: #aaa;
+	font-size: smaller;
+}
+
