@@ -74,9 +74,14 @@ Route::group(['middleware' => 'auth'], function() {
 	]);
 
 	// Question Routes
+
 	Route::get('questions/popular', [
 		'uses' => 'QuestionController@showPopularQuestions',
 		'as' => 'questions.popular'
+	]);
+	Route::get('questions/mine', [
+		'uses' => 'QuestionController@showMyQuestions',
+		'as' => 'questions.mine'
 	]);
 	Route::get('questions/standards/{ids}', [
 		'uses' => 'QuestionController@showQuestionsWithStandards',

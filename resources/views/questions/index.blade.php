@@ -26,6 +26,8 @@
             <br />
             <a class="btn btn-info btn-block hidden-xs hidden-sm disabled" href="{{ route('questions.popular') }}">Popular Questions</a>
             <br />
+            <a class="btn btn-info btn-block hidden-xs hidden-sm" href="{{ route('questions.mine') }}">My Questions</a>
+            <br />
             <ul class="hidden-xs hidden-sm">
                 <h4>MPACs</h4>
                 @foreach ($mpacs as $mpac)

@@ -207,4 +207,13 @@ class QuestionController extends Controller
     {
         return view('questions.showprintable', ['question' => $question]);
     }
+
+    public function showMyQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Auth::user()->questions()->paginate(10),
+            'mpacs' => Standard::ofType('MPAC')->get(),             // For sidebar
+            'bigIdeas' => Standard::ofType('Big Idea')->get(),      // For sidebar
+        ]);
+    }
 }

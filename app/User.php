@@ -6,6 +6,7 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Cache;
+use App\User;
 
 class User extends Authenticatable
 {
