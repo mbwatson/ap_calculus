@@ -1,0 +1,41 @@
+.jumbotron {
+	background-color: #008cba;
+	padding: 10px;
+	color: #fff;
+	margin-bottom: 0;
+}
+
+.jumbotron .name {
+	color: #ccd;
+	font-weight: bold;
+}
+
+.jumbotron .details {
+	color: #dde;
+	font-size: 95%;
+}
+
+.jumbotron .details * {
+	color: inherit;
+	font-size: inherit;
+}
+
+.jumbotron .details blockquote {
+	border: 0;
+	background-color: #109cca;
+	border-radius: 5px;
+}
+
+.jumbotron-toggler {
+	background-color: #008cba;
+	text-align: center;
+}
+
+.jumbotron-toggler a {
+	color: #fff;
+	display: block;
+}
+
+.jumbotron-toggler a:hover {
+	background-color: #109cca
+}

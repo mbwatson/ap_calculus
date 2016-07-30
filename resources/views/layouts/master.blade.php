@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>AP Calculus Question Forum</title>
+  <title>@yield('title', 'AP Calculus Question Forum')</title>
 
   <!-- Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -23,6 +23,7 @@
   <!-- Custom Styling -->
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/main.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/jumbotron.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/user.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/question.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
@@ -31,13 +32,18 @@
 
 </head>
 <body id="app-layout">
+
   @include('partials.header')
-  @yield('header')
+  
   @yield('breadcrumbs')
-  @yield('jumbotron')
+
   @include('partials.errors')
+
   @yield('content')
+
   @include('partials.footer')
+
   @yield('footer')
+
 </body>
 </html>

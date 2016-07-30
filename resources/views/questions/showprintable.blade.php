@@ -1,5 +1,7 @@
 @extends('layouts.printable')
 
+@section('title', $question->title)
+
 @section('content')
 
 <div class="container">

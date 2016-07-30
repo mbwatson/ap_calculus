@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', $question->title)
+
 @section('breadcrumbs', Breadcrumbs::render('questions.show', $question))
 
 @section('content')
@@ -56,7 +58,6 @@
             <div class="panel-footer details">
                 <span class="glyphicon glyphicon-calendar"></span>
                 Posted {{ $question->created_at->diffForHumans() }}
-                {{ ($question->created_at != $question->updated_at) ? ' (Edited ' . $question->updated_at->diffForHumans() . ')' : '' }}
                 <div class="pull-right">
                     <!-- Thumbs Up/Down -->
                     <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a>

@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Users / ' . $user->name)
+
 @section('breadcrumbs', Breadcrumbs::render('users.show', $user))
 
 @section('content')

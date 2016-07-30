@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Questions / Edit')
+
 @section('breadcrumbs', Breadcrumbs::render('questions.edit', $question))
 
 @section('header')

@@ -19,7 +19,7 @@
             </div>
             <p class="details">
                 <span class="glyphicon glyphicon-calendar"></span>Posted {{ $question->created_at->diffForHumans() }}
-                {{ ($question->created_at == $question->updated_at) ? '' : ' (Edited ' . $question->updated_at->diffForHumans() . ')'}}
+                {{ ($question->created_at == $question->updated_at) ? '' : ' (Updated ' . $question->updated_at->diffForHumans() . ')'}}
             </p>
         </div>
         <div class="col-md-1 hidden-sm hidden-xs">
