@@ -18,6 +18,7 @@ Route::auth();
 // Homepage Route
 
 Route::get('/', function () { return view('home'); });
+Route::get('/todo', function () { return view('todo'); });
 
 // Account routes // Auth required
 
