@@ -67,6 +67,7 @@
                         <li>bootstrap breaking point for navbar--probably need to finalize navbar first</li>
                         <li>search: should be able to toggle between union and intersection of keywords/standards</li>
                         <li>user activity log or just query and view</li>
+                        <li>slugs, esp. for standards</li>
                     </ul>
                 </div>
             </div>
