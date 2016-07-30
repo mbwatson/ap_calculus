@@ -43,3 +43,13 @@
 <script type="text/javascript">
   $('div.alert-success').delay(3000).slideUp(200);
 </script>
+
+<!-- Jumbotron Toggler -->
+<script>
+  $(document).ready(function(){
+      $("#jumbotronToggler").click(function(){
+          $(".details").slideToggle();
+          $("#jumbotronToggler > span").toggleClass('glyphicon-menu-up glyphicon-menu-down');
+      });
+  });
+</script>

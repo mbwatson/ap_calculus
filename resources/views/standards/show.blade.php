@@ -24,6 +24,9 @@
         </div>
     </div>
 </div>
+<div class="jumbotron-toggler">
+    <a href="#" id="jumbotronToggler"><span class="glyphicon glyphicon-menu-up"></span></a>
+</div>
 
 <div class="container">
 
