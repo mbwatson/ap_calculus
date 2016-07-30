@@ -1,6 +1,6 @@
 body {
     color: #666;
-    background-color: #fff;
+    background-color: #f5f5f1;
     padding-bottom: 20px;
 }
 
@@ -11,7 +11,7 @@ body {
 /* Jumbotron*/
 
 .jumbotron {
-	background-color: #fff;
+	background-color: #008cba;
 	padding: 60px 30px;
 	color: #fff;
 	margin-bottom: 0;
@@ -43,16 +43,16 @@ body {
 
 .jumbotron .details blockquote {
 	border: 0;
-	background-color: #fff;
+	background-color: #109cca;
 	border-radius: 5px;
 }
 
 .jumbotron-1 {
-	background-color: #fff;
+	background-color: #008cba;
 }
 
 .jumbotron-2 {
-	background-color: #fff;
+	background-color: #60d3f9;
 
 }
 

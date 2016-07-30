@@ -14,17 +14,17 @@
 }
 
 .navbar-links {
-	border-top: 1px solid #fff;
+	border-top: 1px solid #3c3c3c;
 	/*padding: 0 15%;*/
 }
 
 .navbar-links ul {
-	background-color: #fff;
+	background-color: #3c3c3c;
 	text-align: center;
 }
 
 .navbar-link {
-	background-color: #fff;
+	background-color: #333;
 	margin-right: 1px;
 }
 
@@ -67,7 +67,7 @@
 	position: absolute;
 	top: 12px;
 	left: -50px;
-	border: 3px solid #fff;
+	border: 3px solid #333;
 	border-radius: 50%;
 }
 
@@ -96,7 +96,7 @@
 /* Breadcrumbs */
 
 .breadcrumb {
-	background-color: #fff;
+	background-color: #000;
 	padding: 30px 20px;
 	color: #fff;
 	font-size: 85%;

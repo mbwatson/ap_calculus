@@ -1,14 +1,13 @@
 @extends('layouts.master')
 
-@section('content')
-
 @section('breadcrumbs', Breadcrumbs::render('standards'))
 
+@section('content')
 <div class="jumbotron">
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 name">
-            <h1>AP Calculus AB and AP Calculus BC</h1>
-            <h2>Curriculum Framework</h2>
+            <h1>Curriculum Framework</h1>
+            <h2>for AP Calculus AB and AP Calculus BC</h2>
         </div>
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
                 The AP Calculus AB and AP Calculus BC Curriculum Framework specifies the curriculum — what students must know, be able to do, and understand — for both courses.<br /><br />
@@ -48,5 +47,4 @@
     </div>
 
 </div>
-
 @endsection

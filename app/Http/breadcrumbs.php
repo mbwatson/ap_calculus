@@ -3,7 +3,7 @@
 // Standards
 
 Breadcrumbs::register('standards', function($breadcrumbs) {
-    $breadcrumbs->push('Standards', route('standards.index'));
+    $breadcrumbs->push('Curriculum Framework', route('standards.index'));
 });
 
 Breadcrumbs::register('mpacs', function($breadcrumbs) {
