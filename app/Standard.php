@@ -27,11 +27,12 @@ class Standard extends Model
             return $this->belongsToMany('App\Question')->orderBy('created_at', 'desc');
         }
         if ($this->type == "Big Idea") {
-            $standard_ids = Standard::where('parent_id', $this->id)->lists('id');
+            $eu_ids = Standard::where('parent_id', $this->id)->lists('id');
+            $lo_ids = Standard::whereIn('parent_id', $eu_ids)->lists('id');
             $questions = Question::select('questions.*', 'standards.parent_id')
                                  ->join('question_standard', 'question_standard.question_id', '=', 'questions.id')
                                  ->join('standards', 'standards.id', '=', 'question_standard.standard_id')
-                                 ->whereIn('question_standard.standard_id', $standard_ids)
+                                 ->whereIn('question_standard.standard_id', $lo_ids)
                                  ->distinct();
             return $questions;
         }
