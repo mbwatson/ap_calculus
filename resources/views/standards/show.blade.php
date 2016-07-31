@@ -41,7 +41,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <section class="questions">
-                        @foreach ($standard->questions as $question)
+                        @foreach ($standard->questions()->get() as $question)
                             @include('partials.question', $question)
                         @endforeach
                     </section>
