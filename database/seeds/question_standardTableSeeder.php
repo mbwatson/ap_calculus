@@ -67,6 +67,9 @@ class question_standardTableSeeder extends Seeder {
 			[ 'question_id' => 8, 'standard_id' => 52 ],
 			[ 'question_id' => 8, 'standard_id' => 54 ],
 			[ 'question_id' => 8, 'standard_id' => 57 ],
+			[ 'question_id' => 9, 'standard_id' => 52 ],
+			[ 'question_id' => 9, 'standard_id' => 1 ],
+			[ 'question_id' => 9, 'standard_id' => 2 ],
 		);
 
 		DB::table('question_standard')->insert($seeds);

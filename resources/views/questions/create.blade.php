@@ -64,16 +64,44 @@
     <div class="row">
         <div class="col-xs-12">
             {!! Form::open(['route' => 'questions.store', 'files' => 'true', 'class' => 'question-form']) !!}
-            {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
-            {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
+                
+                <br />
 
-            <br />
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="question_type" autocomplete="off" value="multiplechoice" checked> <span class="fa fa-list"></span> Multiple Choice
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="question_type" autocomplete="off" value="freeresponse"> <span class="fa fa-pencil-square-o"></span> Free Response
+                    </label>
+                </div>
 
-            <div class="form-group">
-                {!! Form::select('standards[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
-            </div>
+                <br /><br />
 
-            {!! Form::submit('Post Question', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
+                {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
+
+                <br />
+
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="calulator" autocomplete="off" value="active" checked> <span class="fa fa-plus"></span> Calculator Active
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="calulator" autocomplete="off" value="inactive"> <span class="fa fa-minus"></span> Calculator Inactive
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="calulator" autocomplete="off" value="neutral"> <span class="fa fa-circle-o"></span> Calculator Neutral
+                    </label>
+                </div>
+
+                <br /><br />
+
+                <div class="form-group">
+                    {!! Form::select('standards[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
+                </div>
+
+                {!! Form::submit('Post Question', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>

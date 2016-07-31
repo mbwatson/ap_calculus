@@ -14,6 +14,8 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
+            $table->tinyInteger('type'); // 0: mc; 1: fr
+            $table->tinyInteger('calculator'); // -1: inactive; 0: neutral; 1: active
             $table->text('title');
             $table->text('body');
             $table->integer('user_id');
