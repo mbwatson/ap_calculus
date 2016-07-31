@@ -2,25 +2,25 @@
 
 // Standards
 
-Breadcrumbs::register('standards', function($breadcrumbs) {
+Breadcrumbs::register('standards.index', function($breadcrumbs) {
     $breadcrumbs->push('Curriculum Framework', route('standards.index'));
 });
 
 Breadcrumbs::register('mpacs', function($breadcrumbs) {
-	$breadcrumbs->parent('standards');
+	$breadcrumbs->parent('standards.index');
 	$breadcrumbs->push('MPACs', route('standards.mpacs'));
 });
 
 Breadcrumbs::register('big-ideas', function($breadcrumbs) {
-	$breadcrumbs->parent('standards');
+	$breadcrumbs->parent('standards.index');
 	$breadcrumbs->push('Big Ideas', route('standards.big-ideas'));
 });
 
-Breadcrumbs::register('standard', function($breadcrumbs, $standard) {
+Breadcrumbs::register('standards.show', function($breadcrumbs, $standard) {
 	if ($standard->parent) {
-		$breadcrumbs->parent('standard', $standard->parent);
+		$breadcrumbs->parent('standards.show', $standard->parent);
 	} else {
-		$breadcrumbs->parent('standards');
+		$breadcrumbs->parent('standards.index');
 		if ($standard->type == "MPAC") {
 			$breadcrumbs->push('MPACs', route('standards.mpacs'));
 		} else {

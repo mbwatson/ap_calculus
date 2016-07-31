@@ -2,7 +2,7 @@
 
 @section('title', 'Standards / ' . $standard->name)
 
-@section('breadcrumbs', Breadcrumbs::render('standard', $standard))
+@section('breadcrumbs', Breadcrumbs::render('standards.show', $standard))
 
 @section('content')
 <div class="jumbotron">

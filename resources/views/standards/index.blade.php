@@ -2,7 +2,7 @@
 
 @section('title', 'Standards')
 
-@section('breadcrumbs', Breadcrumbs::render('standards'))
+@section('breadcrumbs', Breadcrumbs::render('standards.index'))
 
 @section('content')
 <div class="jumbotron">
