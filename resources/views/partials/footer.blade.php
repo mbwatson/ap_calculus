@@ -48,7 +48,7 @@
 <script>
   $(document).ready(function(){
       $("#jumbotronToggler").click(function(){
-          $(".details").slideToggle();
+          $(".jumbotron .details").slideToggle();
           $("#jumbotronToggler > span").toggleClass('fa-angle-double-down fa-angle-double-up');
       });
   });

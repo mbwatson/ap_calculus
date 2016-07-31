@@ -7,20 +7,22 @@
 @section('content')
 
 <div class="jumbotron">
-    <div class="row profile">
-        <div class="col-md-3 text-right">
-            <img class="avatar" src="{{ url('/') }}/avatars/{{ $user->avatar }}">
-        </div>
-        <div class="col-md-9">
-            <div class="row heading">
-                <h1>{{ $user->name }}</h1><br /><br />
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-2">
+                <img class="avatar" src="{{ url('/') }}/avatars/{{ $user->avatar }}">
             </div>
-            <div class="row details">
-                <div><span class="glyphicon glyphicon-sunglasses"></span>A.K.A. {{ ($user->first_name || $user->last_name) ? $user->first_name . ' ' . $user->last_name : '' }}</div>
-                <div><span class="glyphicon glyphicon-envelope"></span>{{ $user->email }}</div>
-                <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
-                <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
-                <div><span class="glyphicon glyphicon-user"></span>{{ $user->bio }}</div>
+            <div class="col-md-10">
+                <div class="row heading">
+                    <h1>{{ $user->name }}</h1><br /><br />
+                </div>
+                <div class="row details">
+                    <div><span class="glyphicon glyphicon-sunglasses"></span>A.K.A. {{ ($user->first_name || $user->last_name) ? $user->first_name . ' ' . $user->last_name : '' }}</div>
+                    <div><span class="glyphicon glyphicon-envelope"></span>{{ $user->email }}</div>
+                    <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
+                    <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
+                    <div><span class="glyphicon glyphicon-user"></span>{{ $user->bio }}</div>
+                </div>
             </div>
         </div>
     </div>

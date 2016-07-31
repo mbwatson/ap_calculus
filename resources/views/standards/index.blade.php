@@ -7,11 +7,11 @@
 @section('content')
 <div class="jumbotron">
     <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 heading">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 heading">
             <h1>Curriculum Framework</h1>
             <h2>for AP Calculus AB and AP Calculus BC</h2>
         </div>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 details">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 details">
             <p>
                 The AP Calculus AB and AP Calculus BC Curriculum Framework specifies the curriculum — what students must know, be able to do, and understand — for both courses.
             </p>
