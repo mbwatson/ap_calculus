@@ -7,15 +7,13 @@
             <div class="title">
                 <a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a>
             </div>
-            <div class="row">
-                <div class="col-md-10 standards">
-                    <b>MPACs:</b>
-                    @include('partials.list-standards', ['standards' => $question->mpacs])
-                </div>
-                <div class="col-md-10 standards">
-                    <b>Learning Objectives:</b>
-                    @include('partials.list-standards', ['standards' => $question->learningObjectives])
-                </div>
+            <div class="standards">
+                <b>MPACs:</b>
+                @include('partials.list-standards', ['standards' => $question->mpacs])
+            </div>
+            <div class="standards">
+                <b>Learning Objectives:</b>
+                @include('partials.list-standards', ['standards' => $question->learningObjectives])
             </div>
             <p class="details">
                 <span class="glyphicon glyphicon-calendar"></span>Posted {{ $question->created_at->diffForHumans() }}
