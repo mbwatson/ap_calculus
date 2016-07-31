@@ -16,7 +16,7 @@
                 {{ $question->title }}
                 <div class="btn-group pull-right">
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="question-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary btn-xs dropdown-toggle" type="button" id="question-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="caret"></span>
                         </button>
                         <div class="dropdown-menu pull-right" aria-labelledby="question-dropdown">
@@ -43,11 +43,11 @@
                         {!! Markdown::convertToHtml($question->body) !!}
                         <hr />
                         <div class="row">
-                            <div class="col-lg-5 col-sm-10 standards">
+                            <div class="col-sm-12 col-lg-6 standards">
                                 <b>MPACs:</b>
                                 @include('partials.list-standards', ['standards' => $question->mpacs])
                             </div>
-                            <div class="col-lg-5 col-sm-10 standards">
+                            <div class="col-sm-12 col-lg-6 standards">
                                 <b>Learning Objectives:</b>
                                 @include('partials.list-standards', ['standards' => $question->learningObjectives])
                             </div>
