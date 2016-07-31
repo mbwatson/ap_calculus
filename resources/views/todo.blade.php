@@ -24,9 +24,9 @@
                         <li>search: toggle between union and intersection of keywords/standards</li>
                         <li>slugs, esp. for standards</li>
                         <li>figure out what more should be in the sidebar, or if it should exist at all</li>
-                        <li>aid inexperienced $\LaTeX$ users</li>
-                        <li>page title defined in controller?</li>
-                        <li>GET request filtered in one controller vs. (now) having multiple controllers for each filter option</li>
+                        <li>assistance for inexperienced $\LaTeX$ users</li>
+                        <li>ElasticSearch</li>
+                        <li>improve flash messages, possibly with Flashy</li>
                     </ul>
                 </div>
             </div>

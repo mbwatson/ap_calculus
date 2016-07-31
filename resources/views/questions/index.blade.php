@@ -7,11 +7,6 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-2">
-            <h1>AP Calculus Questions</h1>
-        </div>
-    </div>
 
     <!-- Question List -->
     
@@ -44,9 +39,15 @@
         <div class="col-xs-12 col-md-10">
             <div class="panel panel-default">
                 <div class="panel-body questions">
-                    @foreach ($questions as $question)
-                        @include('partials.question', $question)
-                    @endforeach
+                    @if ($questions->count() > 0)
+                        @foreach ($questions as $question)
+                            @include('partials.question', $question)
+                        @endforeach
+                    @else
+                        <center>
+                            There are no relevant questions to display at this time.
+                        </center>
+                    @endif
                 </div>
             </div>
             <center>{{ $questions->links() }}</center>

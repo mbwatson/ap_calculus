@@ -35,14 +35,12 @@
 
     <!-- User's Activity -->
 
-    <h1>Recent Activity</h1>
     <div class="activities">
         @foreach ($activities as $activity)
             <div class="row activity">
                 <div class="col-xs-2 text-center date">
                     <h5>
-                        {{ $activity->created_at->toFormattedDateString() }}<br /><br />
-                        <i class="glyphicon glyphicon-calendar"></i>
+                        <i class="glyphicon glyphicon-calendar"></i> {{ $activity->created_at->toFormattedDateString() }}<br /><br />
                     </h5>
                 </div>
                 <div class="col-xs-9 col-xs-offset-1 details">

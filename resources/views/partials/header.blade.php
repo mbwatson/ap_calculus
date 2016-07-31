@@ -50,7 +50,6 @@
                                     <li><a href="{{ url('/account') }}"><i class="glyphicon glyphicon-user"></i>Profile</a></li>
                                     <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
                                     <li><a href="{{ url('/account/notifications') }}"><i class="glyphicon glyphicon-bell"></i>Notifications</a></li>
-                                    <li><a href="#"><i class="glyphicon glyphicon-hourglass"></i>Recent Activity</a></li>
                                     <li><a href="{{ url('/favorites') }}"><i class="glyphicon glyphicon-heart"></i>Favorites</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
@@ -74,8 +73,10 @@
                                 </ul>
                             </li>
                             <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
-                            <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
-                            <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="fa fa-btn fa-list"></span>To Do List</a></li>
+                            @if (Auth::check() && Auth::user()->admin)
+                                <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
+                                <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="fa fa-btn fa-list"></span>To Do List</a></li>
+                            @endif
                         </ul>
                         </div>
                     </div>
