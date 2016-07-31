@@ -105,16 +105,25 @@
 	border-width: 0;
 
 }
-.breadcrumb li.active,
-.breadcrumb li {
-	color: #eee;
+
+.breadcrumb:before {
+	content: ">";
 }
+
+.breadcrumb li.active {
+	color: #fff;
+}
+
 .breadcrumb li a {
-	margin: 0 10px;
-	content: "--";
-}
-.breadcrumb a {
 	color: #fff;
 	font-weight: bold;
 	cursor: hand;
+	text-decoration: none;
+	padding: 3px 5px;
+	border-radius: 5px;
+}
+
+.breadcrumb li a:hover {
+	background-color: #eee;
+	color: #666;
 }
