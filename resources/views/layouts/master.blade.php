@@ -36,6 +36,8 @@
 
   @include('partials.header')
   
+  @yield('header')
+
   @yield('breadcrumbs')
 
   @include('partials.errors')
