@@ -106,10 +106,6 @@
 
 }
 
-.breadcrumb:before {
-	content: ">";
-}
-
 .breadcrumb li.active {
 	color: #fff;
 }
