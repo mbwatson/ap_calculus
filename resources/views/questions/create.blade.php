@@ -68,11 +68,11 @@
                 <br />
 
                 <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary active">
-                        <input type="radio" name="question_type" autocomplete="off" value="multiplechoice" checked> <span class="fa fa-list"></span> Multiple Choice
+                    <label class="btn btn-primary">
+                        <input type="radio" name="type" autocomplete="off" value="1"> <span class="fa fa-pencil-square-o"></span> Free Response
                     </label>
                     <label class="btn btn-primary">
-                        <input type="radio" name="question_type" autocomplete="off" value="freeresponse"> <span class="fa fa-pencil-square-o"></span> Free Response
+                        <input type="radio" name="type" autocomplete="off" value="2"> <span class="fa fa-list"></span> Multiple Choice
                     </label>
                 </div>
 
@@ -84,14 +84,14 @@
                 <br />
 
                 <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary active">
-                        <input type="radio" name="calulator" autocomplete="off" value="active" checked> <span class="fa fa-plus"></span> Calculator Active
+                    <label class="btn btn-primary">
+                        <input type="radio" name="calculator" autocomplete="off" value="1"> <span class="fa fa-plus"></span> Calculator Active
                     </label>
                     <label class="btn btn-primary">
-                        <input type="radio" name="calulator" autocomplete="off" value="inactive"> <span class="fa fa-minus"></span> Calculator Inactive
+                        <input type="radio" name="calculator" autocomplete="off" value="-1"> <span class="fa fa-minus"></span> Calculator Inactive
                     </label>
                     <label class="btn btn-primary">
-                        <input type="radio" name="calulator" autocomplete="off" value="neutral"> <span class="fa fa-circle-o"></span> Calculator Neutral
+                        <input type="radio" name="calculator" autocomplete="off" value="0"> <span class="fa fa-circle-o"></span> Calculator Neutral
                     </label>
                 </div>
 

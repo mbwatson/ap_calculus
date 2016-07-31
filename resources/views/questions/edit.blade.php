@@ -69,10 +69,37 @@
                 'route' => ['questions.update', $question->id],
                 'class' => 'question-form'
             ]) !!}
+            <br />
+
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary {{ $question->type == 'Free Response' ? 'active' : ''}}">
+                    <input type="radio" name="type" autocomplete="off" value="1"  {{ $question->type == 'Free Response' ? 'checked' : ''}}> <span class="fa fa-pencil-square-o"></span> Free Response
+                </label>
+                <label class="btn btn-primary {{ $question->type == 'Multiple Choice' ? 'active' : ''}}">
+                    <input type="radio" name="type" autocomplete="off" value="2" {{ $question->type == 'Multiple Choice' ? 'checked' : ''}}> <span class="fa fa-list"></span> Multiple Choice
+                </label>
+            </div>
+
+            <br /><br />
+
             {!! Form::text('title', null, ['class' => 'form-control title']) !!}
             {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body']) !!}
             
             <br />
+
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary {{ $question->calculator == 'Active' ? 'active' : ''}}">
+                    <input type="radio" name="calculator" autocomplete="off" value="1" {{ $question->calculator == 'Active' ? 'checked' : ''}}> <span class="fa fa-plus"></span> Calculator Active
+                </label>
+                <label class="btn btn-primary {{ $question->calculator == 'Inactive' ? 'active' : ''}}">
+                    <input type="radio" name="calculator" autocomplete="off" value="-1" {{ $question->calculator == 'Inactive' ? 'checked' : ''}}> <span class="fa fa-minus"></span> Calculator Inactive
+                </label>
+                <label class="btn btn-primary {{ $question->calculator == 'Neutral' ? 'active' : ''}}">
+                    <input type="radio" name="calculator" autocomplete="off" value="0" {{ $question->calculator == 'Neutral' ? 'checked' : ''}}> <span class="fa fa-circle-o"></span> Calculator Neutral
+                </label>
+            </div>
+
+            <br /><br />
 
             {!! Form::select('standard_ids[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
 

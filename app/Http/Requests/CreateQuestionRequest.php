@@ -30,7 +30,9 @@ class CreateQuestionRequest extends Request
         return [
             'title' => 'required|max:50',
             'body' => 'required|max:2500',
-            'standards' => 'required'
+            'standards' => 'required',
+            'type' => 'required',
+            'calculator' => 'required'
         ];
     }
 }

@@ -63,6 +63,8 @@
             <div class="panel-footer details">
                 <span class="glyphicon glyphicon-calendar"></span>
                 Posted {{ $question->created_at->diffForHumans() }}
+                | Calculator {{ $question->calculator }}
+                | {{ $question->type }}
                 <div class="pull-right">
                     <!-- Thumbs Up/Down -->
                     <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a>

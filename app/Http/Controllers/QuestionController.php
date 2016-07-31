@@ -30,9 +30,43 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questions.index', [
-            'questions' => Question::latest('created_at')->paginate(10), // ... ->get() or ->paginate(N) or ->simplePaginate(N)
-            'mpacs' => Standard::ofType('MPAC')->get(),             // For sidebar
-            'bigIdeas' => Standard::ofType('Big Idea')->get(),      // For sidebar
+            'questions' => Question::latest('created_at')->paginate(10)
+        ]);
+    }
+
+    /**
+     * Show list of calculator active questions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showCalculatorActiveQuestions()
+    {
+        return view('questions.index', [
+            'questions' => Question::where('calculator', 1)->paginate(10)
+        ]);
+    }
+
+    /**
+     * Show list of calculator inactive questions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showCalculatorInactiveQuestions()
+    {
+        return view('questions.index', [
+            'questions' => Question::where('calculator', -1)->paginate(10)
+        ]);
+    }
+
+    /**
+     * Show list of calculator neutral questions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showCalculatorNeutralQuestions()
+    {
+        return view('questions.index', [
+            'questions' => Question::where('calculator', 0)->paginate(10)
         ]);
     }
 
@@ -55,9 +89,7 @@ class QuestionController extends Controller
     public function showQuestionsWithStandards($ids)
     {
         return view('questions.index', [
-            'questions' => Question::latest('updated_at')->withStandards([$ids])->paginate(10),
-            'mpacs' => Standard::ofType('MPAC')->get(),             // For sidebar
-            'bigIdeas' => Standard::ofType('Big Idea')->get(),      // For sidebar
+            'questions' => Question::latest('updated_at')->withStandards([$ids])->paginate(10)
         ]);
     }
 
@@ -99,6 +131,8 @@ class QuestionController extends Controller
         $question = new Question;
         $question->title = $request['title'];
         $question->body = $request['body'];
+        $question->type = $request['type'];
+        $question->calculator = $request['calculator'];
         $request->user()->questions()->save($question);
 
         $question->standards()->sync($request->input('standards'));
@@ -134,12 +168,16 @@ class QuestionController extends Controller
         $this->validate($request, [
             'title' => 'required|max:50',
             'body' => 'required|max:2500',
-            'standard_ids' => 'required'
+            'standard_ids' => 'required',
+            'type' => 'required',
+            'calculator' => 'required'
         ]);
 
         // Question is valid; store in database
         $question->title = $request['title'];
         $question->body = $request['body'];
+        $question->type = $request['type'];
+        $question->calculator = $request['calculator'];
         $question->save();
         
         $question->standards()->sync($request->input('standard_ids'));

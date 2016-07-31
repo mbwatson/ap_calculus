@@ -136,4 +136,37 @@ class Question extends Model
         return $query;
     }
 
+    protected $calc = [
+        -1 => 'Inactive',
+        0 => 'Neutral',
+        1 => 'Active'
+    ];
+    
+    /**
+     * 
+     * 
+     * @param 
+     * @return 
+     */
+    public function getCalculatorAttribute($value)
+    {
+        return $this->calc[$value];
+    }
+
+    protected $types = [
+        1 => 'Free Response',
+        2 => 'Multiple Choice'
+    ];
+
+    /**
+     * 
+     * 
+     * @param 
+     * @return 
+     */
+    public function getTypeAttribute($value)
+    {
+        return $this->types[$value];
+    }
+
 }

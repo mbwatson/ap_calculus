@@ -37,7 +37,7 @@
             <div class="panel panel-default">
                 <div class="panel-body questions">
                     <ul>
-                        @foreach (App\Question::take(3)->get() as $question)
+                        @foreach (App\Question::take(3)->orderBy('created_at', 'desc')->get() as $question)
                             @include('partials.question', $question)
                         @endforeach
                     </ul>

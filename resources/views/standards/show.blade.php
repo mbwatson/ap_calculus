@@ -32,9 +32,7 @@
 
 <div class="container">
 
-    <h1>
-        Questions Addressing {{ $standard->name }}
-    </h1>
+    <h1>Questions Addressing {{ $standard->name }}</h1>
 
     <!-- Questions List -->
 
@@ -43,7 +41,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <section class="questions">
-                        @foreach ($standard->questions()->get() as $question)
+                        @foreach ($standard->questions as $question)
                             @include('partials.question', $question)
                         @endforeach
                     </section>

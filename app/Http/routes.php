@@ -76,6 +76,18 @@ Route::group(['middleware' => 'auth'], function() {
 
 	// Question Routes
 
+	Route::get('questions/calculator=active', [
+		'uses' => 'QuestionController@showCalculatorActiveQuestions',
+		'as' => 'questions.calculator.active'
+	]);
+	Route::get('questions/calculator=inactive', [
+		'uses' => 'QuestionController@showCalculatorInactiveQuestions',
+		'as' => 'questions.calculator.inactive'
+	]);
+	Route::get('questions/calculator=neutral', [
+		'uses' => 'QuestionController@showCalculatorNeutralQuestions',
+		'as' => 'questions.calculator.neutral'
+	]);
 	Route::get('questions/popular', [
 		'uses' => 'QuestionController@showPopularQuestions',
 		'as' => 'questions.popular'
