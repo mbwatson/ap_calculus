@@ -37,7 +37,12 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-2">
-                        @include('partials.user-card', ['user' => $question->user])
+                        <div class="{{ $question->user->isOnline() ? 'active-' : '' }}user text-center">
+                            <a href="{{ route('users.show', $question->user) }}">
+                                <img class="avatar" src="{{ url('/') }}/avatars/{{ $question->user->avatar }}"><br />
+                                <span class="username">{{ $question->user->name }}</span>
+                            </a>
+                        </div>
                     </div>
                     <div class="col-md-10">
                         {!! Markdown::convertToHtml($question->body) !!}

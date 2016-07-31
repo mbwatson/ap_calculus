@@ -2,7 +2,12 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-2 col-xs-12">
-                @include('partials.user-card', ['user' => $comment->user])
+                <div class="{{ $comment->user->isOnline() ? 'active-' : '' }}user text-center">
+                    <a href="{{ route('users.show', $comment->user) }}">
+                        <img class="avatar" src="{{ url('/') }}/avatars/{{ $comment->user->avatar }}"><br />
+                        <span class="username">{{ $comment->user->name }}</span>
+                    </a>
+                </div>
             </div>
             <div class="body col-sm-10 col-xs-12">
                 <div class="body">

@@ -6,62 +6,57 @@
 
 @section('content')
 
-<div class="container">
-    
-    <h1>{{ $user->name }}</h1>
-    
-    <!-- User Profile -->
-
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-body profile">
-                    <div class="col-xs-12 col-sm-3 text-center">
-                        <br />
-                        @include('partials.user-card', ['user' => $user])
-                        <small>{{ $user->admin ? '( Admin )' : '' }}</small>
-                        <br />
-                    </div>
-
-                    <div class="col-xs-12 col-sm-5 col-md-4">
-                        <h4>Personal Information</h4>
-
-                        <div><span class="glyphicon glyphicon-sunglasses"></span>A.K.A. {{ ($user->first_name || $user->last_name) ? $user->first_name . ' ' . $user->last_name : '' }}</div>
-                        <div><span class="glyphicon glyphicon-envelope"></span>{{ $user->email }}</div>
-                        <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
-                        <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-4 col-md-5">
-                        <h4>About Me</h4>
-                        {{ $user->bio }}
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <small class="text-muted">Currently {{ $user->isOnline() ? '' : 'not' }} logged in.</small>
-                </div>
-
+<div class="jumbotron">
+    <div class="row profile">
+        <div class="col-md-3 text-right">
+            <img class="avatar" src="{{ url('/') }}/avatars/{{ $user->avatar }}">
+        </div>
+        <div class="col-md-9">
+            <div class="row heading">
+                <h1>{{ $user->name }}</h1><br /><br />
+            </div>
+            <div class="row details">
+                <div><span class="glyphicon glyphicon-sunglasses"></span>A.K.A. {{ ($user->first_name || $user->last_name) ? $user->first_name . ' ' . $user->last_name : '' }}</div>
+                <div><span class="glyphicon glyphicon-envelope"></span>{{ $user->email }}</div>
+                <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
+                <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
+                <div><span class="glyphicon glyphicon-user"></span>{{ $user->bio }}</div>
             </div>
         </div>
     </div>
+</div>
+<div class="jumbotron-toggler">
+    <a href="#" id="jumbotronToggler"><span class="fa fa-btn fa-angle-double-up"></span></a>
+</div>
 
-    <!-- User's Questions -->
+<div class="container">
 
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    {{ $user->name }}'s Posted Questions ( {{ count($user->questions()->get()) }} )
+    <!-- User's Activity -->
+
+    <h1>Recent Activity</h1>
+    <div class="activities">
+        @foreach ($activities as $activity)
+            <div class="row activity">
+                <div class="col-xs-2 text-center date">
+                    <h5>
+                        {{ $activity->created_at->toFormattedDateString() }}<br /><br />
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </h5>
                 </div>
-                <div class="panel-body">
-                    <section class="questions">
-                        @foreach ($user->questions()->get() as $question)
-                            @include('partials.question', $question)
-                        @endforeach
-                    </section>
+                <div class="col-xs-9 col-xs-offset-1 details">
+                    <h5>
+                        @if (isset($activity->title))
+                            <span class="glyphicon glyphicon-question-sign"></span>
+                            Posted a new question <a href="{{ route('questions.show', $activity) }}">{{ $activity->title }}</a>
+                        @else
+                            <span class="glyphicon glyphicon-comment"></span>
+                            Commented on <a href="{{ route('questions.show', $activity->question) }}">{{ $activity->question->title }}</a>
+                        @endif
+                        &mdash; {{ $activity->created_at->diffForHumans() }}
+                    </h5>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 

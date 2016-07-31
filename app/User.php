@@ -58,6 +58,11 @@ class User extends Authenticatable
         return Cache::has('user-activity-' . $this->id);
     }
 
+    /**
+     * Retrieve user's favorite questions
+     * 
+     * @return 
+     */
     public function favorites()
     {
         return $this->belongsToMany('App\Question', 'favorites')->withTimestamps();

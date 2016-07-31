@@ -1,7 +1,12 @@
 <article class="question">
     <div class="row">
         <div class="col-sm-2 hidden-xs">
-            @include('partials.user-card', ['user' => $question->user])
+            <div class="{{ $question->user->isOnline() ? 'active-' : '' }}user text-center">
+                <a href="{{ route('users.show', $question->user) }}">
+                    <img class="avatar" src="{{ url('/') }}/avatars/{{ $question->user->avatar }}"><br />
+                    <span class="username">{{ $question->user->name }}</span>
+                </a>
+            </div>
         </div>
         <div class="col-xs-10 col-sm-9" style="height:100%">
             <div class="title">
