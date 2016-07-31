@@ -30,10 +30,30 @@ Breadcrumbs::register('standards.show', function($breadcrumbs, $standard) {
 	$breadcrumbs->push($standard->name, route('standards.show', $standard));
 });
 
-// Question
+// Questions
 
 Breadcrumbs::register('questions.index', function($breadcrumbs) {
 	$breadcrumbs->push('Questions', route('questions.index'));
+});
+
+Breadcrumbs::register('questions.calculator.active', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('Calculator Active', route('questions.calculator.active'));
+});
+
+Breadcrumbs::register('questions.calculator.inactive', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('Calculator Inactive', route('questions.calculator.inactive'));
+});
+
+Breadcrumbs::register('questions.calculator.neutral', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('Calculator Neutral', route('questions.calculator.neutral'));
+});
+
+Breadcrumbs::register('questions.mine', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('My Questions', route('questions.mine'));
 });
 
 Breadcrumbs::register('questions.create', function($breadcrumbs) {

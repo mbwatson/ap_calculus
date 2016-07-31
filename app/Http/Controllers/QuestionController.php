@@ -30,7 +30,8 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questions.index', [
-            'questions' => Question::latest('created_at')->paginate(10)
+            'questions' => Question::latest('created_at')->paginate(10),
+            'breadcrumb' => 'questions.index'
         ]);
     }
 
@@ -42,7 +43,8 @@ class QuestionController extends Controller
     public function showCalculatorActiveQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::where('calculator', 1)->paginate(10)
+            'questions' => Question::calculatorActive()->paginate(10),
+            'breadcrumb' => 'questions.calculator.active'
         ]);
     }
 
@@ -54,7 +56,8 @@ class QuestionController extends Controller
     public function showCalculatorInactiveQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::where('calculator', -1)->paginate(10)
+            'questions' => Question::calculatorInactive()->paginate(10),
+            'breadcrumb' => 'questions.calculator.inactive'
         ]);
     }
 
@@ -66,7 +69,8 @@ class QuestionController extends Controller
     public function showCalculatorNeutralQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::where('calculator', 0)->paginate(10)
+            'questions' => Question::calculatorNeutral()->paginate(10),
+            'breadcrumb' => 'questions.calculator.neutral'
         ]);
     }
 
@@ -77,7 +81,7 @@ class QuestionController extends Controller
      */
     public function showPopularQuestions()
     {
-        return 'Not yet!';
+        return '<h1>Not yet!</h1> <h2>This requires a voting system to be put into action, which keeps getting put on the back burner.</h2>';
     }
 
     /**
@@ -252,8 +256,7 @@ class QuestionController extends Controller
     {
         return view('questions.index', [
             'questions' => Auth::user()->questions()->paginate(10),
-            'mpacs' => Standard::ofType('MPAC')->get(),             // For sidebar
-            'bigIdeas' => Standard::ofType('Big Idea')->get(),      // For sidebar
+            'breadcrumb' => 'questions.mine'
         ]);
     }
 }

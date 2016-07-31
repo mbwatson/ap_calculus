@@ -11,26 +11,26 @@ class Question extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var Array
      */
     protected $fillable = [
-        'title', 'body', 'user_id'
+        'title', 'body', 'user_id', 'type', 'calculator'
     ];
 
-    /**
-     * Return body of question with markdown rendered.
-     * 
-     * @return String
-     */
-    public function renderMarkdown()
-    {
-        return Markdown::convertToHtml($this->body);
-    }
+    // /**
+    //  * Return body of question with markdown rendered.
+    //  * 
+    //  * @return String
+    //  */
+    // public function renderMarkdown()
+    // {
+    //     return Markdown::convertToHtml($this->body);
+    // }
 
     /**
      * Get the user that owns the post
      *
-     * @return User
+     * @return App\User
      */
     public function user()
     {
@@ -40,7 +40,7 @@ class Question extends Model
     /**
      * Get the comments that belong to the post
      *
-     * @return array
+     * @return Illuminate\Database\Eloquent\Collection
      */
     public function comments()
     {
@@ -50,7 +50,7 @@ class Question extends Model
     /**
      * Get standards associated with the post
      *
-     * @return array
+     * @return Illuminate\Database\Eloquent\Collection
      */
     public function standards()
     {
@@ -60,7 +60,7 @@ class Question extends Model
     /**
      * Get only MPAC standards associated with the post
      *
-     * @return array
+     * @return Illuminate\Database\Eloquent\Collection
      */
     public function mpacs()
     {
@@ -70,7 +70,7 @@ class Question extends Model
     /**
      * Get only learning objective standards associated with the post
      *
-     * @return array
+     * @return Illuminate\Database\Eloquent\Collection
      */
     public function learningObjectives()
     {
@@ -80,7 +80,7 @@ class Question extends Model
     /**
      * Get a list of standard ids associated with current question
      *
-     * @return array
+     * @return Array
      */
     public function getStandardIdsAttribute()
     {
@@ -90,13 +90,19 @@ class Question extends Model
     /**
      * Return users who have favorited this question.
      *
-     * @return Array
+     * @return Illuminate\Database\Eloquent\Builder
      */
     public function favorites()
     {
         return $this->belongsToMany('App\User', 'favorites')->withTimestamps();
     }
     
+    /**
+     * 
+     * 
+     * @param  Array
+     * @return Illuminate\Database\Eloquent\Builder
+     */
     public function scopeWithAnyKeywords($query, $keywords)
     {
         $keywords = explode(' ', $keywords);
@@ -108,6 +114,12 @@ class Question extends Model
         return $query;
     }
 
+    /**
+     * 
+     * 
+     * @param  Array
+     * @return Illuminate\Database\Eloquent\Builder
+     */
     public function scopeWithAllKeywords($query, $keywords)
     {
         $keywords = explode(' ', $keywords);
@@ -120,10 +132,40 @@ class Question extends Model
     }
 
     /**
-     * Retrieve all questions with standards overlapping with those in a given array
+     * Find all calculator inactive questions.
      * 
-     * @param 
-     * @return 
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeCalculatorInactive($query)
+    {
+        return $query->where('calculator', -1);
+    }
+
+    /**
+     * Find all calculator neutral questions.
+     * 
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeCalculatorNeutral($query)
+    {
+        return $query->where('calculator', 0);
+    }
+
+    /**
+     * Find all calculator active questions.
+     * 
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeCalculatorActive($query)
+    {
+        return $query->where('calculator', 1);
+    }
+
+    /**
+     * Find all questions with standards overlapping with those in a given array
+     * 
+     * @param  Array
+     * @return Illuminate\Database\Eloquent\Builder
      */
     public function scopeWithStandards($query, $ids)
     {
@@ -136,6 +178,7 @@ class Question extends Model
         return $query;
     }
 
+    // Array of database encoding of calculator activity options
     protected $calc = [
         -1 => 'Inactive',
         0 => 'Neutral',
@@ -143,26 +186,25 @@ class Question extends Model
     ];
     
     /**
+     * Use $calc array to get string associated with integer coding the calculator active information about a question.
      * 
-     * 
-     * @param 
-     * @return 
+     * @return String
      */
     public function getCalculatorAttribute($value)
     {
         return $this->calc[$value];
     }
 
+    // Array of database encoding of question types
     protected $types = [
         1 => 'Free Response',
         2 => 'Multiple Choice'
     ];
 
     /**
+     * Return string associated with question type; that is, Multiple Choice or Free Response.
      * 
-     * 
-     * @param 
-     * @return 
+     * @return String
      */
     public function getTypeAttribute($value)
     {

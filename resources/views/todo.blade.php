@@ -21,10 +21,12 @@
                         <li>question voting system +/- 1 buttons</li>
                         <li>simple way to "suggest" standards without having to write a comment? or is a comment better?</li>
                         <li>bootstrap breaking point for navbar--probably need to finalize navbar first</li>
-                        <li>search: should be able to toggle between union and intersection of keywords/standards</li>
+                        <li>search: toggle between union and intersection of keywords/standards</li>
                         <li>slugs, esp. for standards</li>
-                        <li>figure out what should be in the sidebar or if it should exist at all</li>
+                        <li>figure out what more should be in the sidebar, or if it should exist at all</li>
                         <li>aid inexperienced $\LaTeX$ users</li>
+                        <li>page title defined in controller?</li>
+                        <li>GET request filtered in one controller vs. (now) having multiple controllers for each filter option</li>
                     </ul>
                 </div>
             </div>
