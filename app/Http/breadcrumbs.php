@@ -1,6 +1,7 @@
 <?php
 
 // Standards
+///////////////////////////////////////////////////////////////////////////////
 
 Breadcrumbs::register('standards.index', function($breadcrumbs) {
     $breadcrumbs->push('Curriculum Framework', route('standards.index'));
@@ -31,6 +32,7 @@ Breadcrumbs::register('standards.show', function($breadcrumbs, $standard) {
 });
 
 // Questions
+///////////////////////////////////////////////////////////////////////////////
 
 Breadcrumbs::register('questions.index', function($breadcrumbs) {
 	$breadcrumbs->push('Questions', route('questions.index'));
@@ -82,6 +84,7 @@ Breadcrumbs::register('questions.edit', function($breadcrumbs, $question) {
 });
 
 // User
+///////////////////////////////////////////////////////////////////////////////
 
 Breadcrumbs::register('users.index', function($breadcrumbs) {
 	$breadcrumbs->push('Users', route('users.index'));
@@ -92,3 +95,19 @@ Breadcrumbs::register('users.show', function($breadcrumbs, $user) {
 	$breadcrumbs->push($user->name, route('users.show', $user));
 });
 
+// Account
+///////////////////////////////////////////////////////////////////////////////
+
+Breadcrumbs::register('account.index', function($breadcrumbs) {
+	$breadcrumbs->push('My Account', route('account.index', Auth::user()));
+});
+
+Breadcrumbs::register('account.dashboard', function($breadcrumbs) {
+	$breadcrumbs->parent('account.index');
+	$breadcrumbs->push('Dashboard', route('account.index', Auth::user()));
+});
+
+Breadcrumbs::register('account.settings', function($breadcrumbs) {
+	$breadcrumbs->parent('account.index');
+	$breadcrumbs->push('Settings', route('account.edit', Auth::user()));
+});

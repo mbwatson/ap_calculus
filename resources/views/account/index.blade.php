@@ -1,61 +1,80 @@
 @extends('layouts.master')
 
+@section('title', 'Dashboard')
+
+@section('breadcrumbs', Breadcrumbs::render('account.dashboard'))
+
 @section('content')
 <div class="container">
 
-    <h1>My Profile</h1>
-
-    <!-- Profile -->
+    <!-- Since Last Login -->
 
     <div class="row">
         <div class="col-xs-12">
+            <h1>Since You've Been Gone</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
             <div class="panel panel-default">
-                <div class="panel-body profile">
-                    <div class="col-sm-3 user-card">
-                        <img class="avatar" src="{{ URL::to('avatars/' . $user->avatar) }}"><br />
-                        {{ $user->name }}
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tr>
-                                    <th><p class="text-right">Username:</p></th>
-                                    <td>{{ $user->name }}</td>
-                                </tr>
-                                <tr>
-                                    <th><p class="text-right">Email:</p></th>
-                                    <td>{{ $user->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th><p class="text-right">First name:</p></th>
-                                    <td>{{ $user->first_name }}</td>
-                                </tr>
-                                <tr>
-                                    <th><p class="text-right">Last name:</p></th>
-                                    <td>{{ $user->last_name }}</td>
-                                </tr>
-                                <tr>
-                                    <th><p class="text-right">Bio:</p></th>
-                                    <td>{{ $user->bio }}</td>
-                                </tr>
-                                <tr>
-                                    <th><p class="text-right">Location:</p></th>
-                                    <td>{{ $user->location }}</td>
-                                </tr>
-                                <tr>
-                                    <th><p class="text-right">Favorites:</p></th>
-                                    <td>{{ $user->favorites->count() }}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="pull-right">
-                    <!-- Edit Lnk -->
-                    <a href="{{ route('account.edit', $user) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+                <div class="panel-body">
+                    <h3>New Questions</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
             </div>
         </div>
+
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>New Discussions</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Your Active Discussions</h3>
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Something Else Interesting</h3>
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>

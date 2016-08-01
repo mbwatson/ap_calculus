@@ -25,6 +25,19 @@ class AccountController extends Controller
     }
 
     /**
+     * Account index page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('account.index', [
+            'user' => Auth::user(),
+            'breadcrumb' => 'account.index'
+        ]);
+    }
+    
+    /**
      * Show form to edit logged user's profile
      *
      * @return \Illuminate\Http\Response
