@@ -36,6 +36,11 @@ Breadcrumbs::register('questions.index', function($breadcrumbs) {
 	$breadcrumbs->push('Questions', route('questions.index'));
 });
 
+Breadcrumbs::register('questions.index.all', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('All', route('questions.index'));
+});
+
 Breadcrumbs::register('questions.calculator.active', function($breadcrumbs) {
 	$breadcrumbs->parent('questions.index');
 	$breadcrumbs->push('Calculator Active', route('questions.calculator.active'));

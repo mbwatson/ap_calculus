@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    protected $touches = array('question');
 
     /**
      * The attributes that are mass assignable.

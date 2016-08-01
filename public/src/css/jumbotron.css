@@ -32,13 +32,10 @@
 .jumbotron-toggler {
 	background-color: #008cba;
 	text-align: center;
-}
-
-.jumbotron-toggler a {
 	color: #fff;
-	display: block;
+	cursor: pointer;
 }
 
-.jumbotron-toggler a:hover {
-	background-color: #109cca
+.jumbotron-toggler:hover {
+	background-color: #109cca;
 }

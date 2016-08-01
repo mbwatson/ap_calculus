@@ -31,7 +31,7 @@ class QuestionController extends Controller
     {
         return view('questions.index', [
             'questions' => Question::latest('created_at')->paginate(10),
-            'breadcrumb' => 'questions.index'
+            'breadcrumb' => 'questions.index.all'
         ]);
     }
 
@@ -43,7 +43,7 @@ class QuestionController extends Controller
     public function showCalculatorActiveQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::calculatorActive()->paginate(10),
+            'questions' => Question::calculatorActive()->latest('created_at')->paginate(10),
             'breadcrumb' => 'questions.calculator.active'
         ]);
     }
@@ -56,24 +56,11 @@ class QuestionController extends Controller
     public function showCalculatorInactiveQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::calculatorInactive()->paginate(10),
+            'questions' => Question::calculatorInactive()->latest('created_at')->paginate(10),
             'breadcrumb' => 'questions.calculator.inactive'
         ]);
     }
-
-    /**
-     * Show list of calculator neutral questions
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showCalculatorNeutralQuestions()
-    {
-        return view('questions.index', [
-            'questions' => Question::calculatorNeutral()->paginate(10),
-            'breadcrumb' => 'questions.calculator.neutral'
-        ]);
-    }
-
+    
     /**
      * Show list of popular questions
      *

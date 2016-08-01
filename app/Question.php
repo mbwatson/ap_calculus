@@ -138,7 +138,7 @@ class Question extends Model
      */
     public function scopeCalculatorInactive($query)
     {
-        return $query->where('calculator', -1);
+        return $query->where('calculator', 0);
     }
 
     /**
@@ -180,8 +180,7 @@ class Question extends Model
 
     // Array of database encoding of calculator activity options
     protected $calc = [
-        -1 => 'Inactive',
-        0 => 'Neutral',
+        0 => 'Inactive',
         1 => 'Active'
     ];
     
@@ -209,6 +208,11 @@ class Question extends Model
     public function getTypeAttribute($value)
     {
         return $this->types[$value];
+    }
+
+    public function lastActivityTime()
+    {
+        return max( $this->comments()->latest()->first()->created_at, $this->updated_at );
     }
 
 }

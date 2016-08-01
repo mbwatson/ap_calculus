@@ -41,6 +41,10 @@
 	width: 100%;
 }
 
+li.dropdown:hover .dropdown-toggle {
+	background-color: #272727;
+}
+
 /* Brand */
 
 .navbar .navbar-brand {

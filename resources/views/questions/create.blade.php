@@ -67,13 +67,23 @@
                 
                 <br />
 
-                <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary">
-                        <input type="radio" name="type" autocomplete="off" value="1"> <span class="fa fa-pencil-square-o"></span> Free Response
-                    </label>
-                    <label class="btn btn-primary">
-                        <input type="radio" name="type" autocomplete="off" value="2"> <span class="fa fa-list"></span> Multiple Choice
-                    </label>
+                <div class="row">
+                  <div class="btn-group col-md-6" data-toggle="buttons">
+                      <label class="btn btn-primary">
+                          <input type="radio" name="type" autocomplete="off" value="1"> <span class="fa fa-pencil-square-o"></span> Free Response
+                      </label>
+                      <label class="btn btn-primary">
+                          <input type="radio" name="type" autocomplete="off" value="2"> <span class="fa fa-list"></span> Multiple Choice
+                      </label>
+                  </div>
+                  <div class="btn-group col-md-6" data-toggle="buttons">
+                      <label class="btn btn-primary">
+                          <input type="radio" name="calculator" autocomplete="off" value="0"> <span class="fa fa-minus"></span> Calculator Inactive
+                      </label>
+                      <label class="btn btn-primary">
+                          <input type="radio" name="calculator" autocomplete="off" value="1"> <span class="fa fa-plus"></span> Calculator Active
+                      </label>
+                  </div>
                 </div>
 
                 <br /><br />
@@ -83,17 +93,6 @@
 
                 <br />
 
-                <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary">
-                        <input type="radio" name="calculator" autocomplete="off" value="1"> <span class="fa fa-plus"></span> Calculator Active
-                    </label>
-                    <label class="btn btn-primary">
-                        <input type="radio" name="calculator" autocomplete="off" value="-1"> <span class="fa fa-minus"></span> Calculator Inactive
-                    </label>
-                    <label class="btn btn-primary">
-                        <input type="radio" name="calculator" autocomplete="off" value="0"> <span class="fa fa-circle-o"></span> Calculator Neutral
-                    </label>
-                </div>
 
                 <br /><br />
 
