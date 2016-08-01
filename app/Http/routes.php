@@ -22,11 +22,6 @@ Route::get('/todo', function () { return view('todo'); });
 
 // Account routes // Auth required
 
-Route::get('/account', [
-	'uses' => 'AccountController@profile',
-	'as' => 'account.index'
-]);
-
 Route::get('/account/edit', [
 	'uses' => 'AccountController@edit',
 	'as' => 'account.edit'
