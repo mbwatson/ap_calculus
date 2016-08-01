@@ -74,8 +74,8 @@ class QuestionController extends Controller
     /**
      * Show list of questions with specified standards
      * 
-     * @param 
-     * @return 
+     * @param  Array
+     * @return Illuminate\Database\Eloquent\Builder
      */
     public function showQuestionsWithStandards($ids)
     {
@@ -85,9 +85,22 @@ class QuestionController extends Controller
     }
 
     /**
+     * Show questions favorited by logged user
+     * 
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function showMyFavorites()
+    {
+        return view('questions.index', [
+            'questions' => Auth::user()->favorites()->paginate(10),
+            'breadcrumb' => 'questions.favorites'
+        ]);
+    }
+
+    /**
      * Show a single question
      *
-     * @param  Question $question
+     * @param  App\Question $question
      * @return \Illuminate\Http\Response
      */
     public function show(Question $question)
@@ -136,7 +149,7 @@ class QuestionController extends Controller
     /**
      * Show form to edit a question.
      *
-     * @param  integer $id
+     * @param  App\Question
      * @return \Illuminate\Http\Response
      */
     public function edit(Question $question)
@@ -150,7 +163,7 @@ class QuestionController extends Controller
     /**
      * Update question in database
      *
-     * @param  Question $question
+     * @param  App\Question
      * @param  array   $request
      * @return \Illuminate\Http\Response
      */
@@ -182,7 +195,7 @@ class QuestionController extends Controller
     /**
      * Delete a question from database.
      *
-     * @param  Question $question
+     * @param  App\Question
      * @return \Illuminate\Http\Response
      */
     public function destroy(Question $question)
@@ -201,6 +214,12 @@ class QuestionController extends Controller
         return redirect()->route('questions.index');
     }
 
+    /**
+     * Build PDF of question
+     * 
+     * @param  App\Question
+     * @return 
+     */
     public function makePDF(Question $question)
     {
         $pdf = \App::make('snappy.pdf.wrapper');
@@ -234,11 +253,23 @@ class QuestionController extends Controller
         return $pdf->inline();
     }
 
+    /**
+     * Display printer-friendly output of question
+     * 
+     * @param  App\Question
+     * @return \Illuminate\Http\Response
+     */
     public function showPrintable(Question $question)
     {
         return view('questions.showprintable', ['question' => $question]);
     }
 
+    /**
+     * Display questions belonging to logged user
+     * 
+     * @param  App\Question
+     * @return \Illuminate\Http\Response
+     */
     public function showMyQuestions(Question $question)
     {
         return view('questions.index', [

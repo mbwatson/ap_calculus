@@ -61,6 +61,11 @@ Breadcrumbs::register('questions.mine', function($breadcrumbs) {
 	$breadcrumbs->push('My Questions', route('questions.mine'));
 });
 
+Breadcrumbs::register('questions.favorites', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('My Favorites', route('questions.favorites'));
+});
+
 Breadcrumbs::register('questions.create', function($breadcrumbs) {
     $breadcrumbs->parent('questions.index');
 	$breadcrumbs->push('Create', route('questions.create'));

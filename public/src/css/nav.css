@@ -39,6 +39,7 @@
 
 .dropdown-menu {
 	width: 100%;
+	overflow: hidden;
 }
 
 li.dropdown:hover .dropdown-toggle {
@@ -119,5 +120,5 @@ li.dropdown:hover .dropdown-toggle {
 
 .breadcrumb li a:hover {
 	background-color: #eee;
-	color: #666;
+	color: #333;
 }

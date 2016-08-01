@@ -22,6 +22,8 @@
                     <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
                     <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
                     <div><span class="glyphicon glyphicon-user"></span>{{ $user->bio }}</div>
+                    <div><span class="glyphicon glyphicon-question-sign"></span> {{ $user->questions->count() }} posted questions</div>
+                    <div><span class="glyphicon glyphicon-heart"></span> {{ $user->favorites->count() }} favorite questions</div>
                 </div>
             </div>
         </div>

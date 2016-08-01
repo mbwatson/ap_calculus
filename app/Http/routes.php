@@ -96,6 +96,10 @@ Route::group(['middleware' => 'auth'], function() {
 		'uses' => 'QuestionController@showMyQuestions',
 		'as' => 'questions.mine'
 	]);
+	Route::get('questions/favorites', [
+		'uses' => 'QuestionController@showMyFavorites',
+		'as' => 'questions.favorites'
+	]);
 	Route::get('questions/standards/{ids}', [
 		'uses' => 'QuestionController@showQuestionsWithStandards',
 		'as' => 'questions.withstandards'
