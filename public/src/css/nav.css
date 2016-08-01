@@ -2,6 +2,7 @@
 .navbar-nav li a {
 	padding: 25px 10px;
 	font-size: 110%;
+	transition: background-color 0.5s ease;
 }
 
 .navbar-nav li.dropdown ul li a {
@@ -129,6 +130,8 @@ li.dropdown:hover .dropdown-toggle {
 	padding: 3px 5px;
 	border-radius: 5px;
 	font-weight: 700;
+	transition: background-color 1s ease;
+	transition: color 0.5s ease;
 }
 
 .breadcrumb li a:hover {
