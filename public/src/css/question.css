@@ -106,6 +106,10 @@
 	font-size: smaller;
 }
 
+#question .interaction a {
+	margin-left: 20px;
+}
+
 /* Post Edit Dropdown */
 
 #question .dropdown .btn {

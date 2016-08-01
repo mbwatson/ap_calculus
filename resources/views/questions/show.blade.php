@@ -65,11 +65,15 @@
                 Posted {{ $question->created_at->diffForHumans() }}
                 | Calculator {{ $question->calculator }}
                 | {{ $question->type }}
-                <div class="pull-right">
+                <div class="pull-right interaction">
+
                     <!-- Thumbs Up/Down -->
                     <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a>
                     <a href="#" title="-1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    | 
+
+                    <!-- Flag -->
+                    <a href="#" title="Flag as Spam" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-flag"></i></a>
+
                     <!-- (Un)Favorite Button -->
                     @if ($question->favorites->contains(Auth::user()))
                         <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-primary"
