@@ -70,8 +70,6 @@
                 'class' => 'question-form'
             ]) !!}
             
-            <br />
-
             <div class="row">
               <div class="btn-group col-md-6" data-toggle="buttons">
                   <label class="btn btn-primary {{ $question->type == 'Free Response' ? 'active' : ''}}">
@@ -91,16 +89,13 @@
               </div>
             </div>
 
-            <br /><br />
+            <br />
 
             {!! Form::text('title', null, ['class' => 'form-control title']) !!}
             {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body']) !!}
             
             <br />
-
-
-            <br /><br />
-
+            
             {!! Form::select('standard_ids[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
 
             <br /><br />

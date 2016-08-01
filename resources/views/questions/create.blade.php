@@ -65,8 +65,6 @@
         <div class="col-xs-12">
             {!! Form::open(['route' => 'questions.store', 'files' => 'true', 'class' => 'question-form']) !!}
                 
-                <br />
-
                 <div class="row">
                   <div class="btn-group col-md-6" data-toggle="buttons">
                       <label class="btn btn-primary">
@@ -86,19 +84,16 @@
                   </div>
                 </div>
 
-                <br /><br />
+                <br />
 
                 {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
                 {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
 
                 <br />
 
-
+                {!! Form::select('standards[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
+                
                 <br /><br />
-
-                <div class="form-group">
-                    {!! Form::select('standards[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
-                </div>
 
                 {!! Form::submit('Post Question', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
