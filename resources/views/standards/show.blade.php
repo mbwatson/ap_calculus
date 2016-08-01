@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 heading">
             <h1>{{ $standard->name }}</h1>
-            <h2>{!! Markdown::convertToHtml($standard->description) !!}</h2>
+            <h2>{{ $standard->description }}</h2>
         </div>
     </div>
     <div class="row">

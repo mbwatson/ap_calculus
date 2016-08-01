@@ -1,12 +1,16 @@
 .jumbotron {
 	background-color: #008cba;
 	padding: 10px;
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .jumbotron .heading {
 	color: #eef;
 	margin-bottom: 5px;
+}
+
+.jumbotron .heading h2 {
+	font-size: 250%;
 }
 
 .jumbotron .details {

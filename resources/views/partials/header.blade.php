@@ -10,7 +10,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="navbar-header">
+
                     <!-- Collapsed Hamburger -->
+
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <br />
@@ -18,13 +20,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
                     <!-- Branding Image -->
+
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <strong>AP Calculus</strong><small class="text-info">question forum</small>
                     </a>
+
                 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    
                     <!-- Search Bar -->
+                    
                     <div class="col-sm-4 col-md-6 col-lg-7" id="search">
                         {!! Form::open(['route' => ['search.results'], 'class' => 'search-form', 'role' => 'search']) !!}
                         <div class="input-group">
@@ -35,7 +42,9 @@
                         </div>
                         {!! Form::close() !!}
                     </div>
+                    
                     <!-- Authentication Links -->
+                    
                     <ul class="nav navbar-nav navbar-right navbar-auth">
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
@@ -57,27 +66,28 @@
                             </li>
                         @endif
                     </ul>
-                    <!-- Links -->
+                    
+                    <!-- Main Site Navigation Links -->
+                    
                     <div class="col-xs-12 navbar-links">
                         <div class="col-sm-offset-3 ">
-                        <ul class="nav navbar-nav">
-                            <!-- <li><a href="{{ url('/discussions') }}" ="disabled"><span class="glyphicon glyphicon-comment"></span>Discussions</a></li> -->
-                            <li class="navbar-link dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <span class="glyphicon glyphicon-tags"></span>Curriculum Framework <span class="caret"></span></a></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li class="navbar-link"><a href="{{ url('standards') }}"><span class="glyphicon glyphicon-list"></span>Overview</a></li>
-                                    <li class="navbar-link"><a href="{{ url('standards/mpacs') }}"><span class="glyphicon glyphicon-check"></span>MPACs</a></li>
-                                    <li class="navbar-link"><a href="{{ url('standards/big-ideas') }}"><span class="glyphicon glyphicon-check"></span>Big Ideas</a></li>
-                                </ul>
-                            </li>
-                            <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
-                            @if (Auth::check() && Auth::user()->admin)
-                                <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
-                                <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="fa fa-btn fa-list"></span>To Do List</a></li>
-                            @endif
-                        </ul>
+                            <ul class="nav navbar-nav">
+                                <li class="navbar-link dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <span class="glyphicon glyphicon-tags"></span>Curriculum Framework <span class="caret"></span></a></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="navbar-link"><a href="{{ url('standards') }}"><span class="glyphicon glyphicon-list"></span>Overview</a></li>
+                                        <li class="navbar-link"><a href="{{ url('standards/mpacs') }}"><span class="glyphicon glyphicon-check"></span>MPACs</a></li>
+                                        <li class="navbar-link"><a href="{{ url('standards/big-ideas') }}"><span class="glyphicon glyphicon-check"></span>Big Ideas</a></li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
+                                @if (Auth::check() && Auth::user()->admin)
+                                    <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
+                                    <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="fa fa-btn fa-list"></span>To Do List</a></li>
+                                @endif
+                            </ul>
                         </div>
                     </div>
                 </div>

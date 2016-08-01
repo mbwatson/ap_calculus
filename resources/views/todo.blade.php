@@ -6,9 +6,10 @@
     
     <!-- To Do List -->
 
+    <h1>To Do List / Fixes / Ideas</h1>
+    
     <div class="row">
         <div class="col-xs-12">
-            <h1>To Do List / Fixes / Ideas</h1>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul>

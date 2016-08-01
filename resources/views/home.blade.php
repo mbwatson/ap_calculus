@@ -31,7 +31,8 @@
     
     <!-- Latest Questions -->
     
-    <h2>Latest Questions</h2>
+    <h1>Latest Questions</h1>
+    
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
