@@ -135,3 +135,15 @@ li.dropdown:hover .dropdown-toggle {
 	background-color: #eee;
 	color: #333;
 }
+
+@media screen and (max-width: 766px) {
+
+	.nav .dropdown-menu {
+		display: block;
+	}
+
+	.nav .dropdown-menu li {
+		width: 100%;
+	}
+
+}
