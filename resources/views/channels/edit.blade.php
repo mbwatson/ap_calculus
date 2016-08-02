@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Channels / Create')
+@section('title', 'Edit Channel: ' . $channel->name)
+
+@section('breadcrumbs', Breadcrumbs::render('channels.edit', $channel))
 
 @section('content')
 

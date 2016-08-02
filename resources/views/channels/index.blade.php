@@ -2,6 +2,8 @@
 
 @section('title', 'Channels')
 
+@section('breadcrumbs', Breadcrumbs::render('channels.index.all'))
+
 @section('content')
 
 <div class="container">
