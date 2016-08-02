@@ -1,4 +1,4 @@
-/* Questions List*/
+/* Discussions List*/
 
 .discussions .discussion {
 	padding: 10px 0;
@@ -37,44 +37,10 @@
 	font-size: smaller;
 }
 
-.discussion .standards {
-	font-size: 85%;
-}
-
-.discussion .standards ul {
-	display: inline;
-	margin-left: 4px;
-}
-
-.standards ul li {
-	padding: 0;
-}
-
-.standards li a {
-	text-decoration: underline;
-}
-
-/* Single Question */
+/* Single Discussion */
 
 #discussion {
 	margin-top: 20px;
-}
-
-#discussion .panel-heading {
-	font-size: 250%;
-	font-weight: bold;
-	padding-left: 25px;
-}
-
-#discussion {
-	/*padding-left: 10px;*/
-	/*border-left: 1px solid #ccd;*/
-	/*margin-bottom: 30px;*/
-}
-
-#discussion .panel-heading {
-	background-color: #fff;
-	border-width: 0;
 }
 
 #discussion .user-info {
@@ -88,31 +54,12 @@
 	border-radius:50%;
 }
 
-#discussion .discussion-image {
-	text-align: center;
-}
-
-#discussion .standards {
-	font-size: 85%;
-}
-
-#discussion .standards ul {
-	display: inline;
-	margin-left: 4px;
-}
-
 #discussion .details {
 	color: #aaa;
 	font-size: smaller;
 }
 
-/* Post Edit Dropdown */
-
-#discussion .dropdown .btn {
-	color: #fff;
-}
-
-/* Question Create Form */
+/* Discussion Create Form */
 
 .discussion-form .title,
 .discussion-form .title:focus {
@@ -124,3 +71,15 @@
 	padding: 30px 0;
 	border: none;
 }
+
+/* Channels */
+
+ul.channels-list {
+	list-style: none;
+	text-align: right;
+}
+
+ul.channels-list li {
+	margin: 15px;
+}
+
