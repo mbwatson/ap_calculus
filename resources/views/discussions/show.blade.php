@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title', $discussion->title)
+
+@section('breadcrumbs', Breadcrumbs::render('discussions.show', $discussion));
+
 @section('content')
 
 <div class="container">

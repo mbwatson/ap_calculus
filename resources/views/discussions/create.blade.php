@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Discussions / Create')
+@section('title', 'Create Discussion')
+
+@section('breadcrumbs', Breadcrumbs::render('discussions.create'))
 
 @section('content')
 

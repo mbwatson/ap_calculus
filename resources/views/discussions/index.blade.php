@@ -2,6 +2,8 @@
 
 @section('title', 'Discussions')
 
+@section('breadcrumbs', Breadcrumbs::render('discussions.index.all'));
+
 @section('content')
 
 <div class="container">

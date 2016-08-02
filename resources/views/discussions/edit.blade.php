@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Discussions / Create')
+@section('title', 'Edit: ' . $discussion->title)
+
+@section('breadcrumbs', Breadcrumbs::render('discussions.edit', $discussion))
 
 @section('content')
 
