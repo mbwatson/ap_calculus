@@ -1,5 +1,68 @@
 <?php
 
+// User
+
+Breadcrumbs::register('users.index', function($breadcrumbs) {
+	$breadcrumbs->push('Users', route('users.index'));
+});
+
+Breadcrumbs::register('users.show', function($breadcrumbs, $user) {
+	$breadcrumbs->parent('users.index');
+	$breadcrumbs->push($user->name, route('users.show', $user));
+});
+
+// Discussions
+
+Breadcrumbs::register('discussions.index', function($breadcrumbs) {
+	$breadcrumbs->push('Discussions', route('discussions.index'));
+});
+
+Breadcrumbs::register('discussions.index.all', function($breadcrumbs) {
+	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->push('All', route('discussions.index'));
+});
+
+Breadcrumbs::register('discussions.create', function($breadcrumbs) {
+	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->push('Create', route('discussions.create'));
+});
+
+Breadcrumbs::register('discussions.show', function($breadcrumbs, $discussion) {
+	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->push($discussion->title, route('discussions.show', $discussion));
+});
+
+Breadcrumbs::register('discussions.edit', function($breadcrumbs, $discussion) {
+	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->push('Edit: ' . $discussion->title, route('discussions.edit', $discussion));
+});
+
+// Channels
+
+Breadcrumbs::register('channels.index', function($breadcrumbs) {
+	$breadcrumbs->push('Channels', route('channels.index'));
+});
+
+Breadcrumbs::register('channels.index.all', function($breadcrumbs) {
+	$breadcrumbs->parent('channels.index');
+	$breadcrumbs->push('All', route('channels.index'));
+});
+
+Breadcrumbs::register('channels.create', function($breadcrumbs) {
+	$breadcrumbs->parent('channels.index');
+	$breadcrumbs->push('Create', route('channels.create'));
+});
+
+Breadcrumbs::register('channels.show', function($breadcrumbs, $channel) {
+	$breadcrumbs->parent('channels.index');
+	$breadcrumbs->push($channel->name, route('channels.show', $channel));
+});
+
+Breadcrumbs::register('channels.edit', function($breadcrumbs, $channel) {
+	$breadcrumbs->parent('channels.index');
+	$breadcrumbs->push('Edit', route('channels.edit', $channel));
+});
+
 // Standards
 
 Breadcrumbs::register('standards.index', function($breadcrumbs) {
@@ -79,16 +142,5 @@ Breadcrumbs::register('questions.show', function($breadcrumbs, $question) {
 Breadcrumbs::register('questions.edit', function($breadcrumbs, $question) {
     $breadcrumbs->parent('questions.show', $question);
 	$breadcrumbs->push('Edit', route('questions.edit', $question));
-});
-
-// User
-
-Breadcrumbs::register('users.index', function($breadcrumbs) {
-	$breadcrumbs->push('Users', route('users.index'));
-});
-
-Breadcrumbs::register('users.show', function($breadcrumbs, $user) {
-	$breadcrumbs->parent('users.index');
-	$breadcrumbs->push($user->name, route('users.show', $user));
 });
 
