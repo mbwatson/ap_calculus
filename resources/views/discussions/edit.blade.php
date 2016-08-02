@@ -20,6 +20,10 @@
                 'class' => 'discussion-form'
             ]) !!}
                 
+            {!! Form::select('channel_id', $channels_list, null, ['class' => 'form-control', 'placeholder' => 'Channel']) !!}
+
+            <br />
+
             {!! Form::text('title', null, ['class' => 'form-control title']) !!}
 
             <br />
@@ -29,6 +33,7 @@
             <br /><br />
 
             {!! Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block']) !!}
+            
             {!! Form::close() !!}
         </div>
     </div>

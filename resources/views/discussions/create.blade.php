@@ -16,18 +16,20 @@
         <div class="col-xs-12">
             {!! Form::open(['route' => 'discussions.store']) !!}
                 
-                {{ Form::select('channel_id', $channels_list, null, ['placeholder' => 'Channel']) }}
+            {!! Form::select('channel_id', $channels_list, null, ['class' => 'form-control', 'placeholder' => 'Channel']) !!}
 
+            <br />
 
-                {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
 
-                <br />
-                
-                {!! Form::textarea('body', null, ['id' => 'discussion-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, and type your question here.']) !!}
+            <br />
+            
+            {!! Form::textarea('body', null, ['id' => 'discussion-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, and type your question here.']) !!}
 
-                <br /><br />
+            <br /><br />
 
-                {!! Form::submit('Post Discussion', ['class' => 'btn btn-primary btn-block']) !!}
+            {!! Form::submit('Post Discussion', ['class' => 'btn btn-primary btn-block']) !!}
+            
             {!! Form::close() !!}
         </div>
     </div>

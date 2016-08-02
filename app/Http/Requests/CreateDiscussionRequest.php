@@ -30,6 +30,7 @@ class CreateDiscussionRequest extends Request
         return [
             'title' => 'required|max:50',
             'body' => 'required|max:2500',
+            'channel_id' => 'required'
         ];
     }
 }

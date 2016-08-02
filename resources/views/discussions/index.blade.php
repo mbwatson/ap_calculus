@@ -2,7 +2,11 @@
 
 @section('title', 'Discussions')
 
-@section('breadcrumbs', Breadcrumbs::render('discussions.index.all'));
+@if (isset($channel))
+    @section('breadcrumbs', Breadcrumbs::render('discussions.channel', $channel))
+@else
+    @section('breadcrumbs', Breadcrumbs::render('discussions.index.all'))
+@endif
 
 @section('content')
 
@@ -27,7 +31,7 @@
             <br />
             <ul class="channels-list">
                 @foreach ($channels->sortBy('name') as $channel)
-                    <li><a href="{{ route('channels.show', $channel) }}">{{ $channel->name }}</a></li>
+                    <li><a href="{{ route('discussions.channel', $channel->id) }}">{{ $channel->name }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -40,7 +44,7 @@
                     @if ($discussions->count() > 0)
                         @foreach ($discussions as $discussion)
                             <h4><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a>
-                            [ <a href="{{ route('channels.show', $discussion->channel) }}">{{ $discussion->channel->name }}</a> ]</h4>
+                            [ <a href="{{ route('discussions.channel', $discussion->channel->id) }}">{{ $discussion->channel->name }}</a> ]</h4>
                             <hr />
                         @endforeach
                     @else

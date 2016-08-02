@@ -2,7 +2,7 @@
 
 @section('title', $discussion->title)
 
-@section('breadcrumbs', Breadcrumbs::render('discussions.show', $discussion));
+@section('breadcrumbs', Breadcrumbs::render('discussions.show', $discussion))
 
 @section('content')
 

@@ -45,4 +45,9 @@ class Discussion extends Model
         return $this->belongsTo('App\Channel');
     }
 
+    public function scopeInChannel($query, $id)
+    {
+        return Discussion::latest('created_at')->where('channel_id', $id);
+    }
+
 }

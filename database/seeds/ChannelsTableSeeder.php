@@ -17,18 +17,21 @@ class ChannelsTableSeeder extends Seeder
 			array(
 				'id' => 1,
 				'name' => 'Standards',
+				'slug' => 'standards',
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
 			),
 			array(
 				'id' => 2,
 				'name' => 'Instruction',
+				'slug' => 'instruction',
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
 			),
 			array(
 				'id' => 3,
 				'name' => 'Assessment',
+				'slug' => 'assessment',
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
 			)

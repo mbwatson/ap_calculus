@@ -2,7 +2,7 @@
 
 @section('title', 'Channels / ' . $channel->name)
 
-@section('breadcrumbs', Breadcrumbs::render('channels.show', $channel))
+@section('breadcrumbs', Breadcrumbs::render($breadcrumb))
 
 @section('content')
 

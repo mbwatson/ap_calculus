@@ -77,6 +77,11 @@ Route::group(['middleware' => 'auth'], function() {
 
 	// Discussion Routes
 
+	Route::get('/discussions/channel/{channel_slug}', [
+		'uses' => 'DiscussionController@showDiscussionsInChannel',
+		'as' => 'discussions.channel'
+	]);
+
 	Route::resource('discussions', 'DiscussionController');
 
 	// Response Routes

@@ -7,14 +7,19 @@ use Illuminate\Http\Request;
 use App\Discussion;
 use App\Channel;
 use Auth;
+use View;
 
 class DiscussionController extends Controller
 {
+    public function __construct()
+    {
+        View::share(['channels' => Channel::all()]);
+    }
+
     public function index()
     {
         return view('discussions.index', [
-        	'discussions' => Discussion::latest()->paginate(10),
-            'channels' => Channel::all()
+        	'discussions' => Discussion::latest()->paginate(10)
         ]);
     }
 
@@ -59,7 +64,8 @@ class DiscussionController extends Controller
     public function edit(Discussion $discussion)
     {
         return view('discussions.edit', [
-        	'discussion' => $discussion
+        	'discussion' => $discussion,
+            'channels_list' => Channel::all()->lists('name','id')
         ]);
     }
 
@@ -70,16 +76,12 @@ class DiscussionController extends Controller
      * @param  Request
      * @return \Illuminate\Http\Response
      */
-    public function update(Discussion $discussion, Request $request)
+    public function update(Discussion $discussion, CreateDiscussionRequest $request)
     {
-        $this->validate($request, [
-            'title' => 'required|max:50',
-            'body' => 'required|max:2500',
-        ]);
-
         // Discussion is valid; store in database
         $discussion->title = $request['title'];
         $discussion->body = $request['body'];
+        $discussion->channel_id = $request['channel_id'];
         $discussion->save();
         
         session()->flash('flash_message', 'Discussion successfully updated!');
@@ -107,4 +109,11 @@ class DiscussionController extends Controller
         return redirect()->route('discussions.index');
     }
 
+    public function showDiscussionsInChannel($id)
+    {
+        return view('discussions.index', [
+            'discussions' => Discussion::latest('updated_at')->inChannel($id)->paginate(10),
+            'channel' => Channel::find($id)
+        ]);
+    }
 }
