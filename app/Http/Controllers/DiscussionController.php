@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateDiscussionRequest;
 use Illuminate\Http\Request;
 use App\Discussion;
+use App\Channel;
 use Auth;
 
 class DiscussionController extends Controller
@@ -12,7 +13,8 @@ class DiscussionController extends Controller
     public function index()
     {
         return view('discussions.index', [
-        	'discussions' => Discussion::latest()->paginate(10)
+        	'discussions' => Discussion::latest()->paginate(10),
+            'channels' => Channel::all()
         ]);
     }
 
@@ -23,7 +25,9 @@ class DiscussionController extends Controller
      */
     public function create()
     {
-        return view('discussions.create');
+        return view('discussions.create', [
+            'channels_list' => Channel::all()->lists('name','id')
+        ]);
     }
 
     /**
@@ -37,6 +41,7 @@ class DiscussionController extends Controller
         $discussion = new Discussion;
         $discussion->title = $request['title'];
         $discussion->body = $request['body'];
+        $discussion->channel_id = $request['channel_id'];
         $request->user()->discussions()->save($discussion);
 
         session()->flash('flash_message', 'Discussion successfully started!');

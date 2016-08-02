@@ -70,6 +70,7 @@ Route::resource('standards', 'StandardController', [
 Route::group(['middleware' => 'auth'], function() {
 
 	// User Routes
+	
 	Route::resource('users', 'UserController', [
 		'only' => ['index', 'show']
 	]);
@@ -83,6 +84,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::resource('responses', 'ResponseController', [
 		'only' => ['store']
 	]);
+
+	// Channel Routes
+
+	Route::resource('channels', 'ChannelController');
 	
 	// Question Routes
 

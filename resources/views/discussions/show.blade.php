@@ -9,7 +9,7 @@
     <div class="row">
         <div class="panel panel-default" id="discussion">
             <div class="panel-heading">
-                {{ $discussion->title }}
+                {{ $discussion->title }} [ in {{ $discussion->channel->name }} ]
                 <div class="btn-group pull-right">
                     <div class="dropdown">
                         <button class="btn btn-primary btn-xs dropdown-toggle" type="button" id="discussion-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -20,7 +20,7 @@
                                 <!-- Edit -->
                                 <a href="{{ route('discussions.edit', $discussion->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Discussion</a>
                                 <!-- Delete -->
-                                {!! Form::open(['route' => ['discussions.destroy', $discussion->id], 'method' => 'delete']) !!}
+                                {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete']) !!}
                                     <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Discussion</button>
                                 {!! Form::close() !!}
                             @endif

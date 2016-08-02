@@ -23,6 +23,11 @@
                 </ul>
             </div>
             <br />
+            <ul class="channels-list">
+                @foreach ($channels->sortBy('name') as $channel)
+                    <li><a href="{{ route('channels.show', $channel) }}">{{ $channel->name }}</a></li>
+                @endforeach
+            </ul>
         </div>
 
         <!-- Discussion List -->
@@ -32,7 +37,8 @@
                 <div class="panel-body discussions">
                     @if ($discussions->count() > 0)
                         @foreach ($discussions as $discussion)
-                            <h4><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a></h4>
+                            <h4><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a>
+                            [ <a href="{{ route('channels.show', $discussion->channel) }}">{{ $discussion->channel->name }}</a> ]</h4>
                             <hr />
                         @endforeach
                     @else

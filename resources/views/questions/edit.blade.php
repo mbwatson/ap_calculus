@@ -65,7 +65,6 @@
         <div class="col-xs-12">
             {!! Form::model($question, [
                 'method' => 'PATCH',
-                'files' => 'true',
                 'route' => ['questions.update', $question],
                 'class' => 'question-form'
             ]) !!}

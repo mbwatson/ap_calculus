@@ -12,7 +12,7 @@ class Discussion extends Model
      * @var Array
      */
     protected $fillable = [
-        'title', 'body', 'user_id'
+        'title', 'body', 'user_id', 'channel_id'
     ];
     
     /**
@@ -33,6 +33,16 @@ class Discussion extends Model
     public function responses()
     {
     	return $this->hasMany('App\Response');
+    }
+
+    /**
+     * Retrieve the channel that owns the discussion
+     *
+     * @return App\Channel
+     */
+    public function channel()
+    {
+        return $this->belongsTo('App\Channel');
     }
 
 }

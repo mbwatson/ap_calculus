@@ -11,23 +11,26 @@
 	margin-left: 4px;
 }
 
-/* In Questions List */
+/* In Questions/Discussions List */
 
-.questions .avatar {
+.questions .avatar,
+.discussions .avatar {
 	border-width: 7px;
 	width: 70px;
 	height: 70px;
 }
 
-/* Single Question */
+/* Single Question/Discussion */
 
-#question .avatar {
+#question .avatar,
+#discussion .avatar {
 	border-width: 7px;
 	width: 100px;
 	height: 100px;
 }
 
-.comment .avatar {
+.comment .avatar,
+.response .avatar {
 	border-width: 7px;
 	width: 70px;
 	height: 70px;

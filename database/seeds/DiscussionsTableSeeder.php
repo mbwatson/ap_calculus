@@ -18,6 +18,7 @@ class DiscussionsTableSeeder extends Seeder
 				'id' => 1,
 				'title' => 'First Discussion',
 				'body' => 'Here is the body of the first discussion ever started!',
+				'channel_id' => 1,
 				'user_id' => 1,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")

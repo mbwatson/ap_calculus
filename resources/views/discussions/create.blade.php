@@ -14,6 +14,9 @@
         <div class="col-xs-12">
             {!! Form::open(['route' => 'discussions.store']) !!}
                 
+                {{ Form::select('channel_id', $channels_list, null, ['placeholder' => 'Channel']) }}
+
+
                 {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
 
                 <br />
