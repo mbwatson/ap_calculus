@@ -74,10 +74,16 @@ Route::group(['middleware' => 'auth'], function() {
 		'only' => ['index', 'show']
 	]);
 
-	// Question Routes
+	// Discussion Routes
 
 	Route::resource('discussions', 'DiscussionController');
 
+	// Response Routes
+
+	Route::resource('responses', 'ResponseController', [
+		'only' => ['store']
+	]);
+	
 	// Question Routes
 
 	Route::get('questions/calculatoractive', 		[ 'uses' => 'QuestionController@showCalculatorActiveQuestions', 	'as' => 'questions.calculator.active' ]);

@@ -66,7 +66,7 @@
             {!! Form::model($question, [
                 'method' => 'PATCH',
                 'files' => 'true',
-                'route' => ['questions.update', $question->id],
+                'route' => ['questions.update', $question],
                 'class' => 'question-form'
             ]) !!}
             

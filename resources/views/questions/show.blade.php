@@ -24,7 +24,7 @@
                             @if ($question->user == Auth::user() || Auth::user()->admin)
                                 <div role="separator" class="divider"></div>
                                 <!-- Edit -->
-                                <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
+                                <a href="{{ route('questions.edit', $question) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
                                 <!-- Delete -->
                                 {!! Form::open(['route' => ['questions.destroy', $question->id], 'method' => 'delete']) !!}
                                     <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Question</button>

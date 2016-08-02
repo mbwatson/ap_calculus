@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Questions')
-
-@section('breadcrumbs', Breadcrumbs::render( isset($breadcrumb) ? $breadcrumb : 'questions.index'))
+@section('title', 'Discussions')
 
 @section('content')
 
@@ -14,7 +12,7 @@
 
         <div class="col-xs-12 col-md-2 sidebar">
         
-            <a class="btn btn-warning btn-block" href="{{ route('questions.create') }}">New Discussion</a>
+            <a class="btn btn-warning btn-block" href="{{ route('discussions.create') }}">New Discussion</a>
             <br />
             <div class="dropdown">
                 <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,14 +29,15 @@
         
         <div class="col-xs-12 col-md-10">
             <div class="panel panel-default">
-                <div class="panel-body questions">
+                <div class="panel-body discussions">
                     @if ($discussions->count() > 0)
                         @foreach ($discussions as $discussion)
-                            {{ $discussion->title }}
+                            <h4><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a></h4>
+                            <hr />
                         @endforeach
                     @else
                         <center>
-                            There are no discussions to display at this time.
+                            No discussions!
                         </center>
                     @endif
                 </div>

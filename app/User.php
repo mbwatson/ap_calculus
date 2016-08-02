@@ -40,12 +40,25 @@ class User extends Authenticatable
         return $this->hasMany('App\Question')->orderBy('created_at', 'desc');
     }
 
+    public function discussions()
+    {
+        return $this->hasMany('App\Discussion')->orderBy('created_at', 'desc');
+    }
+
     /**
      * Get the comments that belong to the user
     */
     public function comments()
     {
         return $this->hasMany('App\Comment')->orderBy('created_at', 'desc');
+    }
+
+    /**
+     * Get the discussion resposes that belong to the user
+    */
+    public function responses()
+    {
+        return $this->hasMany('App\Response')->orderBy('created_at', 'desc');
     }
 
     /**

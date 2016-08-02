@@ -123,7 +123,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Create a new question instance.
+     * Create and store a new question instance.
      *
      * @param  CreateQuestionRequest $request
      * @return \Illuminate\Http\Response
