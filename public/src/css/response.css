@@ -1,24 +1,24 @@
-/* Comments List */
+/* Responses List */
 
-.comment {
+.response {
 	margin-bottom: 30px;
 }
 
-.comment .user-info {
+.response .user-info {
 	text-align: center;
 }
 
-.comment .user-info .avatar {
+.response .user-info .avatar {
 	width: 75px;
 	height: 75px;
 	border: 6px solid #286090;
 	border-radius:50%;
 }
 
-.comment .body {
+.response .body {
 }
 
-.comment .details {
+.response .details {
 	color: #aaa;
 	font-size: smaller;
 }

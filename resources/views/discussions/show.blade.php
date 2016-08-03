@@ -59,9 +59,7 @@
     <div class="row">
         @if (count($discussion->responses) > 0)
             @foreach ($discussion->responses as $response)
-                <h3>{{ $response->body }} ( by {{ $response->user->name }} )</h3>
-                {{ $response->created_at->diffForHumans() }}
-                <hr />
+                @include('partials.response', $response)
             @endforeach
         @endif
     </div>
