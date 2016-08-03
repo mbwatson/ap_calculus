@@ -57,28 +57,26 @@
 @section('content')
 <div class="container">
 
-    <h1>Create a New Question</h1>
-    
     <!-- New Question Form -->
 
     <div class="row">
         <div class="col-xs-12">
             {!! Form::open(['route' => 'questions.store', 'class' => 'question-form']) !!}
                 
-                <div class="row">
-                  <div class="btn-group col-md-6" data-toggle="buttons">
-                      <label class="btn btn-primary">
-                          <input type="radio" name="type" autocomplete="off" value="1"> <span class="fa fa-pencil-square-o"></span> Free Response
+                <div class="row" style="display: flex; justify-content: center;">
+                  <div class="btn-group col-md-5" data-toggle="buttons" style="display: flex;">
+                      <label class="btn btn-primary btn-lg" style="flex: 1;">
+                          <input type="radio" name="type" autocomplete="off" value="1" style="flex: 1;"> <span class="fa fa-pencil-square-o"></span> Free Response
                       </label>
-                      <label class="btn btn-primary">
-                          <input type="radio" name="type" autocomplete="off" value="2"> <span class="fa fa-list"></span> Multiple Choice
+                      <label class="btn btn-primary btn-lg" style="flex: 1;">
+                          <input type="radio" name="type" autocomplete="off" value="2" style="flex: 1;"> <span class="fa fa-list"></span> Multiple Choice
                       </label>
                   </div>
-                  <div class="btn-group col-md-6" data-toggle="buttons">
-                      <label class="btn btn-primary">
+                  <div class="btn-group col-md-5 col-md-offset-1" data-toggle="buttons" style="display: flex;">
+                      <label class="btn btn-primary btn-lg" style="flex: 1;">
                           <input type="radio" name="calculator" autocomplete="off" value="0"> <span class="fa fa-minus"></span> Calculator Inactive
                       </label>
-                      <label class="btn btn-primary">
+                      <label class="btn btn-primary btn-lg" style="flex: 1;">
                           <input type="radio" name="calculator" autocomplete="off" value="1"> <span class="fa fa-plus"></span> Calculator Active
                       </label>
                   </div>

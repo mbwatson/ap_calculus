@@ -40,7 +40,6 @@
 /* Single Discussion */
 
 #discussion {
-	margin-top: 20px;
 }
 
 #discussion .user-info {
@@ -62,7 +61,7 @@
 /* Discussion Create Form */
 
 .discussion-form .title,
-.discussion-form .title:focus {
+.question-form .title:focus {
 	background-color: transparent;
 	outline: none;
 	box-shadow: none;

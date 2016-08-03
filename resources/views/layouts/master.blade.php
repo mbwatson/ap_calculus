@@ -38,7 +38,6 @@
   
   @include('partials.header')
   @yield('header')
-  @yield('breadcrumbs')
   @include('partials.alerts')
   
   @yield('content')
