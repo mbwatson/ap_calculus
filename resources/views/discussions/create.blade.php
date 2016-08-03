@@ -77,8 +77,10 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-xs-2 text-center">
-                        <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
-                        <span class="username">{{ Auth::user()->name }}</span>
+                        <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
+                            <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
+                            <span class="username">{{ Auth::user()->name }}</span>
+                        </div>
                     </div>
                     <div class="col-xs-10">
                         {!! Form::textarea('body', null, ['id' => 'discussion-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, choose a channel in which to post your discsussion, and type being your discussion in this textbox.']) !!}

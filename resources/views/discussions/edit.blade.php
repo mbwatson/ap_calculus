@@ -67,7 +67,7 @@
                 'class' => 'discussion-form'
             ]) !!}
 
-            {!! Form::text('title', null, ['class' => 'form-control title']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
 
             <div class="form-group" style="background-color: #000; padding: 1em; color: #fff;">
                 <div class="row">
@@ -81,8 +81,10 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-xs-2 text-center">
-                        <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
-                        <span class="username">{{ Auth::user()->name }}</span>
+                        <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
+                            <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
+                            <span class="username">{{ Auth::user()->name }}</span>
+                        </div>
                     </div>
                     <div class="col-xs-10">
                         {!! Form::textarea('body', null, ['id' => 'discussion-textarea', 'class' => 'form-control body']) !!}
