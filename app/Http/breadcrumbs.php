@@ -42,6 +42,11 @@ Breadcrumbs::register('discussions.channel', function($breadcrumbs, $channel) {
 	$breadcrumbs->push($channel->name, route('discussions.channel', $channel));
 });
 
+Breadcrumbs::register('discussions.mine', function($breadcrumbs) {
+	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->push('My Discussions', route('discussions.mine'));
+});
+
 // Channels
 
 Breadcrumbs::register('channels.index', function($breadcrumbs) {

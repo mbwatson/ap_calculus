@@ -61,7 +61,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            {!! Form::open(['route' => 'questions.store', 'class' => 'question-form']) !!}
+            {!! Form::open(['route' => 'questions.store']) !!}
                 
                 <div class="row" style="display: flex; justify-content: center;">
                   <div class="btn-group col-md-5" data-toggle="buttons" style="display: flex;">
@@ -84,7 +84,7 @@
 
                 <br />
 
-                {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
+                {!! Form::text('title', null, ['class' => 'form-control form-title', 'placeholder' => 'Enter Title Here']) !!}
                 {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
 
                 <br />

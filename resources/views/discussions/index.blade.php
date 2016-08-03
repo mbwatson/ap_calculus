@@ -5,7 +5,7 @@
 @if (isset($channel))
     @section('breadcrumbs', Breadcrumbs::render('discussions.channel', $channel))
 @else
-    @section('breadcrumbs', Breadcrumbs::render('discussions.index.all'))
+    @section('breadcrumbs', Breadcrumbs::render( isset($breadcrumb) ? $breadcrumb : 'discussions.index.all')))
 @endif
 
 @section('content')
@@ -26,6 +26,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.index') }}">All Discussions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.mine') }}">My Discussions</a></li>
                 </ul>
             </div>
             <br />
@@ -76,7 +77,7 @@
                                     </div>
                                     <div class="hidden-xs col-sm-1">
                                         <span class="response-count">
-                                            {{ count($discussion->responses->count()) }}
+                                            {{ $discussion->responses->count() }}
                                         </span>
                                     </div>
                                 </div>
@@ -84,7 +85,7 @@
                         @endforeach
                     @else
                         <center>
-                            No discussions!
+                            No discussions have been posted in this channel yet!
                         </center>
                     @endif
                 </div>

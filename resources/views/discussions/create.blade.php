@@ -61,9 +61,9 @@
 
     <div class="row" id="discussion">
         <div class="col-xs-12">
-            {!! Form::open(['route' => 'discussions.store', 'class' => 'question-form']) !!}
+            {!! Form::open(['route' => 'discussions.store']) !!}
 
-            {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control form-title', 'placeholder' => 'Enter Title Here']) !!}
 
             <div class="form-group" style="background-color: #000; padding: 1em; color: #fff;">
                 <div class="row">

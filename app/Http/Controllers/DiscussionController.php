@@ -116,4 +116,12 @@ class DiscussionController extends Controller
             'channel' => Channel::find($id)
         ]);
     }
+
+    public function showMyDiscussions()
+    {
+        return view('discussions.index', [
+            'discussions' => Auth::user()->discussions()->paginate(10),
+            'breadcrumb' => 'discussions.mine'
+        ]);
+    }
 }

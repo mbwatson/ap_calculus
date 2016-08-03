@@ -63,8 +63,7 @@
         <div class="col-xs-12">
             {!! Form::model($question, [
                 'method' => 'PATCH',
-                'route' => ['questions.update', $question],
-                'class' => 'question-form'
+                'route' => ['questions.update', $question]
             ]) !!}
             
             <div class="row">
@@ -88,7 +87,7 @@
 
             <br />
 
-            {!! Form::text('title', null, ['class' => 'form-control title']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control form-title']) !!}
             {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body']) !!}
             
             <br />

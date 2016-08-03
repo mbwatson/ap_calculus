@@ -77,6 +77,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 	// Discussion Routes
 
+	Route::get('/discussions/mine', [ 'uses' => 'DiscussionController@showMyDiscussions', 'as' => 'discussions.mine' ]);
+
 	Route::get('/discussions/channel/{channel_slug}', [
 		'uses' => 'DiscussionController@showDiscussionsInChannel',
 		'as' => 'discussions.channel'

@@ -63,11 +63,10 @@
         <div class="col-xs-12" id="discussion">
             {!! Form::model($discussion, [
                 'method' => 'PATCH',
-                'route' => ['discussions.update', $discussion],
-                'class' => 'discussion-form'
+                'route' => ['discussions.update', $discussion]
             ]) !!}
 
-            {!! Form::text('title', null, ['class' => 'form-control title', 'placeholder' => 'Enter Title Here']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control form-title', 'placeholder' => 'Enter Title Here']) !!}
 
             <div class="form-group" style="background-color: #000; padding: 1em; color: #fff;">
                 <div class="row">

@@ -24,23 +24,6 @@ a {
     margin: 0 6px;
 }
 
-/* Forms */
-
-FORM textarea {
-    max-width: 100%;
-}
-
-FORM label,
-FORM .control-label {
-	font-size: 110%;
-	text-align: right;
-	margin-top: 6px;
-}
-
-.btn {
-	border-radius: 5px;
-}
-
 /* Panels */
 
 .panel {
