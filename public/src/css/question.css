@@ -106,16 +106,19 @@
 	font-size: smaller;
 }
 
-/* Post Edit Dropdown */
+/* Edit Options Dropdown */
 
-#question .dropdown .btn {
+#question .dropdown .btn,
+#discussion .dropdown .btn {
 	color: #fff;
 }
 
-/* Question Create Form */
+/* Question/Discussion Create Form */
 
 .question-form .title,
-.question-form .title:focus {
+.question-form .title:focus,
+.discussion-form .title,
+.discussion-form .title:focus {
 	background-color: transparent;
 	outline: none;
 	box-shadow: none;

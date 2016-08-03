@@ -62,8 +62,9 @@ FORM .control-label {
 /* Flash Messages */
 
 .alert {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	width: 100%;
+	font-weight: 600;
+	text-align: center;
 }
 
 /* Search */

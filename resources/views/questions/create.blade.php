@@ -63,7 +63,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            {!! Form::open(['route' => 'questions.store', 'files' => 'true', 'class' => 'question-form']) !!}
+            {!! Form::open(['route' => 'questions.store', 'class' => 'question-form']) !!}
                 
                 <div class="row">
                   <div class="btn-group col-md-6" data-toggle="buttons">

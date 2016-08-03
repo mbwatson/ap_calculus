@@ -34,7 +34,7 @@ Breadcrumbs::register('discussions.show', function($breadcrumbs, $discussion) {
 
 Breadcrumbs::register('discussions.edit', function($breadcrumbs, $discussion) {
 	$breadcrumbs->parent('discussions.index');
-	$breadcrumbs->push('Edit: ' . $discussion->title, route('discussions.edit', $discussion));
+	$breadcrumbs->push('Edit', route('discussions.edit', $discussion));
 });
 
 Breadcrumbs::register('discussions.channel', function($breadcrumbs, $channel) {
