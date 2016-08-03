@@ -57,8 +57,6 @@
 @section('content')
 <div class="container">
 
-    <h1>Edit Your Question</h1>
-    
     <!-- Edit Question Form -->
 
     <div class="row">
