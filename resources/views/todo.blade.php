@@ -44,6 +44,7 @@
                             <li>improve flash messages, possibly with Flashy</li>
                             <li>ability to flag questions as spam</li>
                             <li>deleting question (discussion) also deletes associated comments (responses)</li>
+                            <li>watch discussions (like question favorites?)</li>
                         </ul>
                     </div>
                 </div>
