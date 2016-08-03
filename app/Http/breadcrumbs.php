@@ -27,19 +27,19 @@ Breadcrumbs::register('discussions.create', function($breadcrumbs) {
 	$breadcrumbs->push('Create', route('discussions.create'));
 });
 
-Breadcrumbs::register('discussions.show', function($breadcrumbs, $discussion) {
-	$breadcrumbs->parent('discussions.index');
-	$breadcrumbs->push($discussion->title, route('discussions.show', $discussion));
-});
-
 Breadcrumbs::register('discussions.edit', function($breadcrumbs, $discussion) {
-	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->parent('discussions.show', $discussion);
 	$breadcrumbs->push('Edit', route('discussions.edit', $discussion));
 });
 
 Breadcrumbs::register('discussions.channel', function($breadcrumbs, $channel) {
 	$breadcrumbs->parent('discussions.index');
 	$breadcrumbs->push($channel->name, route('discussions.channel', $channel));
+});
+
+Breadcrumbs::register('discussions.show', function($breadcrumbs, $discussion) {
+	$breadcrumbs->parent('discussions.channel', $discussion->channel);
+	$breadcrumbs->push($discussion->title, route('discussions.show', $discussion));
 });
 
 Breadcrumbs::register('discussions.mine', function($breadcrumbs) {

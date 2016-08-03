@@ -27,12 +27,15 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.index') }}">All Discussions</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.mine') }}">My Discussions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block disabled" href="#">Watching</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block disabled" href="#">Popular</a></li>
                 </ul>
             </div>
             <br />
             <ul class="channels-list">
-                @foreach ($channels->sortBy('name') as $channel)
-                    <li><a href="{{ route('discussions.channel', $channel->id) }}">{{ $channel->name }}</a></li>
+                @foreach ($channels->sortBy('name') as $chan)
+                    <li><a href="{{ route('discussions.channel', $chan->id) }}" class="{{ (isset($channel) && $chan == $channel) ? 'text-primary' : 'text-muted' }}">
+                        {{ $chan->name }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -44,7 +47,7 @@
                 <div class="panel-body discussions">
                     @if ($discussions->count() > 0)
                         @foreach ($discussions as $discussion)
-                            <article class="discussion">
+                            <article>
                                 <div class="row">
                                     
                                     <!-- User Info -->
@@ -61,12 +64,12 @@
                                     <!-- Discussion Info -->
 
                                     <div class="col-xs-12 col-sm-11 col-md-6">
-                                        <div class="title">
+                                        <div class="post-title">
                                             <a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a>
                                         </div>
-                                        <div class="row details">
+                                        <div class="row meta">
                                             <div class="col-xs-8">
-                                                <br />
+                                                <br /><br />
                                                 Started {{ $discussion->created_at->diffForHumans() }}
                                                 {{ $discussion->created_at == $discussion->updated_at ? '' : ' | Edited at ' . $discussion->updated_at->diffForHumans() }}
                                             </div>
@@ -76,7 +79,7 @@
                                         <a href="{{ route('discussions.channel', $discussion->channel) }}">{{ $discussion->channel->name }}</a>
                                     </div>
                                     <div class="hidden-xs col-sm-1">
-                                        <span class="response-count">
+                                        <span class="comment-count">
                                             {{ $discussion->responses->count() }}
                                         </span>
                                     </div>

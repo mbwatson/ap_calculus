@@ -1,15 +1,19 @@
-/* Questions List*/
+/* Questions/Discussions List*/
 
-.questions .question {
+article {
+	margin-bottom: 20px;
+}
+
+.post {
 	padding: 10px 0;
 }
 
-.questions .question .title a {
+.post-title a {
 	font-size: 125%;
 	font-weight: bold;
 }
 
-.questions .question .comment-count {
+.comment-count {
 	display: inline;
 	border-radius: 6px;
 	background-color: #ccc;
@@ -22,7 +26,7 @@
 	top: 10px;
 }
 
-.questions .question .comment-count:after {
+.comment-count:after {
 	content: "";
 	position: absolute;
 	bottom: -6px; 					/* value = - border-top-width - border-bottom-width */
@@ -32,16 +36,16 @@
 	border-color: #ccc transparent;
 }
 
-.question .details {
+.meta {
 	color: #aaa;
 	font-size: smaller;
 }
 
-.question .standards {
+.standards {
 	font-size: 85%;
 }
 
-.question .standards ul {
+.standards ul {
 	display: inline;
 	margin-left: 4px;
 }
@@ -54,10 +58,7 @@
 	text-decoration: underline;
 }
 
-/* Single Question */
-
-#question {
-}
+/* Single Question/Discussion */
 
 #question .panel-heading {
 	font-size: 250%;
