@@ -63,6 +63,7 @@
                             <li>more in sidebar; should it even exist?</li>
                             <li>assistance for inexperienced $\LaTeX$ users</li>
                             <li>improve dashboard UX</li>
+                            <li>search questions AND discussions</li>
                         </ul>
                     </div>
                 </div>
