@@ -47,12 +47,18 @@
                 </div>
                 <div class="col-xs-9 col-xs-offset-1 details">
                     <h5>
-                        @if (isset($activity->title))
+                        @if (preg_match('/Question/', get_class($activity)))
                             <span class="glyphicon glyphicon-question-sign"></span>
-                            Posted a new question <a href="{{ route('questions.show', $activity) }}">{{ $activity->title }}</a>
-                        @else
+                            Posted a question titled <a href="{{ route('questions.show', $activity) }}">{{ $activity->title }}</a>
+                        @elseif (preg_match('/Comment/', get_class($activity)))
                             <span class="glyphicon glyphicon-comment"></span>
-                            Commented on <a href="{{ route('questions.show', $activity->question) }}">{{ $activity->question->title }}</a>
+                            Commented on the question <a href="{{ route('questions.show', $activity->question) }}">{{ $activity->question->title }}</a>
+                        @elseif (preg_match('/Discussion/', get_class($activity)))
+                            <span class="fa fa-comments"></span>
+                            Started a discussion called <a href="{{ route('discussions.show', $activity) }}">{{ $activity->title }}</a> in
+                        @elseif (preg_match('/Response/', get_class($activity)))
+                            <span class="fa fa-comment"></span>
+                            Contributed to the discussion <a href="{{ route('discussions.show', $activity->discussion) }}">{{ $activity->discussion->title }}</a>
                         @endif
                         &mdash; {{ $activity->created_at->diffForHumans() }}
                     </h5>

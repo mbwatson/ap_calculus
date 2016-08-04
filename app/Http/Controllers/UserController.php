@@ -25,9 +25,14 @@ class UserController extends Controller
     {
         $questions = collect($user->questions);
         $comments = collect($user->comments);
+        $discussions = collect($user->discussions);
+        $responses = collect($user->responses);
+        $activities = $questions->merge($comments)
+                                ->merge($discussions)
+                                ->merge($responses)
+                                ->sortByDesc('created_at')->take(10);
 
-        $activities = $questions->merge($comments)->sortByDesc('created_at')->take(5);
-
+        // dd($activities);
         return view('users.show', [
             'user' => $user,
             'activities' => $activities
