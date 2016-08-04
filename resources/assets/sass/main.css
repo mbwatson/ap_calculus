@@ -57,11 +57,7 @@ a {
     border-radius: 3px;
 }
 
-/* Sidebar */
-
-.sidebar {
-	font-size: 85%;
-}
+/* Drodown Menus */
 
 .dropdown:hover button {
 	border-bottom-left-radius: 0;

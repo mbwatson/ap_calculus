@@ -12,26 +12,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
-  
-  <!-- Latest compiled and minified CSS for Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
   
   <!-- Select2 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
-  
-  <!-- Bootswatch Theme -->
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/themes/yeti.min.css') }}">
 
-  <!-- Custom Styling -->
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/main.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/jumbotron.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/user.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/post.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/standard.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/forms.css') }}">
-
-</head>
+  </head>
 <body>
   
   @include('partials.header')

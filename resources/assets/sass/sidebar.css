@@ -1,0 +1,13 @@
+/* Sidebar */
+
+.sidebar {
+	/*font-size: 85%;*/
+}
+
+.channels-list {
+	list-style: none;
+
+	li {
+		padding: 20px;
+	}
+}
