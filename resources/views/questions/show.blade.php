@@ -10,8 +10,8 @@
 
     <!-- Question -->
 
-    <div class="panel panel-default">
-        <div class="panel-heading question-title">
+    <div class="panel panel-default" id="post">
+        <div class="panel-heading">
             {{ $question->title }}
             <div class="btn-group pull-right">
                 <div class="dropdown post-dropdown">
@@ -48,11 +48,11 @@
                     <hr />
                     <div class="row">
                         <div class="col-sm-12 col-lg-6 question-standards">
-                            <b>MPACs:</b>
+                            <b>MPACs</b>
                             @include('partials.list-standards', ['standards' => $question->mpacs])
                         </div>
                         <div class="col-sm-12 col-lg-6 question-standards">
-                            <b>Learning Objectives:</b>
+                            <b>Learning Objectives</b>
                             @include('partials.list-standards', ['standards' => $question->learningObjectives])
                         </div>
                     </div>

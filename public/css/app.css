@@ -11408,10 +11408,6 @@ a {
   font-weight: 600;
   text-align: center; }
 
-/* Search */
-.search-form input {
-  border-radius: 3px; }
-
 /* Drodown Menus */
 .dropdown:hover button {
   border-bottom-left-radius: 0;
@@ -11618,33 +11614,89 @@ label,
   border: none; }
 
 /* Question/Discussion Create Form */
-.question-form .title,
-.question-form .title:focus,
 .discussion-form .title,
-.discussion-form .title:focus {
+.discussion-form .title:focus,
+.question-form .title,
+.question-form .title:focus {
   background-color: transparent;
   outline: none;
   box-shadow: none;
   font-size: 250%;
   font-weight: bolder;
   padding: 30px 0;
-  border: none; }
+  border: none;
+  color: #666; }
 
-.user-info .avatar {
+
+.posts .post {
+  margin-bottom: 50px; }
+
+.posts .standards ul {
+  display: inline; }
+
+.posts .avatar {
+  width: 80px;
+  height: 80px;
+  border: 5px solid #333;
+  border-radius: 50%; }
+
+.posts .comment-count {
+  display: inline;
+  border-radius: 6px;
+  background-color: #ccc;
+  font-size: 80%;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 3px 10px;
+  position: relative;
+  top: 12px; }
+
+.posts .comment-count:after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  /* value = - border-top-width - border-bottom-width */
+  left: 5px;
+  /* controls horizontal position */
+  border-width: 8px 8px 0 0;
+  /* vary these values to change the angle of the vertex */
+  border-style: solid;
+  border-color: #ccc transparent; }
+
+.meta {
+  color: #aaa; }
+
+.standards-list li {
+  padding: 0 0 0 4px;
+  margin: 0;
+  font-size: 90%; }
+  .standards-list li a {
+    text-decoration: underline; }
+
+#post .panel-heading {
+  background-color: #fff;
+  font-size: 200%;
+  border-bottom-width: 0; }
+
+#post .avatar {
   width: 120px;
   height: 120px;
   border: 8px solid #333;
   border-radius: 50%; }
 
+#post .dropdown-menu .btn, #post .dropdown-menu .a {
+  color: #fff; }
+
+.channels-list {
+  list-style: none;
+  padding: 0; }
+  .channels-list li {
+    padding-bottom: 10px; }
 
 /* Sidebar */
 .sidebar {
   /*font-size: 85%;*/ }
-
-.channels-list {
-  list-style: none; }
-  .channels-list li {
-    padding: 20px; }
 
 /* Global Stuff */
 .avatar {
@@ -11712,5 +11764,12 @@ label,
 
 .activities .activity div {
   padding: 10px 0; }
+
+.btn-white {
+  background-color: #fff; }
+
+.btn-white:hover {
+  background-color: #dde;
+  color: #333; }
 
 /*# sourceMappingURL=app.css.map */

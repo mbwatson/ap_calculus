@@ -85,7 +85,21 @@
                 <br />
 
                 {!! Form::text('title', null, ['class' => 'form-control form-title', 'placeholder' => 'Enter Title Here']) !!}
-                {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
+
+                <div class="form-group">
+                    <div class="row" id="post">
+                        <div class="col-xs-2 text-center">
+                            <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
+                                <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
+                                <span class="username">{{ Auth::user()->name }}</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-10">
+                          {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
+                        </div>
+                    </div>
+                </div>
+
 
                 <br />
 

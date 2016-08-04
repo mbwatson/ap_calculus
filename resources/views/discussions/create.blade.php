@@ -10,7 +10,7 @@
 <script>
   var editor_config = {
     path_absolute : "/",
-    selector: '#question-textarea',
+    selector: '#discussion-textarea',
     plugins: 'advlist autolink image lists charmap preview textpattern',
     toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image | preview',
     menubar: false,
@@ -75,7 +75,7 @@
             </div>
 
             <div class="form-group">
-                <div class="row">
+                <div class="row post">
                     <div class="col-xs-2 text-center">
                         <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
                             <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />

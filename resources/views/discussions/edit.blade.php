@@ -10,7 +10,7 @@
 <script>
   var editor_config = {
     path_absolute : "/",
-    selector: '#question-textarea',
+    selector: '#discussion-textarea',
     plugins: 'advlist autolink image lists charmap preview textpattern',
     toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image | preview',
     menubar: false,

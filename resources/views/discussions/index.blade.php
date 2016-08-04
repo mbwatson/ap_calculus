@@ -12,6 +12,8 @@
 
 <div class="container">
 
+    <!-- Discussion List -->
+
     <div class="row">
 
         <!-- Sidebar -->
@@ -32,10 +34,10 @@
                 </ul>
             </div>
             <br />
+            <h4 class="text-center">Channels</h4>
             <ul class="channels-list">
                 @foreach ($channels->sortBy('name') as $chan)
-                    <li><a href="{{ route('discussions.channel', $chan->id) }}" class="{{ (isset($channel) && $chan == $channel) ? 'text-primary' : 'text-muted' }}">
-                        {{ $chan->name }}</a></li>
+                    <li><a class="btn btn-block {{ (isset($channel) && $chan == $channel) ? 'btn-primary' : 'btn-info' }}" href="{{ route('discussions.channel', $chan->id) }}">{{ $chan->name }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -44,7 +46,7 @@
         
         <div class="col-xs-12 col-md-10">
             <div class="panel panel-default">
-                <div class="panel-body discussions">
+                <div class="panel-body posts">
                     @if ($discussions->count() > 0)
                         @foreach ($discussions as $discussion)
                             @include('partials.discussion')

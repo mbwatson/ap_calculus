@@ -1,9 +1,14 @@
-<!-- <div class="debugging">
+<!--
+
+<div class="debugging">
     <span class="visible-xs">XS</span>
     <span class="visible-sm">SM</span>
     <span class="visible-md">MD</span>
     <span class="visible-lg">LG</span>
-</div> -->
+</div>
+
+-->
+
 <header>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">

@@ -39,11 +39,10 @@
                             <li>multiple choice question creation form with inputs for responses/distractors (and possibly marking the correct one)</li>
                             <li>tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum</li>
                             <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
-                            <li>slugs, esp. for standards</li>
+                            <li>slugs, esp. for standards and channels</li>
                             <li>ElasticSearch</li>
                             <li>improve flash messages, possibly with Flashy</li>
                             <li>ability to flag questions as spam</li>
-                            <li>deleting question (discussion) also deletes associated comments (responses)</li>
                             <li>watch discussions (like question favorites?)</li>
                         </ul>
                     </div>
@@ -60,9 +59,8 @@
                 
                     <div class="panel-body">
                         <ul>
-                            <li>bootstrap breaking point for navbar--probably need to finalize navbar first</li>
                             <li>search: toggle between union and intersection of keywords/standards</li>
-                            <li>figure out what more should be in the sidebar, or if it should exist at all</li>
+                            <li>more in sidebar; should it even exist?</li>
                             <li>assistance for inexperienced $\LaTeX$ users</li>
                             <li>improve dashboard UX</li>
                         </ul>

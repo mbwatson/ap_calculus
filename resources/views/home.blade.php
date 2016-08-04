@@ -20,7 +20,7 @@
                 align with the Curriculum Framework defining the AP Calculus curriculum, as laid out by the CollegeBoard.
             </h2>
             <div class="text-center" style="padding: 25px;">
-                <a class="btn btn-primary btn-lg" href="{{ route('questions.index') }}" style="margin:0 25px">Browse the Questions</a>
+                <a class="btn btn-white btn-lg" href="{{ route('questions.index') }}" style="margin:0 25px">Browse the Questions</a>
                 <a class="btn btn-warning btn-lg" href="{{ route('standards.index') }}" style="margin:0 25px">Curriculum Framework</a>
             </div>
         </div>

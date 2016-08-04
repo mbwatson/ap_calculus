@@ -10,8 +10,8 @@
 
     <!-- Discussion -->
 
-    <div class="panel panel-default">
-        <div class="panel-heading post-title">
+    <div class="panel panel-default" id="post">
+        <div class="panel-heading">
             {{ $discussion->title }} [ in {{ $discussion->channel->name }} ]
             <div class="btn-group pull-right">
                 <div class="dropdown">

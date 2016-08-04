@@ -1,5 +1,11 @@
 <?php
 
+// Admin
+
+Breadcrumbs::register('admin.channels', function($breadcrumbs) {
+	$breadcrumbs->push('Admin', route('account.index'));
+});
+
 // User
 
 Breadcrumbs::register('users.index', function($breadcrumbs) {

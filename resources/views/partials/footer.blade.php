@@ -41,7 +41,7 @@
 
 <!-- Flash message retreat -->
 <script type="text/javascript">
-$('div.alert-success').delay(3000).slideUp(200);
+	$('div.alert-success').delay(3000).slideUp(200);
 </script>
 
 <!-- Jumbotron Toggler -->
@@ -56,6 +56,6 @@ $(document).ready(function(){
 
 <!-- Actual Footer -->
 
-  <footer>
+<footer>
 	
 </footer>

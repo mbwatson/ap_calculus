@@ -38,7 +38,7 @@
         
         <div class="col-xs-12 col-md-10">
             <div class="panel panel-default">
-                <div class="panel-body questions">
+                <div class="panel-body posts">
                     @if ($questions->count() > 0)
                         @foreach ($questions as $question)
                             @include('partials.question', $question)
