@@ -10,8 +10,8 @@
 
     <!-- Discussion -->
 
-    <div class="panel panel-default" id="discussion">
-        <div class="panel-heading">
+    <div class="panel panel-default">
+        <div class="panel-heading post-title">
             {{ $discussion->title }} [ in {{ $discussion->channel->name }} ]
             <div class="btn-group pull-right">
                 <div class="dropdown">
@@ -34,7 +34,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-2">
-                    <div class="{{ $discussion->user->isOnline() ? 'active-' : '' }}user text-center">
+                    <div class="user-info {{ $discussion->user->isOnline() ? 'active-' : '' }}user text-center">
                         <a href="{{ route('users.show', $discussion->user) }}">
                             <img class="avatar" src="{{ url('/') }}/avatars/{{ $discussion->user->avatar }}"><br />
                             <span class="username">{{ $discussion->user->name }}</span>
@@ -46,9 +46,8 @@
                 </div>
             </div>
         </div>
-        <div class="panel-footer details">
-            <span class="glyphicon glyphicon-calendar"></span>
-            Posted {{ $discussion->created_at->diffForHumans() }}
+        <div class="panel-footer meta">
+            <span class="glyphicon glyphicon-calendar"></span>{{ $discussion->created_at->diffForHumans() }}
             <div class="pull-right">
                 <!-- (Un)Favorite Button -->
                 <a href="#" role="button" class="watch text-primary" title="Watch this Discussion" data-toggle="tooltip" data-placement="top">

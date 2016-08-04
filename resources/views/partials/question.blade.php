@@ -1,4 +1,4 @@
-<article>
+<article class="post">
     <div class="row">
         <div class="hidden-xs hidden-sm col-md-2">
             <div class="{{ $question->user->isOnline() ? 'active-' : '' }}user text-center">

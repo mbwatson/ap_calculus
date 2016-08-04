@@ -47,7 +47,7 @@
                 <div class="panel-body discussions">
                     @if ($discussions->count() > 0)
                         @foreach ($discussions as $discussion)
-                            <article>
+                            <article class="post">
                                 <div class="row">
                                     
                                     <!-- User Info -->

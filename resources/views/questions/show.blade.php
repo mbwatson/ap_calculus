@@ -10,8 +10,8 @@
 
     <!-- Question -->
 
-    <div class="panel panel-default" id="question">
-        <div class="panel-heading">
+    <div class="panel panel-default">
+        <div class="panel-heading post-title">
             {{ $question->title }}
             <div class="btn-group pull-right">
                 <div class="dropdown">
@@ -36,7 +36,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-2">
-                    <div class="{{ $question->user->isOnline() ? 'active-' : '' }}user text-center">
+                    <div class="user-info {{ $question->user->isOnline() ? 'active-' : '' }}user text-center">
                         <a href="{{ route('users.show', $question->user) }}">
                             <img class="avatar" src="{{ url('/') }}/avatars/{{ $question->user->avatar }}"><br />
                             <span class="username">{{ $question->user->name }}</span>
@@ -59,9 +59,9 @@
                 </div>
             </div>
         </div>
-        <div class="panel-footer details">
+        <div class="panel-footer meta">
             <span class="glyphicon glyphicon-calendar"></span>
-            Posted {{ $question->created_at->diffForHumans() }}
+            {{ $question->created_at->diffForHumans() }}
             | Calculator {{ $question->calculator }}
             | {{ $question->type }}
             <div class="pull-right">

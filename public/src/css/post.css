@@ -10,7 +10,7 @@ article {
 
 .post-title a {
 	font-size: 125%;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .comment-count {
@@ -60,48 +60,33 @@ article {
 
 /* Single Question/Discussion */
 
-#question .panel-heading {
-	font-size: 250%;
+#post-title {
+	font-size: 200%;
 	font-weight: bold;
 	padding-left: 25px;
 }
 
-#question {
-	/*padding-left: 10px;*/
-	/*border-left: 1px solid #ccd;*/
-	/*margin-bottom: 30px;*/
-}
-
-#question .panel-heading {
-	background-color: #fff;
-	border-width: 0;
-}
-
-#question .user-info {
+.user-info {
 	text-align: center;
 }
 
-#question .user-info .avatar {
+.user-info .avatar {
 	width: 120px;
 	height: 120px;
-	border: 8px solid #286090;
+	border: 8px solid #333;
 	border-radius:50%;
 }
 
-#question .question-image {
-	text-align: center;
-}
-
-#question .standards {
+.standards {
 	font-size: 85%;
 }
 
-#question .standards ul {
+.standards ul {
 	display: inline;
 	margin-left: 4px;
 }
 
-#question .details {
+.meta {
 	color: #aaa;
 	font-size: smaller;
 }

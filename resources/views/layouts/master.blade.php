@@ -27,8 +27,7 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/jumbotron.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/user.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/discussion.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/question.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/post.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/standard.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/forms.css') }}">
 
