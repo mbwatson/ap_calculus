@@ -1,15 +1,19 @@
-/* Questions List*/
+/* Questions/Discussions List*/
 
-.questions .question {
+article {
+	margin-bottom: 20px;
+}
+
+.post {
 	padding: 10px 0;
 }
 
-.questions .question .title a {
+.post-title a {
 	font-size: 125%;
-	font-weight: bold;
+	font-weight: 600;
 }
 
-.questions .question .comment-count {
+.comment-count {
 	display: inline;
 	border-radius: 6px;
 	background-color: #ccc;
@@ -22,7 +26,7 @@
 	top: 10px;
 }
 
-.questions .question .comment-count:after {
+.comment-count:after {
 	content: "";
 	position: absolute;
 	bottom: -6px; 					/* value = - border-top-width - border-bottom-width */
@@ -32,16 +36,16 @@
 	border-color: #ccc transparent;
 }
 
-.question .details {
+.meta {
 	color: #aaa;
 	font-size: smaller;
 }
 
-.question .standards {
+.standards {
 	font-size: 85%;
 }
 
-.question .standards ul {
+.standards ul {
 	display: inline;
 	margin-left: 4px;
 }
@@ -54,54 +58,35 @@
 	text-decoration: underline;
 }
 
-/* Single Question */
+/* Single Question/Discussion */
 
-#question {
-	margin-top: 20px;
-}
-
-#question .panel-heading {
-	font-size: 250%;
+#post-title {
+	font-size: 200%;
 	font-weight: bold;
 	padding-left: 25px;
 }
 
-#question {
-	/*padding-left: 10px;*/
-	/*border-left: 1px solid #ccd;*/
-	/*margin-bottom: 30px;*/
-}
-
-#question .panel-heading {
-	background-color: #fff;
-	border-width: 0;
-}
-
-#question .user-info {
+.user-info {
 	text-align: center;
 }
 
-#question .user-info .avatar {
+.user-info .avatar {
 	width: 120px;
 	height: 120px;
-	border: 8px solid #286090;
+	border: 8px solid #333;
 	border-radius:50%;
 }
 
-#question .question-image {
-	text-align: center;
-}
-
-#question .standards {
+.standards {
 	font-size: 85%;
 }
 
-#question .standards ul {
+.standards ul {
 	display: inline;
 	margin-left: 4px;
 }
 
-#question .details {
+.meta {
 	color: #aaa;
 	font-size: smaller;
 }
@@ -110,20 +95,23 @@
 	margin-left: 20px;
 }
 
-/* Post Edit Dropdown */
+/* Edit Options Dropdown */
 
-#question .dropdown .btn {
+#question .dropdown .btn,
+#discussion .dropdown .btn {
 	color: #fff;
 }
 
-/* Question Create Form */
+/* Question/Discussion Create Form */
 
 .question-form .title,
-.question-form .title:focus {
+.question-form .title:focus,
+.discussion-form .title,
+.discussion-form .title:focus {
 	background-color: transparent;
 	outline: none;
 	box-shadow: none;
-	font-size: 200%;
+	font-size: 250%;
 	font-weight: bolder;
 	padding: 30px 0;
 	border: none;

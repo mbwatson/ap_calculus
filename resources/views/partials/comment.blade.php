@@ -15,9 +15,9 @@
                 </div>
             </div>
         </div>
-        <div class="row details">
+        <div class="row meta">
             <div class="col-sm-10 col-sm-offset-2 col-xs-12">
-                <i class="glyphicon glyphicon-calendar"></i> Posted {{ $comment->created_at->diffForHumans() }}
+                <i class="glyphicon glyphicon-calendar"></i> {{ $comment->created_at->diffForHumans() }}
             </div>
         </div>
     </div>

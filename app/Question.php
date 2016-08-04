@@ -3,11 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Markdown;
 use PDF;
 
 class Question extends Model
 {
+    use SoftDeletes;
+    
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -16,19 +26,9 @@ class Question extends Model
     protected $fillable = [
         'title', 'body', 'user_id', 'type', 'calculator'
     ];
-
-    // /**
-    //  * Return body of question with markdown rendered.
-    //  * 
-    //  * @return String
-    //  */
-    // public function renderMarkdown()
-    // {
-    //     return Markdown::convertToHtml($this->body);
-    // }
-
+    
     /**
-     * Get the user that owns the post
+     * Get the user that owns the question
      *
      * @return App\User
      */
@@ -38,7 +38,7 @@ class Question extends Model
     }
 
     /**
-     * Get the comments that belong to the post
+     * Get the comments that belong to the question
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -48,7 +48,7 @@ class Question extends Model
     }
 
     /**
-     * Get standards associated with the post
+     * Get standards associated with the question
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -58,7 +58,7 @@ class Question extends Model
     }
 
     /**
-     * Get only MPAC standards associated with the post
+     * Get only MPAC standards associated with the question
      *
      * @return Illuminate\Database\Eloquent\Collection
      */

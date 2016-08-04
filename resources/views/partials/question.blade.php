@@ -1,4 +1,4 @@
-<article class="question">
+<article class="post">
     <div class="row">
         <div class="hidden-xs hidden-sm col-md-2">
             <div class="{{ $question->user->isOnline() ? 'active-' : '' }}user text-center">
@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-9" style="height:100%">
-            <div class="title">
+            <div class="post-title">
                 <a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a>
             </div>
             <div class="standards">
@@ -20,7 +20,7 @@
                 <b>Learning Objectives:</b>
                 @include('partials.list-standards', ['standards' => $question->learningObjectives])
             </div>
-            <div class="row details">
+            <div class="row meta">
                 <div class="col-xs-8">
                     <br />
                     Posted {{ $question->created_at->diffForHumans() }}

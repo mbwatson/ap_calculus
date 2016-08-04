@@ -57,33 +57,29 @@
 @section('content')
 <div class="container">
 
-    <h1>Edit Your Question</h1>
-    
     <!-- Edit Question Form -->
 
     <div class="row">
         <div class="col-xs-12">
             {!! Form::model($question, [
                 'method' => 'PATCH',
-                'files' => 'true',
-                'route' => ['questions.update', $question->id],
-                'class' => 'question-form'
+                'route' => ['questions.update', $question]
             ]) !!}
             
             <div class="row">
-              <div class="btn-group col-md-6" data-toggle="buttons">
-                  <label class="btn btn-primary {{ $question->type == 'Free Response' ? 'active' : ''}}">
+              <div class="btn-group col-md-5" data-toggle="buttons" style="display: flex;">
+                  <label class="btn btn-primary btn-lg {{ $question->type == 'Free Response' ? 'active' : ''}}" style="flex: 1;">
                       <input type="radio" name="type" autocomplete="off" value="1"  {{ $question->type == 'Free Response' ? 'checked' : ''}}> <span class="fa fa-pencil-square-o"></span> Free Response
                   </label>
-                  <label class="btn btn-primary {{ $question->type == 'Multiple Choice' ? 'active' : ''}}">
+                  <label class="btn btn-primary btn-lg {{ $question->type == 'Multiple Choice' ? 'active' : ''}}" style="flex: 1;">
                       <input type="radio" name="type" autocomplete="off" value="2" {{ $question->type == 'Multiple Choice' ? 'checked' : ''}}> <span class="fa fa-list"></span> Multiple Choice
                   </label>
               </div>
-              <div class="btn-group col-md-6" data-toggle="buttons">
-                  <label class="btn btn-primary {{ $question->calculator == 'Inactive' ? 'active' : ''}}">
+              <div class="btn-group col-md-5 col-md-offset-1" data-toggle="buttons" style="display: flex;">
+                  <label class="btn btn-primary btn-lg {{ $question->calculator == 'Inactive' ? 'active' : ''}}" style="flex: 1;">
                       <input type="radio" name="calculator" autocomplete="off" value="0" {{ $question->calculator == 'Inactive' ? 'checked' : ''}}> <span class="fa fa-minus"></span> Calculator Inactive
                   </label>
-                  <label class="btn btn-primary {{ $question->calculator == 'Active' ? 'active' : ''}}">
+                  <label class="btn btn-primary btn-lg {{ $question->calculator == 'Active' ? 'active' : ''}}" style="flex: 1;">
                       <input type="radio" name="calculator" autocomplete="off" value="1" {{ $question->calculator == 'Active' ? 'checked' : ''}}> <span class="fa fa-plus"></span> Calculator Active
                   </label>
               </div>
@@ -91,7 +87,7 @@
 
             <br />
 
-            {!! Form::text('title', null, ['class' => 'form-control title']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control form-title']) !!}
             {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body']) !!}
             
             <br />

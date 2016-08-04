@@ -1,0 +1,30 @@
+/* General */
+
+textarea {
+    max-width: 100%;
+}
+
+label,
+.control-label {
+	font-size: 110%;
+	text-align: right;
+	margin-top: 6px;
+}
+
+.btn {
+	border-radius: 5px;
+}
+
+/* Create Question/Discussion */
+
+.form-title,
+.form-title:focus {
+	background-color: transparent;
+	outline: none;
+	box-shadow: none;
+	font-size: 250%;
+	font-weight: bolder;
+	padding: 30px 0;
+	border: none;
+}
+

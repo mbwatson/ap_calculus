@@ -83,7 +83,9 @@
                                     </ul>
                                 </li>
                                 <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
+                                <li class="navbar-link"><a href="{{ url('/discussions') }}"><span class="glyphicon glyphicon-comment"></span>Discussions</a></li>
                                 @if (Auth::check() && Auth::user()->admin)
+                                    <li class="navbar-link"><a href="{{ url('/channels') }}"><span class="fa fa-television"></span>Channels</a></li>
                                     <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
                                     <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="fa fa-btn fa-list"></span>To Do List</a></li>
                                 @endif
@@ -94,4 +96,5 @@
             </div>
         </div>
     </nav>
+  @yield('breadcrumbs')
 </header>
