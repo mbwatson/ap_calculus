@@ -27,7 +27,6 @@
                     Filters
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.index') }}">All Discussions</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.mine') }}">My Discussions</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block disabled" href="#">Watching</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block disabled" href="#">Popular</a></li>
@@ -36,6 +35,7 @@
             <br />
             <h4 class="text-center">Channels</h4>
             <ul class="channels-list">
+                <li><a class="btn btn-block {{ isset($channel) ? 'btn-info' : 'btn-primary' }}" href="{{ route('discussions.index') }}">All Discussions</a></li>
                 @foreach ($channels->sortBy('name') as $chan)
                     <li><a class="btn btn-block {{ (isset($channel) && $chan == $channel) ? 'btn-primary' : 'btn-info' }}" href="{{ route('discussions.channel', $chan->id) }}">{{ $chan->name }}</a></li>
                 @endforeach

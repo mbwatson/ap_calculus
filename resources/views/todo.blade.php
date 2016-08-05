@@ -44,6 +44,7 @@
                             <li>improve flash messages, possibly with Flashy</li>
                             <li>ability to flag questions as spam</li>
                             <li>watch discussions (like question favorites?)</li>
+                            <li><a href="http://goodheads.io/2016/04/17/7-laravel-packages-to-supercharge-your-models/">voting and liking</a></li>
                         </ul>
                     </div>
                 </div>
