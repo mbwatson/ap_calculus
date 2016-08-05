@@ -24,11 +24,14 @@
                 </button>
                 <ul class="filters-list dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.index') }}">All Questions</a></li>
+                    <li role="separator" class="divider"></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.mine') }}">My Questions</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.favorites') }}">My Favorites</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.popular') }}">Popular Questions</a></li>
+                    <li role="separator" class="divider"></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.active') }}">Calculator Active</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.inactive') }}">Calculator Inactive</a></li>
+                    <li role="separator" class="divider"></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.freeresponse') }}">Free Response</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.multiplechoice') }}">Multiple Choice</a></li>
                 </ul>
