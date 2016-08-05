@@ -42,7 +42,6 @@
                             <li>slugs, esp. for standards and channels</li>
                             <li>ElasticSearch</li>
                             <li>ability to flag questions as spam</li>
-                            <li><a href="http://goodheads.io/2016/04/17/7-laravel-packages-to-supercharge-your-models/">voting and liking</a></li>
                         </ul>
                     </div>
                 </div>
