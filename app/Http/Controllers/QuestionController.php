@@ -278,4 +278,20 @@ class QuestionController extends Controller
         ]);
     }
 
+    public function showFreeResponseQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Question::where('type', 1)->paginate(10),
+            'breadcrumbs' => 'questions.freeresponse'
+        ]);
+    }
+
+    public function showMultipleChoiceQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Question::where('type', 2)->paginate(10),
+            'breadcrumbs' => 'questions.multiplechoice'
+        ]);
+    }
+
 }

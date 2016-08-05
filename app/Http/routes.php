@@ -96,6 +96,8 @@ Route::group(['middleware' => 'auth'], function() {
 	
 	// Question Routes
 
+	Route::get('questions/freeresponse', 			[ 'uses' => 'QuestionController@showFreeResponseQuestions', 		'as' => 'questions.freeresponse' ]);
+	Route::get('questions/multiplechoice',	 		[ 'uses' => 'QuestionController@showMultipleChoiceQuestions',	 	'as' => 'questions.multiplechoice' ]);
 	Route::get('questions/calculatoractive', 		[ 'uses' => 'QuestionController@showCalculatorActiveQuestions', 	'as' => 'questions.calculator.active' ]);
 	Route::get('questions/calculatorinactive', 		[ 'uses' => 'QuestionController@showCalculatorInactiveQuestions', 	'as' => 'questions.calculator.inactive' ]);
 	Route::get('questions/calculatorneutral', 		[ 'uses' => 'QuestionController@showCalculatorNeutralQuestions', 	'as' => 'questions.calculator.neutral' ]);

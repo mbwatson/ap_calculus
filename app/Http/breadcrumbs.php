@@ -122,6 +122,16 @@ Breadcrumbs::register('questions.index.all', function($breadcrumbs) {
 	$breadcrumbs->push('All', route('questions.index'));
 });
 
+Breadcrumbs::register('questions.freeresponse', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('Free Response', route('questions.freeresponse'));
+});
+
+Breadcrumbs::register('questions.multiplechoice', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('Multiple Choice', route('questions.multiplechoice'));
+});
+
 Breadcrumbs::register('questions.calculator.active', function($breadcrumbs) {
 	$breadcrumbs->parent('questions.index');
 	$breadcrumbs->push('Calculator Active', route('questions.calculator.active'));
