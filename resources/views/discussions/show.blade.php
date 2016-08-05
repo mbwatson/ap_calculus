@@ -44,11 +44,6 @@
         </div>
         <div class="panel-footer meta">
             <span class="glyphicon glyphicon-calendar"></span>{{ $discussion->created_at->diffForHumans() }}
-            <div class="pull-right">
-                <!-- (Un)Favorite Button -->
-                <a href="#" role="button" class="watch text-primary" title="Watch this Discussion" data-toggle="tooltip" data-placement="top">
-                    <i class="glyphicon glyphicon-eye-open"></i></a>
-            </div>
         </div>
     </div>
 

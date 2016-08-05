@@ -11395,6 +11395,7 @@ a {
   border-top-right-radius: 5px; }
 
 .panel-footer {
+  background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 
@@ -11622,7 +11623,7 @@ label,
   color: #666; }
 
 .posts .post {
-  margin-bottom: 50px; }
+  margin: 20px 0; }
 
 .posts .standards ul {
   display: inline; }
@@ -11634,9 +11635,9 @@ label,
 .posts .comment-count {
   display: inline;
   border-radius: 6px;
-  background-color: #ccc;
-  font-size: 80%;
-  color: #fff;
+  background-color: #ddd;
+  color: #666;
+  font-size: 100%;
   font-weight: bold;
   text-align: center;
   padding: 3px 10px;
@@ -11646,14 +11647,14 @@ label,
 .posts .comment-count:after {
   content: "";
   position: absolute;
-  bottom: -6px;
+  bottom: -8px;
   /* value = - border-top-width - border-bottom-width */
   left: 5px;
   /* controls horizontal position */
   border-width: 8px 8px 0 0;
   /* vary these values to change the angle of the vertex */
   border-style: solid;
-  border-color: #ccc transparent; }
+  border-color: #ddd transparent; }
 
 .meta {
   color: #aaa; }

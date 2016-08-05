@@ -1,7 +1,7 @@
 .posts {
 	
 	.post {
-		margin-bottom: 50px;
+		margin: 20px 0;
 	}
 
 	.standards {
@@ -18,9 +18,9 @@
 	.comment-count {
 		display: inline;
 		border-radius: 6px;
-		background-color: #ccc;
-		font-size: 80%;
-		color: #fff;
+		background-color: #ddd;
+		color: #666;
+		font-size: 100%;
 		font-weight: bold;
 		text-align: center;
 		padding: 3px 10px;
@@ -31,21 +31,25 @@
 	.comment-count:after {
 		content: "";
 		position: absolute;
-		bottom: -6px; 					/* value = - border-top-width - border-bottom-width */
+		bottom: -8px; 					/* value = - border-top-width - border-bottom-width */
 		left: 5px;						/* controls horizontal position */
 		border-width: 8px 8px 0 0;		/* vary these values to change the angle of the vertex */
 		border-style: solid;
-		border-color: #ccc transparent;
+		border-color: #ddd transparent;
 	}
 
 }
 
 .meta {
+	
 	color: #aaa;
+
 }
 
 .standards-list {
+
 	li {
+		
 		padding: 0 0 0 4px;
 		margin: 0;
 		font-size: 90%;
@@ -53,7 +57,9 @@
 		a {
 			text-decoration: underline;
 		}
+
 	}
+
 }
 
 #post {
@@ -83,6 +89,7 @@
 }
 
 .channels-list {
+
 	list-style: none;
 	padding: 0;
 
@@ -93,9 +100,11 @@
 
 .comment,
 .response {
+	
 	.avatar {
 		width: 80px;
 		height: 80px;
 	}
+
 }
 

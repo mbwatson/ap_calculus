@@ -215,4 +215,9 @@ class Question extends Model
         return max( $this->comments()->latest()->first()->created_at, $this->updated_at );
     }
 
+    public function thumbsUpCount()
+    {
+        return rand(1, 25);
+    }
+
 }
