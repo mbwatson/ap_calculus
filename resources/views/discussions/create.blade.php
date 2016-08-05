@@ -75,7 +75,7 @@
             </div>
 
             <div class="form-group">
-                <div class="row post">
+                <div class="row" id="post">
                     <div class="col-xs-2 text-center">
                         <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
                             <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />

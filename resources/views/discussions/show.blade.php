@@ -14,38 +14,18 @@
         <div class="panel-heading">
             {{ $discussion->title }}
             <div class="btn-group pull-right">
-                <div class="dropdown">
-                    <button class="btn btn-primary btn-xs dropdown-toggle" type="button" id="discussion-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                    </button>
-                    <div class="dropdown-menu pull-right" aria-labelledby="discussion-dropdown">
-                        @if ($discussion->user == Auth::user() || Auth::user()->admin)
-                            <!-- Edit -->
-                            <a href="{{ route('discussions.edit', $discussion->id) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Discussion</a>
-                            <!-- Delete -->
-                            {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete']) !!}
-                                <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Discussion</button>
-                            {!! Form::close() !!}
-                        @endif
+                @if ($discussion->user == Auth::user() || Auth::user()->admin)
+                    <div class="btn-group pull-right post-options" style="opacity: 0.2;">
+                        <!-- Edit -->
+                        <a href="{{ route('discussions.edit', $discussion->id) }}" role="button" class="btn btn-sm btn-link" style="padding-top: 14px;">
+                            <i class="glyphicon glyphicon-edit"></i></a>
+                        <!-- Delete -->
+                        {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete', 'style' => 'display: inline;']) !!}
+                            <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i></button>
+                        {!! Form::close() !!}
                     </div>
-                </div>
+                @endif
             </div>
-
-
-            @if ($discussion->user == Auth::user() || Auth::user()->admin)
-                <div class="btn-group pull-right post-options">
-                    <!-- Edit -->
-                    <a href="{{ route('discussions.edit', $discussion->id) }}" role="button" class="btn btn-sm btn-link"
-                        style="padding-top: 12px;"><i class="glyphicon glyphicon-edit"></i></a>
-                    <!-- Delete -->
-                    {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete', 'style' => 'display: inline;']) !!}
-                        <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i></button>
-                    {!! Form::close() !!}
-                </div>
-            @endif
-
-
-
         </div>
         <div class="panel-body">
             <div class="row">

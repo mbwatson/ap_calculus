@@ -14,22 +14,19 @@
         <div class="panel-heading">
             {{ $question->title }}
             <div class="btn-group pull-right">
-                <div class="dropdown post-dropdown">
-                    <button class="btn btn-primary btn-xs dropdown-toggle" type="button" id="question-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                    </button>
-                    <div class="dropdown-menu pull-right" aria-labelledby="question-dropdown">
-                        <a href="{{ route('questions.showprintable', $question) }}" target="_blank" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-print"></i>Printer-friendly</a>
-                        @if ($question->user == Auth::user() || Auth::user()->admin)
-                            <div role="separator" class="divider"></div>
-                            <!-- Edit -->
-                            <a href="{{ route('questions.edit', $question) }}" role="button" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-edit"></i>Edit Question</a>
-                            <!-- Delete -->
-                            {!! Form::open(['route' => ['questions.destroy', $question->id], 'method' => 'delete']) !!}
-                                <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i>Delete Question</button>
-                            {!! Form::close() !!}
-                        @endif
-                    </div>
+                <div class="btn-group pull-right post-options" style="opacity: 0.2;">
+                    <!-- Print -->
+                    <a href="{{ route('questions.showprintable', $question) }}" target="_blank" role="button" class="btn btn-sm btn-link" style="padding-top: 14px;">
+                        <i class="glyphicon glyphicon-print"></i></a>
+                    @if ($question->user == Auth::user() || Auth::user()->admin)
+                        <!-- Edit -->
+                        <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link" style="padding-top: 14px;">
+                            <i class="glyphicon glyphicon-edit"></i></a>
+                        <!-- Delete -->
+                        {!! Form::open(['route' => ['questions.destroy', $question], 'method' => 'delete', 'style' => 'display: inline;']) !!}
+                            <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i></button>
+                        {!! Form::close() !!}
+                    @endif
                 </div>
             </div>
         </div>
@@ -107,4 +104,12 @@
 <!-- My Favorites JS -->
 <script type="text/javascript" src="{{ asset('src/js/favorites.js') }}"></script>
 
+<script type="text/javascript">
+    $("#post").hover(function(){
+        $(".post-options").fadeTo("fast", 1, "swing");
+    },
+    function(){
+        $(".post-options").fadeTo("fast", 0.2, "swing");
+    });
+</script>
 @endsection
