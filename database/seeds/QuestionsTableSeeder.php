@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class QuestionsTableSeeder extends Seeder {
 	public function run()
@@ -22,8 +23,8 @@ class QuestionsTableSeeder extends Seeder {
 
 (c) Use the first three nonzero terms of the power series for $f$ to approximate $f(1)$. Use the alternating series error bound to show that this approximation differs from $f(1)$ by less than $\frac{1}{100}$.',
 				'user_id' => 1,
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 2,
@@ -36,10 +37,10 @@ class QuestionsTableSeeder extends Seeder {
 
 (b) Find the maximum value of $f$ for $x \geq 0$. Justify your answer.
 
-(c) Evaluate $\int_0^\infty f(x)\,dx$, or show that the integral diverges.',
+(c) Evaluate $\int_0^\infty f(x) dx$, or show that the integral diverges.',
 				'user_id' => 2,
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(1)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(1)->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 3,
@@ -55,8 +56,8 @@ Consider the function defined by $f(x)=\frac{\sin(x)}{x}$.
 					
 (c) Redefine $f$ as follows: $f(x) = \begin{cases}\frac{\sin(x)}{x} &: x \ne 0;\newline k &: x=0.\end{cases}$ The power series in part (a) will be a Maclaurin series for this newly defined $f$. What is the value of $k$?',
 				'user_id' => '1',
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(2)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(2)->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 4,
@@ -76,8 +77,8 @@ Write the first four terms and the general term of the Taylor series for $g$ abo
 
 (d) Does the Taylor series for $g$ as defined in part (c) converge at $x=-2$? Give a reason for your answer.',
 				'user_id' => '2',
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(3)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(3)->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 5,
@@ -98,8 +99,8 @@ on its interval of convergence.
 
 (c) Use the Maclaurin series you found in part (b) to find the value of $f\'(-\tfrac{1}{3})$.',
 				'user_id' => '1',
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(4)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(4)->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 6,
@@ -114,8 +115,8 @@ on its interval of convergence.
 <p>(c) On the closed interval $-1 \leq x \leq 4$, find the absolute minimum value of $g$ and find the absolute maximum value of $g$. Justify your answers.</p>
 <p>(d) Let $h(x) = x \cdot g(x)$. Find $h\'(2)$.</p>',
 				'user_id' => '2',
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(5)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(5)->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 7,
@@ -129,8 +130,8 @@ on its interval of convergence.
 <p>(b) A Solid is generated when $S$ is revolved about the horizontal line $y=5$. Write, but do not evaluate, an expression involving one or more integrals that gives the volume of the solid.</p>
 <p>(c) Region $R$ is the base of an art sculpture. At all points in $R$ at a distance $x$ from the $y$-axis, the height of the sculpture is given by $h(x) = 4 - x$. Find the volume of the art sculpture.</p>',
 				'user_id' => '1',
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(6)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(6)->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 8,
@@ -147,8 +148,8 @@ on its interval of convergence.
 <p>(D) Sarah also rode a stationary bicycle. The number of rotations per minute of the wheel of&nbsp;the stationary bicycle at time $t$ minutes during Sarah&rsquo;s ride is modeled by the function $s$,</p>
 <p>defined by $s(t) = 40 + 20\pi\sin\Big(\frac{\pi t}{18}\Big)$&nbsp;for $0 \leq t \leq 9$&nbsp;minutes. Find the average number of&nbsp;rotations per minute of the wheel of the stationary bicycle for $0 \leq t \leq 9$&nbsp;minutes.</p>',
 				'user_id' => '1',
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(7)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(7)->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 9,
@@ -162,8 +163,8 @@ on its interval of convergence.
 <p>(C) 3.031</p>
 <p>(D) 3.152</p>',
 				'user_id' => '2',
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->addSecond(8)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(8)->format('Y-m-d H:i:s')
 			),
 		);
 

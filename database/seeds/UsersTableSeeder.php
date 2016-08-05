@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -20,8 +21,8 @@ class UsersTableSeeder extends Seeder
 				'email' => 'email@ddress.com',
 				'admin' => true,
 				'password' => Hash::make('password'),
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 			),
 			array(
 				'id' => 2,
@@ -29,8 +30,8 @@ class UsersTableSeeder extends Seeder
 				'email' => 'email@ddress.net',
 				'admin' => false,
 				'password' => Hash::make('password'),
-				'created_at' => date("Y-m-d H:i:s"),
-				'updated_at' => date("Y-m-d H:i:s")
+				'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 			)
 		);
 
