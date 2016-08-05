@@ -26,6 +26,15 @@ class DiscussionsTableSeeder extends Seeder
 				'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 			),
+			array(
+				'id' => 2,
+				'title' => 'Another Discussion',
+				'body' => 'Here is a discussion in another channel.',
+				'channel_id' => 2,
+				'user_id' => 2,
+				'created_at' => Carbon::now()->addSeconds(5)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSeconds(5)->format('Y-m-d H:i:s')
+			),
 		);
 
 		DB::table('discussions')->insert($seeds);
