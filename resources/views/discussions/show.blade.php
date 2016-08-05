@@ -13,8 +13,8 @@
     <div class="panel panel-default" id="post">
         <div class="panel-heading">
             {{ $discussion->title }}
-            <div class="btn-group pull-right">
-                @if ($discussion->user == Auth::user() || Auth::user()->admin)
+            @if ($discussion->user == Auth::user() || Auth::user()->admin)
+                <div class="btn-group pull-right post-options" style="opacity: 0.2;">
                     <!-- Edit -->
                     {!! Form::open(['route' => ['discussions.edit', $discussion], 'method' => 'get', 'style' => 'display: inline;']) !!}
                         <button type="submit" class="btn btn-link" title="Edit Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
@@ -25,20 +25,8 @@
                         <button type="submit" class="btn btn-link" title="Delete Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
                             <i class="glyphicon glyphicon-remove"></i></button>
                     {!! Form::close() !!}
-                @endif
-                <!-- old stuff -->
-                @if ($discussion->user == Auth::user() || Auth::user()->admin)
-                    <div class="btn-group pull-right post-options" style="opacity: 0.2;">
-                        <!-- Edit -->
-                        <a href="{{ route('discussions.edit', $discussion->id) }}" role="button" class="btn btn-sm btn-link" style="padding-top: 14px;">
-                            <i class="glyphicon glyphicon-edit"></i></a>
-                        <!-- Delete -->
-                        {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete', 'style' => 'display: inline;']) !!}
-                            <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i></button>
-                        {!! Form::close() !!}
-                    </div>
-                @endif
-            </div>
+                </div>
+            @endif
         </div>
         <div class="panel-body">
             <div class="row">
