@@ -29,7 +29,9 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('users', 'App\User');
         $router->model('channels', 'App\Channel');
         $router->model('discussions', 'App\Discussion');
+        $router->model('responses', 'App\Response');
         $router->model('questions', 'App\Question');
+        $router->model('comments', 'App\Comment');
         $router->model('standards', 'App\Standard');
     }
 

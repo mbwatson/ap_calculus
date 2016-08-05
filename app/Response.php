@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DraperStudio\Likeable\Contracts\Likeable;
+use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
 
-class Response extends Model
+class Response extends Model implements Likeable
 {
+    use LikeableTrait;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -17,7 +21,7 @@ class Response extends Model
     
 	/**
 	 * Get the question that owns the comment
-	*/
+	 */
     public function discussion()
     {
     	return $this->belongsTo('App\Discussion');
@@ -25,7 +29,7 @@ class Response extends Model
 
     /**
      * Get the user that owns the comment
-    */
+     */
     public function user()
     {
         return $this->belongsTo('App\User');

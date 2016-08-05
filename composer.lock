@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5b56e48cd617df4d59b9012c6e81deff",
-    "content-hash": "9cf91d8077511e0139e54f67f8a6750d",
+    "hash": "1f46a39af63943939ccfae6bd420258d",
+    "content-hash": "d6584c9ec29a6dbf48d422ff665dc387",
     "packages": [
         {
             "name": "barryvdh/laravel-snappy",
@@ -261,6 +261,119 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "draperstudio/laravel-likeable",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DraperStudio/Laravel-Likeable.git",
+                "reference": "e144d98c43df108c2352607641be13753e4f4c8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DraperStudio/Laravel-Likeable/zipball/e144d98c43df108c2352607641be13753e4f4c8d",
+                "reference": "e144d98c43df108c2352607641be13753e4f4c8d",
+                "shasum": ""
+            },
+            "require": {
+                "draperstudio/laravel-service-provider": "^0.1",
+                "illuminate/database": "5.1.* || 5.2.*",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.0",
+                "scrutinizer/ocular": "~1.1",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DraperStudio\\Likeable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "DraperStudio",
+                    "email": "hello@draperstudio.tech",
+                    "homepage": "http://draperstudio.tech",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Likeable Polymorphic Eloquent Models for Laravel 5",
+            "homepage": "https://github.com/DraperStudio/laravel-likeable",
+            "keywords": [
+                "DraperStudio",
+                "laravel-likeable"
+            ],
+            "time": "2016-03-07 21:41:39"
+        },
+        {
+            "name": "draperstudio/laravel-service-provider",
+            "version": "0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DraperStudio/Laravel-Service-Provider.git",
+                "reference": "0696e8f46a8c0a1053b2b29bd5d09441b60d2c50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DraperStudio/Laravel-Service-Provider/zipball/0696e8f46a8c0a1053b2b29bd5d09441b60d2c50",
+                "reference": "0696e8f46a8c0a1053b2b29bd5d09441b60d2c50",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.* || 5.2.*",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.0",
+                "scrutinizer/ocular": "~1.1",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DraperStudio\\ServiceProvider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "DraperStudio",
+                    "email": "hello@draperstudio.tech",
+                    "homepage": "http://draperstudio.tech",
+                    "role": "Developer"
+                }
+            ],
+            "description": "DRY Service Provider for Laravel 5 Packages",
+            "homepage": "https://github.com/DraperStudio/laravel-service-provider",
+            "keywords": [
+                "DraperStudio",
+                "laravel-service-provider"
+            ],
+            "time": "2016-03-08 14:59:34"
         },
         {
             "name": "graham-campbell/markdown",

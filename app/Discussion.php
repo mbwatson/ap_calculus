@@ -5,9 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Discussion extends Model
+use DraperStudio\Likeable\Contracts\Likeable;
+use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
+
+class Discussion extends Model implements Likeable
 {
     use SoftDeletes;
+    use LikeableTrait;
     
     /**
      * The attributes that should be mutated to dates.

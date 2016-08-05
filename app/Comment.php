@@ -3,10 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DraperStudio\Likeable\Contracts\Likeable;
+use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
 
-class Comment extends Model
+class Comment extends Model implements Likeable
 {
 
+    use LikeableTrait;
+    
     /**
      * The attributes that are mass assignable.
      *

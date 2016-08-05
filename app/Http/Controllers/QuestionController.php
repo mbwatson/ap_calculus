@@ -277,4 +277,5 @@ class QuestionController extends Controller
             'breadcrumb' => 'questions.mine'
         ]);
     }
+
 }

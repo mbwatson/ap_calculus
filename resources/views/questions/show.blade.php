@@ -74,9 +74,15 @@
                     @endif
                 </div>
                 <div class="col-xs-2 text-right">
-                    <!-- Thumbs Up/Down -->
-                    <a href="#" class="text-muted" title="Thumbs Up" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-thumbs-up"></i></a>
-                    <sub>{{ $question->thumbsUpCount() }}</sub>
+                    <!-- Thumbs Up -->
+                    @if ($question->liked(Auth::user()))
+                        <a href="{{ route('questions.unlike', $question) }}" class="text-primary" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                    @else
+                        <a href="{{ route('questions.like', $question) }}" class="text-muted" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                    @endif
+                    <sub>{{ $question->likeCount }}</sub>
                 </div>
                 <div class="col-xs-1 text-right">
                     <!-- (Un)Favorite Button -->

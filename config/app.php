@@ -162,6 +162,7 @@ return [
         Barryvdh\Snappy\ServiceProvider::class,
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        DraperStudio\Likeable\ServiceProvider::class,
     ],
 
     /*

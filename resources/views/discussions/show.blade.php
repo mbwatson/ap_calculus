@@ -43,7 +43,23 @@
             </div>
         </div>
         <div class="panel-footer meta">
-            <span class="glyphicon glyphicon-calendar"></span>{{ $discussion->created_at->diffForHumans() }}
+            <div class="row">
+                <div class="col-xs-6">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    {{ $discussion->created_at->diffForHumans() }}
+                </div>
+                <div class="col-xs-6 text-right">
+                    <!-- Thumbs Up -->
+                    @if ($discussion->liked(Auth::user()))
+                        <a href="{{ route('discussions.unlike', $discussion) }}" class="text-primary" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                    @else
+                        <a href="{{ route('discussions.like', $discussion) }}" class="text-muted" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                    @endif
+                    <sub>{{ $discussion->likeCount }}</sub>
+                </div>
+            </div>
         </div>
     </div>
 

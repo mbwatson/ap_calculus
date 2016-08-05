@@ -15,9 +15,22 @@
                 </div>
             </div>
         </div>
-        <div class="row meta">
-            <div class="col-sm-10 col-sm-offset-2 col-xs-12">
+    </div>
+    <div class="panel-footer meta">
+        <div class="row">
+            <div class="col-xs-6">
                 <i class="glyphicon glyphicon-calendar"></i> {{ $response->created_at->diffForHumans() }}
+            </div>
+            <div class="col-xs-6 text-right">
+                <!-- Thumbs Up -->
+                @if ($response->liked(Auth::user()))
+                    <a href="{{ route('responses.unlike', $response) }}" class="text-primary" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                        <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                @else
+                    <a href="{{ route('responses.like', $response) }}" class="text-muted" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                        <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                @endif
+                <sub>{{ $response->likeCount }}</sub>
             </div>
         </div>
     </div>

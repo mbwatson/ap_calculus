@@ -116,7 +116,36 @@ class AccountController extends Controller
             Auth::user()->favorites()->attach([$id]);
             return response()->json(['message' => 'Favorited question!']);
         }
-
-
     }
+
+    /**
+     * "Like" the given model.
+     * 
+     * @param  App\Question, App\Comment, App\Discussion, App\Response
+     * @return \Illuminate\Http\Response
+     */
+    public function like($object)
+    {
+        $user = Auth::user();
+        
+        $object->like($user);
+
+        return redirect()->back();
+    }
+
+    /**
+     * "UnLike" the given model.
+     * 
+     * @param  App\Question, App\Comment, App\Discussion, App\Response
+     * @return \Illuminate\Http\Response
+     */
+    public function unlike($object)
+    {
+        $user = Auth::user();
+        
+        $object->dislike($user);
+
+        return redirect()->back();
+    }
+
 }

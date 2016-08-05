@@ -53,6 +53,8 @@ Route::resource('account', 'AccountController', [
 	'only' => ['index', 'edit', 'update']
 ]);
 
+Route::get('questions/{questions}/like', [ 'uses' => 'AccountController@like', 'as' => 'questions.like' ]);
+
 // Everything Else
 
 Route::get('standards/mpacs', [
@@ -77,12 +79,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 	// Discussion Routes
 
-	Route::get('/discussions/mine', [ 'uses' => 'DiscussionController@showMyDiscussions', 'as' => 'discussions.mine' ]);
-
-	Route::get('/discussions/channel/{channel_slug}', [
-		'uses' => 'DiscussionController@showDiscussionsInChannel',
-		'as' => 'discussions.channel'
-	]);
+	Route::get('/discussions/mine', 					[ 'uses' => 'DiscussionController@showMyDiscussions', 'as' => 'discussions.mine' ]);
+	Route::get('/discussions/channel/{channel_slug}', 	[ 'uses' => 'DiscussionController@showDiscussionsInChannel', 'as' => 'discussions.channel' ]);
 
 	Route::resource('discussions', 'DiscussionController');
 
@@ -132,5 +130,16 @@ Route::group(['middleware' => 'auth'], function() {
 		'uses' => 'SearchController@results',
 		'as' => 'search.results',
 	]);
+
+	// (un)Like Routes
+
+	Route::get('/questions/{questions}/like', 		[ 'uses' => 'AccountController@like',	'as' => 'questions.like' ]);
+	Route::get('/questions/{questions}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'questions.unlike' ]);
+	Route::get('/comments/{comments}/like', 		[ 'uses' => 'AccountController@like', 	'as' => 'comments.like' ]);
+	Route::get('/comments/{comments}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'comments.unlike' ]);
+	Route::get('/discussions/{discussions}/like',	[ 'uses' => 'AccountController@like', 	'as' => 'discussions.like' ]);
+	Route::get('/discussions/{discussions}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'discussions.unlike' ]);
+	Route::get('/responses/{responses}/like', 		[ 'uses' => 'AccountController@like', 	'as' => 'responses.like' ]);
+	Route::get('/responses/{responses}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'responses.unlike' ]);
 
 });

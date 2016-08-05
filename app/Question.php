@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Markdown;
 use PDF;
+use DraperStudio\Likeable\Contracts\Likeable;
+use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
 
-class Question extends Model
+
+class Question extends Model implements Likeable
 {
     use SoftDeletes;
+    use LikeableTrait;
     
     /**
      * The attributes that should be mutated to dates.
@@ -213,11 +217,6 @@ class Question extends Model
     public function lastActivityTime()
     {
         return max( $this->comments()->latest()->first()->created_at, $this->updated_at );
-    }
-
-    public function thumbsUpCount()
-    {
-        return rand(1, 25);
     }
 
 }
