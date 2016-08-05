@@ -11368,6 +11368,7 @@ input[type="radio"], input[type="checkbox"] {
   color: #222222; }
 
 body {
+  font-family: Lato;
   color: #666;
   background-color: #f5f5f1; }
 
@@ -11668,12 +11669,12 @@ label,
   background-color: #fff;
   font-size: 200%;
   border-bottom-width: 0;
-  color: #3c3c3c; }
+  color: #333; }
 
 #post .avatar {
   width: 120px;
   height: 120px;
-  border: 8px solid #3c3c3c;
+  border: 8px solid #333;
   border-radius: 50%; }
 
 #post .dropdown-menu .btn, #post .dropdown-menu .a {
@@ -11696,6 +11697,8 @@ label,
 
 /* Global Stuff */
 .avatar {
+  height: 85px;
+  width: 85px;
   border-radius: 50%;
   border: 6px solid #333; }
 

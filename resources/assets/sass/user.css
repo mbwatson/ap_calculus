@@ -1,6 +1,8 @@
 /* Global Stuff */
 
 .avatar {
+	height: 85px;
+	width: 85px;
 	border-radius:50%;
 	border: 6px solid #333;
 }
