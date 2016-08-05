@@ -41,9 +41,7 @@
                             <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
                             <li>slugs, esp. for standards and channels</li>
                             <li>ElasticSearch</li>
-                            <li>improve flash messages, possibly with Flashy</li>
                             <li>ability to flag questions as spam</li>
-                            <li>watch discussions (like question favorites?)</li>
                             <li><a href="http://goodheads.io/2016/04/17/7-laravel-packages-to-supercharge-your-models/">voting and liking</a></li>
                         </ul>
                     </div>
@@ -65,6 +63,7 @@
                             <li>assistance for inexperienced $\LaTeX$ users</li>
                             <li>improve dashboard UX</li>
                             <li>search questions AND discussions</li>
+                            <li>ajax for favorites and likes to update page and not redirect</li>
                         </ul>
                     </div>
                 </div>
