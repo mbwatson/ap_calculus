@@ -38,7 +38,7 @@
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <section class="questions">
+                    <section class="posts">
                         @foreach ($standard->questions()->get() as $question)
                             @include('partials.question', $question)
                         @endforeach
