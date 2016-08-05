@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    {{ $discussion->body }}
+                    {!! $discussion->body !!}
                 </div>
             </div>
         </div>
@@ -51,13 +51,13 @@
                 <div class="col-xs-6 text-right">
                     <!-- Thumbs Up -->
                     @if ($discussion->liked(Auth::user()))
-                        <a href="{{ route('discussions.unlike', $discussion) }}" class="text-primary" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
-                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                        <a href="{{ route('discussions.unlike', $discussion) }}" class="like text-primary" title="Unlike" data-toggle="tooltip" data-placement="top">
+                            <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $discussion->likeCount }}</sub></a>
                     @else
-                        <a href="{{ route('discussions.like', $discussion) }}" class="text-muted" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
-                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                        <a href="{{ route('discussions.like', $discussion) }}" class="like text-muted" title="Like this Discussion" data-toggle="tooltip" data-placement="top">
+                            <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $discussion->likeCount }}</sub></a>
                     @endif
-                    <sub>{{ $discussion->likeCount }}</sub>
+                    
                 </div>
             </div>
         </div>
