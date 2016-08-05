@@ -182,6 +182,16 @@ class Question extends Model implements Likeable
         return $query;
     }
 
+    public function scopeFreeResponse($query)
+    {
+        return $query->where('type', 1);
+    }
+
+    public function scopeMultipleChoice($query)
+    {
+        return $query->where('type', 2);
+    }
+
     // Array of database encoding of calculator activity options
     protected $calc = [
         0 => 'Inactive',
@@ -212,11 +222,6 @@ class Question extends Model implements Likeable
     public function getTypeAttribute($value)
     {
         return $this->types[$value];
-    }
-
-    public function lastActivityTime()
-    {
-        return max( $this->comments()->latest()->first()->created_at, $this->updated_at );
     }
 
 }

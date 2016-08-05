@@ -98,6 +98,48 @@ class QuestionController extends Controller
     }
 
     /**
+     * Show questions types as Free Response
+     * 
+     * @param  App\Question
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function showFreeResponseQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Question::latest('updated_at')->freeResponse()->paginate(10),
+            'breadcrumbs' => 'questions.freeresponse'
+        ]);
+    }
+
+    /**
+     * Show questions types as Multiple Choice
+     * 
+     * @param  App\Question
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function showMultipleChoiceQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Question::latest('updated_at')->multipleChoice()->paginate(10),
+            'breadcrumbs' => 'questions.multiplechoice'
+        ]);
+    }
+
+    /**
+     * Display questions belonging to logged user
+     * 
+     * @param  App\Question
+     * @return \Illuminate\Http\Response
+     */
+    public function showMyQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Auth::user()->questions()->paginate(10),
+            'breadcrumb' => 'questions.mine'
+        ]);
+    }
+
+    /**
      * Show a single question
      *
      * @param  App\Question $question
@@ -264,34 +306,5 @@ class QuestionController extends Controller
         return view('questions.showprintable', ['question' => $question]);
     }
 
-    /**
-     * Display questions belonging to logged user
-     * 
-     * @param  App\Question
-     * @return \Illuminate\Http\Response
-     */
-    public function showMyQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Auth::user()->questions()->paginate(10),
-            'breadcrumb' => 'questions.mine'
-        ]);
-    }
-
-    public function showFreeResponseQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Question::where('type', 1)->paginate(10),
-            'breadcrumbs' => 'questions.freeresponse'
-        ]);
-    }
-
-    public function showMultipleChoiceQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Question::where('type', 2)->paginate(10),
-            'breadcrumbs' => 'questions.multiplechoice'
-        ]);
-    }
 
 }
