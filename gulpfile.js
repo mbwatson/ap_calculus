@@ -15,14 +15,13 @@ elixir(function(mix) {
     mix.sass([
     	'app.scss',
 		'yeti.min.css',
-		'main.scss',
-		'nav.scss',
-		'jumbotron.scss',
-		'forms.scss',
-		'avatar.scss',
-		'posts.scss',
-		'sidebar.scss',
-		'user.scss',
-		'buttons.scss'
+		'main.css',
+		'nav.css',
+		'jumbotron.css',
+		'forms.css',
+		'posts.css',
+		'sidebar.css',
+		'user.css',
+		'buttons.css'
     ]);
 });

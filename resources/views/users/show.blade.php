@@ -9,10 +9,10 @@
 <div class="jumbotron">
     <div class="container">
         <div class="row profile">
-            <div class="col-md-2">
+            <div class="col-sm-3">
                 <img class="avatar" src="{{ url('/') }}/avatars/{{ $user->avatar }}">
             </div>
-            <div class="col-md-10">
+            <div class="col-sm-5">
                 <div class="row heading">
                     <h1>{{ $user->name }}</h1><br /><br />
                 </div>

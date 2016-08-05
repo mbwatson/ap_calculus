@@ -13,8 +13,6 @@
 	.avatar {
 		width: 80px;
 		height: 80px;
-		border: 5px solid #333;
-		border-radius:50%;
 	}
 
 	.comment-count {
@@ -64,8 +62,9 @@
 		background-color: #fff;
 		font-size: 200%;
 		border-bottom-width: 0;
+		color: #333;
 	}
-
+	
 	.avatar {
 		width: 120px;
 		height: 120px;
@@ -92,4 +91,11 @@
 	}
 }
 
+.comment,
+.response {
+	.avatar {
+		width: 80px;
+		height: 80px;
+	}
+}
 

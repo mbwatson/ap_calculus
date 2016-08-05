@@ -12,7 +12,7 @@
 
     <div class="panel panel-default" id="post">
         <div class="panel-heading">
-            {{ $discussion->title }} [ in {{ $discussion->channel->name }} ]
+            {{ $discussion->title }}
             <div class="btn-group pull-right">
                 <div class="dropdown">
                     <button class="btn btn-primary btn-xs dropdown-toggle" type="button" id="discussion-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,6 +30,22 @@
                     </div>
                 </div>
             </div>
+
+
+            @if ($discussion->user == Auth::user() || Auth::user()->admin)
+                <div class="btn-group pull-right post-options">
+                    <!-- Edit -->
+                    <a href="{{ route('discussions.edit', $discussion->id) }}" role="button" class="btn btn-sm btn-link"
+                        style="padding-top: 12px;"><i class="glyphicon glyphicon-edit"></i></a>
+                    <!-- Delete -->
+                    {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete', 'style' => 'display: inline;']) !!}
+                        <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i></button>
+                    {!! Form::close() !!}
+                </div>
+            @endif
+
+
+
         </div>
         <div class="panel-body">
             <div class="row">
@@ -75,4 +91,15 @@
 
 </div>
 
+@endsection
+
+@section('footer')
+<script type="text/javascript">
+    $("#post").hover(function(){
+        $(".post-options").fadeTo("fast", 1, "swing");
+    },
+    function(){
+        $(".post-options").fadeTo("fast", 0.2, "swing");
+    });
+</script>
 @endsection

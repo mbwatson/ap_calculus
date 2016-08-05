@@ -59,26 +59,26 @@
                 </div>
             </div>
         </div>
-            <div class="panel-footer meta">
-                <span class="glyphicon glyphicon-calendar"></span>
-                {{ $question->created_at->diffForHumans() }}
-                | Calculator {{ $question->calculator }}
-                | {{ $question->type }}
-                <div class="pull-right interaction">
-                    <!-- Thumbs Up/Down -->
-                    <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                    <a href="#" title="-1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    | 
-                    <!-- (Un)Favorite Button -->
-                    @if ($question->favorites->contains(Auth::user()))
-                        <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-primary"
-                        title="Remove from Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
-                    @else
-                        <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-muted"
-                        title="Add to Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
-                    @endif
-                </div>
+        <div class="panel-footer meta">
+            <span class="glyphicon glyphicon-calendar"></span>
+            {{ $question->created_at->diffForHumans() }}
+            | Calculator {{ $question->calculator }}
+            | {{ $question->type }}
+            <div class="pull-right interaction">
+                <!-- Thumbs Up/Down -->
+                <a href="#" title="+1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                <a href="#" title="-1" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                | 
+                <!-- (Un)Favorite Button -->
+                @if ($question->favorites->contains(Auth::user()))
+                    <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-primary"
+                    title="Remove from Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
+                @else
+                    <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-muted"
+                    title="Add to Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
+                @endif
             </div>
+        </div>
     </div>
 
     <!-- Comments List -->
