@@ -15,6 +15,19 @@
             {{ $discussion->title }}
             <div class="btn-group pull-right">
                 @if ($discussion->user == Auth::user() || Auth::user()->admin)
+                    <!-- Edit -->
+                    {!! Form::open(['route' => ['discussions.edit', $discussion], 'method' => 'get', 'style' => 'display: inline;']) !!}
+                        <button type="submit" class="btn btn-link" title="Edit Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
+                            <i class="glyphicon glyphicon-edit"></i></button>
+                    {!! Form::close() !!}
+                    <!-- Delete -->
+                    {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete', 'style' => 'display: inline;']) !!}
+                        <button type="submit" class="btn btn-link" title="Delete Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
+                            <i class="glyphicon glyphicon-remove"></i></button>
+                    {!! Form::close() !!}
+                @endif
+                <!-- old stuff -->
+                @if ($discussion->user == Auth::user() || Auth::user()->admin)
                     <div class="btn-group pull-right post-options" style="opacity: 0.2;">
                         <!-- Edit -->
                         <a href="{{ route('discussions.edit', $discussion->id) }}" role="button" class="btn btn-sm btn-link" style="padding-top: 14px;">
@@ -85,6 +98,7 @@
 @endsection
 
 @section('footer')
+<!-- Post Options -->
 <script type="text/javascript">
     $("#post").hover(function(){
         $(".post-options").fadeTo("fast", 1, "swing");

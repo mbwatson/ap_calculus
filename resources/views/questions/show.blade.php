@@ -16,15 +16,20 @@
             <div class="btn-group pull-right">
                 <div class="btn-group pull-right post-options" style="opacity: 0.2;">
                     <!-- Print -->
-                    <a href="{{ route('questions.showprintable', $question) }}" target="_blank" role="button" class="btn btn-sm btn-link" style="padding-top: 14px;">
-                        <i class="glyphicon glyphicon-print"></i></a>
+                    {!! Form::open(['route' => ['questions.showprintable', $question], 'method' => 'get', 'style' => 'display: inline;']) !!}
+                        <button type="submit" class="btn btn-link" title="Printer-friendly Version" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
+                            <i class="glyphicon glyphicon-print"></i></button>
+                    {!! Form::close() !!}
                     @if ($question->user == Auth::user() || Auth::user()->admin)
                         <!-- Edit -->
-                        <a href="{{ route('questions.edit', $question->id) }}" role="button" class="btn btn-sm btn-link" style="padding-top: 14px;">
-                            <i class="glyphicon glyphicon-edit"></i></a>
+                        {!! Form::open(['route' => ['questions.edit', $question], 'method' => 'get', 'style' => 'display: inline;']) !!}
+                            <button type="submit" class="btn btn-link" title="Edit Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
+                                <i class="glyphicon glyphicon-edit"></i></button>
+                        {!! Form::close() !!}
                         <!-- Delete -->
                         {!! Form::open(['route' => ['questions.destroy', $question], 'method' => 'delete', 'style' => 'display: inline;']) !!}
-                            <button type="submit" class="btn btn-sm btn-link"><i class="glyphicon glyphicon-remove"></i></button>
+                            <button type="submit" class="btn btn-link" title="Delete Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
+                                <i class="glyphicon glyphicon-remove"></i></button>
                         {!! Form::close() !!}
                     @endif
                 </div>
@@ -123,6 +128,7 @@
 <!-- My Favorites JS -->
 <script type="text/javascript" src="{{ asset('src/js/favorites.js') }}"></script>
 
+<!-- Post Options -->
 <script type="text/javascript">
     $("#post").hover(function(){
         $(".post-options").fadeTo("fast", 1, "swing");

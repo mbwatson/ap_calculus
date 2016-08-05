@@ -24,7 +24,7 @@ class ResponsesTableSeeder extends Seeder
 				'updated_at' => Carbon::now()->addSeconds(1)->format('Y-m-d H:i:s')
 			),
 			array(
-				'id' => 1,
+				'id' => 2,
 				'body' => 'I think it\'s going well!',
 				'discussion_id' => 1,
 				'user_id' => 2,
