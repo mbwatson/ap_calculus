@@ -22,9 +22,8 @@
     @foreach ($bigideas as $bigidea)
         
         <h1><a href="{{ route('standards.show', $bigidea) }}">{{ $bigidea->name }}: {{ $bigidea->description }}</a></h1>
-        {!! Markdown::convertToHtml($bigidea->details) !!}
         
-        <!-- <h3>Enduring Understandings</h3> -->
+        {!! Markdown::convertToHtml($bigidea->details) !!}
         
         @foreach ($bigidea->children()->get() as $enduringUnderstanding)
                 
