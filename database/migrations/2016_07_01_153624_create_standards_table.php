@@ -16,6 +16,7 @@ class CreateStandardsTable extends Migration
             $table->increments('id');
             $table->string('type');
             $table->string('name');
+            $table->string('slug');
             $table->text('description');
             $table->text('details')->nullable();
             $table->integer('parent_id')->unsigned()->nullable();

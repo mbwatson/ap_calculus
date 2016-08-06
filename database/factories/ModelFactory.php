@@ -27,3 +27,11 @@ $factory->define(App\Response::class, function (Faker\Generator $faker) {
         'user_id' => rand(1,2)
     ];
 });
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    return [
+        'body' => $faker->paragraph,
+        'question_id' => rand(1,8),
+        'user_id' => rand(1,2)
+    ];
+});
