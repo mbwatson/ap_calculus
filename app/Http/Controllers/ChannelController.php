@@ -97,7 +97,6 @@ class ChannelController extends Controller
         
         session()->flash('flash_message', 'Channel successfully updated!');
         
-        // See ya!
         return redirect()->route('channels.index');
     }
 

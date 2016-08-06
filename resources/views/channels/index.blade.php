@@ -22,6 +22,7 @@
         <!-- Channels List -->
         
         <div class="col-xs-12 col-md-10">
+            <h1>Active Channels</h1>
             @if ($channels->count() > 0)
                 @foreach ($channels as $channel)
                     <div class="panel panel-default">
@@ -51,7 +52,7 @@
                 @endforeach
             @else
                 <center>
-                    There are no relevant channels to display at this time.
+                    There are no channels to display!
                 </center>
             @endif
         </div>
