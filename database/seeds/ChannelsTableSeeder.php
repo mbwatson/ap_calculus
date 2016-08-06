@@ -34,6 +34,13 @@ class ChannelsTableSeeder extends Seeder
 				'slug' => 'assessment',
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
+			),
+			array(
+				'id' => 4,
+				'name' => 'Grading',
+				'slug' => 'grading',
+				'created_at' => date("Y-m-d H:i:s"),
+				'updated_at' => date("Y-m-d H:i:s")
 			)
 		);
 
