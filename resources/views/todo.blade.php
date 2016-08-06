@@ -42,7 +42,6 @@
                             <li>slugs, esp. for standards and channels (eloquent-sluggable)</li>
                             <li>ElasticSearch</li>
                             <li>ability to flag questions as spam</li>
-                            <li>morphsTo relationship, allowing a single comments (no responses) table</li>
                             <li>restore softDeleted channels in admin panel</li>
                         </ul>
                     </div>
