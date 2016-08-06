@@ -79,10 +79,10 @@
                 <div class="col-xs-2 text-right">
                     <!-- Thumbs Up -->
                     @if ($question->liked(Auth::user()))
-                        <a href="{{ route('questions.unlike', $question) }}" class="text-primary" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                        <a href="{{ route('questions.unlike', $question) }}" class="text-primary" title="Unlike this Question" data-toggle="tooltip" data-placement="top">
                             <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $question->likeCount }}</sub></a>
                     @else
-                        <a href="{{ route('questions.like', $question) }}" class="text-muted" title="Thumbs Up" data-toggle="tooltip" data-placement="top">
+                        <a href="{{ route('questions.like', $question) }}" class="text-muted" title="Like this Question" data-toggle="tooltip" data-placement="top">
                             <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $question->likeCount }}</sub></a>
                     @endif
                 </div>

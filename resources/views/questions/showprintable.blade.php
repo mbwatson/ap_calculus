@@ -9,10 +9,8 @@
     <!-- Question -->
 
     <div class="row">
-        <div class="panel" id="question">
-            <div class="panel-heading">
-                {{ $question->title }}
-            </div>
+        <div class="panel" id="post">
+            <div class="panel-heading">{{ $question->title }}</div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
