@@ -57,6 +57,7 @@ class ChannelController extends Controller
 
         $channel = new Channel;
         $channel->name = $request['name'];
+        $channel->slug = str_slug($request['name']);
         $channel->save();
 
         session()->flash('flash_message', 'Channel successfully created!');
