@@ -25,22 +25,24 @@
             @if ($channels->count() > 0)
                 @foreach ($channels as $channel)
                     <div class="panel panel-default">
-                        <div class="panel-body channels">
+                        <div class="panel-body">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-4">
-                                    <h4><a href="{{ route('channels.show', $channel) }}">{{ $channel->name }}</a></h4>
-                                </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <h6>{{ $channel->discussions->count() }} discussions</h6>
+                                <div class="col-xs-12 col-sm-8">
+                                    <h3><a href="{{ route('channels.show', $channel) }}">{{ $channel->name }}</a></h3>
+                                    <h5>{{ $channel->discussions->count() }} discussions</h5>
                                 </div>
                                 <div class="col-xs-12 col-sm-2">
+                                    <br />
                                     <!-- Edit -->
-                                    <a href="{{ route('channels.edit', $channel->id) }}" role="button" class="btn btn-link"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+                                    {!! Form::open(['route' => ['channels.edit', $channel], 'method' => 'get']) !!}
+                                        <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-remove"></i>Edit</button>
+                                    {!! Form::close() !!}
                                 </div>
                                 <div class="col-xs-12 col-sm-2">
+                                    <br />
                                     <!-- Delete -->
                                     {!! Form::open(['route' => ['channels.destroy', $channel], 'method' => 'delete']) !!}
-                                        <button type="submit" class="btn btn-link"><i class="glyphicon glyphicon-remove"></i>Delete</button>
+                                        <button type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i>Delete</button>
                                     {!! Form::close() !!}
                                 </div>
                             </div>

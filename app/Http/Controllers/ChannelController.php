@@ -31,7 +31,7 @@ class ChannelController extends Controller
     {
         $channel->load('discussions');
 
-        return view('channels.show', ['channel' => $channel]);
+        return view('channels.show', [ 'channel' => $channel ]);
     }
 
     /**

@@ -28,7 +28,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.mine') }}">My Discussions</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block disabled" href="#">Watching</a></li>
+                    <li role="separator" class="divider"></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block disabled" href="#">Popular</a></li>
                 </ul>
             </div>
