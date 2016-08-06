@@ -68,7 +68,7 @@
 
     @if (count($discussion->responses) > 0)
         @foreach ($discussion->responses as $response)
-            @include('partials.response', $response)
+            @include('partials.comment', ['comment' => $response])
         @endforeach
     @endif
 
