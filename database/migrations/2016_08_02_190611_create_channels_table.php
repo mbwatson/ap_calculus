@@ -17,6 +17,7 @@ class CreateChannelsTable extends Migration
             $table->string('name');
             $table->string('slug')->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

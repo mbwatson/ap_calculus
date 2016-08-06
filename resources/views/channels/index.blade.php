@@ -35,14 +35,14 @@
                                     <br />
                                     <!-- Edit -->
                                     {!! Form::open(['route' => ['channels.edit', $channel], 'method' => 'get']) !!}
-                                        <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-remove"></i>Edit</button>
+                                        <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-edit"></i>Edit</button>
                                     {!! Form::close() !!}
                                 </div>
                                 <div class="col-xs-12 col-sm-2">
                                     <br />
                                     <!-- Delete -->
                                     {!! Form::open(['route' => ['channels.destroy', $channel], 'method' => 'delete']) !!}
-                                        <button type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i>Delete</button>
+                                        <button type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i>Delete</button>
                                     {!! Form::close() !!}
                                 </div>
                             </div>
