@@ -64,4 +64,11 @@ class Discussion extends Model implements Likeable
         return Discussion::latest('created_at')->where('channel_id', $id);
     }
 
+    // public function scopePopular($query)
+    // {
+    //     return $query->where(function() {
+            
+    //     });
+    // }
+
 }

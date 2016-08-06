@@ -136,7 +136,7 @@ class AccountController extends Controller
     /**
      * "UnLike" the given model.
      * 
-     * @param  App\Question, App\Comment, App\Discussion, App\Response
+     * @param  App\Question, App\Comment, App\Discussion, App\Response (Model $likeable)
      * @return \Illuminate\Http\Response
      */
     public function unlike($object)

@@ -39,9 +39,10 @@
                             <li>multiple choice question creation form with inputs for responses/distractors (and possibly marking the correct one)</li>
                             <li>tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum</li>
                             <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
-                            <li>slugs, esp. for standards and channels</li>
+                            <li>slugs, esp. for standards and channels (eloquent-sluggable)</li>
                             <li>ElasticSearch</li>
                             <li>ability to flag questions as spam</li>
+                            <li>morphsTo relationship, allowing a single comments (no responses) table</li>
                         </ul>
                     </div>
                 </div>
