@@ -15,7 +15,7 @@ $factory->define(App\Discussion::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->sentence(4),
         'body' => $faker->paragraph,
-        'channel_id' => rand(1,3),
+        'channel_id' => rand(1,4),
         'user_id' => rand(1,2),
     ];
 });
