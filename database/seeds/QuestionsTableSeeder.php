@@ -166,6 +166,54 @@ on its interval of convergence.
 				'created_at' => Carbon::now()->addSecond(8)->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->addSecond(8)->format('Y-m-d H:i:s')
 			),
+			array(
+				'id' => 10,
+				'type' => '2',
+				'calculator' => '0',
+				'title' => 'Limits from Graph',
+				'body' => '
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/1/Screenshot_from_2016-08-07_02_31_59_png.png" alt="" width="505" height="310" /></p>
+<p>&nbsp;</p>
+<p>The graphs of the functions $f$ and $g$ are shown above. The value of $\lim_{x\to1}f(g(x))$ is</p>
+<p>(A) 1</p>
+<p>(B) 2</p>
+<p>(C) 3</p>
+<p>(D) nonexistent</p>',
+				'user_id' => '2',
+				'created_at' => Carbon::now()->addSecond(9)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(9)->format('Y-m-d H:i:s')
+			),
+			array(
+				'id' => 11,
+				'type' => '2',
+				'calculator' => '0',
+				'title' => 'Simple Limit',
+				'body' => '
+<p>$\lim_{x\to0}\frac{7x - \sin(x)}{x^2 + \sin(3x)} = $</p>
+<p>(A) 6</p>
+<p>(B) 2</p>
+<p>(C) 1</p>
+<p>(D) 0</p>',
+				'user_id' => '1',
+				'created_at' => Carbon::now()->addSecond(10)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(10)->format('Y-m-d H:i:s')
+			),
+			array(
+				'id' => 12,
+				'type' => '2',
+				'calculator' => '0',
+				'title' => 'Linear Approximation',
+				'body' => '
+<p>The local linear approximation to the function $g$ at $x = \frac{1}{2}$ is $y = 4x + 1$.
+What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
+<p>(A) 4</p>
+<p>(B) 5</p>
+<p>(C) 6</p>
+<p>(D) 7</p>',
+				'user_id' => '2',
+				'created_at' => Carbon::now()->addSecond(10)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(10)->format('Y-m-d H:i:s')
+			),
 		);
 
 		DB::table('questions')->insert($seeds);
