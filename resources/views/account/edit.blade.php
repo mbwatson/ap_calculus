@@ -47,7 +47,18 @@
                     </div>
                     <div class="col-xs-12">
                         {!! Form::label('birthday', 'Birthday', ['class' => 'control-label']) !!}
-                        {!! Form::input('date', 'birthday', null, ['class' => 'form-control']) !!}
+                        {!! Form::input('birthday', 'birthday', null, ['class' => 'form-control']) !!}
+                    </div>
+                    <div class="col-xs-12">
+                        <br />
+                    </div>
+                    <div class="btn-group col-xs-12" data-toggle="buttons" style="display: flex;">
+                      <label class="btn btn-primary{{ $user['private'] ? '' : ' active' }}" style="flex: 1;">
+                          <input type="radio" name="private" autocomplete="off" value="0" style="flex: 1;"{{ $user['private'] ? '' : ' checked' }}> Make my profile public
+                      </label>
+                      <label class="btn btn-primary{{ $user['private'] ? ' active' : '' }}" style="flex: 1;">
+                          <input type="radio" name="private" autocomplete="off" value="1" style="flex: 1;"{{ $user['private'] ? ' checked' : '' }}> Make my profile private
+                      </label>
                     </div>
                     <div class="col-xs-12">
                         <br />

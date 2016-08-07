@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->text('bio');
             $table->string('location');
+            $table->date('birthday');
+            $table->boolean('private');
             $table->dateTime('last_login');
             $table->rememberToken();
             $table->timestamps();

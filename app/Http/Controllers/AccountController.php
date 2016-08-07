@@ -55,6 +55,7 @@ class AccountController extends Controller
      */
     public function update(Request $request)
     {
+        // dd($request);
         $this->validate($request, [
             'name' => 'required|max:32',
             'email' => 'required|email|max:255|unique:users,email,' . Auth::user()->id,
@@ -62,6 +63,7 @@ class AccountController extends Controller
             'last_name' => 'max:50',
             'bio' => 'max:255',
             'location' => 'max:50',
+            'private' => 'required'
         ]);
         Auth::user()->name = $request['name'];
         Auth::user()->email = $request['email'];
@@ -69,6 +71,7 @@ class AccountController extends Controller
         Auth::user()->last_name = $request['last_name'];
         Auth::user()->bio = $request['bio'];
         Auth::user()->location = $request['location'];
+        Auth::user()->private = ($request['private']) ? 1 : 0;
         Auth::user()->save();
         
         session()->flash('flash_message', 'Profile successfully updated!');

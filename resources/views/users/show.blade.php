@@ -17,18 +17,22 @@
                     <h1>{{ $user->name }}</h1><br /><br />
                 </div>
                 <div class="row details">
-                    <div><span class="glyphicon glyphicon-sunglasses"></span>
-                        A.K.A. {{ ($user->first_name || $user->last_name) ? $user->first_name . ' ' . $user->last_name : '' }}</div>
-                    <div><span class="glyphicon glyphicon-envelope"></span>{{ $user->email }}</div>
-                    <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
-                    <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
-                    <div><span class="glyphicon glyphicon-log-in"></span>Last login {{ $user->last_login->diffForHumans() }}</div>
-                    <div><span class="glyphicon glyphicon-user"></span>{{ $user->bio }}</div>
-                    <div><span class="glyphicon glyphicon-question-sign"></span> {{ $user->questions->count() }} questions</div>
-                    <div><span class="glyphicon glyphicon-comment"></span> {{ $user->comments->count() }} comments</div>
-                    <div><span class="glyphicon glyphicon-heart"></span> {{ $user->favorites->count() }} favorite questions</div>
-                    <div><span class="fa fa-comments"></span> {{ $user->discussions->count() }} discussions</div>
-                    <div><span class="fa fa-comment"></span> {{ $user->responses->count() }} responses</div>
+                    @if (!$user->private)
+                        <div><span class="glyphicon glyphicon-sunglasses"></span>
+                            A.K.A. {{ ($user->first_name || $user->last_name) ? $user->first_name . ' ' . $user->last_name : '' }}</div>
+                        <div><span class="glyphicon glyphicon-envelope"></span>{{ $user->email }}</div>
+                        <div><span class="glyphicon glyphicon-home"></span>{{ $user->location }}</div>
+                        <div><span class="glyphicon glyphicon-hourglass"></span>Member since {{ $user->created_at->diffForHumans() }}</div>
+                        <div><span class="glyphicon glyphicon-log-in"></span>Last login {{ $user->last_login->diffForHumans() }}</div>
+                        <div><span class="glyphicon glyphicon-user"></span>{{ $user->bio }}</div>
+                        <div><span class="glyphicon glyphicon-question-sign"></span> {{ $user->questions->count() }} questions</div>
+                        <div><span class="glyphicon glyphicon-comment"></span> {{ $user->comments->count() }} comments</div>
+                        <div><span class="glyphicon glyphicon-heart"></span> {{ $user->favorites->count() }} favorite questions</div>
+                        <div><span class="fa fa-comments"></span> {{ $user->discussions->count() }} discussions</div>
+                        <div><span class="fa fa-comment"></span> {{ $user->responses->count() }} responses</div>
+                    @else
+                        {{ $user->name }}'s profile is private.
+                    @endif
                 </div>
             </div>
         </div>
