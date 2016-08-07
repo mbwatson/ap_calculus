@@ -15,9 +15,9 @@
         "unisharp/laravel-filemanager": "^1.5",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "draperstudio/laravel-likeable": "^0.1.0"
+        "fzaninotto/faker": "~1.4",
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "symfony/css-selector": "2.8.*|3.0.*",
