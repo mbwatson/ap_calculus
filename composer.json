@@ -14,8 +14,8 @@
         "h4cc/wkhtmltopdf-amd64": "0.12.x",
         "unisharp/laravel-filemanager": "^1.5",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
-        "draperstudio/laravel-likeable": "^0.1.0"
-        "fzaninotto/faker": "~1.4",
+        "draperstudio/laravel-likeable": "^0.1.0",
+        "fzaninotto/faker": "~1.4"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
