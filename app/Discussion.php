@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use DraperStudio\Likeable\Contracts\Likeable;
 use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
+use \DB;
 
 class Discussion extends Model implements Likeable
 {
@@ -64,11 +65,14 @@ class Discussion extends Model implements Likeable
         return Discussion::latest('created_at')->where('channel_id', $id);
     }
 
-    // public function scopePopular($query)
-    // {
-    //     return $query->where(function() {
-            
-    //     });
-    // }
+    public function scopePopular($query)
+    {
+        $numberOfLikesToBePopular = 1;
+
+        $popularIds = DB::table('likes_counter')->select('likeable_id')->where('likeable_type', 'App\Discussion')->where('count', '>=', $numberOfLikesToBePopular)->lists('likeable_id');
+        
+        return Discussion::latest('created_at')->whereIn('id', $popularIds);
+    }
+
 
 }

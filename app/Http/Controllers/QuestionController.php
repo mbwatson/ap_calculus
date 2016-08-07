@@ -68,7 +68,10 @@ class QuestionController extends Controller
      */
     public function showPopularQuestions()
     {
-        return '<h1>Not yet!</h1> <h2>This requires a voting system to be put into action, which keeps getting put on the back burner.</h2>';
+        return view('questions.index', [
+            'questions' => Question::popular()->paginate(10),
+            'breadcrumb' => 'questions.calculator.inactive'
+        ]);
     }
 
     /**

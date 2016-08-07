@@ -124,4 +124,18 @@ class DiscussionController extends Controller
             'breadcrumb' => 'discussions.mine'
         ]);
     }
+
+    /**
+     * Show list of popular discussions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showPopularDiscussions()
+    {
+        return view('discussions.index', [
+            'discussions' => Discussion::popular()->paginate(10),
+            'breadcrumb' => 'discussions.index'
+        ]);
+    }
+
 }

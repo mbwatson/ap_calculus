@@ -8,7 +8,7 @@ use Markdown;
 use PDF;
 use DraperStudio\Likeable\Contracts\Likeable;
 use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
-
+use \DB;
 
 class Question extends Model implements Likeable
 {
@@ -222,6 +222,15 @@ class Question extends Model implements Likeable
     public function getTypeAttribute($value)
     {
         return $this->types[$value];
+    }
+
+    public function scopePopular($query)
+    {
+        $numberOfLikesToBePopular = 1;
+
+        $popularIds = DB::table('likes_counter')->select('likeable_id')->where('likeable_type', 'App\Question')->where('count', '>=', $numberOfLikesToBePopular)->lists('likeable_id');
+        
+        return Question::latest('created_at')->whereIn('id', $popularIds);
     }
 
 }
