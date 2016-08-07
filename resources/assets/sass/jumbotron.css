@@ -16,6 +16,10 @@
 .jumbotron .details {
 	color: #dde;
 	font-size: 110%;
+	
+	p {
+		font-weight: 500;
+	}
 }
 
 .jumbotron .details li {

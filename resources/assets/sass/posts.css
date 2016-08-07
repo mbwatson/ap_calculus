@@ -1,7 +1,13 @@
 .posts {
 	
+	font-size: 90%;
+
 	.post {
 		margin: 20px 0;
+
+		h4 {
+			margin: 5px 0;
+		}
 	}
 
 	.standards {
@@ -11,8 +17,8 @@
 	}
 
 	.avatar {
-		width: 90px;
-		height: 90px;
+		width: 65px;
+		height: 65px;
 	}
 
 	.comment-count {

@@ -11562,6 +11562,8 @@ li.dropdown:hover .dropdown-toggle {
 .jumbotron .details {
   color: #dde;
   font-size: 110%; }
+  .jumbotron .details p {
+    font-weight: 500; }
 
 .jumbotron .details li {
   padding: 5px 0; }
@@ -11622,39 +11624,39 @@ label,
   border: none;
   color: #666; }
 
-.posts .post {
-  margin: 20px 0; }
-
-.posts .standards ul {
-  display: inline; }
-
-.posts .avatar {
-  width: 90px;
-  height: 90px; }
-
-.posts .comment-count {
-  display: inline;
-  border-radius: 6px;
-  background-color: #ddd;
-  color: #666;
-  font-size: 100%;
-  font-weight: bold;
-  text-align: center;
-  padding: 3px 10px;
-  position: relative;
-  top: 12px; }
-
-.posts .comment-count:after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  /* value = - border-top-width - border-bottom-width */
-  left: 5px;
-  /* controls horizontal position */
-  border-width: 8px 8px 0 0;
-  /* vary these values to change the angle of the vertex */
-  border-style: solid;
-  border-color: #ddd transparent; }
+.posts {
+  font-size: 90%; }
+  .posts .post {
+    margin: 20px 0; }
+    .posts .post h4 {
+      margin: 5px 0; }
+  .posts .standards ul {
+    display: inline; }
+  .posts .avatar {
+    width: 65px;
+    height: 65px; }
+  .posts .comment-count {
+    display: inline;
+    border-radius: 6px;
+    background-color: #ddd;
+    color: #666;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 10px;
+    position: relative;
+    top: 12px; }
+  .posts .comment-count:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    /* value = - border-top-width - border-bottom-width */
+    left: 5px;
+    /* controls horizontal position */
+    border-width: 8px 8px 0 0;
+    /* vary these values to change the angle of the vertex */
+    border-style: solid;
+    border-color: #ddd transparent; }
 
 .meta {
   color: #aaa; }
