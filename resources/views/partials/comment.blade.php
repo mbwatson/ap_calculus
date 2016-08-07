@@ -24,12 +24,13 @@
             <div class="col-xs-6 text-right">
                 <!-- Thumbs Up -->
                 @if ($comment->liked(Auth::user()))
-                    <a href="{{ route('comments.unlike', $comment) }}" class="text-primary" title="Unike This" data-toggle="tooltip" data-placement="top">
-                        <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $comment->likeCount }}</sub></a>
+                    <a href="{{ route('comments.unlike', $comment) }}" class="text-primary" title="Unlike" data-toggle="tooltip" data-placement="top">
+                        <i class="glyphicon glyphicon-thumbs-up"></i></a>
                 @else
-                    <a href="{{ route('comments.like', $comment) }}" class="text-muted" title="Like This" data-toggle="tooltip" data-placement="top">
-                        <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $comment->likeCount }}</sub></a>
+                    <a href="{{ route('comments.like', $comment) }}" class="text-muted" title="Like" data-toggle="tooltip" data-placement="top">
+                        <i class="glyphicon glyphicon-thumbs-up"></i></a>
                 @endif
+                <sub>{{ $comment->likeCount }}</sub>
             </div>
         </div>
     </div>

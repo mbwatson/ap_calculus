@@ -56,7 +56,7 @@
                             <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $discussion->likeCount }}</sub></a>
                     @else
                         <a href="{{ route('discussions.like', $discussion) }}" class="like text-muted" title="Like this Discussion" data-toggle="tooltip" data-placement="top">
-                            <i class="glyphicon glyphicon-thumbs-up"></i><sub>{{ $discussion->likeCount }}</sub></a>
+                            <i class="glyphicon glyphicon-thumbs-up"></i></a><sub>{{ $discussion->likeCount }}</sub>
                     @endif
                     
                 </div>
@@ -68,7 +68,7 @@
 
     @if (count($discussion->responses) > 0)
         @foreach ($discussion->responses as $response)
-            @include('partials.comment', ['comment' => $response])
+            @include('partials.response', ['response' => $response])
         @endforeach
     @endif
 
