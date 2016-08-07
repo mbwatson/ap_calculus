@@ -18,9 +18,7 @@
                     <div class="panel-body">
                         <ul>
                             <li>implement the addition of scoring guidelines with question</li>
-                            <li>regular conversation forum with categories?</li>
-                            <li>question voting system +/- 1 buttons</li>
-                            <li>simple way to "suggest" standards without having to write a comment? or is a comment better?</li>
+                            <li>simple way to "suggest" standards (like tagging) without having to write a comment? or is a comment better?</li>
                         </ul>
                     </div>
                 </div>
