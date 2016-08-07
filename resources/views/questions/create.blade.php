@@ -65,18 +65,18 @@
                 
                 <div class="row" style="display: flex; justify-content: center;">
                   <div class="btn-group col-md-5" data-toggle="buttons" style="display: flex;">
-                      <label class="btn btn-primary btn-lg" style="flex: 1;">
+                      <label class="btn btn-primary" style="flex: 1;">
                           <input type="radio" name="type" autocomplete="off" value="1" style="flex: 1;"> <span class="fa fa-pencil-square-o"></span> Free Response
                       </label>
-                      <label class="btn btn-primary btn-lg" style="flex: 1;">
+                      <label class="btn btn-primary" style="flex: 1;">
                           <input type="radio" name="type" autocomplete="off" value="2" style="flex: 1;"> <span class="fa fa-list"></span> Multiple Choice
                       </label>
                   </div>
                   <div class="btn-group col-md-5 col-md-offset-1" data-toggle="buttons" style="display: flex;">
-                      <label class="btn btn-primary btn-lg" style="flex: 1;">
+                      <label class="btn btn-primary" style="flex: 1;">
                           <input type="radio" name="calculator" autocomplete="off" value="0"> <span class="fa fa-minus"></span> Calculator Inactive
                       </label>
-                      <label class="btn btn-primary btn-lg" style="flex: 1;">
+                      <label class="btn btn-primary" style="flex: 1;">
                           <input type="radio" name="calculator" autocomplete="off" value="1"> <span class="fa fa-plus"></span> Calculator Active
                       </label>
                   </div>

@@ -11403,7 +11403,8 @@ a {
 .alert {
   width: 100%;
   font-weight: 600;
-  text-align: center; }
+  text-align: center;
+  font-size: 120%; }
 
 /* Drodown Menus */
 .dropdown:hover button {
