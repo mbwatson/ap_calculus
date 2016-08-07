@@ -37,7 +37,7 @@
                             <li>tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum</li>
                             <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
                             <li>slugs, esp. for standards and channels (eloquent-sluggable)</li>
-                            <li>ElasticSearch</li>
+                            <li>better search: Scout is coming in 5.3</li>
                             <li>ability to flag questions as spam</li>
                             <li>restore softDeleted channels in admin panel</li>
                         </ul>
