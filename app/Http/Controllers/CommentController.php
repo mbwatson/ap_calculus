@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Comment;
+use App\Http\Requests\CreateCommentRequest;
 use Illuminate\Http\Request;
+use App\Comment;
+use Auth;
 
 class CommentController extends Controller
 {
@@ -14,12 +15,8 @@ class CommentController extends Controller
      * @param  array $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCommentRequest $request)
     {
-        // Comment body is required field and can be no longer than 1000 characters
-        $this->validate($request, [
-            'body' => 'required|max:1000'
-        ]);
         // Comment is valid; store in database
         $comment = new Comment();
         $comment->question_id = $request['question_id'];

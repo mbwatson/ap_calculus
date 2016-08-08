@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateResponseRequest;
 use Illuminate\Http\Request;
 use App\Response;
 use Auth;
@@ -14,7 +15,7 @@ class ResponseController extends Controller
      * @param  Response
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateResponseRequest $request)
     {
         // Response body is required field and can be no longer than 2500 characters
         $this->validate($request, [
