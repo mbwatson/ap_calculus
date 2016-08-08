@@ -217,5 +217,11 @@ What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
 		);
 
 		DB::table('questions')->insert($seeds);
+
+		foreach (App\Question::all() as $question) {
+			$question->slug = str_slug($question->title);
+			$question->save();
+		}
+		
 	}
 }
