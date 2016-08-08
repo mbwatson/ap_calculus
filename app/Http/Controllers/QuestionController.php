@@ -226,7 +226,7 @@ class QuestionController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:50',
-            'body' => 'required|max:2500',
+            'body' => 'required|max:5000',
             'standard_ids' => 'required',
             'type' => 'required',
             'calculator' => 'required'

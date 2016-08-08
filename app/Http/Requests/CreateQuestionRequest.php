@@ -29,7 +29,7 @@ class CreateQuestionRequest extends Request
         // body can be no longer than 1000 characters
         return [
             'title' => 'required|max:50',
-            'body' => 'required|max:2500',
+            'body' => 'required|max:5000',
             'standards' => 'required',
             'type' => 'required',
             'calculator' => 'required'
