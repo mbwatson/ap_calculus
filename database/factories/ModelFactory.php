@@ -21,14 +21,16 @@ $factory->define(App\Discussion::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Response::class, function (Faker\Generator $faker) {
+    $discussionIds = App\Discussion::lists('id')->toArray();
     return [
         'body' => $faker->paragraph,
-        'discussion_id' => rand(1,25),
+        'discussion_id' => array_rand($discussionIds),
         'user_id' => rand(1,2)
     ];
 });
 
 $factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    $questionIds = App\Question::lists('id')->toArray();
     return [
         'body' => $faker->paragraph,
         'question_id' => rand(1,11),
