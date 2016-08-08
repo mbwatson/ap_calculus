@@ -1,12 +1,14 @@
 <?php
 
 // Admin
+///////////////////////////////////////////////////////////////////////////////
 
 Breadcrumbs::register('admin.channels', function($breadcrumbs) {
 	$breadcrumbs->push('Admin', route('account.index'));
 });
 
 // User
+///////////////////////////////////////////////////////////////////////////////
 
 Breadcrumbs::register('users.index', function($breadcrumbs) {
 	$breadcrumbs->push('Users', route('users.index'));
@@ -17,7 +19,25 @@ Breadcrumbs::register('users.show', function($breadcrumbs, $user) {
 	$breadcrumbs->push($user->name, route('users.show', $user));
 });
 
+// Account
+///////////////////////////////////////////////////////////////////////////////
+
+Breadcrumbs::register('account.index', function($breadcrumbs) {
+	$breadcrumbs->push('My Account', route('account.index', Auth::user()));
+});
+
+Breadcrumbs::register('account.dashboard', function($breadcrumbs) {
+	$breadcrumbs->parent('account.index');
+	$breadcrumbs->push('Dashboard', route('account.index', Auth::user()));
+});
+
+Breadcrumbs::register('account.settings', function($breadcrumbs) {
+	$breadcrumbs->parent('account.index');
+	$breadcrumbs->push('Settings', route('account.edit', Auth::user()));
+});
+
 // Discussions
+///////////////////////////////////////////////////////////////////////////////
 
 Breadcrumbs::register('discussions.index', function($breadcrumbs) {
 	$breadcrumbs->push('Discussions', route('discussions.index'));
@@ -53,7 +73,13 @@ Breadcrumbs::register('discussions.mine', function($breadcrumbs) {
 	$breadcrumbs->push('My Discussions', route('discussions.mine'));
 });
 
+Breadcrumbs::register('discussions.popular', function($breadcrumbs) {
+	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->push('Popular', route('discussions.popular'));
+});
+
 // Channels
+///////////////////////////////////////////////////////////////////////////////
 
 Breadcrumbs::register('channels.index', function($breadcrumbs) {
 	$breadcrumbs->push('Channels', route('channels.index'));
@@ -157,6 +183,11 @@ Breadcrumbs::register('questions.favorites', function($breadcrumbs) {
 	$breadcrumbs->push('My Favorites', route('questions.favorites'));
 });
 
+Breadcrumbs::register('questions.popular', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('Popular', route('questions.popular'));
+});
+
 Breadcrumbs::register('questions.create', function($breadcrumbs) {
     $breadcrumbs->parent('questions.index');
 	$breadcrumbs->push('Create', route('questions.create'));
@@ -172,31 +203,3 @@ Breadcrumbs::register('questions.edit', function($breadcrumbs, $question) {
 	$breadcrumbs->push('Edit', route('questions.edit', $question));
 });
 
-// User
-///////////////////////////////////////////////////////////////////////////////
-
-Breadcrumbs::register('users.index', function($breadcrumbs) {
-	$breadcrumbs->push('Users', route('users.index'));
-});
-
-Breadcrumbs::register('users.show', function($breadcrumbs, $user) {
-	$breadcrumbs->parent('users.index');
-	$breadcrumbs->push($user->name, route('users.show', $user));
-});
-
-// Account
-///////////////////////////////////////////////////////////////////////////////
-
-Breadcrumbs::register('account.index', function($breadcrumbs) {
-	$breadcrumbs->push('My Account', route('account.index', Auth::user()));
-});
-
-Breadcrumbs::register('account.dashboard', function($breadcrumbs) {
-	$breadcrumbs->parent('account.index');
-	$breadcrumbs->push('Dashboard', route('account.index', Auth::user()));
-});
-
-Breadcrumbs::register('account.settings', function($breadcrumbs) {
-	$breadcrumbs->parent('account.index');
-	$breadcrumbs->push('Settings', route('account.edit', Auth::user()));
-});

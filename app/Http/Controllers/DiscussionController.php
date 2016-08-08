@@ -134,7 +134,7 @@ class DiscussionController extends Controller
     {
         return view('discussions.index', [
             'discussions' => Discussion::popular()->paginate(config('global.perPage')),
-            'breadcrumb' => 'discussions.index'
+            'breadcrumb' => 'discussions.popular'
         ]);
     }
 

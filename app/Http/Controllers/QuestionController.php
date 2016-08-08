@@ -70,7 +70,7 @@ class QuestionController extends Controller
     {
         return view('questions.index', [
             'questions' => Question::popular()->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.calculator.inactive'
+            'breadcrumb' => 'questions.popular'
         ]);
     }
 
@@ -269,7 +269,7 @@ class QuestionController extends Controller
     {
         $pdf = \App::make('snappy.pdf.wrapper');
         $pdf->setOption('enable-javascript', true);
-        $pdf->setOption('javascript-delay', config('global.perPage')00);
+        $pdf->setOption('javascript-delay', config('global.perPage'));
         $pdf->loadHTML('
             <html><head></head>
             <body>
