@@ -22,49 +22,19 @@ Route::get('/todo', function () { return view('todo'); });
 
 // Account routes // Auth required
 
-Route::get('/account', [
-	'uses' => 'AccountController@index',
-	'as' => 'account.index'
-]);
-
-Route::get('/account/edit', [
-	'uses' => 'AccountController@edit',
-	'as' => 'account.edit'
-]);
-
-Route::patch('/account/update', [
-	'uses' => 'AccountController@update',
-	'as' => 'account.update'
-]);
-
-Route::post('/account/update/avatar', [
-	'uses' => 'AccountController@update_avatar'
-]);
-
-Route::get('/account/notifications', function() {
-	return redirect()->back();
-});
-
-Route::get('/favorites', function() {
-	return view('account.favorites', ['user' => Auth::user()]);
-});
-
+Route::get('/account', 					[ 'uses' => 'AccountController@index', 		'as' => 'account.index' ]);
+Route::get('/account/edit', 			[ 'uses' => 'AccountController@edit', 		'as' => 'account.edit' ]);
+Route::patch('/account/update', 		[ 'uses' => 'AccountController@update',		'as' => 'account.update' ]);
+Route::post('/account/update/avatar', 	[ 'uses' => 'AccountController@update_avatar' ]);
+Route::get('/account/notifications', function() { return redirect()->back(); });
 Route::resource('account', 'AccountController', [
 	'only' => ['index', 'edit', 'update']
 ]);
 
-Route::get('questions/{questions}/like', [ 'uses' => 'AccountController@like', 'as' => 'questions.like' ]);
+// Standards Routes
 
-// Everything Else
-
-Route::get('standards/mpacs', [
-	'uses' => 'StandardController@showMpacs',
-	'as' => 'standards.mpacs'
-]);
-Route::get('standards/big-ideas', [
-	'uses' => 'StandardController@showBigIdeas',
-	'as' => 'standards.big-ideas'
-]);
+Route::get('standards/mpacs', [ 'uses' => 'StandardController@showMpacs', 'as' => 'standards.mpacs' ]);
+Route::get('standards/big-ideas', [ 'uses' => 'StandardController@showBigIdeas', 'as' => 'standards.big-ideas' ]);
 Route::resource('standards', 'StandardController', [
 	'only' => ['index', 'show']
 ]);
@@ -77,12 +47,15 @@ Route::group(['middleware' => 'auth'], function() {
 		'only' => ['index', 'show']
 	]);
 
+	// Channel Routes
+
+	Route::resource('channels', 'ChannelController');
+	
 	// Discussion Routes
 
 	Route::get('/discussions/popular', 					[ 'uses' => 'DiscussionController@showPopularDiscussions', 'as' => 'discussions.popular' ]);
 	Route::get('/discussions/mine', 					[ 'uses' => 'DiscussionController@showMyDiscussions', 'as' => 'discussions.mine' ]);
 	Route::get('/discussions/channel/{channel_slug}', 	[ 'uses' => 'DiscussionController@showDiscussionsInChannel', 'as' => 'discussions.channel' ]);
-
 	Route::resource('discussions', 'DiscussionController');
 
 	// Response Routes
@@ -91,10 +64,6 @@ Route::group(['middleware' => 'auth'], function() {
 		'only' => ['store']
 	]);
 
-	// Channel Routes
-
-	Route::resource('channels', 'ChannelController');
-	
 	// Question Routes
 
 	Route::get('questions/freeresponse', 			[ 'uses' => 'QuestionController@showFreeResponseQuestions', 		'as' => 'questions.freeresponse' ]);
@@ -114,13 +83,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('comments', 'CommentController', [
 		'only' => ['store']
-	]);
-
-	// Favorite Routes
-
-	Route::get('favorites/toggle/{id}', [
-		'uses' => 'AccountController@favorite_toggle',
-		'as' => 'favorite.toggle'
 	]);
 
 	// Search Routes
@@ -145,4 +107,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/responses/{responses}/like', 		[ 'uses' => 'AccountController@like', 	'as' => 'responses.like' ]);
 	Route::get('/responses/{responses}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'responses.unlike' ]);
 
+	// Favorite Route
+
+	Route::get('favorites/toggle/{id}', [
+		'uses' => 'AccountController@favorite_toggle',
+		'as' => 'favorite.toggle'
+	]);
 });
