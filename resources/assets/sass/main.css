@@ -29,15 +29,19 @@ a {
 
 .panel-heading {
 	background-color: #fff;
-/*	border-top-left-radius: 5px;
+/*
+	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-*/}
+*/
+}
 
 .panel-footer {
 	background-color: #fff;
-/*	border-bottom-left-radius: 5px;
+/*
+	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-*/}
+*/
+}
 
 /* Flash Messages */
 
