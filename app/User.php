@@ -35,6 +35,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function questions()
     {
         return $this->hasMany('App\Question')->orderBy('created_at', 'desc');

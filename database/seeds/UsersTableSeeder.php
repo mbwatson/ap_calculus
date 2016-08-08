@@ -39,4 +39,10 @@ class UsersTableSeeder extends Seeder
 
     	factory(App\User::class, 13)->create();
 
-	}}
+		foreach (App\User::all() as $user) {
+			$user->slug = str_slug($user->name);
+			$user->save();
+		}
+
+	}
+}

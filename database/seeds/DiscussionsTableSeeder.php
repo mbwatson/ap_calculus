@@ -13,5 +13,10 @@ class DiscussionsTableSeeder extends Seeder
     public function run()
     {
     	factory(App\Discussion::class, 25)->create();
+
+		foreach (App\Discussion::all() as $discussion) {
+			$discussion->slug = str_slug($discussion->title);
+			$discussion->save();
+		}
 	}
 }

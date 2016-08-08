@@ -32,6 +32,16 @@ class Question extends Model implements Likeable
     ];
     
     /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
      * Get the user that owns the question
      *
      * @return App\User
