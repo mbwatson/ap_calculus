@@ -82,7 +82,7 @@ class ChannelController extends Controller
      * @param  Request
      * @return \Illuminate\Http\Response
      */
-    public function update(Channel $channel, Request $request)
+    public function update(Channel $channel, CreateChannelRequest $request)
     {
         $this->validate($request, [
             'name' => 'required|min:5|max:25'
