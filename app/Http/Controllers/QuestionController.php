@@ -30,7 +30,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questions.index', [
-            'questions' => Question::latest('created_at')->paginate(10),
+            'questions' => Question::latest('created_at')->paginate(config('global.perPage')),
             'breadcrumb' => 'questions.index.all'
         ]);
     }
@@ -43,7 +43,7 @@ class QuestionController extends Controller
     public function showCalculatorActiveQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::calculatorActive()->latest('created_at')->paginate(10),
+            'questions' => Question::calculatorActive()->latest('created_at')->paginate(config('global.perPage')),
             'breadcrumb' => 'questions.calculator.active'
         ]);
     }
@@ -56,7 +56,7 @@ class QuestionController extends Controller
     public function showCalculatorInactiveQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::calculatorInactive()->latest('created_at')->paginate(10),
+            'questions' => Question::calculatorInactive()->latest('created_at')->paginate(config('global.perPage')),
             'breadcrumb' => 'questions.calculator.inactive'
         ]);
     }
@@ -69,7 +69,7 @@ class QuestionController extends Controller
     public function showPopularQuestions()
     {
         return view('questions.index', [
-            'questions' => Question::popular()->paginate(10),
+            'questions' => Question::popular()->paginate(config('global.perPage')),
             'breadcrumb' => 'questions.calculator.inactive'
         ]);
     }
@@ -83,7 +83,7 @@ class QuestionController extends Controller
     public function showQuestionsWithStandards($ids)
     {
         return view('questions.index', [
-            'questions' => Question::latest('updated_at')->withStandards([$ids])->paginate(10)
+            'questions' => Question::latest('updated_at')->withStandards([$ids])->paginate(config('global.perPage'))
         ]);
     }
 
@@ -95,7 +95,7 @@ class QuestionController extends Controller
     public function showMyFavorites()
     {
         return view('questions.index', [
-            'questions' => Auth::user()->favorites()->paginate(10),
+            'questions' => Auth::user()->favorites()->paginate(config('global.perPage')),
             'breadcrumb' => 'questions.favorites'
         ]);
     }
@@ -109,7 +109,7 @@ class QuestionController extends Controller
     public function showFreeResponseQuestions(Question $question)
     {
         return view('questions.index', [
-            'questions' => Question::latest('updated_at')->freeResponse()->paginate(10),
+            'questions' => Question::latest('updated_at')->freeResponse()->paginate(config('global.perPage')),
             'breadcrumbs' => 'questions.freeresponse'
         ]);
     }
@@ -123,7 +123,7 @@ class QuestionController extends Controller
     public function showMultipleChoiceQuestions(Question $question)
     {
         return view('questions.index', [
-            'questions' => Question::latest('updated_at')->multipleChoice()->paginate(10),
+            'questions' => Question::latest('updated_at')->multipleChoice()->paginate(config('global.perPage')),
             'breadcrumbs' => 'questions.multiplechoice'
         ]);
     }
@@ -137,7 +137,7 @@ class QuestionController extends Controller
     public function showMyQuestions(Question $question)
     {
         return view('questions.index', [
-            'questions' => Auth::user()->questions()->paginate(10),
+            'questions' => Auth::user()->questions()->paginate(config('global.perPage')),
             'breadcrumb' => 'questions.mine'
         ]);
     }
@@ -269,7 +269,7 @@ class QuestionController extends Controller
     {
         $pdf = \App::make('snappy.pdf.wrapper');
         $pdf->setOption('enable-javascript', true);
-        $pdf->setOption('javascript-delay', 1000);
+        $pdf->setOption('javascript-delay', config('global.perPage')00);
         $pdf->loadHTML('
             <html><head></head>
             <body>

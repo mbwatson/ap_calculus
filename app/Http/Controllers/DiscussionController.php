@@ -19,7 +19,7 @@ class DiscussionController extends Controller
     public function index()
     {
         return view('discussions.index', [
-        	'discussions' => Discussion::latest()->paginate(10)
+        	'discussions' => Discussion::latest()->paginate(config('global.perPage'))
         ]);
     }
 
@@ -112,7 +112,7 @@ class DiscussionController extends Controller
     public function showDiscussionsInChannel($id)
     {
         return view('discussions.index', [
-            'discussions' => Discussion::latest('updated_at')->inChannel($id)->paginate(10),
+            'discussions' => Discussion::latest('updated_at')->inChannel($id)->paginate(config('global.perPage')),
             'channel' => Channel::find($id)
         ]);
     }
@@ -120,7 +120,7 @@ class DiscussionController extends Controller
     public function showMyDiscussions()
     {
         return view('discussions.index', [
-            'discussions' => Auth::user()->discussions()->paginate(10),
+            'discussions' => Auth::user()->discussions()->paginate(config('global.perPage')),
             'breadcrumb' => 'discussions.mine'
         ]);
     }
@@ -133,7 +133,7 @@ class DiscussionController extends Controller
     public function showPopularDiscussions()
     {
         return view('discussions.index', [
-            'discussions' => Discussion::popular()->paginate(10),
+            'discussions' => Discussion::popular()->paginate(config('global.perPage')),
             'breadcrumb' => 'discussions.index'
         ]);
     }
