@@ -67,9 +67,10 @@ class Discussion extends Model implements Likeable
 
     public function scopePopular($query)
     {
-        $numberOfLikesToBePopular = 1;
-
-        $popularIds = DB::table('likes_counter')->select('likeable_id')->where('likeable_type', 'App\Discussion')->where('count', '>=', $numberOfLikesToBePopular)->lists('likeable_id');
+        $popularIds = DB::table('likes_counter')->select('likeable_id')
+                                                ->where('likeable_type', 'App\Discussion')
+                                                ->where('count', '>=', config('global.numberOfLikesToBePopular'))
+                                                ->lists('likeable_id');
         
         return Discussion::latest('created_at')->whereIn('id', $popularIds);
     }

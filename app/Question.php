@@ -226,9 +226,10 @@ class Question extends Model implements Likeable
 
     public function scopePopular($query)
     {
-        $numberOfLikesToBePopular = 1;
-
-        $popularIds = DB::table('likes_counter')->select('likeable_id')->where('likeable_type', 'App\Question')->where('count', '>=', $numberOfLikesToBePopular)->lists('likeable_id');
+        $popularIds = DB::table('likes_counter')->select('likeable_id')
+                                                ->where('likeable_type', 'App\Question')
+                                                ->where('count', '>=', 'global.numberOfLikesToBePopular')
+                                                ->lists('likeable_id');
         
         return Question::latest('created_at')->whereIn('id', $popularIds);
     }
