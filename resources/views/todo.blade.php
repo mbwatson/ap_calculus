@@ -38,6 +38,7 @@
                             <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
                             <li>slugs, esp. for standards and channels (eloquent-sluggable)</li>
                             <li>better search: Scout is coming in 5.3</li>
+                            <li>also for search: toggle between union and intersection of keywords/standards</li>
                             <li>ability to flag all posts as spam</li>
                             <li>restore softDeleted channels in admin panel</li>
                         </ul>
@@ -55,8 +56,8 @@
                 
                     <div class="panel-body">
                         <ul>
-                            <li>search: toggle between union and intersection of keywords/standards</li>
                             <li>more in sidebar; should it even exist?</li>
+                            <li>channels list layout/look</li>
                             <li>assistance for inexperienced $\LaTeX$ users</li>
                             <li>improve dashboard UX</li>
                             <li>search questions AND discussions</li>
