@@ -911,8 +911,15 @@ A limit might not exist for some functions at particular values of . Some ways t
 				'parent_id' => 23,
 				'created_at' => date("Y-m-d H:i:s"),
 				'updated_at' => date("Y-m-d H:i:s")
-			)		);
+			)
+		);
 
 		DB::table('standards')->insert($seeds);
+
+		foreach (App\Standard::all() as $std) {
+			$std->slug = str_slug($std->name);
+			$std->save();
+		}
+		
 	}
 }
