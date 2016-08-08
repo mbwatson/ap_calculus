@@ -16,6 +16,16 @@ class Standard extends Model
         'type', 'name', 'description', 'parent_id'
     ];
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 	/**
      * Get the questions associated to the current standard
      *

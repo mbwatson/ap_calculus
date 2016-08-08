@@ -23,6 +23,16 @@ class QuestionController extends Controller
     }
 
     /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
      * Show list of all questions
      *
      * @return \Illuminate\Http\Response
