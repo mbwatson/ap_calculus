@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateChannelRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Channel;
@@ -49,12 +50,8 @@ class ChannelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateChannelRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required|min:5|max:25'
-        ]);
-
         $channel = new Channel;
         $channel->name = $request['name'];
         $channel->slug = str_slug($request['name']);

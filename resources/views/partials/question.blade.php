@@ -26,7 +26,6 @@
         <div class="row meta">
             <div class="col-xs-4">
                 Posted {{ $question->created_at->diffForHumans() }}
-                {{ $question->created_at == $question->updated_at ? '' : ' | Edited at ' . $question->updated_at->diffForHumans() }}
             </div>
             <div class="col-xs-4">
                 <i class="fa fa-calculator {{ $question->calculator == 'Active' ? 'active' : 'inactive'}}"></i>

@@ -5,17 +5,16 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Auth;
 
-class CreateDiscussionRequest extends Request
+class CreateChannelRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
-     * Any signed-in user has authorization to make this request.
-     * 
+     *
      * @return bool
      */
     public function authorize()
     {
-        return Auth::user();
+        return Auth::user()->admin;
     }
 
     /**
@@ -26,9 +25,7 @@ class CreateDiscussionRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|max:50',
-            'body' => 'required|max:2500',
-            'channel_id' => 'required'
+            'name' => 'required|min:5|max:25'
         ];
     }
 }
