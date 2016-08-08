@@ -96,16 +96,16 @@
                         </div>
                         <div class="col-xs-10">
                           {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body', 'placeholder' => 'Please add a short title above, type your question here, and choose standards below.']) !!}
+
+                          <br />
+
+                          {!! Form::select('standards[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
+                          
                         </div>
                     </div>
                 </div>
 
 
-                <br />
-
-                {!! Form::select('standards[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
-                
-                <br /><br />
 
                 {!! Form::submit('Post Question', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
