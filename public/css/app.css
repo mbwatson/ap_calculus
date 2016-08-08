@@ -11391,13 +11391,15 @@ a {
 
 .panel-heading {
   background-color: #fff;
-  /*	border-top-left-radius: 5px;
+  /*
+	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 */ }
 
 .panel-footer {
   background-color: #fff;
-  /*	border-bottom-left-radius: 5px;
+  /*
+	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 */ }
 
@@ -11596,9 +11598,6 @@ label,
   text-align: right;
   margin-top: 6px; }
 
-.btn {
-  border-radius: 5px; }
-
 /* Create Question/Discussion */
 .form-title,
 .form-title:focus {
@@ -11683,12 +11682,6 @@ label,
 #post .dropdown-menu .btn, #post .dropdown-menu .a {
   color: #fff; }
 
-.channels-list {
-  list-style: none;
-  padding: 0; }
-  .channels-list li {
-    padding-bottom: 10px; }
-
 .comment .avatar,
 .response .avatar {
   width: 80px;
@@ -11697,6 +11690,9 @@ label,
 /* Sidebar */
 .sidebar {
   /*font-size: 85%;*/ }
+
+.btn-group-vertical {
+  display: block; }
 
 /* Global Stuff */
 .avatar {
@@ -11741,8 +11737,12 @@ label,
 .activities .activity div {
   padding: 10px 0; }
 
+.btn {
+  border-radius: 5px; }
+
 .btn-white {
-  background-color: #fff; }
+  background-color: #fff;
+  border: 1px solid #008cba; }
 
 .btn-white:hover {
   background-color: #dde;

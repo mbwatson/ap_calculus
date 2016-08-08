@@ -4,3 +4,6 @@
 	/*font-size: 85%;*/
 }
 
+.btn-group-vertical {
+	display: block;
+}

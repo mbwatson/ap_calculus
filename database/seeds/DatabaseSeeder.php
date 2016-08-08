@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(question_standardTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
         $this->call(FavoritesTableSeeder::class);
+        $this->call(ChannelsTableSeeder::class);
         $this->call(DiscussionsTableSeeder::class);
         $this->call(ResponsesTableSeeder::class);
-        $this->call(ChannelsTableSeeder::class);
     }
 }

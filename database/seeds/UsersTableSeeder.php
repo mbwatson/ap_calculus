@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
 		$seeds = array(
 			array(
 				'id' => 1,
-				'name' => 'adminname',
+				'name' => 'mwatson',
 				'email' => 'email@ddress.com',
 				'admin' => true,
 				'password' => Hash::make('password'),
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
 			),
 			array(
 				'id' => 2,
-				'name' => 'username',
+				'name' => 'dingleberry',
 				'email' => 'email@ddress.net',
 				'admin' => false,
 				'password' => Hash::make('password'),
@@ -36,4 +36,7 @@ class UsersTableSeeder extends Seeder
 		);
 
 		DB::table('users')->insert($seeds);
+
+    	factory(App\User::class, 13)->create();
+
 	}}

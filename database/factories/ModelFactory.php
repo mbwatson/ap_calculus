@@ -11,29 +11,46 @@
 |
 */
 
+$factory->define(App\User::class, function(Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'email' => $faker->email,
+        'admin' => false,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'bio' => $faker->paragraph,
+        'private' => rand(0,1),
+        'password' => bcrypt('password')
+    ];
+});
+
 $factory->define(App\Discussion::class, function (Faker\Generator $faker) {
+    $channelIds = App\Channel::lists('id')->toArray();
+    $userIds = App\User::lists('id')->toArray();
     return [
         'title' => $faker->sentence(4),
         'body' => $faker->paragraph,
-        'channel_id' => rand(1,4),
-        'user_id' => rand(1,2),
+        'channel_id' => $faker->randomElement($channelIds),
+        'user_id' => $faker->randomElement($userIds)
     ];
 });
 
 $factory->define(App\Response::class, function (Faker\Generator $faker) {
     $discussionIds = App\Discussion::lists('id')->toArray();
+    $userIds = App\User::lists('id')->toArray();
     return [
         'body' => $faker->paragraph,
-        'discussion_id' => array_rand($discussionIds),
-        'user_id' => rand(1,2)
+        'discussion_id' => $faker->randomElement($discussionIds),
+        'user_id' => $faker->randomElement($userIds),
     ];
 });
 
 $factory->define(App\Comment::class, function (Faker\Generator $faker) {
     $questionIds = App\Question::lists('id')->toArray();
+    $userIds = App\User::lists('id')->toArray();
     return [
         'body' => $faker->paragraph,
-        'question_id' => rand(1,11),
-        'user_id' => rand(1,2)
+        'question_id' => $faker->randomElement($questionIds),
+        'user_id' => $faker->randomElement($userIds),
     ];
 });

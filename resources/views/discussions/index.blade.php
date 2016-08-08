@@ -34,12 +34,12 @@
             </div>
             <br />
             <h4 class="text-center">Channels</h4>
-            <ul class="channels-list">
-                <li><a class="btn btn-block {{ isset($channel) ? 'btn-info' : 'btn-primary' }}" href="{{ route('discussions.index') }}">All Discussions</a></li>
+            <div class="btn-group-vertical">
+                <a class="btn btn-block {{ isset($channel) ? 'btn-info' : 'btn-primary' }}" href="{{ route('discussions.index') }}">All Channels</a>
                 @foreach ($channels->sortBy('name') as $chan)
-                    <li><a class="btn btn-block {{ (isset($channel) && $chan == $channel) ? 'btn-primary' : 'btn-info' }}" href="{{ route('discussions.channel', $chan->id) }}">{{ $chan->name }}</a></li>
+                    <a class="btn btn-block {{ (isset($channel) && $chan == $channel) ? 'btn-primary' : 'btn-info' }}" href="{{ route('discussions.channel', $chan->id) }}">{{ $chan->name }}</a>
                 @endforeach
-            </ul>
+            </div>
         </div>
 
         <!-- Discussion List -->
