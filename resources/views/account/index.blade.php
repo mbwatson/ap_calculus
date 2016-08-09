@@ -13,57 +13,24 @@
 
         <div class="col-xs-12 col-md-9">
 
-            <h1>Since You've Been Gone</h1>
+            <h2>My Discussions</h2>
 
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>New Questions</h3>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>New Discussions</h3>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="panel-body posts">
+                    @foreach ($user->discussions->take(3) as $discussion)
+                        @include('partials.discussion')
+                    @endforeach
+                    <a href="{{ route('discussions.mine') }}" class="pull-right">View All</a>
                 </div>
             </div>
 
-            <h1>My Participation</h1>
-
+            <h2>My Questions</h2>
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>My Active Discussions</h3>
-                </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>My Questions</h3>
-                </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="panel-body posts">
+                    @foreach ($user->questions->take(3) as $question)
+                        @include('partials.question')
+                    @endforeach
+                    <a href="{{ route('questions.mine') }}" class="pull-right">View All</a>
                 </div>
             </div>
         </div>
@@ -89,8 +56,18 @@
                 </div>
                 <div class="panel-body">
                     <h4><a href="{{ route('account.edit', Auth::user()) }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></h4>
-                    <h4><span><i class="glyphicon"></i>Other stuff</span></h4>
-                    <h4><span><i class="glyphicon"></i>Something Else</span></h4>
+                    <h4><a href="{{ route('users.show', Auth::user()) }}"><i class="mdi mdi-account-card-details"></i>My Profile</a></h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <span><i class="glyphicon glyphicon-heart"></i>Favorite Questions</span>
+                </div>
+                <div class="panel-body">
+                    @foreach ($user->favorites->take(5) as $question)
+                        <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
+                    @endforeach
+                    <a href="{{ route('questions.favorites') }}" class="pull-right">View All</a>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
 
     <!-- Question Info -->
     
-    <div class="col-xs-12 col-md-9" style="height:100%">
+    <div class="col-xs-12 col-md-9">
         <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
         <div class="standards">
             <b>MPACs:</b>
