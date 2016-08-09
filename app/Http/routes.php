@@ -49,13 +49,15 @@ Route::group(['middleware' => 'auth'], function() {
 
 	// Channel Routes
 
+	Route::get('channels/{channel_id}/restore', 		[ 'uses' => 'ChannelController@restore', 	'as' => 'channels.restore' ]);
+	
 	Route::resource('channels', 'ChannelController');
 	
 	// Discussion Routes
 
-	Route::get('/discussions/popular', 					[ 'uses' => 'DiscussionController@showPopularDiscussions', 'as' => 'discussions.popular' ]);
-	Route::get('/discussions/mine', 					[ 'uses' => 'DiscussionController@showMyDiscussions', 'as' => 'discussions.mine' ]);
-	Route::get('/discussions/channels/{channels}',	 	[ 'uses' => 'DiscussionController@showDiscussionsInChannel', 'as' => 'discussions.channel' ]);
+	Route::get('/discussions/popular', 					[ 'uses' => 'DiscussionController@showPopularDiscussions', 		'as' => 'discussions.popular' ]);
+	Route::get('/discussions/mine', 					[ 'uses' => 'DiscussionController@showMyDiscussions', 			'as' => 'discussions.mine' ]);
+	Route::get('/discussions/channels/{channels}',	 	[ 'uses' => 'DiscussionController@showDiscussionsInChannel', 	'as' => 'discussions.channel' ]);
 	Route::resource('discussions', 'DiscussionController');
 
 	// Response Routes
@@ -66,17 +68,17 @@ Route::group(['middleware' => 'auth'], function() {
 
 	// Question Routes
 
-	Route::get('questions/freeresponse', 			[ 'uses' => 'QuestionController@showFreeResponseQuestions', 		'as' => 'questions.freeresponse' ]);
-	Route::get('questions/multiplechoice',	 		[ 'uses' => 'QuestionController@showMultipleChoiceQuestions',	 	'as' => 'questions.multiplechoice' ]);
-	Route::get('questions/calculatoractive', 		[ 'uses' => 'QuestionController@showCalculatorActiveQuestions', 	'as' => 'questions.calculator.active' ]);
-	Route::get('questions/calculatorinactive', 		[ 'uses' => 'QuestionController@showCalculatorInactiveQuestions', 	'as' => 'questions.calculator.inactive' ]);
-	Route::get('questions/calculatorneutral', 		[ 'uses' => 'QuestionController@showCalculatorNeutralQuestions', 	'as' => 'questions.calculator.neutral' ]);
-	Route::get('questions/popular', 				[ 'uses' => 'QuestionController@showPopularQuestions', 				'as' => 'questions.popular' ]);
-	Route::get('questions/mine', 					[ 'uses' => 'QuestionController@showMyQuestions', 					'as' => 'questions.mine' ]);
-	Route::get('questions/favorites', 				[ 'uses' => 'QuestionController@showMyFavorites', 					'as' => 'questions.favorites' ]);
-	Route::get('questions/standards/{ids}', 		[ 'uses' => 'QuestionController@showQuestionsWithStandards', 		'as' => 'questions.withstandards' ]);
-	Route::get('questions/{questions}/pdf', 		[ 'uses' => 'QuestionController@makePDF', 							'as' => 'questions.makepdf' ]);
-	Route::get('questions/{questions}/printable', 	[ 'uses' => 'QuestionController@showPrintable', 					'as' => 'questions.showprintable' ]);
+	Route::get('questions/freeresponse', 				[ 'uses' => 'QuestionController@showFreeResponseQuestions', 		'as' => 'questions.freeresponse' ]);
+	Route::get('questions/multiplechoice',	 			[ 'uses' => 'QuestionController@showMultipleChoiceQuestions',	 	'as' => 'questions.multiplechoice' ]);
+	Route::get('questions/calculatoractive', 			[ 'uses' => 'QuestionController@showCalculatorActiveQuestions', 	'as' => 'questions.calculator.active' ]);
+	Route::get('questions/calculatorinactive', 			[ 'uses' => 'QuestionController@showCalculatorInactiveQuestions', 	'as' => 'questions.calculator.inactive' ]);
+	Route::get('questions/calculatorneutral', 			[ 'uses' => 'QuestionController@showCalculatorNeutralQuestions', 	'as' => 'questions.calculator.neutral' ]);
+	Route::get('questions/popular', 					[ 'uses' => 'QuestionController@showPopularQuestions', 				'as' => 'questions.popular' ]);
+	Route::get('questions/mine', 						[ 'uses' => 'QuestionController@showMyQuestions', 					'as' => 'questions.mine' ]);
+	Route::get('questions/favorites', 					[ 'uses' => 'QuestionController@showMyFavorites', 					'as' => 'questions.favorites' ]);
+	Route::get('questions/standards/{ids}', 			[ 'uses' => 'QuestionController@showQuestionsWithStandards', 		'as' => 'questions.withstandards' ]);
+	Route::get('questions/{questions}/pdf', 			[ 'uses' => 'QuestionController@makePDF', 							'as' => 'questions.makepdf' ]);
+	Route::get('questions/{questions}/printable', 		[ 'uses' => 'QuestionController@showPrintable', 					'as' => 'questions.showprintable' ]);
 	Route::resource('questions', 'QuestionController');
 
 	// Comment Routes

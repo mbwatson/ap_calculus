@@ -57,6 +57,36 @@
             @endif
         </div>
 
+        <div class="col-xs-12 col-md-2 sidebar">
+            <br />
+        </div>
+        <div class="col-xs-12 col-md-10">
+            <h1>Inactive Channels</h1>
+            @if (App\Channel::onlyTrashed()->count() > 0)
+                @foreach (App\Channel::onlyTrashed()->get() as $channel)
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-10">
+                                    <h3><a href="{{ route('channels.show', $channel) }}">{{ $channel->name }}</a></h3>
+                                    <h5>{{ $channel->discussions->count() }} discussions</h5>
+                                </div>
+                                <div class="col-xs-12 col-sm-2">
+                                    <br />
+                                    <!-- Restore -->
+                                    <a class="btn btn-warning" href="{{ route('channels.restore', $channel->id) }}"><i class="glyphicon glyphicon-refresh"></i>Restore</a>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                @endforeach
+            @else
+                <center>
+                    There are no channels to display!
+                </center>
+            @endif
+        </div>
+
     </div>
 </div>
 

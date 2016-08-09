@@ -36,8 +36,7 @@
                             <li>multiple choice question creation form with inputs for responses/distractors (and possibly marking the correct one)</li>
                             <li>tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum</li>
                             <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
-                            <li>slugs, esp. for standards and channels (eloquent-sluggable)</li>
-                            <li>bettern search
+                            <li>better search
                                 <ul>
                                     <li>Scout is coming in 5.3</li>
                                     <li>also for search: toggle between union and intersection of keywords/standards</li>

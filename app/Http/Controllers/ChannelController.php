@@ -98,6 +98,19 @@ class ChannelController extends Controller
     }
 
     /**
+     * Restore channel in database
+     *
+     * @param  App\Channel
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        Channel::withTrashed()->find($id)->restore();
+        
+        return redirect()->route('channels.index');
+    }
+
+    /**
      * Delete a channel from database.
      *
      * @param  App\Channel
