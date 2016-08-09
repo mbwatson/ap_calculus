@@ -58,8 +58,6 @@ a {
 .dropdown:hover {
 	
 	button {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
 	}
 	
 	.dropdown-menu {
@@ -70,8 +68,6 @@ a {
 .dropdown-menu {
 	border-width: 0;
 	background-color: #3c3c3c;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
 	color: #fff;
 
 	li a {

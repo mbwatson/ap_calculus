@@ -11411,18 +11411,12 @@ a {
   font-size: 110%; }
 
 /* Drodown Menus */
-.dropdown:hover button {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
-
 .dropdown:hover .dropdown-menu {
   display: block; }
 
 .dropdown-menu {
   border-width: 0;
   background-color: #3c3c3c;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
   color: #fff; }
   .dropdown-menu li a {
     color: #fff; }
@@ -11738,7 +11732,7 @@ label,
   padding: 10px 0; }
 
 .btn {
-  border-radius: 5px; }
+  border-radius: 0; }
 
 .btn-white {
   background-color: #fff;
