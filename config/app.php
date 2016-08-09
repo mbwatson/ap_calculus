@@ -163,6 +163,7 @@ return [
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         DraperStudio\Likeable\ServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
     ],
 
     /*
