@@ -31,7 +31,7 @@
                         <div><span class="fa fa-comments"></span> {{ $user->discussions->count() }} discussions</div>
                         <div><span class="fa fa-comment"></span> {{ $user->responses->count() }} responses</div>
                     @else
-                        {{ $user->name }}'s profile is private.
+                        <i class="mdi mdi-incognito mdi-24px"></i>{{ $user->name }}'s profile is private.
                     @endif
                 </div>
             </div>
