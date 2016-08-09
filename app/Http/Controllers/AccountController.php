@@ -108,7 +108,7 @@ class AccountController extends Controller
     	return view('account.index', ['user' => Auth::user()]);
     }
 
-    public function favorite_toggle($id)
+    public function toggleFavorite($id)
     {
         $question = Question::find($id);
 

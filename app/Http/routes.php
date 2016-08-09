@@ -112,7 +112,7 @@ Route::group(['middleware' => 'auth'], function() {
 	// Favorite Route
 
 	Route::get('favorites/toggle/{id}', [
-		'uses' => 'AccountController@favorite_toggle',
+		'uses' => 'AccountController@toggleFavorite',
 		'as' => 'favorite.toggle'
 	]);
 });

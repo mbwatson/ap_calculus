@@ -319,5 +319,4 @@ class QuestionController extends Controller
         return view('questions.showprintable', ['question' => $question]);
     }
 
-
 }
