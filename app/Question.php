@@ -2,18 +2,20 @@
 
 namespace App;
 
+use \DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Markdown;
 use PDF;
 use DraperStudio\Likeable\Contracts\Likeable;
 use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
-use \DB;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Question extends Model implements Likeable
 {
     use SoftDeletes;
     use LikeableTrait;
+    use Sluggable;
     
     /**
      * The attributes that should be mutated to dates.
@@ -30,6 +32,30 @@ class Question extends Model implements Likeable
     protected $fillable = [
         'title', 'body', 'user_id', 'type', 'calculator'
     ];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /**
      * Get the user that owns the question
