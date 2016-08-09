@@ -34,8 +34,12 @@
                     <div class="panel-body">
                         <ul>
                             <li>multiple choice question creation form with inputs for responses/distractors (and possibly marking the correct one)</li>
-                            <li>tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum</li>
-                            <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
+                            <li>tagging
+                                <ul>
+                                    <li>tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum</li>
+                                    <li>tag/mention other users (with @-symbol?) in question comments or in regular conversation forum</li>
+                                </ul>
+                            </li>
                             <li>better search
                                 <ul>
                                     <li>Scout is coming in 5.3</li>
@@ -54,7 +58,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="panel-heading">
-                        UX Improvements
+                        frontend Improvements
                     </div>
                 
                     <div class="panel-body">
@@ -62,7 +66,7 @@
                             <li>more in sidebar; should it even exist?</li>
                             <li>channels list layout/look</li>
                             <li>assistance for inexperienced $\LaTeX$ users</li>
-                            <li>improve dashboard UX</li>
+                            <li>improve dashboard</li>
                             <li>ajax for favorites and likes to update page and not redirect</li>
                         </ul>
                     </div>

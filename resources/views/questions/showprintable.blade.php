@@ -21,16 +21,16 @@
                 <div class="row">
                     <div class="col-xs-12 standards">
                         @if ($question->mpacs()->count() > 0)
-                            <h5>MPACs</h5>
+                            <h3>MPACs</h3>
                             @foreach ($question->mpacs()->get() as $standard)
-                                <b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
+                                <i class="fa fa-circle-o" style="padding-right: 10px;"></i><b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
                             @endforeach
                         @endif
                         @if ($question->learningObjectives()->count() > 0)
                             <br />
-                            <h5>Learning Objectives</h5>
+                            <h3>Learning Objectives</h3>
                             @foreach ($question->learningObjectives()->get() as $standard)
-                                <b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
+                                <i class="fa fa-circle-o" style="padding-right: 10px;"></i><b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
                             @endforeach
                         @endif
                     </div>

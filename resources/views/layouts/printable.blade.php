@@ -16,16 +16,11 @@
   <!-- Bootswatch Theme -->
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/themes/yeti.min.css') }}">
 
-  <!-- Custom Styling -->
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/main.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/nav.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/user.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/question.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/standard.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/comment.css') }}">
-
-  <link rel="stylesheet" type="text/css" href="/css/jquery.atwho.min.css">
+  <style type="text/css">
+    body {
+      font-size: 200%;
+    }
+  </style>
   
 </head>
 <body id="app-layout">
