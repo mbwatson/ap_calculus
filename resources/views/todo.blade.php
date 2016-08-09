@@ -44,7 +44,6 @@
                                 </ul>
                             </li>
                             <li>ability to flag all posts as spam</li>
-                            <li>restore softDeleted channels in admin panel</li>
                         </ul>
                     </div>
                 </div>
