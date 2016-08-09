@@ -39,7 +39,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <section class="posts">
-                        @foreach ($standard->questions()->get() as $question)
+                        @foreach ($standard->questions()->get()->unique() as $question)
                             @include('partials.question', $question)
                         @endforeach
                     </section>
