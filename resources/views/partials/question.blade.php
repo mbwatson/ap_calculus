@@ -28,7 +28,7 @@
                 Posted {{ $question->created_at->diffForHumans() }}
             </div>
             <div class="col-xs-4">
-                <i class="fa fa-calculator {{ $question->calculator == 'Active' ? 'active' : 'inactive'}}"></i>
+                <i class="mdi mdi-calculator {{ $question->calculator == 'Active' ? 'active' : 'inactive'}}"></i>
                 {{ $question->calculator == 'Active' ? 'Active' : 'Inactive'}}
             </div>
             <div class="col-xs-4">

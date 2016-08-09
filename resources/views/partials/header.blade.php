@@ -61,7 +61,7 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ url('/account') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-                                    <li><a href="{{ route('users.show', Auth::user()) }}"><i class="glyphicon glyphicon-user"></i>My Profile</a></li>
+                                    <li><a href="{{ route('users.show', Auth::user()) }}"><i class="mdi mdi-account-card-details"></i>My Profile</a></li>
                                     <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
                                     <li><a href="#"><i class="glyphicon glyphicon-bell"></i>Notifications</a></li>
                                     <li role="separator" class="divider"></li>
