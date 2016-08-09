@@ -18,16 +18,6 @@ class Channel extends Model
         'name'
     ];
 
-    /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
-
 	/**
      * Get the discussions that belong to this channel
      *

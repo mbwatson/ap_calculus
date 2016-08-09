@@ -31,16 +31,6 @@ class Discussion extends Model implements Likeable
     ];
     
     /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
-
-    /**
      * Retrieve the user that owns the discussion
      *
      * @return App\User

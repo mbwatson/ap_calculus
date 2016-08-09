@@ -30,16 +30,6 @@ class Question extends Model implements Likeable
     protected $fillable = [
         'title', 'body', 'user_id', 'type', 'calculator'
     ];
-    
-    /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 
     /**
      * Get the user that owns the question
