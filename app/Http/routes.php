@@ -55,7 +55,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/discussions/popular', 					[ 'uses' => 'DiscussionController@showPopularDiscussions', 'as' => 'discussions.popular' ]);
 	Route::get('/discussions/mine', 					[ 'uses' => 'DiscussionController@showMyDiscussions', 'as' => 'discussions.mine' ]);
-	Route::get('/discussions/channel/{channel_slug}', 	[ 'uses' => 'DiscussionController@showDiscussionsInChannel', 'as' => 'discussions.channel' ]);
+	Route::get('/discussions/channel/{channels}',	 	[ 'uses' => 'DiscussionController@showDiscussionsInChannel', 'as' => 'discussions.channel' ]);
 	Route::resource('discussions', 'DiscussionController');
 
 	// Response Routes

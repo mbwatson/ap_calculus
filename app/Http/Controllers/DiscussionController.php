@@ -109,11 +109,10 @@ class DiscussionController extends Controller
         return redirect()->route('discussions.index');
     }
 
-    public function showDiscussionsInChannel($id)
+    public function showDiscussionsInChannel(Channel $channel)
     {
         return view('discussions.index', [
-            'discussions' => Discussion::latest('updated_at')->inChannel($id)->paginate(config('global.perPage')),
-            'channel' => Channel::find($id)
+            'discussions' => Discussion::latest('updated_at')->inChannel($channel)->paginate(config('global.perPage'))
         ]);
     }
 

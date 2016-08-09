@@ -37,7 +37,7 @@
             <div class="btn-group-vertical">
                 <a class="btn btn-block {{ isset($channel) ? 'btn-info' : 'btn-primary' }}" href="{{ route('discussions.index') }}">All Channels</a>
                 @foreach ($channels->sortBy('name') as $chan)
-                    <a class="btn btn-block {{ (isset($channel) && $chan == $channel) ? 'btn-primary' : 'btn-info' }}" href="{{ route('discussions.channel', $chan->id) }}">{{ $chan->name }}</a>
+                    <a class="btn btn-block {{ (isset($channel) && $chan == $channel) ? 'btn-primary' : 'btn-info' }}" href="{{ route('discussions.channel', $chan) }}">{{ $chan->name }}</a>
                 @endforeach
             </div>
         </div>

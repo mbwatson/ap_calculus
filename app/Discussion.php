@@ -85,9 +85,9 @@ class Discussion extends Model implements Likeable
         return $this->belongsTo('App\Channel');
     }
 
-    public function scopeInChannel($query, $id)
+    public function scopeInChannel($query, Channel $channel)
     {
-        return Discussion::latest('created_at')->where('channel_id', $id);
+        return Discussion::latest('created_at')->where('channel_id', $channel->id);
     }
 
     public function scopePopular($query)
