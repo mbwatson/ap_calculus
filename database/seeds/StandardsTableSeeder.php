@@ -917,7 +917,7 @@ A limit might not exist for some functions at particular values of . Some ways t
 		DB::table('standards')->insert($seeds);
 
 		foreach (App\Standard::all() as $std) {
-			$std->slug = str_slug($std->name);
+			$std->slug = str_slug(preg_replace('/./', '-', $std->name));
 			$std->save();
 		}
 		

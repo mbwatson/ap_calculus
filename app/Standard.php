@@ -2,9 +2,9 @@
 
 namespace App;
 
+use DB;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-use DB;
 
 class Standard extends Model
 {
