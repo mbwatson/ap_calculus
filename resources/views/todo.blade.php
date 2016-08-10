@@ -18,7 +18,7 @@
                     <div class="panel-body">
                         <ul>
                             <li>implement the addition of scoring guidelines with question</li>
-                            <li>simple way to "suggest" standards (like tagging) without having to write a comment? or is a comment better?</li>
+                            <li>multiple choice question creation form with inputs for responses/distractors (and possibly marking the correct one)</li>
                         </ul>
                     </div>
                 </div>
@@ -33,7 +33,6 @@
                     </div>
                     <div class="panel-body">
                         <ul>
-                            <li>multiple choice question creation form with inputs for responses/distractors (and possibly marking the correct one)</li>
                             <li>tagging
                                 <ul>
                                     <li>tag standards [[LO 1.2A(b)]] or similar syntax in comments, and in possible regular forum</li>
