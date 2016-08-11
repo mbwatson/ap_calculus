@@ -11429,6 +11429,34 @@ a {
     background-color: #272727;
     color: #eee; }
 
+/* Heading */
+.fancy-heading {
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 40px; }
+
+.fancy-heading span {
+  font-size: 150%;
+  display: inline-block;
+  position: relative; }
+
+.fancy-heading span:before,
+.fancy-heading span:after {
+  content: "";
+  position: absolute;
+  height: 15px;
+  border-bottom: 3px solid #008cba;
+  top: 0;
+  width: 60%; }
+
+.fancy-heading span:before {
+  right: 100%;
+  margin-right: 15px; }
+
+.fancy-heading span:after {
+  left: 100%;
+  margin-left: 15px; }
+
 .navbar {
   margin-bottom: 0; }
 

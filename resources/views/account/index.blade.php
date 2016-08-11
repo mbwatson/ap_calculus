@@ -13,7 +13,7 @@
 
         <div class="col-xs-12 col-md-9">
 
-            <h3 class="text-center"><i class="mdi mdi-comment-multiple-outline"></i>My Discussions</h3>
+            <p class="fancy-heading"><span><i class="mdi mdi-comment-multiple-outline"></i>My Discussions</span></p>
             <div class="panel panel-default posts">
                 @foreach ($user->discussions->take(3) as $discussion)
                     <div class="panel-body">
@@ -42,7 +42,9 @@
                 </div>
             </div>
 
-            <h3 class="text-center"><i class="mdi mdi-comment-question-outline"></i>My Questions</h3>
+            <br />
+            
+            <p class="fancy-heading"><span><i class="mdi mdi-comment-multiple-outline"></i>My Questions</span></p>
             <div class="panel panel-default posts">
                 @foreach ($user->questions->take(3) as $question)
                     <div class="panel-body">
@@ -67,7 +69,9 @@
                 </div>
             </div>
 
-            <h3 class="text-center"><i class="mdi mdi-heart"></i>My Favorites</h3>
+            <br />
+            
+            <p class="fancy-heading"><span><i class="mdi mdi-comment-multiple-outline"></i>Recent Favorites</span></p>
             <div class="panel panel-default">
                 @foreach ($user->favorites->take(5) as $question)
                     <div class="panel-body">
