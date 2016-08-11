@@ -23,27 +23,27 @@
 
 	.comment-count {
 		display: inline;
-		border-radius: 6px;
-		background-color: #ddd;
-		color: #666;
-		font-size: 100%;
-		font-weight: bold;
+		border-radius: 5px;
+		background-color: #ccc;
+		color: #fff;
+		font-size: 95%;
+		font-weight: 600;
 		text-align: center;
-		padding: 3px 10px;
+		padding: 1px;
 		position: relative;
-		top: 12px;
-		min-width: 30px;
+		top: 20px;
+		min-width: 20px;
 		float: right;
 	}
 
 	.comment-count:after {
 		content: "";
 		position: absolute;
-		bottom: -8px; 					/* value = - border-top-width - border-bottom-width */
+		bottom: -7px; 					/* value = - border-top-width - border-bottom-width */
 		left: 5px;						/* controls horizontal position */
 		border-width: 8px 8px 0 0;		/* vary these values to change the angle of the vertex */
 		border-style: solid;
-		border-color: #ddd transparent;
+		border-color: #ccc transparent;
 	}
 
 }
