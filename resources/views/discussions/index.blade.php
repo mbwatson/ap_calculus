@@ -40,6 +40,7 @@
                     <a class="btn btn-block {{ (isset($channel) && $chan == $channel) ? 'btn-primary' : 'btn-info' }}" href="{{ route('discussions.channel', $chan) }}">{{ $chan->name }}</a>
                 @endforeach
             </div>
+            <br />
         </div>
 
         <!-- Discussion List -->
