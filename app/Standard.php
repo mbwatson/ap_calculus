@@ -98,16 +98,6 @@ class Standard extends Model
     }
 
     /**
-     * Get information about the current standard in the form [ 'name: description' ]
-     *
-     * @return String
-     */
-    public function getStandardInfoAttribute()
-    {
-        return $this->attributes['name'] . ': ' . $this->attributes['description'];
-    }
-
-    /**
      * Retrieve only MPACs and LOs
      *
      * @return \Illuminate\Database\Eloquent\Builder
