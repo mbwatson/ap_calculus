@@ -32,6 +32,8 @@
 		padding: 3px 10px;
 		position: relative;
 		top: 12px;
+		min-width: 30px;
+		float: right;
 	}
 
 	.comment-count:after {

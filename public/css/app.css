@@ -11662,7 +11662,9 @@ label,
     text-align: center;
     padding: 3px 10px;
     position: relative;
-    top: 12px; }
+    top: 12px;
+    min-width: 30px;
+    float: right; }
   .posts .comment-count:after {
     content: "";
     position: absolute;

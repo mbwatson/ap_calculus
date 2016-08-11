@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-1 hidden-sm hidden-xs text-center">
+    <div class="col-md-1 hidden-sm hidden-xs">
         <span class="comment-count">
             {{ count($question->comments) }}
         </span>
