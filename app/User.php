@@ -109,4 +109,15 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Question', 'favorites')->withTimestamps();
     }
+
+    /**
+     * Retrieve user's ($num) most recent favorite questions
+     * 
+     * @param Integer
+     * @return 
+     */
+    public function recentFavorites($num)
+    {
+        return $this->favorites()->orderBy('favorites.created_at', 'asc')->take($num);
+    }
 }
