@@ -21,6 +21,12 @@ a {
     margin: 0 6px;
 }
 
+.mdi {
+	font-size: 130%;
+	position: relative;
+	top: 3px;
+}
+
 /* Panels */
 
 .panel {

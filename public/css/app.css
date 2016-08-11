@@ -11385,6 +11385,11 @@ a {
 .glyphicon, .fa, .fa-btn, .mdi {
   margin: 0 6px; }
 
+.mdi {
+  font-size: 130%;
+  position: relative;
+  top: 3px; }
+
 /* Panels */
 .panel {
   /*border-radius: 5px;*/ }
@@ -11438,7 +11443,6 @@ a {
 
 .navbar li a {
   padding: 25px 10px;
-  font-size: 110%;
   transition: background-color 0.5s ease; }
 
 .navbar-nav li.dropdown ul li a {

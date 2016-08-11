@@ -51,8 +51,8 @@
                     
                     <ul class="nav navbar-nav navbar-right navbar-auth">
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
-                            <li><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-user"></i>Register</a></li>
+                            <li><a href="{{ url('/login') }}"><i class="mdi mdi-login-variant"></i>Login</a></li>
+                            <li><a href="{{ url('/register') }}"><i class="mdi mdi-account-plus"></i>Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -60,12 +60,12 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('/account') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                                    <li><a href="{{ url('/account') }}"><i class="mdi mdi-view-dashboard"></i>Dashboard</a></li>
                                     <li><a href="{{ route('users.show', Auth::user()) }}"><i class="mdi mdi-account-card-details"></i>My Profile</a></li>
-                                    <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
-                                    <li><a href="#"><i class="glyphicon glyphicon-bell"></i>Notifications</a></li>
+                                    <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="mdi mdi-settings"></i>Settings</a></li>
+                                    <li><a href="#"><i class="mdi mdi-bell"></i>Notifications</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="mdi mdi-logout-variant"></i>Logout</a></li>
                                 </ul>
                             </li>
                         @endif
@@ -78,16 +78,16 @@
                             <ul class="nav navbar-nav">
                                 <li class="navbar-link dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        <span class="glyphicon glyphicon-tags"></span>Curriculum Framework <span class="caret"></span></a></span>
+                                        <span class="mdi mdi-tag-multiple"></span>Curriculum Framework <span class="caret"></span></a></span>
                                     </a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li class="navbar-link"><a href="{{ url('standards') }}"><span class="glyphicon glyphicon-list"></span>Overview</a></li>
-                                        <li class="navbar-link"><a href="{{ url('standards/mpacs') }}"><span class="glyphicon glyphicon-check"></span>MPACs</a></li>
-                                        <li class="navbar-link"><a href="{{ url('standards/big-ideas') }}"><span class="glyphicon glyphicon-check"></span>Big Ideas</a></li>
+                                        <li class="navbar-link"><a href="{{ url('standards') }}"><span class="mdi mdi-format-list-bulleted"></span>Overview</a></li>
+                                        <li class="navbar-link"><a href="{{ url('standards/mpacs') }}"><span class="mdi mdi-android-studio"></span>MPACs</a></li>
+                                        <li class="navbar-link"><a href="{{ url('standards/big-ideas') }}"><span class="mdi mdi-lightbulb"></span>Big Ideas</a></li>
                                     </ul>
                                 </li>
-                                <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="glyphicon glyphicon-question-sign"></span>Questions</a></li>
-                                <li class="navbar-link"><a href="{{ url('/discussions') }}"><span class="glyphicon glyphicon-comment"></span>Discussions</a></li>
+                                <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="mdi mdi-comment-question-outline"></span>Questions</a></li>
+                                <li class="navbar-link"><a href="{{ url('/discussions') }}"><span class="mdi mdi-comment-multiple-outline"></span>Discussions</a></li>
                                 @if (Auth::check() && Auth::user()->admin)
                                     <li class="navbar-link dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -95,8 +95,8 @@
                                         </a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
-                                            <li class="navbar-link"><a href="{{ url('/channels') }}"><span class="fa fa-television"></span>Channels</a></li>
-                                            <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="fa fa-btn fa-list"></span>To Do List</a></li>
+                                            <li class="navbar-link"><a href="{{ url('/channels') }}"><span class="mdi mdi-television"></span>Channels</a></li>
+                                            <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="mdi mdi-playlist-check"></span>To Do List</a></li>
                                         </ul>
                                     </li>
                                 @endif
