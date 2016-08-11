@@ -28,13 +28,13 @@
         </div>
     </div>
     <div class="col-xs-2 col-sm-3">
-        <span class="pull-right">
+        <span class="pull-right meta">
             <br />
             {!! $question->calculator == 'Active' ? '<span class="mdi mdi-calculator" data-toggle="tooltip" data-placement="top" title="Calculator Active"></span>' : '' !!}
             @if ($question->type == 'Free Response')
                 <span class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="Free Response"></span>
             @else
-                <span class="fa fa-list" data-toggle="tooltip" data-placement="top" title="Multiple Choice"></span>
+                <span class="mdi mdi-format-list-bulleted" data-toggle="tooltip" data-placement="top" title="Multiple Choice"></span>
             @endif
         </span>
     </div>

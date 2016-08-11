@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-xs-3">
                     @if ($question->type == 'Free Response')
-                        <i class="mdi mdi-note-text mdi-18px"></i> Free Response
+                        <i class="fa fa-pencil-square-o"></i> Free Response
                     @else
                         <i class="mdi mdi-format-list-bulleted mdi-18px"></i> Multiple Choice
                     @endif

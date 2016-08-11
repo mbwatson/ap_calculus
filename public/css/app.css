@@ -11385,7 +11385,7 @@ a {
 .glyphicon, .fa, .fa-btn, .mdi {
   margin: 0 6px; }
 
-.mdi {
+.mdi, .fa {
   font-size: 130%;
   position: relative;
   top: 3px; }
