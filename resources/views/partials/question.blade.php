@@ -13,7 +13,7 @@
 
     <!-- Question Info -->
     
-    <div class="col-xs-12 col-sm-11 col-md-9">
+    <div class="col-xs-10 col-sm-8 col-md-6">
         <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
         <div class="standards">
             <b>MPACs:</b>
@@ -23,22 +23,20 @@
             <b>Learning Objectives:</b>
             @include('partials.list-standards', ['standards' => $question->learningObjectives])
         </div>
-        <div class="row meta">
-            <div class="col-xs-4">
-                Posted {{ $question->created_at->diffForHumans() }}
-            </div>
-            <div class="col-xs-4">
-                @if ($question->type == 'Free Response')
-                    <i class="fa fa-pencil-square-o"></i> Free Response
-                @else
-                    <i class="fa fa-list"></i> Multiple Choice
-                @endif
-            </div>
-            <div class="col-xs-4">
-                <i class="mdi mdi-calculator"></i>
-                {{ $question->calculator == 'Active' ? 'Active' : 'Inactive'}}
-            </div>
+        <div class="meta">
+            Posted {{ $question->created_at->diffForHumans() }}
         </div>
+    </div>
+    <div class="col-xs-2 col-sm-3">
+        <span class="pull-right">
+            <br />
+            {!! $question->calculator == 'Active' ? '<span class="mdi mdi-calculator"></span>' : '' !!}
+            @if ($question->type == 'Free Response')
+                <span class="fa fa-pencil-square-o"></span>
+            @else
+                <span class="fa fa-list"></span>
+            @endif
+        </span>
     </div>
     <div class="hidden-xs col-sm-1">
         <span class="comment-count">
