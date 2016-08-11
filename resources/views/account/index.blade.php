@@ -13,33 +13,80 @@
 
         <div class="col-xs-12 col-md-9">
 
-            <h2>My Discussions</h2>
+            <h3 class="text-center"><i class="mdi mdi-comment-multiple-outline"></i>My Discussions</h3>
+            <div class="panel panel-default posts">
+                @foreach ($user->discussions->take(3) as $discussion)
+                    <div class="panel-body">
+                        <div class="col-xs-12 col-sm-8">
+                            <h4><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a></h4>
+                            <div class="meta">
+                                Started {{ $discussion->created_at->diffForHumans() }}
+                                {{ $discussion->created_at == $discussion->updated_at ? '' : ' | Edited at ' . $discussion->updated_at->diffForHumans() }}
+                            </div>
+                        </div>
 
-            <div class="panel panel-default">
-                <div class="panel-body posts">
-                    @foreach ($user->discussions->take(3) as $discussion)
-                        @include('partials.discussion')
-                    @endforeach
+                        <div class="hidden-xs col-sm-3">
+                            <h5><a href="{{ route('discussions.channel', $discussion->channel) }}">{{ $discussion->channel->name }}</a></h5>
+                        </div>
+                        
+                        <div class="hidden-xs col-sm-1">
+                            <span class="comment-count">
+                                {{ $discussion->responses->count() }}
+                            </span>
+                        </div>
+
+                    </div>
+                @endforeach
+                <div class="panel-body">
                     <a href="{{ route('discussions.mine') }}" class="pull-right">View All</a>
                 </div>
             </div>
 
-            <h2>My Questions</h2>
-            <div class="panel panel-default">
-                <div class="panel-body posts">
-                    @foreach ($user->questions->take(3) as $question)
-                        @include('partials.question')
-                    @endforeach
+            <h3 class="text-center"><i class="mdi mdi-comment-question-outline"></i>My Questions</h3>
+            <div class="panel panel-default posts">
+                @foreach ($user->questions->take(3) as $question)
+                    <div class="panel-body">
+                        <div class="col-xs-12 col-sm-11">
+                            <h4><a href="{{ route('discussions.show', $question) }}">{{ $question->title }}</a></h4>
+                            <div class="meta">
+                                Started {{ $question->created_at->diffForHumans() }}
+                                {{ $question->created_at == $question->updated_at ? '' : ' | Edited at ' . $question->updated_at->diffForHumans() }}
+                            </div>
+                        </div>
+
+                        <div class="hidden-xs col-sm-1">
+                            <span class="comment-count">
+                                {{ $question->comments->count() }}
+                            </span>
+                        </div>
+
+                    </div>
+                @endforeach
+                <div class="panel-body">
                     <a href="{{ route('questions.mine') }}" class="pull-right">View All</a>
                 </div>
             </div>
+
+            <h3 class="text-center"><i class="mdi mdi-heart"></i>My Favorites</h3>
+            <div class="panel panel-default">
+                @foreach ($user->favorites->take(5) as $question)
+                    <div class="panel-body">
+                        <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
+                    </div>
+                @endforeach
+                <div class="panel-body">
+                    <a href="{{ route('questions.favorites') }}" class="pull-right">View All</a>
+                </div>
+            </div>
+
         </div>
 
 
         <div class="col-xs-12 col-md-3">
+            <h2>&nbsp;</h2>
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                    <span><i class="glyphicon glyphicon-bell"></i>Notifications</span>
+                    <span><i class="mdi mdi-bell"></i>Notifications</span>
                 </div>
                 <div class="panel-body">
                     <ul>
@@ -52,22 +99,11 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                    <span><i class="glyphicon glyphicon-wrench"></i>Account Utilities</span>
+                    <span><i class="glyphicon glyphicon-wrench"></i>Utilities</span>
                 </div>
                 <div class="panel-body">
-                    <h4><a href="{{ route('account.edit', Auth::user()) }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></h4>
+                    <h4><a href="{{ route('account.edit', Auth::user()) }}"><i class="mdi mdi-settings"></i>Settings</a></h4>
                     <h4><a href="{{ route('users.show', Auth::user()) }}"><i class="mdi mdi-account-card-details"></i>My Profile</a></h4>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading text-center">
-                    <span><i class="glyphicon glyphicon-heart"></i>Favorite Questions</span>
-                </div>
-                <div class="panel-body">
-                    @foreach ($user->favorites->take(5) as $question)
-                        <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
-                    @endforeach
-                    <a href="{{ route('questions.favorites') }}" class="pull-right">View All</a>
                 </div>
             </div>
         </div>
