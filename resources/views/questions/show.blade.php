@@ -62,28 +62,28 @@
         <div class="panel-footer meta">
             <div class="row">
                 <div class="col-xs-3">
-                    <i class="glyphicon glyphicon-calendar"></i>
+                    <i class="mdi mdi-calendar mdi-18px"></i>
                     {{ $question->created_at->diffForHumans() }}
                 </div>
                 <div class="col-xs-3">
-                    <i class="mdi mdi-calculator {{ $question->calculator == 'Active' ? 'active' : 'inactive'}}"></i>
+                    <i class="mdi mdi-calculator mdi-18px"></i>
                     {{ $question->calculator == 'Active' ? 'Active' : 'Inactive'}}
                 </div>
                 <div class="col-xs-3">
                     @if ($question->type == 'Free Response')
-                        <i class="fa fa-pencil-square-o"></i> Free Response
+                        <i class="mdi mdi-note-text mdi-18px"></i> Free Response
                     @else
-                        <i class="fa fa-list"></i> Multiple Choice
+                        <i class="mdi mdi-format-list-bulleted mdi-18px"></i> Multiple Choice
                     @endif
                 </div>
                 <div class="col-xs-2 text-right">
                     <!-- Thumbs Up -->
                     @if ($question->liked(Auth::user()))
                         <a href="{{ route('questions.unlike', $question) }}" class="text-primary" title="Unlike this Question" data-toggle="tooltip" data-placement="top">
-                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                            <i class="mdi mdi-thumb-up mdi-18px"></i></a>
                     @else
                         <a href="{{ route('questions.like', $question) }}" class="text-muted" title="Like this Question" data-toggle="tooltip" data-placement="top">
-                            <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                            <i class="mdi mdi-thumb-up-outline mdi-18px"></i></a>
                     @endif
                     <sub>{{ $question->likeCount }}</sub>
                 </div>
@@ -91,10 +91,10 @@
                     <!-- (Un)Favorite Button -->
                     @if ($question->favorites->contains(Auth::user()))
                         <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-primary"
-                        title="Remove from Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
+                        title="Remove from Favorites" data-toggle="tooltip" data-placement="top"><i class="mdi mdi-heart mdi-18px"></i></a>
                     @else
                         <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-muted"
-                        title="Add to Favorites" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-heart"></i></a>
+                        title="Add to Favorites" data-toggle="tooltip" data-placement="top"><i class="mdi mdi-heart-outline mdi-18px"></i></a>
                     @endif
                 </div>
             </div>

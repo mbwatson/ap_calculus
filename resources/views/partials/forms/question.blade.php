@@ -35,7 +35,11 @@
 
           <select class="form-control" id="standard_list" name="standards[]" multiple>
             @foreach ($standards as $standard)
-              <option value="{{ $standard->id }}" {{ in_array($standard->id, $question->standards->lists('id')->toArray()) ? 'selected' : '' }}>
+              @if (isset($question))
+                <option value="{{ $standard->id }}" {{ in_array($standard->id, $question->standards->lists('id')->toArray()) ? 'selected' : '' }}>
+              @else
+                <option value="{{ $standard->id }}">
+              @endif
                 {{ $standard->name }}: {{ $standard->description }}
               </option>
             @endforeach
