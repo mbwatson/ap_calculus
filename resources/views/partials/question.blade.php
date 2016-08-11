@@ -13,7 +13,7 @@
 
     <!-- Question Info -->
     
-    <div class="col-xs-12 col-md-9">
+    <div class="col-xs-12 col-sm-11 col-md-9">
         <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
         <div class="standards">
             <b>MPACs:</b>
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-1 hidden-sm hidden-xs">
+    <div class="hidden-xs col-sm-1">
         <span class="comment-count">
             {{ count($question->comments) }}
         </span>

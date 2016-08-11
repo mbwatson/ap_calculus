@@ -26,7 +26,7 @@
         <h5><a href="{{ route('discussions.channel', $discussion->channel) }}">{{ $discussion->channel->name }}</a></h5>
     </div>
     
-    <div class="hidden-xs col-sm-1">
+    <div class="hidden-xs col-sm-1 col-md-1">
         <span class="comment-count">
             {{ $discussion->responses->count() }}
         </span>
