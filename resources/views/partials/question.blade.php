@@ -28,15 +28,15 @@
                 Posted {{ $question->created_at->diffForHumans() }}
             </div>
             <div class="col-xs-4">
-                <i class="mdi mdi-calculator"></i>
-                {{ $question->calculator == 'Active' ? 'Active' : 'Inactive'}}
-            </div>
-            <div class="col-xs-4">
                 @if ($question->type == 'Free Response')
                     <i class="fa fa-pencil-square-o"></i> Free Response
                 @else
                     <i class="fa fa-list"></i> Multiple Choice
                 @endif
+            </div>
+            <div class="col-xs-4">
+                <i class="mdi mdi-calculator"></i>
+                {{ $question->calculator == 'Active' ? 'Active' : 'Inactive'}}
             </div>
         </div>
     </div>
