@@ -108,6 +108,16 @@ class Standard extends Model
     }
 
     /**
+     * Retrieve only MPACs and LOs
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeTaggable($query)
+    {
+        return $query->whereIn('type', ['MPAC', 'Learning Objective']);
+    }
+
+    /**
      * Scope a query to include only those of a given type
      *
      * @return \Illuminate\Database\Eloquent\Builder

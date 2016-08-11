@@ -61,55 +61,8 @@
 
     <div class="row">
         <div class="col-xs-12">
-            {!! Form::model($question, [
-                'method' => 'PATCH',
-                'route' => ['questions.update', $question]
-            ]) !!}
-                
-                <div class="row">
-                  <div class="btn-group col-md-5" data-toggle="buttons" style="display: flex;">
-                      <label class="btn btn-primary {{ $question->type == 'Free Response' ? 'active' : ''}}" style="flex: 1;">
-                          <input type="radio" name="type" autocomplete="off" value="1"  {{ $question->type == 'Free Response' ? 'checked' : ''}}> <span class="fa fa-pencil-square-o"></span> Free Response
-                      </label>
-                      <label class="btn btn-primary {{ $question->type == 'Multiple Choice' ? 'active' : ''}}" style="flex: 1;">
-                          <input type="radio" name="type" autocomplete="off" value="2" {{ $question->type == 'Multiple Choice' ? 'checked' : ''}}> <span class="fa fa-list"></span> Multiple Choice
-                      </label>
-                  </div>
-                  <div class="btn-group col-md-5 col-md-offset-1" data-toggle="buttons" style="display: flex;">
-                      <label class="btn btn-primary {{ $question->calculator == 'Inactive' ? 'active' : ''}}" style="flex: 1;">
-                          <input type="radio" name="calculator" autocomplete="off" value="0" {{ $question->calculator == 'Inactive' ? 'checked' : ''}}> <span class="fa fa-minus"></span> Calculator Inactive
-                      </label>
-                      <label class="btn btn-primary {{ $question->calculator == 'Active' ? 'active' : ''}}" style="flex: 1;">
-                          <input type="radio" name="calculator" autocomplete="off" value="1" {{ $question->calculator == 'Active' ? 'checked' : ''}}> <span class="fa fa-plus"></span> Calculator Active
-                      </label>
-                  </div>
-                </div>
-                <br />
-
-                {!! Form::text('title', null, ['class' => 'form-control form-title']) !!}
-
-                <div class="form-group">
-                    <div class="row" id="post">
-                        <div class="col-xs-2 text-center">
-                            <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
-                                <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
-                                <span class="username">{{ Auth::user()->name }}</span>
-                            </div>
-                        </div>
-                        <div class="col-xs-10">
-                          {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body']) !!}
-
-                          <br />
-
-                          {!! Form::select('standard_ids[]', $standards_list, null, ['id' => 'standard_list', 'class' => 'form-control', 'multiple']) !!}
-                          
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {!! Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block']) !!}
+            {!! Form::model($question, [ 'method' => 'PATCH', 'route' => ['questions.update', $question] ]) !!}
+                @include('partials.forms.question')
             {!! Form::close() !!}
         </div>
     </div>

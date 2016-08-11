@@ -61,10 +61,7 @@
 
     <div class="row">
         <div class="col-xs-12" id="discussion">
-            {!! Form::model($discussion, [
-                'method' => 'PATCH',
-                'route' => ['discussions.update', $discussion]
-            ]) !!}
+            {!! Form::model($discussion, [ 'method' => 'PATCH', 'route' => ['discussions.update', $discussion] ]) !!}
               @include('partials.forms.discussion')
             {!! Form::close() !!}
         </div>

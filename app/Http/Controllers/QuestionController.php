@@ -173,7 +173,7 @@ class QuestionController extends Controller
     public function create()
     {
         return view('questions.create', [
-            'standards_list' => Standard::all()->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id')
+            'standards' => Standard::taggable()->get()
         ]);
     }
 
@@ -211,7 +211,7 @@ class QuestionController extends Controller
     {
         return view('questions.edit', [
             'question' => $question,
-            'standards_list' => Standard::all()->whereIn('type',['MPAC','Learning Objective'])->lists('standard_info','id')
+            'standards' => Standard::taggable()->get()
         ]);
     }
 
@@ -222,28 +222,18 @@ class QuestionController extends Controller
      * @param  array   $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Question $question, Request $request)
+    public function update(Question $question, CreateQuestionRequest $request)
     {
-        $this->validate($request, [
-            'title' => 'required|max:50',
-            'body' => 'required|max:5000',
-            'standard_ids' => 'required',
-            'type' => 'required',
-            'calculator' => 'required'
-        ]);
-
-        // Question is valid; store in database
         $question->title = $request['title'];
         $question->body = $request['body'];
         $question->type = $request['type'];
         $question->calculator = $request['calculator'];
         $question->save();
-        
-        $question->standards()->sync($request->input('standard_ids'));
+
+        $question->standards()->sync($request->input('standards'));
         
         session()->flash('flash_message', 'Question successfully updated!');
         
-        // See ya!
         return redirect()->route('questions.show', ['question' => $question]);
     }
 
