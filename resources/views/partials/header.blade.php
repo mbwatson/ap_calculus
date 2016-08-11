@@ -94,7 +94,7 @@
                                             <span class="glyphicon glyphicon-lock"></span>Admin Tools <span class="caret"></span></a></span>
                                         </a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li class="navbar-link"><a href="{{ url('/users') }}"><span class="fa fa-btn fa-users"></span>Users</a></li>
+                                            <li class="navbar-link"><a href="{{ url('/users') }}"><span class="mdi mdi-account-multiple"></span>Users</a></li>
                                             <li class="navbar-link"><a href="{{ url('/channels') }}"><span class="mdi mdi-television"></span>Channels</a></li>
                                             <li class="navbar-link"><a href="{{ url('/todo') }}"><span class="mdi mdi-playlist-check"></span>To Do List</a></li>
                                         </ul>
