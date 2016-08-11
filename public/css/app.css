@@ -11368,7 +11368,7 @@ input[type="radio"], input[type="checkbox"] {
   color: #222222; }
 
 body {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   color: #666;
   background-color: #f9f9f1; }
 

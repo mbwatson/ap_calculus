@@ -87,11 +87,11 @@
                                     </ul>
                                 </li>
                                 <li class="navbar-link"><a href="{{ url('/questions') }}"><span class="mdi mdi-comment-question-outline"></span>Questions</a></li>
-                                <li class="navbar-link"><a href="{{ url('/discussions') }}"><span class="mdi mdi-comment-multiple-outline"></span>Discussions</a></li>
+                                <li class="navbar-link"><a href="{{ url('/discussions') }}"><span class="mdi mdi-forum"></span>Discussions</a></li>
                                 @if (Auth::check() && Auth::user()->admin)
                                     <li class="navbar-link dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            <span class="mdi mdi-lock-outline"></span>Admin Tools <span class="caret"></span></a></span>
+                                            <span class="mdi mdi-lock"></span>Admin Tools <span class="caret"></span></a></span>
                                         </a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li class="navbar-link"><a href="{{ url('/users') }}"><span class="mdi mdi-account-multiple"></span>Users</a></li>
