@@ -11708,7 +11708,7 @@ label,
 
 /* Activities */
 .activities .activity .date {
-  height: 100px;
+  height: 75px;
   position: relative; }
 
 .activities .activity .date h5 {
@@ -11725,7 +11725,7 @@ label,
   border-left: 1px solid #d5d5d1; }
 
 .activities .activity div {
-  padding: 10px 0; }
+  padding: 0; }
 
 .btn {
   border-radius: 0; }
