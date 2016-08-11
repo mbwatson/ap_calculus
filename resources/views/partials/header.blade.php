@@ -41,7 +41,7 @@
                         <div class="input-group">
                             {!! Form::text('keywords', null, ['class' => 'form-control', 'placeholder' => 'Search for questions']) !!}
                             <div class="input-group-btn">
-                                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
                             </div>
                         </div>
                         {!! Form::close() !!}
@@ -91,7 +91,7 @@
                                 @if (Auth::check() && Auth::user()->admin)
                                     <li class="navbar-link dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            <span class="glyphicon glyphicon-lock"></span>Admin Tools <span class="caret"></span></a></span>
+                                            <span class="mdi mdi-lock-outline"></span>Admin Tools <span class="caret"></span></a></span>
                                         </a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li class="navbar-link"><a href="{{ url('/users') }}"><span class="mdi mdi-account-multiple"></span>Users</a></li>
