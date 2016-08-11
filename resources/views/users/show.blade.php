@@ -23,8 +23,7 @@
             <div class="col-xs-12 col-sm-9 col-sm-offset-3">
                 {{ $user->bio }}
             </div>
-            <br /><br />
-            <br /><br />
+            <br /><br /><br /><br />
             <div class="hidden-xs col-sm-9 col-sm-offset-3" style="display: flex; justify-content: space-between;">
                 <span><i class="mdi mdi-comment-question-outline"></i> {{ $user->questions->count() }} questions</span>
                 <span><i class="mdi mdi-comment-outline"></i> {{ $user->comments->count() }} comments</span>
@@ -52,16 +51,16 @@
                 <div class="col-xs-9 col-xs-offset-1 details">
                     <h5>
                         @if (preg_match('/Question/', get_class($activity)))
-                            <span class="glyphicon glyphicon-question-sign"></span>
+                            <span class="mdi mdi-comment-question-outline"></span>
                             Posted a question titled <a href="{{ route('questions.show', $activity) }}">{{ $activity->title }}</a>
                         @elseif (preg_match('/Comment/', get_class($activity)))
-                            <span class="glyphicon glyphicon-comment"></span>
+                            <span class="mdi mdi-comment-outline"></span>
                             Commented on the question <a href="{{ route('questions.show', $activity->question) }}">{{ $activity->question->title }}</a>
                         @elseif (preg_match('/Discussion/', get_class($activity)))
-                            <span class="fa fa-comments"></span>
+                            <span class="mdi mdi-forum"></span>
                             Started a discussion called <a href="{{ route('discussions.show', $activity) }}">{{ $activity->title }}</a> in
                         @elseif (preg_match('/Response/', get_class($activity)))
-                            <span class="fa fa-comment"></span>
+                            <span class="mdi mdi-comment-text"></span>
                             Contributed to the discussion <a href="{{ route('discussions.show', $activity->discussion) }}">{{ $activity->discussion->title }}</a>
                         @endif
                         &mdash; {{ $activity->created_at->diffForHumans() }}

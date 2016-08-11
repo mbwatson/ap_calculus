@@ -61,7 +61,7 @@ class AccountController extends Controller
             'email' => 'required|email|max:255|unique:users,email,' . Auth::user()->id,
             'first_name' => 'max:50',
             'last_name' => 'max:50',
-            'bio' => 'max:255',
+            'bio' => 'max:1000',
             'location' => 'max:50',
             'private' => 'required'
         ]);

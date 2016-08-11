@@ -64,7 +64,7 @@
                         <br />
                     </div>
                     <div class="col-xs-12">
-                        {!! Form::submit('Update Profile', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
+                        {!! Form::submit('Update Profile', ['class' => 'btn btn-primary btn-block']) !!}
                     </div>
                     {!! Form::close() !!}
                 </div>
