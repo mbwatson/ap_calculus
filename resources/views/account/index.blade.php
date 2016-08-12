@@ -22,7 +22,6 @@
                                 <h4><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a></h4>
                                 <div class="meta">
                                     Started {{ $discussion->created_at->diffForHumans() }}
-                                    {{ $discussion->created_at == $discussion->updated_at ? '' : ' | Edited at ' . $discussion->updated_at->diffForHumans() }}
                                 </div>
                             </div>
 
@@ -52,14 +51,13 @@
             
             <p class="fancy-heading"><span><i class="mdi mdi-comment-question-outline"></i>My Questions</span></p>
             <div class="panel panel-default posts">
-                @if ($user->discussions->count() > 0)
+                @if ($user->questions->count() > 0)
                     @foreach ($user->questions->take(3) as $question)
                         <div class="panel-body">
                             <div class="col-xs-12 col-sm-11">
                                 <h4><a href="{{ route('discussions.show', $question) }}">{{ $question->title }}</a></h4>
                                 <div class="meta">
                                     Started {{ $question->created_at->diffForHumans() }}
-                                    {{ $question->created_at == $question->updated_at ? '' : ' | Edited at ' . $question->updated_at->diffForHumans() }}
                                 </div>
                             </div>
                             <div class="hidden-xs col-sm-1">
@@ -90,7 +88,6 @@
                                 <h4><a href="{{ route('discussions.show', $question) }}">{{ $question->title }}</a></h4>
                                 <div class="meta">
                                     Started {{ $question->created_at->diffForHumans() }}
-                                    {{ $question->created_at == $question->updated_at ? '' : ' | Edited at ' . $question->updated_at->diffForHumans() }}
                                 </div>
                             </div>
                             <div class="hidden-xs col-sm-1">
