@@ -30,7 +30,6 @@
                     <a href="{{ route('responses.like', $response) }}" class="like text-muted" title="Like" data-toggle="tooltip" data-placement="top">
                         <i class="mdi mdi-thumb-up-outline mdi-18px"></i></a>
                 @endif
-                <sub>{{ $response->likeCount }}</sub>
             </div>
         </div>
     </div>

@@ -85,7 +85,6 @@
                         <a href="{{ route('questions.like', $question) }}" class="like text-muted" title="Like this Question" data-toggle="tooltip" data-placement="top">
                             <i class="mdi mdi-thumb-up-outline mdi-18px"></i></a>
                     @endif
-                    <sub>{{ $question->likeCount }}</sub>
                 </div>
                 <div class="col-xs-1 text-right">
                     <!-- (Un)Favorite Button -->

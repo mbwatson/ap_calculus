@@ -62,6 +62,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ url('/account') }}"><i class="mdi mdi-view-dashboard"></i>Dashboard</a></li>
                                     <li><a href="{{ route('users.show', Auth::user()) }}"><i class="mdi mdi-account-card-details"></i>My Profile</a></li>
+                                    <li><a href="{{ route('questions.favorites') }}"><i class="mdi mdi-heart"></i>Favorites</a></li>
                                     <li><a href="{{ url('/account/'.Auth::user()->id.'/edit') }}"><i class="mdi mdi-settings"></i>Settings</a></li>
                                     <li><a href="#"><i class="mdi mdi-bell"></i>Notifications</a></li>
                                     <li role="separator" class="divider"></li>
