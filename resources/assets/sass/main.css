@@ -31,23 +31,14 @@ a {
 
 .panel {
 	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15);
-	/*border-radius: 5px;*/
 }
 
 .panel-heading {
 	background-color: #fff;
-/*
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-*/
 }
 
 .panel-footer {
 	background-color: #fff;
-/*
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-*/
 }
 
 /* Flash Messages */
