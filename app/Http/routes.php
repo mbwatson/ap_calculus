@@ -77,7 +77,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('questions/mine', 						[ 'uses' => 'QuestionController@showMyQuestions', 					'as' => 'questions.mine' ]);
 	Route::get('questions/favorites', 					[ 'uses' => 'QuestionController@showMyFavorites', 					'as' => 'questions.favorites' ]);
 	Route::get('questions/standards/{ids}', 			[ 'uses' => 'QuestionController@showQuestionsWithStandards', 		'as' => 'questions.withstandards' ]);
-	Route::get('questions/{questions}/pdf', 			[ 'uses' => 'QuestionController@makePDF', 							'as' => 'questions.makepdf' ]);
+	Route::get('questions/{questions}/pdf', 			[ 'uses' => 'QuestionController@getPdf', 							'as' => 'questions.pdf' ]);
 	Route::get('questions/{questions}/printable', 		[ 'uses' => 'QuestionController@showPrintable', 					'as' => 'questions.showprintable' ]);
 	Route::resource('questions', 'QuestionController');
 

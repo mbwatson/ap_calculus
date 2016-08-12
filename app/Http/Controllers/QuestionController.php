@@ -260,45 +260,6 @@ class QuestionController extends Controller
     }
 
     /**
-     * Build PDF of question
-     * 
-     * @param  App\Question
-     * @return 
-     */
-    public function makePDF(Question $question)
-    {
-        $pdf = \App::make('snappy.pdf.wrapper');
-        $pdf->setOption('enable-javascript', true);
-        $pdf->setOption('javascript-delay', config('global.perPage'));
-        $pdf->loadHTML('
-            <html><head></head>
-            <body>
-                <h1>'.$question->title.'</h1><hr /><br />'.$question->body.'
-                
-                <script type="text/x-mathjax-config">
-                    MathJax.Hub.Config({
-                        tex2jax: {inlineMath: [[\'$\',\'$\'], [\'\\(\',\'\\)\']]}
-                    });
-                </script>
-                <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-                <script type="text/x-mathjax-config">
-                    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-                        var TEX = MathJax.InputJax.TeX;
-                        var PREFILTER = TEX.prefilterMath;
-                        TEX.Augment({
-                            prefilterMath: function (math,displaymode,script) {
-                                math = "\\displaystyle{"+math+"}";
-                                return PREFILTER.call(TEX,math,displaymode,script);
-                            }
-                        });
-                    });
-                </script>
-            </body>
-            </html>');
-        return $pdf->inline();
-    }
-
-    /**
      * Display printer-friendly output of question
      * 
      * @param  App\Question

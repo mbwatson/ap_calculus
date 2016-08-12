@@ -15,9 +15,14 @@
             {{ $question->title }}
             <div class="btn-group pull-right post-options" style="opacity: 0.2;">
                 <!-- Print -->
+                {!! Form::open(['route' => ['questions.pdf', $question], 'method' => 'get', 'style' => 'display: inline;']) !!}
+                    <button type="submit" class="btn btn-link" title="PDF" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
+                        <i class="mdi mdi-file-pdf"></i></button>
+                {!! Form::close() !!}
+                <!-- Print -->
                 {!! Form::open(['route' => ['questions.showprintable', $question], 'method' => 'get', 'style' => 'display: inline;']) !!}
                     <button type="submit" class="btn btn-link" title="Printer-friendly Version" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
-                        <i class="glyphicon glyphicon-print"></i></button>
+                        <i class="mdi mdi-printer"></i></button>
                 {!! Form::close() !!}
                 @if ($question->user == Auth::user() || Auth::user()->admin)
                     <!-- Edit -->
@@ -28,7 +33,7 @@
                     <!-- Delete -->
                     {!! Form::open(['route' => ['questions.destroy', $question], 'method' => 'delete', 'style' => 'display: inline;']) !!}
                         <button type="submit" class="btn btn-link" title="Delete Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
-                            <i class="glyphicon glyphicon-remove"></i></button>
+                            <i class="mdi mdi-delete"></i></button>
                     {!! Form::close() !!}
                 @endif
             </div>
