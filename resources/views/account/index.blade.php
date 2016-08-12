@@ -119,8 +119,8 @@
                     </ul>
                 </div>
             </div>
-            <h3><a href="{{ route('users.show', Auth::user()) }}"><i class="mdi mdi-account-card-details"></i>My Profile</a></h3>
-            <h3><a href="{{ route('account.edit', Auth::user()) }}"><i class="mdi mdi-settings"></i>Settings</a></h3>
+            <h3><a href="{{ route('users.show', Auth::user()) }}"><i class="mdi mdi-account-card-details"></i>View My Profile</a></h3>
+            <h3><a href="{{ route('account.edit', Auth::user()) }}"><i class="mdi mdi-settings"></i>Update Settings</a></h3>
         </div>
 
     </div>
