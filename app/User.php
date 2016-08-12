@@ -120,4 +120,23 @@ class User extends Authenticatable
     {
         return $this->favorites()->orderBy('favorites.created_at', 'asc')->take($num);
     }
+
+    /**
+     * Retrieve user's activities
+     * 
+     * @param Integer $numberOfActivities
+     * @return 
+     */
+    public function activities()
+    {
+        $questions = collect($this->questions);
+        $comments = collect($this->comments);
+        $discussions = collect($this->discussions);
+        $responses = collect($this->responses);
+
+        return $questions->merge($comments)
+                         ->merge($discussions)
+                         ->merge($responses)
+                         ->sortByDesc('created_at');
+    }
 }
