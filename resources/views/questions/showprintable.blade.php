@@ -5,8 +5,9 @@
 @section('question')
     <div class="text-center">
         <h3>{{ $question->title }}</h3>
-        Calculator {{ $question->calculator }}
+        <span class="text-muted">Calculator {{ $question->calculator }}</span>
     </div>
+    <br />
     <div>
         {!! $question->body !!}
     </div>
