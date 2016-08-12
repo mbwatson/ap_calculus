@@ -11383,7 +11383,7 @@ a {
   font-weight: 500; }
 
 .glyphicon, .fa, .fa-btn, .mdi {
-  margin: 0 6px; }
+  margin: 0 0.5em; }
 
 .mdi, .fa {
   font-size: 130%;
