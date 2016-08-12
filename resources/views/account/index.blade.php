@@ -62,13 +62,11 @@
                                     {{ $question->created_at == $question->updated_at ? '' : ' | Edited at ' . $question->updated_at->diffForHumans() }}
                                 </div>
                             </div>
-
                             <div class="hidden-xs col-sm-1">
                                 <span class="comment-count">
                                     {{ $question->comments->count() }}
                                 </span>
                             </div>
-
                         </div>
                     @endforeach
                     <div class="panel-body">
@@ -84,11 +82,22 @@
             <br /><br />
             
             <p class="fancy-heading"><span><i class="mdi mdi-heart"></i>Recent Favorites</span></p>
-            <div class="panel panel-default">
+            <div class="panel panel-default posts">
                 @if ($user->favorites->count() > 0)
                     @foreach ($user->recentFavorites(3)->get() as $question)
                         <div class="panel-body">
-                            <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
+                            <div class="col-xs-12 col-sm-11">
+                                <h4><a href="{{ route('discussions.show', $question) }}">{{ $question->title }}</a></h4>
+                                <div class="meta">
+                                    Started {{ $question->created_at->diffForHumans() }}
+                                    {{ $question->created_at == $question->updated_at ? '' : ' | Edited at ' . $question->updated_at->diffForHumans() }}
+                                </div>
+                            </div>
+                            <div class="hidden-xs col-sm-1">
+                                <span class="comment-count">
+                                    {{ $question->comments->count() }}
+                                </span>
+                            </div>
                         </div>
                     @endforeach
                     <div class="panel-body">

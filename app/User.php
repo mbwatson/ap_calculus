@@ -118,7 +118,7 @@ class User extends Authenticatable
      */
     public function recentFavorites($num)
     {
-        return $this->favorites()->orderBy('favorites.created_at', 'asc')->take($num);
+        return $this->favorites()->orderBy('favorites.created_at', 'desc')->take($num);
     }
 
     /**
