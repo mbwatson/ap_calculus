@@ -23,17 +23,17 @@
                     Filters
                 </button>
                 <ul class="filters-list dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.index') }}"><i class="mdi mdi-comment-question-outline"></i>All Questions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.index') }}">All Questions</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.mine') }}"><i class="mdi mdi-account"></i>My Questions</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.favorites') }}"><i class="mdi mdi-heart"></i>My Favorites</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.popular') }}"><i class="mdi mdi-star"></i>Popular Questions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.mine') }}">My Questions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.favorites') }}">My Favorites</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.popular') }}">Popular Questions</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.active') }}"><i class="mdi mdi-calculator"></i>Calculator Active</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.inactive') }}"><i class="mdi mdi-block-helper"></i>Calculator Inactive</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.active') }}">Calculator Active</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.inactive') }}">Calculator Inactive</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.freeresponse') }}"><i class="fa fa-pencil-square-o"></i>Free Response</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.multiplechoice') }}"><i class="mdi mdi-format-list-bulleted"></i>Multiple Choice</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.freeresponse') }}">Free Response</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.multiplechoice') }}">Multiple Choice</a></li>
                 </ul>
             </div>
             <br />
