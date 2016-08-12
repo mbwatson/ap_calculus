@@ -10,6 +10,11 @@
   <!-- Fonts & Icons -->
   <link href="{{ asset('css/materialdesignicons.min.css') }}" media="all" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+  <style type="text/css">
+  body {
+    font-size: 10pt;
+  }
+  </style>
 </head>
 <body id="app-layout">
   @yield('content')
