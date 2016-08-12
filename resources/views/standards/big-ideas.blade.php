@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-<div class="jumbotron-toggler"><span class="fa fa-btn fa-angle-double-up"></span></div>
+<div class="jumbotron-toggler"><span class="mdi mdi-chevron-double-up"></span></div>
 
 <div class="container">
 
