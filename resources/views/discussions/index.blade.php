@@ -54,7 +54,7 @@
                         @endforeach
                     @else
                         <center>
-                            No discussions have been posted in this channel yet!
+                            No relevant discussions to display!
                         </center>
                     @endif
                 </div>

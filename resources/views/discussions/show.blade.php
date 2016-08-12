@@ -58,7 +58,6 @@
                         <a href="{{ route('discussions.like', $discussion) }}" class="like text-muted" title="Like this Discussion" data-toggle="tooltip" data-placement="top">
                             <i class="glyphicon glyphicon-thumbs-up"></i></a><sub>{{ $discussion->likeCount }}</sub>
                     @endif
-                    
                 </div>
             </div>
         </div>
