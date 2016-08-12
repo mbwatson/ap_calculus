@@ -25,10 +25,10 @@
                 <!-- Thumbs Up -->
                 @if ($response->liked(Auth::user()))
                     <a href="{{ route('responses.unlike', $response) }}" class="text-primary" title="Unlike" data-toggle="tooltip" data-placement="top">
-                        <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                        <i class="mdi mdi-thumb-up mdi-18px"></i></a>
                 @else
                     <a href="{{ route('responses.like', $response) }}" class="text-muted" title="Like" data-toggle="tooltip" data-placement="top">
-                        <i class="glyphicon glyphicon-thumbs-up"></i></a>
+                        <i class="mdi mdi-thumb-up-outline mdi-18px"></i></a>
                 @endif
                 <sub>{{ $response->likeCount }}</sub>
             </div>
