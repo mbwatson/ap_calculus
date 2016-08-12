@@ -15,7 +15,7 @@
   
   <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
   
-  <!-- Select2 -->
+  <!-- Select2 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
 
   </head>

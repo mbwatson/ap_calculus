@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="col-xs-10">
-          {!! Form::textarea('body', null, ['id' => 'question-textarea', 'class' => 'form-control body']) !!}
+          {!! Form::textarea('body', null, ['id' => 'post-textarea', 'class' => 'form-control body']) !!}
 
           <br />
 

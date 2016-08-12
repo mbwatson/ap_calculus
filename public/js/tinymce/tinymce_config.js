@@ -1,6 +1,6 @@
 var editor_config = {
   path_absolute : "/",
-  selector: '#discussion-textarea',
+  selector: '#post-textarea',
   plugins: 'advlist autolink image lists charmap preview textpattern',
   toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image | preview',
   menubar: false,
@@ -38,8 +38,8 @@ var editor_config = {
       close_previous : "no"
     });
   },
-  content_css : "{{ asset('css/tinymce.css') }}",
-  theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
+  content_css : "/css/tinymce.css",
+  theme_advanced_font_sizes : "10px,12px,13px,14px,16px,18px,20px",
   font_size_style_values : "10px,12px,13px,14px,16px,18px,20px",
 };
 

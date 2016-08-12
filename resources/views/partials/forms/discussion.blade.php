@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="col-xs-10">
-            {!! Form::textarea('body', null, ['id' => 'discussion-textarea', 'class' => 'form-control body']) !!}
+            {!! Form::textarea('body', null, ['id' => 'post-textarea', 'class' => 'form-control body']) !!}
         </div>
     </div>
 </div>
