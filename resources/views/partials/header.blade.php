@@ -51,7 +51,7 @@
                     
                     <ul class="nav navbar-nav navbar-right navbar-auth">
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}"><i class="mdi mdi-login-variant"></i>Login</a></li>
+                            <li><a href="{{ url('/login') }}" id="login"><i class="mdi mdi-login-variant"></i>Login</a></li>
                             <li><a href="{{ url('/register') }}"><i class="mdi mdi-account-plus"></i>Register</a></li>
                         @else
                             <li class="dropdown">

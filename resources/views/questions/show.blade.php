@@ -79,10 +79,10 @@
                 <div class="col-xs-2 text-right">
                     <!-- Thumbs Up -->
                     @if ($question->liked(Auth::user()))
-                        <a href="{{ route('questions.unlike', $question) }}" class="text-primary" title="Unlike this Question" data-toggle="tooltip" data-placement="top">
+                        <a href="{{ route('questions.unlike', $question) }}" class="like text-primary" title="Unlike this Question" data-toggle="tooltip" data-placement="top">
                             <i class="mdi mdi-thumb-up mdi-18px"></i></a>
                     @else
-                        <a href="{{ route('questions.like', $question) }}" class="text-muted" title="Like this Question" data-toggle="tooltip" data-placement="top">
+                        <a href="{{ route('questions.like', $question) }}" class="like text-muted" title="Like this Question" data-toggle="tooltip" data-placement="top">
                             <i class="mdi mdi-thumb-up-outline mdi-18px"></i></a>
                     @endif
                     <sub>{{ $question->likeCount }}</sub>
@@ -124,8 +124,9 @@
 
 @section('footer')
 
-<!-- My Favorites JS -->
+<!-- Interaction JS -->
 <script type="text/javascript" src="{{ asset('src/js/favorites.js') }}"></script>
+<script type="text/javascript" src="{{ asset('src/js/likes.js') }}"></script>
 
 <!-- Post Options -->
 <script type="text/javascript">

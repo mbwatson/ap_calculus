@@ -86,6 +86,10 @@
 @endsection
 
 @section('footer')
+<!-- Interaction JS -->
+<script type="text/javascript" src="{{ asset('src/js/favorites.js') }}"></script>
+<script type="text/javascript" src="{{ asset('src/js/likes.js') }}"></script>
+
 <!-- Post Options -->
 <script type="text/javascript">
     $("#post").hover(function(){
