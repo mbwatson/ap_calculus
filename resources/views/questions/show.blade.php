@@ -16,7 +16,7 @@
             <div class="btn-group pull-right post-options" style="opacity: 0.2;">
                 <!-- Print -->
                 {!! Form::open(['route' => ['questions.showprintable', $question], 'method' => 'get', 'style' => 'display: inline;']) !!}
-                    <button type="submit" class="btn btn-link" title="Printer-friendly Version" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
+                    <button type="submit" formtarget="_blank" class="btn btn-link" title="Printer-friendly Version" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
                         <i class="mdi mdi-printer"></i></button>
                 {!! Form::close() !!}
                 @if ($question->user == Auth::user() || Auth::user()->admin)
