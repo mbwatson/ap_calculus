@@ -11655,7 +11655,7 @@ label,
     height: 65px; }
   .posts .comment-count {
     display: inline;
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: #ccc;
     color: #fff;
     font-size: 95%;
