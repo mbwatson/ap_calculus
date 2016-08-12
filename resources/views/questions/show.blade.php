@@ -15,11 +15,6 @@
             {{ $question->title }}
             <div class="btn-group pull-right post-options" style="opacity: 0.2;">
                 <!-- Print -->
-                {!! Form::open(['route' => ['questions.pdf', $question], 'method' => 'get', 'style' => 'display: inline;']) !!}
-                    <button type="submit" class="btn btn-link" title="PDF" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
-                        <i class="mdi mdi-file-pdf"></i></button>
-                {!! Form::close() !!}
-                <!-- Print -->
                 {!! Form::open(['route' => ['questions.showprintable', $question], 'method' => 'get', 'style' => 'display: inline;']) !!}
                     <button type="submit" class="btn btn-link" title="Printer-friendly Version" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
                         <i class="mdi mdi-printer"></i></button>
@@ -49,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    {!! Markdown::convertToHtml($question->body) !!}
+                    {!! $question->body !!}
                     <hr />
                     <div class="row">
                         <div class="col-sm-12 col-lg-6 question-standards">

@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Question;
 use App\Standard;
 use Auth;
+use Markdown;
 
 class StandardController extends Controller
 {

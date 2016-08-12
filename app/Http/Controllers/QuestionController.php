@@ -12,7 +12,6 @@ use App\Html;
 use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateQuestionRequest;
-use PDF;
 use View;
 
 class QuestionController extends Controller

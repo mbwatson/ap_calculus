@@ -5,7 +5,6 @@ namespace App;
 use \DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Markdown;
 use PDF;
 use DraperStudio\Likeable\Contracts\Likeable;
 use DraperStudio\Likeable\Traits\Likeable as LikeableTrait;
