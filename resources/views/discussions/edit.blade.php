@@ -4,12 +4,6 @@
 
 @section('breadcrumbs', Breadcrumbs::render('discussions.edit', $discussion))
 
-@section('header')
-<!-- TinyMCE -->
-<script src='{{ asset('js/tinymce/tinymce.min.js') }}'></script>
-<script src='{{ asset('js/tinymce/tinymce_config.js') }}'></script>
-@endsection
-
 @section('content')
 <div class="container">
 
@@ -24,4 +18,10 @@
     </div>
 
 </div>
+@endsection
+
+@section('footer')
+<!-- TinyMCE -->
+<script src='{{ asset('js/tinymce/tinymce.min.js') }}'></script>
+<script src='{{ asset('js/tinymce/tinymce_config.js') }}'></script>
 @endsection

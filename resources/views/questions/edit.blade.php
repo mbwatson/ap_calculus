@@ -4,12 +4,6 @@
 
 @section('breadcrumbs', Breadcrumbs::render('questions.edit', $question))
 
-@section('header')
-<!-- TinyMCE -->
-<script src='{{ asset('js/tinymce/tinymce.min.js') }}'></script>
-<script src='{{ asset('js/tinymce/tinymce_config.js') }}'></script>
-@endsection
-
 @section('content')
 <div class="container">
 
@@ -26,6 +20,9 @@
 @endsection
 
 @section('footer')
+<!-- TinyMCE -->
+<script src='{{ asset('js/tinymce/tinymce.min.js') }}'></script>
+<script src='{{ asset('js/tinymce/tinymce_config.js') }}'></script>
 <!-- Select2 list -->
 <script type="text/javascript">
     $('#standard_list').select2({ placeholder: "Choose Standard(s)" });
