@@ -25,10 +25,10 @@
             </div>
             <br /><br /><br /><br />
             <div class="hidden-xs col-sm-9 col-sm-offset-3" style="display: flex; justify-content: space-between;">
-                <span><i class="mdi mdi-comment-question-outline"></i> {{ $user->questions->count() }} questions</span>
-                <span><i class="mdi mdi-comment-outline"></i> {{ $user->comments->count() }} comments</span>
-                <span><i class="mdi mdi-forum"></i> {{ $user->discussions->count() }} discussions</span>
-                <span><i class="mdi mdi-comment-text"></i> {{ $user->responses->count() }} responses</span>
+                <span><i class="mdi mdi-comment-question-outline"></i> {{ $user->questions->count() }} {{ str_plural('question', $user->questions->count()) }}</span>
+                <span><i class="mdi mdi-comment-outline"></i> {{ $user->comments->count() }} {{ str_plural('comment', $user->comments->count()) }}</span>
+                <span><i class="mdi mdi-forum"></i> {{ $user->discussions->count() }} {{ str_plural('discussion', $user->discussions->count()) }}</span>
+                <span><i class="mdi mdi-comment-text"></i> {{ $user->responses->count() }} {{ str_plural('response', $user->responses->count()) }}</span>
             </div>
         </div>
     </div>
