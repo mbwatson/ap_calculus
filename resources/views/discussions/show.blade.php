@@ -53,7 +53,7 @@
                     <!-- Thumbs Up -->
                     @if ($discussion->liked(Auth::user()))
                         <a href="{{ route('discussions.unlike', $discussion) }}" class="like text-primary" title="Unlike" data-toggle="tooltip" data-placement="top">
-                            <i class="mdi mdi-thumb-up mdi-18px"></i><sub>{{ $discussion->likeCount }}</sub></a>
+                            <i class="mdi mdi-thumb-up mdi-18px"></i></a><sub>{{ $discussion->likeCount }}</sub>
                     @else
                         <a href="{{ route('discussions.like', $discussion) }}" class="like text-muted" title="Like this Discussion" data-toggle="tooltip" data-placement="top">
                             <i class="mdi mdi-thumb-up-outline mdi-18px"></i></a><sub>{{ $discussion->likeCount }}</sub>
