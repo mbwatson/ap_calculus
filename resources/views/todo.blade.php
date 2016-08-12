@@ -47,6 +47,7 @@
                                 </ul>
                             </li>
                             <li>ability to flag all posts as spam</li>
+                            <li>fix table seeders to not be so inefficient</li>
                         </ul>
                     </div>
                 </div>
