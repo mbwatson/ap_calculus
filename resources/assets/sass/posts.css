@@ -94,6 +94,9 @@
 
 	}
 
+	.panel-footer {
+		background-color: #fafafa;
+	}
 }
 
 .comment,

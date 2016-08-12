@@ -11703,6 +11703,9 @@ label,
 #post .dropdown-menu .btn, #post .dropdown-menu .a {
   color: #fff; }
 
+#post .panel-footer {
+  background-color: #fafafa; }
+
 .comment .avatar,
 .response .avatar {
   width: 80px;
