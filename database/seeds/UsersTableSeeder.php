@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
 			array(
 				'id' => 2,
 				'name' => 'sample-user',
-				'email' => 'email@ddress.com',
+				'email' => 'email@ddress.net',
 				'admin' => false,
 				'password' => Hash::make('password'),
 				'created_at' => Carbon::now()->format('Y-m-d H:i:s'),

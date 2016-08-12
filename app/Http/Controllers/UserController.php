@@ -30,7 +30,7 @@ class UserController extends Controller
         $activities = $questions->merge($comments)
                                 ->merge($discussions)
                                 ->merge($responses)
-                                ->sortByDesc('created_at')->take(10);
+                                ->sortByDesc('created_at')->take(3);
 
         // dd($activities);
         return view('users.show', [
