@@ -11708,6 +11708,9 @@ label,
   width: 80px;
   height: 80px; }
 
+#tinymce p {
+  font-size: 150%; }
+
 /* Sidebar */
 .sidebar {
   /*font-size: 85%;*/ }

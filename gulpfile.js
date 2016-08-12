@@ -23,5 +23,11 @@ elixir(function(mix) {
 		'sidebar.css',
 		'user.css',
 		'buttons.css'
+    ])
+    .scripts([
+    	'favorites.js',
+    	'likes.js',
+    	'flash-messages.js',
+    	'jumbotron-toggler.js'
     ]);
 });
