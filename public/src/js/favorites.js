@@ -5,7 +5,7 @@ $('a.favorite').click(function(evt) {
 	} else {
 		$(this).attr('title', 'Add to Favorites').tooltip('fixTitle').tooltip('show');
 	}
-	$(this).toggleClass("text-muted text-primary");
+	$(this).toggleClass("text-muted text-danger");
 	$(this).children('i').toggleClass("mdi-heart mdi-heart-outline");
 	$.ajax({
 		method: 'get',

@@ -90,7 +90,7 @@
                 <div class="col-xs-1 text-right">
                     <!-- (Un)Favorite Button -->
                     @if ($question->favorites->contains(Auth::user()))
-                        <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-primary"
+                        <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-danger"
                         title="Remove from Favorites" data-toggle="tooltip" data-placement="top"><i class="mdi mdi-heart mdi-18px"></i></a>
                     @else
                         <a href="{{ route('favorite.toggle', $question->id) }}" role="button" class="favorite text-muted"
