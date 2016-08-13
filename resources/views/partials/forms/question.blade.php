@@ -48,6 +48,4 @@
     </div>
 </div>
 
-
-
-{!! Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block']) !!}
+{!! Form::submit('Save Question', ['class' => 'btn btn-primary btn-block']) !!}

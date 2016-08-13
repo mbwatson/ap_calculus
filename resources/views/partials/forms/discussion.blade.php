@@ -25,4 +25,4 @@
 
 <br />
 
-{!! Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block']) !!}
+{!! Form::submit('Save Discussion', ['class' => 'btn btn-primary btn-block']) !!}
