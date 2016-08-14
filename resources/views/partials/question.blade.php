@@ -1,6 +1,6 @@
 <tr class="post">
 
-    <td>
+    <td class="post-user">
         <!-- User Info -->
         <div class="{{ $question->user->isOnline() ? 'active-' : '' }}user">
             <a href="{{ route('users.show', $question->user) }}">
@@ -10,7 +10,7 @@
         </div>
     </td>
 
-    <td style="width: 100%;">
+    <td class="post-title" style="width: 100%;">
         <!-- Question Info -->
         <div class="title"><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></div>
         <div class="standards">
@@ -42,7 +42,7 @@
         </span>
     </td>
 
-    <td>
+    <td class="post-comments">
         <span class="comment-count">
             {{ count($question->comments) }}
         </span>

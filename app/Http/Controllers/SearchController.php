@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Standard;
 use App\Question;
+use App\Discussion;
 
 class SearchController extends Controller
 {
@@ -18,34 +19,52 @@ class SearchController extends Controller
 
     public function results(Request $request)
     {
-        if ($keywords = $request->input('keywords')) {
-            if ($standard_ids = $request->input('standard_ids')) {
-                $results = Question::withAnyKeywords($keywords)->withStandards($request->input('standard_ids'))->get();
+        $keywords = explode(' ', $request->keywords);
+        $standard_ids = $request->standard_ids;
+        
+        return view('search.results', [
+            'keywords' => $keywords,
+            'questions' => $this->questionResults($keywords, $standard_ids),
+            'standards' => Standard::all(),
+            'discussions' => $this->discussionResults($keywords) 
+        ]);
+    }
+
+    /**
+     * 
+     * 
+     * @param Request
+     * @return Questions or response
+     */
+    public function questionResults($keywords, $standard_ids)
+    {
+        if ( $keywords ) {
+            if ($standard_ids) {
+                $results = Question::withAnyKeywords($keywords)->withStandards($standard_ids)->get();
             } else {
                 $results = Question::withAnyKeywords($keywords)->get();
             }
         } else {
-            if ($standard_ids = $request->input('standard_ids')) {
-                $results = Question::withStandards($request->input('standard_ids'))->get();
+            if ( $standard_ids ) {
+                $results = Question::withStandards($standard_ids)->get();
             } else {
                 session()->flash('flash_message', 'Please enter search criteria!');
                 return redirect()->route('search.index');
             }
         }
         
-        return view('search.results', [
-            'keywords' => $keywords,
-            'questions' => $results,
-            'standards' => Standard::all(),
-            'selected_standard_ids' => $request->input('standard_ids')
-        ]);
+        return $results;
     }
 
-
-    public function byStandard()
+    public function discussionResults($keywords)
     {
-        
+        if ( $keywords ) {
+            $results = Discussion::withAnyKeywords($keywords)->get();
+        }
+
+        return $results;
     }
+
 }
 
 //////////////////////////////////////////////////////////////////////

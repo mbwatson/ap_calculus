@@ -7,10 +7,22 @@
 
 		transition: background-color 0.5s ease;
 
-		.title {
-			font-size: 150%;
-			margin: 5px 0;
-			font-weight: 700;
+		.post-user {
+			min-width: 120px;
+		}
+
+		.post-title {
+			
+			.title {
+				font-size: 150%;
+				margin: 5px 0;
+				font-weight: 700;
+			}
+
+		}
+
+		.post-channel {
+			padding-top: 35px;
 		}
 
 		td {
@@ -19,7 +31,7 @@
 			padding-left: 15px;
 		}
 
-		td:last-child {
+		.post-comments {
 			padding-right: 25px;
 		}
 	}

@@ -134,27 +134,8 @@ class Question extends Model implements Likeable
      */
     public function scopeWithAnyKeywords($query, $keywords)
     {
-        $keywords = explode(' ', $keywords);
-        
         foreach ($keywords as $keyword) {
             $query->orWhere('title', 'LIKE', '%'.$keyword.'%')->orWhere('body', 'LIKE', '%'.$keyword.'%');
-        }
-
-        return $query;
-    }
-
-    /**
-     * 
-     * 
-     * @param  Array
-     * @return Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeWithAllKeywords($query, $keywords)
-    {
-        $keywords = explode(' ', $keywords);
-        
-        foreach ($keywords as $keyword) {
-            $query->where('title', 'LIKE', '%'.$keyword.'%')->orWhere('body', 'LIKE', '%'.$keyword.'%');
         }
 
         return $query;

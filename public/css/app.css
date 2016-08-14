@@ -11640,15 +11640,19 @@ label,
   border-collapse: separate;
   border-spacing: 10px 50px;
   transition: background-color 0.5s ease; }
-  .posts .post .title {
+  .posts .post .post-user {
+    min-width: 120px; }
+  .posts .post .post-title .title {
     font-size: 150%;
     margin: 5px 0;
     font-weight: 700; }
+  .posts .post .post-channel {
+    padding-top: 35px; }
   .posts .post td {
     vertical-align: top;
     padding: 20px 0;
     padding-left: 15px; }
-  .posts .post td:last-child {
+  .posts .post .post-comments {
     padding-right: 25px; }
 
 .posts .post:hover {

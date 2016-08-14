@@ -46,7 +46,7 @@
         <!-- Discussion List -->
         
         <div class="col-xs-12 col-md-10">
-            <div class="panel panel-default">
+            <div class="panel">
                 @if ($discussions->count() > 0)
                     <table class="posts">
                         @foreach ($discussions as $discussion)

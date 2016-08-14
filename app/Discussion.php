@@ -100,5 +100,19 @@ class Discussion extends Model implements Likeable
         return Discussion::latest('created_at')->whereIn('id', $popularIds);
     }
 
+    /**
+     * 
+     * 
+     * @param  Array
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithAnyKeywords($query, $keywords)
+    {
+        foreach ($keywords as $keyword) {
+            $query->orWhere('title', 'LIKE', '%'.$keyword.'%')->orWhere('body', 'LIKE', '%'.$keyword.'%');
+        }
+
+        return $query;
+    }
 
 }
