@@ -211,9 +211,72 @@ What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
 <p>(C) 6</p>
 <p>(D) 7</p>',
 				'user_id' => '2',
-				'created_at' => Carbon::now()->addSecond(10)->format('Y-m-d H:i:s'),
-				'updated_at' => Carbon::now()->addSecond(10)->format('Y-m-d H:i:s')
+				'created_at' => Carbon::now()->addSecond(11)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(11)->format('Y-m-d H:i:s')
 			),
+			array(
+				'id' => 13,
+				'type' => '2',
+				'calculator' => '0',
+				'title' => 'Partcle Motion',
+				'body' => '<p>For time $t \geq 0$, the velocity of a particle moving along the $x$-axis is given by $v(t) = (t-5)(t-2)^2$. At what values of $t$ is the acceleration of the particle equal to 0?</p>
+<p>(A) 2 only</p>
+<p>(B) 4 only</p>
+<p>(C) &nbsp;2 and 4</p>
+<p>(D) 2 and 5</p>',
+				'user_id' => '1',
+				'created_at' => Carbon::now()->addSecond(12)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(12)->format('Y-m-d H:i:s')
+			),
+			array(
+				'id' => 14,
+				'type' => '2',
+				'calculator' => '0',
+				'title' => 'Confidential Documents: Interpreting a Derivative',
+				'body' => '<p>The cost, in dollars, to shred the confidential documents of a company is modeled by $C$, a differentiable function of the weight of documents in pounds. Of the following, which is the best interpretation of $C\'(500)=80$?</p>
+<p>(A) The cost to shred 500 pounds of documents is $80.</p>
+<p>(B) The average cost to shred documents is $\frac{80}{500}$ dollar per pound.</p>
+<p>(C) Increasing the weight of documents by 500 pounds will increase the cost to shred the</p>
+<p>documents by approximately $80.</p>
+<p>(D) The cost to shred documents is increasing at a rate of $80 per pound when the weight of</p>
+<p>the documents is 500 pounds.</p>',
+				'user_id' => '1',
+				'created_at' => Carbon::now()->addSecond(13)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(13)->format('Y-m-d H:i:s')
+			),
+			array(
+				'id' => 15,
+				'type' => '2',
+				'calculator' => '0',
+				'title' => 'Equivalent Expressions: a Riemann Sum and an Integral',
+				'body' => '<p>Which of the following integral expressions is equal to $\lim_{n\to\infty}\sum_{k=1}^n\Big(\sqrt{1+\frac{3k}{n}\cdot\frac{1}{n}}\Big)$?</p>
+<p>(A) $\int_0^1\sqrt{1+3x}dx$</p>
+<p>(B) $\int_0^3\sqrt{1+x}dx$</p>
+<p>(C) $\int_1^4\sqrt{x}dx$</p>
+<p>(D) $\frac{1}{3}\int_0^3\sqrt{x}dx$</p>',
+				'user_id' => '1',
+				'created_at' => Carbon::now()->addSecond(14)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(14)->format('Y-m-d H:i:s')
+			),
+			array(
+				'id' => 16,
+				'type' => '2',
+				'calculator' => '0',
+				'title' => 'Integral of a Piecewise Function',
+				'body' => '<p>Consider the function $f$ defined by $f(x) = \begin{cases}</p>
+<p>&nbsp; x &amp; \text{for} x&lt;2\\</p>
+<p>&nbsp; 3 &amp; \text{for} x \geq 2.</p>
+<p>\end{cases}$</p>
+<p>What is the value of $\int_{-1}^4f(x)dx$?</p>
+<p>(A) $\frac{9}{2}$</p>
+<p>(B) $\frac{15}{2}$</p>
+<p>(C) $\frac{17}{2}$</p>
+<p>(D) undefined</p>',
+				'user_id' => '2',
+				'created_at' => Carbon::now()->addSecond(15)->format('Y-m-d H:i:s'),
+				'updated_at' => Carbon::now()->addSecond(15)->format('Y-m-d H:i:s')
+			),
+
 		);
 
 		DB::table('questions')->insert($seeds);

@@ -28,7 +28,6 @@ class UsersTableSeeder extends Seeder
 				'id' => 2,
 				'name' => 'sample-user',
 				'email' => 'email@ddress.net',
-				'location' => 'Raleigh, NC',
 				'admin' => false,
 				'password' => Hash::make('password'),
 				'created_at' => Carbon::now()->format('Y-m-d H:i:s'),

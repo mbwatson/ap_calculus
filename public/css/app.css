@@ -11635,6 +11635,17 @@ label,
   border: none;
   color: #666; }
 
+.seamless {
+  border-color: #fff;
+  border-width: 0;
+  margin: 0;
+  box-shadow: inset 0 1px 1px #fff, 0 0 8px #fff; }
+
+.seamless:focus {
+  border-color: #fff;
+  outline: 0;
+  box-shadow: inset 0 1px 1px #fff, 0 0 8px #fff; }
+
 .posts .post {
   margin: 20px 0;
   border-collapse: separate;

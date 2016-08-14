@@ -28,7 +28,7 @@ class CreateQuestionRequest extends Request
         // Question title, body, and standards are required fields and 
         // body can be no longer than 1000 characters
         return [
-            'title' => 'required|max:50',
+            'title' => 'required|max:100',
             'body' => 'required|max:5000',
             'standards' => 'required',
             'type' => 'required',
