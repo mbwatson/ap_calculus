@@ -30,20 +30,24 @@
 
 <div class="container">
 
-    <h1>Questions Addressing {{ $standard->name }}</h1>
+    <p class="fancy-heading"><span><i class="mdi mdi-comment-question-outline"></i>Questions Addressing {{ $standard->name }}</span></p>
 
     <!-- Questions List -->
 
     <div class="row">
         <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <section class="posts">
+            <div class="panel">
+                <table class="posts">
+                    @if ( $standard->questions()->get()->count() > 0 )
                         @foreach ($standard->questions()->get()->unique() as $question)
                             @include('partials.question', $question)
                         @endforeach
-                    </section>
-                </div>
+                    @else
+                        <div class="panel-body text-center">
+                            There are no relavant questions! Post one!
+                        </div>
+                    @endif
+                </table>
             </div>
         </div>
     </div>

@@ -50,9 +50,9 @@
                         @endforeach
                     </table>
                 @else
-                    <center>
-                        There are no relevant questions to display at this time.
-                    </center>
+                    <div class="panel-body text-center">
+                        There are no relavant questions! Post one!
+                    </div>
                 @endif
             </div>
             <center>{{ $questions->links() }}</center>
