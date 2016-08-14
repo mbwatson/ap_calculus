@@ -96,9 +96,7 @@
 
 <!-- Select2 list -->
 <script type="text/javascript">
-    $('#standard_list').select2({
-      placeholder: "Select Standard(s)"
-    });
+    $('#standard_list').select2({ placeholder: "Select Standard(s)" });
 </script>
 
 <script type="text/javascript">

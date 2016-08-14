@@ -23,7 +23,7 @@
                     <!-- Delete -->
                     {!! Form::open(['route' => ['discussions.destroy', $discussion], 'method' => 'delete', 'style' => 'display: inline;']) !!}
                         <button type="submit" class="btn btn-link" title="Delete Question" data-toggle="tooltip" data-placement="bottom" style="padding: 0;">
-                            <i class="glyphicon glyphicon-remove"></i></button>
+                            <i class="mdi mdi-delete"></i></button>
                     {!! Form::close() !!}
                 </div>
             @endif
