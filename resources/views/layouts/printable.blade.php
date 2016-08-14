@@ -11,6 +11,9 @@
     <link href="{{ asset('css/materialdesignicons.min.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style type="text/css">
+        body {
+            background-color: #fff;
+        }
         div {
             padding: 0 100px;
         }
