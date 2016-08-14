@@ -1,12 +1,14 @@
 .posts {
 	
-	font-size: 90%;
+	/*font-size: 90%;*/
 
 	.post {
-		margin: 25px 0;
+		margin: 20px 0;
 
-		h4 {
+		.title {
+			font-size: 110%;
 			margin: 5px 0;
+			font-weight: bold;
 		}
 	}
 

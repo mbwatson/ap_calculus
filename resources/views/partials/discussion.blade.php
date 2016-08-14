@@ -14,7 +14,7 @@
     <!-- Discussion Info -->
 
     <div class="col-xs-12 col-sm-11 col-md-6">
-        <h4><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a></h4>
+        <div class="title"><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a></div>
         <br /><br />
         <div class="meta">
             Started {{ $discussion->created_at->diffForHumans() }}

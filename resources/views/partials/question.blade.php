@@ -14,7 +14,7 @@
     <!-- Question Info -->
     
     <div class="col-xs-10 col-sm-8 col-md-6">
-        <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
+        <div class="title"><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></div>
         <div class="standards">
             <b>MPACs:</b>
             @include('partials.list-standards', ['standards' => $question->mpacs])
