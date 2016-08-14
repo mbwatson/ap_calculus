@@ -1,35 +1,32 @@
-<div class="row post">
+<tr class="post">
     
-    <!-- User Info -->
-    
-    <div class="hidden-xs hidden-sm col-md-2">
+    <td>
+        <!-- User Info -->
         <div class="{{ $discussion->user->isOnline() ? 'active-' : '' }}user text-center">
             <a href="{{ route('users.show', $discussion->user) }}">
                 <img class="avatar" src="{{ url('/') }}/avatars/{{ $discussion->user->avatar }}"><br />
                 <span class="username">{{ $discussion->user->name }}</span>
             </a>
         </div>
-    </div>
+    </td>
 
-    <!-- Discussion Info -->
-
-    <div class="col-xs-12 col-sm-11 col-md-6">
+    <td style="width: 70%;">
+        <!-- Discussion Info -->
         <div class="title"><a href="{{ route('discussions.show', $discussion) }}">{{ $discussion->title }}</a></div>
         <br /><br />
         <div class="meta">
             Started {{ $discussion->created_at->diffForHumans() }}
-            {{ $discussion->created_at == $discussion->updated_at ? '' : ' | Edited at ' . $discussion->updated_at->diffForHumans() }}
         </div>
-    </div>
+    </td>
 
-    <div class="hidden-xs hidden-sm col-md-3">
-        <h5><a href="{{ route('discussions.channel', $discussion->channel) }}">{{ $discussion->channel->name }}</a></h5>
-    </div>
+    <td style="width: 30%; text-align: center; padding-top: 20px;">
+        <a href="{{ route('discussions.channel', $discussion->channel) }}">{{ $discussion->channel->name }}</a>
+    </td>
     
-    <div class="hidden-xs col-sm-1 col-md-1">
+    <td style="text-align: center; padding-top: 20px;">
         <span class="comment-count">
             {{ $discussion->responses->count() }}
         </span>
-    </div>
+    </td>
 
-</div>
+</tr>

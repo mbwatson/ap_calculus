@@ -11635,43 +11635,57 @@ label,
   border: none;
   color: #666; }
 
-.posts {
-  /*font-size: 90%;*/ }
-  .posts .post {
-    margin: 20px 0; }
-    .posts .post .title {
-      font-size: 110%;
-      margin: 5px 0;
-      font-weight: bold; }
-  .posts .standards ul {
-    display: inline; }
-  .posts .avatar {
-    width: 65px;
-    height: 65px; }
-  .posts .comment-count {
-    display: inline;
-    border-radius: 3px;
-    background-color: #ccc;
-    color: #fff;
-    font-size: 95%;
-    font-weight: 600;
-    text-align: center;
-    padding: 1px 3px;
-    position: relative;
-    top: 20px;
-    min-width: 20px;
-    float: right; }
-  .posts .comment-count:after {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    /* value = - border-top-width - border-bottom-width */
-    left: 5px;
-    /* controls horizontal position */
-    border-width: 8px 8px 0 0;
-    /* vary these values to change the angle of the vertex */
-    border-style: solid;
-    border-color: #ccc transparent; }
+.posts .post {
+  margin: 20px 0;
+  border-collapse: separate;
+  border-spacing: 10px 50px;
+  transition: background-color 0.5s ease; }
+  .posts .post .title {
+    font-size: 150%;
+    margin: 5px 0;
+    font-weight: 700; }
+  .posts .post td {
+    vertical-align: top;
+    padding: 20px 0;
+    padding-left: 15px; }
+  .posts .post td:last-child {
+    padding-right: 25px; }
+
+.posts .post:hover {
+  background-color: #f0f0f0; }
+
+.posts .standards ul {
+  display: inline; }
+
+.posts .avatar {
+  width: 65px;
+  height: 65px; }
+
+.posts .comment-count {
+  display: inline;
+  border-radius: 3px;
+  background-color: #ccc;
+  color: #fff;
+  font-size: 95%;
+  font-weight: 600;
+  text-align: center;
+  padding: 1px 3px;
+  position: relative;
+  top: 0;
+  min-width: 20px;
+  float: right; }
+
+.posts .comment-count:after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  /* value = - border-top-width - border-bottom-width */
+  left: 5px;
+  /* controls horizontal position */
+  border-width: 8px 8px 0 0;
+  /* vary these values to change the angle of the vertex */
+  border-style: solid;
+  border-color: #ccc transparent; }
 
 .meta {
   color: #aaa; }

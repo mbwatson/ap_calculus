@@ -47,17 +47,17 @@
         
         <div class="col-xs-12 col-md-10">
             <div class="panel panel-default">
-                <div class="panel-body posts">
-                    @if ($discussions->count() > 0)
+                @if ($discussions->count() > 0)
+                    <table class="posts">
                         @foreach ($discussions as $discussion)
                             @include('partials.discussion')
                         @endforeach
-                    @else
-                        <center>
-                            No relevant discussions to display!
-                        </center>
-                    @endif
-                </div>
+                    </table>
+                @else
+                    <center>
+                        No relevant discussions to display!
+                    </center>
+                @endif
             </div>
             <center>{{ $discussions->links() }}</center>
         </div>

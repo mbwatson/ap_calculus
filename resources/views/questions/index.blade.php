@@ -42,18 +42,18 @@
         <!-- Questions List -->
         
         <div class="col-xs-12 col-md-10">
-            <div class="panel panel-default">
-                <div class="panel-body posts">
-                    @if ($questions->count() > 0)
+            <div class="panel">
+                @if ($questions->count() > 0)
+                    <table class="posts">
                         @foreach ($questions as $question)
                             @include('partials.question', $question)
                         @endforeach
-                    @else
-                        <center>
-                            There are no relevant questions to display at this time.
-                        </center>
-                    @endif
-                </div>
+                    </table>
+                @else
+                    <center>
+                        There are no relevant questions to display at this time.
+                    </center>
+                @endif
             </div>
             <center>{{ $questions->links() }}</center>
         </div>
