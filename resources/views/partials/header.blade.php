@@ -39,7 +39,7 @@
                     <div class="col-sm-4 col-md-6 col-lg-7" id="search">
                         {!! Form::open(['route' => ['search.results'], 'class' => 'search-form', 'role' => 'search']) !!}
                         <div class="input-group">
-                            {!! Form::text('keywords', null, ['class' => 'form-control', 'placeholder' => 'Search for questions']) !!}
+                            {!! Form::text('keywords', null, ['class' => 'form-control', 'placeholder' => 'What would like to find?']) !!}
                             <div class="input-group-btn">
                                 <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
                             </div>
