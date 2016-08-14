@@ -110,7 +110,7 @@
 
     <!-- New Comment Form -->
 
-    {!! Form::open(['route' => 'comments.store']) !!}
+    {!! Form::open(['route' => 'comments.store', 'class' => 'comment-form']) !!}
     {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => '5', 'placeholder' => 'I\'ve got something to say!']) !!}
     {!! Form::hidden('question_id', $question->id) !!}
     <br />

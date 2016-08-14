@@ -11730,13 +11730,17 @@ label,
 #post .panel-footer {
   background-color: #fafafa; }
 
-.comment .avatar,
-.response .avatar {
-  width: 80px;
-  height: 80px; }
+.comment,
+.response {
+  margin: 30px 0; }
+  .comment .avatar,
+  .response .avatar {
+    width: 80px;
+    height: 80px; }
 
-#tinymce p {
-  font-size: 150%; }
+.comment-form,
+.response-form {
+  margin-top: 30px 0; }
 
 /* Sidebar */
 .sidebar {

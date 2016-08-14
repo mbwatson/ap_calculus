@@ -73,7 +73,7 @@
 
     <!-- New Response Form -->
 
-    {!! Form::open(['route' => 'responses.store']) !!}
+    {!! Form::open(['route' => 'responses.store', 'class' => 'response-form']) !!}
     {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => '5', 'placeholder' => 'I\'ve got something to say!']) !!}
     {!! Form::hidden('discussion_id', $discussion->id) !!}
     <br />
