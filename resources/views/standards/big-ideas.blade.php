@@ -6,12 +6,14 @@
 
 @section('content')
 <div class="jumbotron">
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 heading">
-            <h1>Big Ideas</h1>
-        </div>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 details">
-            The courses are organized around big ideas, which correspond to foundational concepts of calculus: limits, derivatives, integrals and the Fundamental Theorem of Calculus, and (for AP Calculus BC) series.
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 heading">
+                <h1>Big Ideas</h1>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 details">
+                The courses are organized around big ideas, which correspond to foundational concepts of calculus: limits, derivatives, integrals and the Fundamental Theorem of Calculus, and (for AP Calculus BC) series.
+            </div>
         </div>
     </div>
 </div>

@@ -33,17 +33,30 @@
     
     <!-- Latest Questions -->
     
-    <h1>Latest Questions</h1>
-    
     <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-body posts">
-                    <ul>
-                        @foreach (App\Question::take(3)->orderBy('created_at', 'desc')->get() as $question)
-                            @include('partials.question', $question)
-                        @endforeach
-                    </ul>
+        <div class="col-xs-12 col-md-6">
+            <p class="fancy-heading"><span><i class="mdi mdi-comment-multiple-outline"></i>Latest Questions</span></p>
+            <div class="panel">
+                <table class="posts">
+                    @foreach (App\Question::take(3)->orderBy('created_at', 'desc')->get() as $question)
+                        @include('partials.question', $question)
+                    @endforeach
+                </table>
+                <div class="panel-body">
+                    <a href="{{ route('questions.index') }}" class="pull-right">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <p class="fancy-heading"><span><i class="mdi mdi-comment-multiple-outline"></i>Latest Discussions</span></p>
+            <div class="panel">
+                <table class="posts">
+                    @foreach (App\Discussion::take(3)->orderBy('created_at', 'desc')->get() as $discussion)
+                        @include('partials.discussion', $discussion)
+                    @endforeach
+                </table>
+                <div class="panel-body">
+                    <a href="{{ route('discussions.index') }}" class="pull-right">View All</a>
                 </div>
             </div>
         </div>
