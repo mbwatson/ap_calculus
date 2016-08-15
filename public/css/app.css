@@ -11653,6 +11653,8 @@ label,
   transition: background-color 0.5s ease; }
   .posts .post .post-user {
     min-width: 120px; }
+  .posts .post .post-user {
+    text-align: center; }
   .posts .post .post-title .title {
     font-size: 150%;
     margin: 5px 0;
