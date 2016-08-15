@@ -54,9 +54,9 @@
                         @endforeach
                     </table>
                 @else
-                    <center>
+                    <div class="panel-body text-center">
                         No relevant discussions to display!
-                    </center>
+                    </div>
                 @endif
             </div>
             <center>{{ $discussions->links() }}</center>
