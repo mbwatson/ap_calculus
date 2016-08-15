@@ -14,14 +14,11 @@ class QuestionsTableSeeder extends Seeder {
 				'type' => '1',
 				'calculator' => '0',
 				'title' => 'Power Series: Convergence & Error Bound',
-				'body' => 'The function $f$ is defined by the power series
-					$$f(x) = \sum_{n=0}^\infty\frac{(x-2)^n}{3^n(n+1)} = 1 + \frac{x-2}{3 \cdot 2} + \frac{(x-2)^2}{3^2\cdot 3} + \frac{(x-2)^3}{3^3\cdot 4} + \cdots  + \frac{(x-2)^n}{3^n(n+1)} + \cdots.$$
-
-(a) Determine the interval of convergence of the power series for $f$. Show the work that leads to your answer.
-
-(b) Find the value of $f\'\'(2)$.
-
-(c) Use the first three nonzero terms of the power series for $f$ to approximate $f(1)$. Use the alternating series error bound to show that this approximation differs from $f(1)$ by less than $\frac{1}{100}$.',
+				'body' => '<p>The function $f$ is defined by the power series
+					$$f(x) = \sum_{n=0}^\infty\frac{(x-2)^n}{3^n(n+1)} = 1 + \frac{x-2}{3 \cdot 2} + \frac{(x-2)^2}{3^2\cdot 3} + \frac{(x-2)^3}{3^3\cdot 4} + \cdots  + \frac{(x-2)^n}{3^n(n+1)} + \cdots.$$</p>
+<p>(a) Determine the interval of convergence of the power series for $f$. Show the work that leads to your answer.</p>
+<p>(b) Find the value of $f\'\'(2)$.</p>
+<p>(c) Use the first three nonzero terms of the power series for $f$ to approximate $f(1)$. Use the alternating series error bound to show that this approximation differs from $f(1)$ by less than $\frac{1}{100}$.</p>',
 				'user_id' => 1,
 				'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -31,13 +28,10 @@ class QuestionsTableSeeder extends Seeder {
 				'type' => '1',
 				'calculator' => '0',
 				'title' => 'An Improper Integral',
-				'body' => 'Consider the function $f$ given by $f(x) = xe^{-2x}$ for all $x \geq 0$.
-					
-(a) Find $\lim_{x\to\infty}f(x)$.
-
-(b) Find the maximum value of $f$ for $x \geq 0$. Justify your answer.
-
-(c) Evaluate $\int_0^\infty f(x) dx$, or show that the integral diverges.',
+				'body' => '<p>Consider the function $f$ given by $f(x) = xe^{-2x}$ for all $x \geq 0$.</p>
+<p>(a) Find $\lim_{x\to\infty}f(x)$.</p>
+<p>(b) Find the maximum value of $f$ for $x \geq 0$. Justify your answer.</p>
+<p>(c) Evaluate $\int_0^\infty f(x) dx$, or show that the integral diverges.</p>',
 				'user_id' => 2,
 				'created_at' => Carbon::now()->addSecond(1)->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->addSecond(1)->format('Y-m-d H:i:s')
@@ -47,14 +41,10 @@ class QuestionsTableSeeder extends Seeder {
 				'type' => '1',
 				'calculator' => '0',
 				'title' => 'Power series and $\sin(x)/x$',
-				'body' => '
-Consider the function defined by $f(x)=\frac{\sin(x)}{x}$.
-				
-(a) Find a power series representation of $f$ centered at $x=0$.
-
-(b) The power series you found in part (a) is not quite a Maclaurin series for $f$ because $f$ is technically not eligible to have a Maclaurin series. Why?
-					
-(c) Redefine $f$ as follows: $f(x) = \begin{cases}\frac{\sin(x)}{x} &: x \ne 0;\newline k &: x=0.\end{cases}$ The power series in part (a) will be a Maclaurin series for this newly defined $f$. What is the value of $k$?',
+				'body' => '<p>Consider the function defined by $f(x)=\frac{\sin(x)}{x}$.</p>
+<p>(a) Find a power series representation of $f$ centered at $x=0$.</p>
+<p>(b) The power series you found in part (a) is not quite a Maclaurin series for $f$ because $f$ is technically not eligible to have a Maclaurin series. Why?</p>
+<p>(c) Redefine $f$ as follows: $f(x) = \begin{cases}\frac{\sin(x)}{x} &amp;: x \ne 0;\newline k &amp;: x=0.\end{cases}$ The power series in part (a) will be a Maclaurin series for this newly defined $f$. What is the value of $k$?</p>',
 				'user_id' => '1',
 				'created_at' => Carbon::now()->addSecond(2)->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->addSecond(2)->format('Y-m-d H:i:s')
@@ -64,18 +54,11 @@ Consider the function defined by $f(x)=\frac{\sin(x)}{x}$.
 				'type' => '1',
 				'calculator' => '0',
 				'title' => 'Function Analysis via its Taylor Series',
-				'body' => '
-The function $f$ has a Taylor series about $x=2$ that converges to $f(x)$ for all $x$ in the interval of convergence.
-The $n$th derivative of $f$ at $x=2$ is given by $f^{(n)}(2) = \frac{(n+1)!}{3^n}$ for all $n \ge 1$ and $f(2) = 1$.
-
-(a) Write the first four terms and the general term of the Taylor series for $f$ about $x=2$.
-
-(b) Find the radius of convergence for the Taylor series for $f$ about $x=2$. Show the work that leads to your answer.
-
-(c) Let $g$ be a function satisfying $g(2)=3$ and $g\'(x)=f(x)$ for all $x$.
-Write the first four terms and the general term of the Taylor series for $g$ about $x=2$.
-
-(d) Does the Taylor series for $g$ as defined in part (c) converge at $x=-2$? Give a reason for your answer.',
+				'body' => '<p>The function $f$ has a Taylor series about $x=2$ that converges to $f(x)$ for all $x$ in the interval of convergence. The $n$th derivative of $f$ at $x=2$ is given by $f^{(n)}(2) = \frac{(n+1)!}{3^n}$ for all $n \ge 1$ and $f(2) = 1$.</p>
+<p>(a) Write the first four terms and the general term of the Taylor series for $f$ about $x=2$.</p>
+<p>(b) Find the radius of convergence for the Taylor series for $f$ about $x=2$. Show the work that leads to your answer.</p>
+<p>(c) Let $g$ be a function satisfying $g(2)=3$ and $g\'(x)=f(x)$ for all $x$. Write the first four terms and the general term of the Taylor series for $g$ about $x=2$.</p>
+<p>(d) Does the Taylor series for $g$ as defined in part (c) converge at $x=-2$? Give a reason for your answer.</p>',
 				'user_id' => '2',
 				'created_at' => Carbon::now()->addSecond(3)->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->addSecond(3)->format('Y-m-d H:i:s')
@@ -85,19 +68,10 @@ Write the first four terms and the general term of the Taylor series for $g$ abo
 				'type' => '1',
 				'calculator' => '0',
 				'title' => 'Analyzing a Maclaurin Series',
-				'body' => '
-The Maclaurin series for the function $f$ is given by 
-$$
-f(x)= \sum_{n=0}^\infty\frac{(2x)^{n+1}}{n+1}
-    = 2x + \frac{4x^2}{2} + \frac{8x^3}{3} + \frac{16x^4}{4} + \cdots + \frac{(2x)^{n+1}}{n+1} + \cdots
-$$
-on its interval of convergence.
-
-(a) Find the interval of convergence for the Maclaurin series for $f$. Justify your answer.
-
-(b) Find the first four terms and the general term for the Maclaurin series for $f\'(x)$.
-
-(c) Use the Maclaurin series you found in part (b) to find the value of $f\'(-\tfrac{1}{3})$.',
+				'body' => '<p>The Maclaurin series for the function $f$ is given by $$ f(x)= \sum_{n=0}^\infty\frac{(2x)^{n+1}}{n+1} = 2x + \frac{4x^2}{2} + \frac{8x^3}{3} + \frac{16x^4}{4} + \cdots + \frac{(2x)^{n+1}}{n+1} + \cdots $$ on its interval of convergence.</p>
+<p>(a) Find the interval of convergence for the Maclaurin series for $f$. Justify your answer.</p>
+<p>(b) Find the first four terms and the general term for the Maclaurin series for $f\'(x)$.</p>
+<p>(c) Use the Maclaurin series you found in part (b) to find the value of $f\'(-\tfrac{1}{3})$.</p>',
 				'user_id' => '1',
 				'created_at' => Carbon::now()->addSecond(4)->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->addSecond(4)->format('Y-m-d H:i:s')
@@ -141,11 +115,11 @@ on its interval of convergence.
 				'body' => '
 <p style="text-align: center;"><img src="/images/1/Screenshot_from_2016-07-28_11_24_45_png.png" width="473" height="102" /></p>
 <p>Rochelle rode a stationary bicycle. The number of rotations per minute of the wheel of the&nbsp;stationary bicycle at time $t$ minutes during Rochelle&rsquo;s ride is modeled by a differentiable function $r$ for $0 \leq t \leq 9$ minutes. Values of $r(t)$&nbsp;for selected values of $t$ are shown in the table above.</p>
-<p>(A) Estimate $r\'(4)$.&nbsp;Show the computations that lead to your answer. Indicate units of measure.</p>
-<p>(B) Is there a time $t$, for $3 \leq t \leq 5$, at which $r(t)$ is 106 rotations per minute?&nbsp;Justify your answer.</p>
-<p>(C) Use a left Riemann sum with the four subintervals indicated by the data in the table to&nbsp;approximate $\int_0^9 r(t)dt$.&nbsp;Using correct units, explain the meaning of $\int_0^9 r(t)dt$</p>
+<p>(a) Estimate $r\'(4)$.&nbsp;Show the computations that lead to your answer. Indicate units of measure.</p>
+<p>(b) Is there a time $t$, for $3 \leq t \leq 5$, at which $r(t)$ is 106 rotations per minute?&nbsp;Justify your answer.</p>
+<p>(c) Use a left Riemann sum with the four subintervals indicated by the data in the table to&nbsp;approximate $\int_0^9 r(t)dt$.&nbsp;Using correct units, explain the meaning of $\int_0^9 r(t)dt$</p>
 <p>in the&nbsp;context of the problem.</p>
-<p>(D) Sarah also rode a stationary bicycle. The number of rotations per minute of the wheel of&nbsp;the stationary bicycle at time $t$ minutes during Sarah&rsquo;s ride is modeled by the function $s$,</p>
+<p>(d) Sarah also rode a stationary bicycle. The number of rotations per minute of the wheel of&nbsp;the stationary bicycle at time $t$ minutes during Sarah&rsquo;s ride is modeled by the function $s$,</p>
 <p>defined by $s(t) = 40 + 20\pi\sin\Big(\frac{\pi t}{18}\Big)$&nbsp;for $0 \leq t \leq 9$&nbsp;minutes. Find the average number of&nbsp;rotations per minute of the wheel of the stationary bicycle for $0 \leq t \leq 9$&nbsp;minutes.</p>',
 				'user_id' => '1',
 				'created_at' => Carbon::now()->addSecond(7)->format('Y-m-d H:i:s'),
@@ -263,10 +237,7 @@ What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
 				'type' => '2',
 				'calculator' => '0',
 				'title' => 'Integral of a Piecewise Function',
-				'body' => '<p>Consider the function $f$ defined by $f(x) = \begin{cases}</p>
-<p>&nbsp; x &amp; \text{for} x&lt;2\\</p>
-<p>&nbsp; 3 &amp; \text{for} x \geq 2.</p>
-<p>\end{cases}$</p>
+				'body' => '<p>Consider the function $f$ defined by $f(x) = \begin{cases}&nbsp; x &amp; \text{for} x&lt;2\\&nbsp; 3 &amp; \text{for} x \geq 2.\end{cases}$</p>
 <p>What is the value of $\int_{-1}^4f(x)dx$?</p>
 <p>(A) $\frac{9}{2}$</p>
 <p>(B) $\frac{15}{2}$</p>
