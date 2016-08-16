@@ -24,9 +24,9 @@
     @include('partials.nav')
     @yield('breadcrumbs')
     @yield('header')
+    @include('partials.alerts')
   </header> 
 
-  @include('partials.alerts')
 
   <div id="main">
     @yield('content')

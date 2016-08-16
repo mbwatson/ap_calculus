@@ -237,7 +237,7 @@ What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
 				'type' => '2',
 				'calculator' => '0',
 				'title' => 'Integral of a Piecewise Function',
-				'body' => '<p>Consider the function $f$ defined by $f(x) = \begin{cases}&nbsp; x &amp; \text{for} x&lt;2\\&nbsp; 3 &amp; \text{for} x \geq 2.\end{cases}$</p>
+				'body' => '<p>Consider the function $f$ defined by $f(x) = \begin{cases} x &amp; \text{for} x&lt;2,\\ 3 &amp; \text{for} x \geq 2.\end{cases}$</p>
 <p>What is the value of $\int_{-1}^4f(x)dx$?</p>
 <p>(A) $\frac{9}{2}$</p>
 <p>(B) $\frac{15}{2}$</p>
