@@ -11371,7 +11371,16 @@ body {
   font-family: 'Lato', sans-serif;
   color: #666;
   background-color: #f5f5f5;
-  font-size: 10pt; }
+  font-size: 10pt;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+#main {
+  -ms-flex: 1;
+  flex: 1; }
 
 .container {
   padding-top: 50px; }
@@ -11384,7 +11393,7 @@ a {
   font-weight: 500; }
 
 .glyphicon, .fa, .fa-btn, .mdi {
-  margin: 0 0.4em; }
+  margin-right: 0.4em; }
 
 .mdi, .fa {
   font-size: 130%;
@@ -11449,6 +11458,20 @@ a {
 .fancy-heading span:after {
   left: 100%;
   margin-left: 15px; }
+
+/* Header */
+header {
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25); }
+
+/* Main */
+/* Footer */
+footer {
+  padding-bottom: 25px;
+  box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.25); }
+  footer .links {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0; }
 
 .navbar {
   margin-bottom: 0; }
@@ -11537,8 +11560,7 @@ li.dropdown:hover .dropdown-toggle {
   font-size: 110%;
   margin-bottom: 0;
   border-radius: 0;
-  border-width: 0;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25); }
+  border-width: 0; }
   .breadcrumb li.active {
     color: #fff;
     font-weight: 500; }
