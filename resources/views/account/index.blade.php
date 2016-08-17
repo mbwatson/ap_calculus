@@ -55,7 +55,7 @@
                     @foreach ($user->questions->take(3) as $question)
                         <div class="panel-body">
                             <div class="col-xs-12 col-sm-11">
-                                <h4><a href="{{ route('discussions.show', $question) }}">{{ $question->title }}</a></h4>
+                                <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
                                 <div class="meta">
                                     Started {{ $question->created_at->diffForHumans() }}
                                 </div>
