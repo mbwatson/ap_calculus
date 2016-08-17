@@ -19,9 +19,16 @@
     <div class="panel-footer meta">
         <div class="row">
             <div class="col-xs-6">
-                <i class="glyphicon glyphicon-calendar"></i> {{ $comment->created_at->diffForHumans() }}
+                <i class="mdi mdi-calendar"></i> {{ $comment->created_at->diffForHumans() }}
             </div>
             <div class="col-xs-6 text-right">
+                <!-- Current Likers -->
+                <span class="likers">
+                    @foreach ($comment->likers()->get() as $user)
+                        <a href="{{ route('users.show', $user) }}" class="liker btn btn-info btn-xs">{{ $user->name }}</a>
+                    @endforeach
+                </span>
+                &nbsp;&nbsp;&nbsp;
                 <!-- Thumbs Up -->
                 @if ($comment->liked(Auth::user()))
                     <a href="{{ route('comments.unlike', $comment) }}" class="like text-primary" title="Unlike" data-toggle="tooltip" data-placement="top">

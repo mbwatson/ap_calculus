@@ -139,4 +139,5 @@ class User extends Authenticatable
                          ->merge($responses)
                          ->sortByDesc('created_at');
     }
+
 }

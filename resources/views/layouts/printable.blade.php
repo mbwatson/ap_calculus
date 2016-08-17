@@ -30,7 +30,7 @@
             }
             .content {
                 font-size: 10pt;
-                flex: 1;
+                flex: 0.99;
             }
             .standards {
                 font-size: 8pt;

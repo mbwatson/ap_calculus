@@ -36,4 +36,8 @@ class Comment extends Model implements Likeable
         return $this->belongsTo('App\User');
     }
 
+    public function likers()
+    {
+        return User::whereIn('id', $this->likes()->lists('liked_by_id'));
+    }
 }

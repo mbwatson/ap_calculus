@@ -19,7 +19,7 @@
         @if ($question->mpacs()->count() > 0)
             <h5>MPACs</h5>
             @foreach ($question->mpacs()->get() as $standard)
-                <i class="mdi mdi-checkbox-blank-outline"></i><b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
+                <i class="mdi mdi-checkbox-blank-outline" style="color: #ccc;"></i><b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
             @endforeach
         @endif
     </div>
@@ -27,7 +27,7 @@
         @if ($question->learningObjectives()->count() > 0)
             <h5>Learning Objectives</h5>
             @foreach ($question->learningObjectives()->get() as $standard)
-                <i class="mdi mdi-checkbox-blank-outline"></i><b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
+                <i class="mdi mdi-checkbox-blank-outline" style="color: #ccc;"></i><b>{{ $standard->name }}:</b> {{ $standard->description }}<br />
             @endforeach
         @endif
     </div>
