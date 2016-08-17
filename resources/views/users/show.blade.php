@@ -16,6 +16,7 @@
                 <h1>{{ $user->name }}</h1>
                 <i class="mdi mdi-certificate"></i>Member since {{ $user->created_at->diffForHumans() }}<br />
                 <i class="mdi mdi-earth"></i>{{ $user->location }}<br />
+                <i class="mdi mdi-login"></i>Last login: {{ $user->last_login->diffForHumans() }}<br />
             </div>
         </div>
         <div class="row details">
