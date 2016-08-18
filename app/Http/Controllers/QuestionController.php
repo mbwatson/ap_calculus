@@ -138,7 +138,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Display questions belonging to logged user
+     * Show questions belonging to logged user
      * 
      * @param  App\Question
      * @return \Illuminate\Http\Response
@@ -152,7 +152,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Retrieve questions for which the authorized user has left a comment
+     * Show logged user's questions and those for which the user has left a comment
      * 
      * @return \Illuminate\Http\Response
      */

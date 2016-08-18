@@ -116,11 +116,31 @@ class DiscussionController extends Controller
         ]);
     }
 
+    /**
+     * Retrieve discussions I created
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function showMyDiscussions()
     {
         return view('discussions.index', [
             'discussions' => Auth::user()->discussions()->paginate(config('global.perPage')),
             'breadcrumb' => 'discussions.mine'
+        ]);
+    }
+
+    /**
+     * Retrieve the logged user's discussions and those for which the user has left a response
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function showMyParticipation()
+    {
+        $discussion_ids = Auth::user()->responses->lists('discussion_id')->toArray();
+        $discussions = Discussion::whereIn('id', $discussion_ids)->orWhere('user_id', Auth::user()->id);
+
+        return view('discussions.index', [
+            'discussions' => $discussions->orderBy('created_at', 'desc')->paginate(config('global.perPage'))
         ]);
     }
 
@@ -134,21 +154,6 @@ class DiscussionController extends Controller
         return view('discussions.index', [
             'discussions' => Discussion::popular()->paginate(config('global.perPage')),
             'breadcrumb' => 'discussions.popular'
-        ]);
-    }
-
-    /**
-     * Retrieve discussions for which the authorized user has left a response
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function showMyParticipation()
-    {
-        $discussion_ids = Auth::user()->responses->lists('discussion_id')->toArray();
-        $discussions = Discussion::whereIn('id', $discussion_ids)->orWhere('user_id', Auth::user()->id);
-
-        return view('discussions.index', [
-            'discussions' => $discussions->orderBy('created_at', 'desc')->paginate(config('global.perPage'))
         ]);
     }
 
