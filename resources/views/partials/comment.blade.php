@@ -22,14 +22,14 @@
     <div class="panel-footer meta">
         <div class="row">
             <div class="col-xs-6 likers">
-                    <!-- Current Likers -->
-                    @foreach ($comment->likers()->take(5)->get() as $user)
-                        <a href="{{ route('users.show', $user) }}" class="liker btn btn-primary btn-xs">{{ $user->name }}</a>
-                    @endforeach
+                <!-- Current Likers -->
+                @foreach ($comment->likers()->take(5)->get() as $user)
+                    <a href="{{ route('users.show', $user) }}" class="liker btn btn-primary btn-xs">{{ $user->name }}</a>
+                @endforeach
 
-                    @if ( $comment->likeCount > 5)
-                        + {{ $comment->likeCount - 5 }} more
-                    @endif
+                @if ( $comment->likeCount > 5)
+                    + {{ $comment->likeCount - 5 }} more
+                @endif
             </div>
             <div class="col-xs-6 text-right">
                 <!-- Thumbs Up -->

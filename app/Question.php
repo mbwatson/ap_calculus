@@ -240,4 +240,8 @@ class Question extends Model implements Likeable
         return Question::latest('created_at')->whereIn('id', $popularIds);
     }
 
+    public function likers()
+    {
+        return User::whereIn('id', $this->likes()->lists('liked_by_id'));
+    }
 }

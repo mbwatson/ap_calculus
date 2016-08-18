@@ -11735,11 +11735,15 @@ label,
   .standards-list li a {
     text-decoration: underline; }
 
+#post .title,
 #post .panel-heading {
   background-color: #fff;
-  font-size: 200%;
+  font-size: 250%;
   border-bottom-width: 0;
   color: #333; }
+
+#post .user-info {
+  padding-top: 10px; }
 
 #post .avatar {
   width: 120px;
@@ -11753,6 +11757,11 @@ label,
 #post .panel-footer {
   background-color: #fafafa; }
 
+.likers .liker {
+  margin: 0 0.5em;
+  padding: 0 5px;
+  border-radius: 3px; }
+
 .comment,
 .response {
   margin: 30px 0; }
@@ -11760,11 +11769,6 @@ label,
   .response .avatar {
     width: 80px;
     height: 80px; }
-  .comment .likers .liker,
-  .response .likers .liker {
-    margin: 0 0.5em;
-    padding: 0 5px;
-    border-radius: 3px; }
 
 .comment-form,
 .response-form {
