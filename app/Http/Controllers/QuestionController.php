@@ -159,9 +159,10 @@ class QuestionController extends Controller
     public function showMyParticipation()
     {
         $question_ids = Auth::user()->comments->lists('question_id')->toArray();
+        $questions = Question::whereIn('id', $question_ids)->orWhere('user_id', Auth::user()->id);
 
         return view('questions.index', [
-            'questions' => Question::whereIn('id', $question_ids)->paginate(config('global.perPage'))
+            'questions' => $questions->orderBy('created_at', 'desc')->paginate(config('global.perPage'))
         ]);
     }
 
