@@ -26,6 +26,7 @@
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.index') }}">All Questions</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.mine') }}">My Questions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.myparticipation') }}">My Participation</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.favorites') }}">My Favorites</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.popular') }}">Popular Questions</a></li>
                     <li role="separator" class="divider"></li>

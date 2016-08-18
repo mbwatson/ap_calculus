@@ -137,6 +137,11 @@ class DiscussionController extends Controller
         ]);
     }
 
+    /**
+     * Retrieve discussions for which the authorized user has left a response
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function showMyParticipation()
     {
         $discussion_ids = Auth::user()->responses->lists('discussion_id')->toArray();

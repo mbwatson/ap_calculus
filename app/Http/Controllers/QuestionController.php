@@ -152,6 +152,20 @@ class QuestionController extends Controller
     }
 
     /**
+     * Retrieve questions for which the authorized user has left a comment
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function showMyParticipation()
+    {
+        $question_ids = Auth::user()->comments->lists('question_id')->toArray();
+
+        return view('questions.index', [
+            'questions' => Question::whereIn('id', $question_ids)->paginate(config('global.perPage'))
+        ]);
+    }
+
+    /**
      * Show a single question
      *
      * @param  App\Question $question

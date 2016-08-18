@@ -76,6 +76,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('questions/calculatorneutral', 			[ 'uses' => 'QuestionController@showCalculatorNeutralQuestions', 	'as' => 'questions.calculator.neutral' ]);
 	Route::get('questions/popular', 					[ 'uses' => 'QuestionController@showPopularQuestions', 				'as' => 'questions.popular' ]);
 	Route::get('questions/mine', 						[ 'uses' => 'QuestionController@showMyQuestions', 					'as' => 'questions.mine' ]);
+	Route::get('/questions/myparticipation',			[ 'uses' => 'QuestionController@showMyParticipation',				'as' => 'questions.myparticipation' ]);
 	Route::get('questions/favorites', 					[ 'uses' => 'QuestionController@showMyFavorites', 					'as' => 'questions.favorites' ]);
 	Route::get('questions/standards/{ids}', 			[ 'uses' => 'QuestionController@showQuestionsWithStandards', 		'as' => 'questions.withstandards' ]);
 	Route::get('questions/{questions}/pdf', 			[ 'uses' => 'QuestionController@getPdf', 							'as' => 'questions.pdf' ]);
