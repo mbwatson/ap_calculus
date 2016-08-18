@@ -137,4 +137,13 @@ class DiscussionController extends Controller
         ]);
     }
 
+    public function showMyParticipation()
+    {
+        $discussion_ids = Auth::user()->responses->lists('discussion_id')->toArray();
+
+        return view('discussions.index', [
+            'discussions' => Discussion::whereIn('id', $discussion_ids)->paginate(config('global.perPage'))
+        ]);
+    }
+
 }

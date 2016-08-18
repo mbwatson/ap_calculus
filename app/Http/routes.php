@@ -56,6 +56,7 @@ Route::group(['middleware' => 'auth'], function() {
 	// Discussion Routes
 
 	Route::get('/discussions/popular', 					[ 'uses' => 'DiscussionController@showPopularDiscussions', 		'as' => 'discussions.popular' ]);
+	Route::get('/discussions/myparticipation',			[ 'uses' => 'DiscussionController@showMyParticipation',			'as' => 'discussions.myparticipation' ]);
 	Route::get('/discussions/mine', 					[ 'uses' => 'DiscussionController@showMyDiscussions', 			'as' => 'discussions.mine' ]);
 	Route::get('/discussions/channels/{channels}',	 	[ 'uses' => 'DiscussionController@showDiscussionsInChannel', 	'as' => 'discussions.channel' ]);
 	Route::resource('discussions', 'DiscussionController');
@@ -105,7 +106,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/comments/{comments}/like', 		[ 'uses' => 'AccountController@like', 	'as' => 'comments.like' ]);
 	Route::get('/comments/{comments}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'comments.unlike' ]);
 	Route::get('/discussions/{discussions}/like',	[ 'uses' => 'AccountController@like', 	'as' => 'discussions.like' ]);
-	Route::get('/discussions/{discussions}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'discussions.unlike' ]);
+	Route::get('/discussions/{discussions}/unlike',	[ 'uses' => 'AccountController@unlike', 'as' => 'discussions.unlike' ]);
 	Route::get('/responses/{responses}/like', 		[ 'uses' => 'AccountController@like', 	'as' => 'responses.like' ]);
 	Route::get('/responses/{responses}/unlike',		[ 'uses' => 'AccountController@unlike', 'as' => 'responses.unlike' ]);
 

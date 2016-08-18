@@ -55,10 +55,10 @@
                         @else
                             <i class="mdi mdi-format-list-bulleted mdi-18px"></i> Multiple Choice
                         @endif
-                        <br />
-                        <i class="mdi mdi-calculator mdi-18px"></i>
-                        {{ $question->calculator == 'Active' ? 'Active' : 'Inactive'}}
+
+                        <i class="mdi mdi-calculator mdi-18px"></i>{{ $question->calculator == 'Active' ? 'Active' : 'Inactive'}}
                     </div>
+                    <hr />
                     {!! $question->body !!}
                     <hr />
                     <div class="row">
