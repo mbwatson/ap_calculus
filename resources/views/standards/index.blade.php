@@ -55,5 +55,11 @@
         </div>
     </div>
 
+    <div class="row">
+        <br />
+        <div class="col-xs-12 text-center meta">
+            All the information on the AP Calculus Curriculum Framework provided here can be found in <a href="https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-calculus-ab-and-bc-course-and-exam-description.pdf" target="_blank">this document</a> released by the College Board.
+        </div>
+    </div>
 </div>
 @endsection
