@@ -36,11 +36,26 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $filters = $request->only('group', 'calculator', 'type');
+
+        $questions = Question::query();
+        if ($filters['group'] == 'mine')                { $questions = Auth::user()->questions(); }
+        if ($filters['group'] == 'my_contributions')    { $questions = Question::withCommentsFrom(Auth::user()); }
+        if ($filters['group'] == 'my_favorites')        { $questions = Auth::user()->favorites(); }
+        if ($filters['group'] == 'popular')             { $questions = Question::popular(); }
+
+        if ($filters['calculator'] == 'active')     { $questions->calculatorActive(); }
+        if ($filters['calculator'] == 'inactive')   { $questions->calculatorInactive(); }
+
+        if ($filters['type'] == 'free_response')    { $questions->freeResponse(); }
+        if ($filters['type'] == 'multiple_choice')  { $questions->multipleChoice(); }
+        
         return view('questions.index', [
-            'questions' => Question::latest('created_at')->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.index.all'
+            'questions' => $questions->latest('created_at')->paginate(config('global.perPage')),
+            'breadcrumb' => 'questions.index.all',
+            'filters' => $filters
         ]);
     }
 
@@ -70,6 +85,34 @@ class QuestionController extends Controller
         ]);
     }
     
+    /**
+     * Show questions types as Free Response
+     * 
+     * @param  App\Question
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function showFreeResponseQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Question::latest('updated_at')->freeResponse()->paginate(config('global.perPage')),
+            'breadcrumbs' => 'questions.freeresponse'
+        ]);
+    }
+
+    /**
+     * Show questions types as Multiple Choice
+     * 
+     * @param  App\Question
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function showMultipleChoiceQuestions(Question $question)
+    {
+        return view('questions.index', [
+            'questions' => Question::latest('updated_at')->multipleChoice()->paginate(config('global.perPage')),
+            'breadcrumbs' => 'questions.multiplechoice'
+        ]);
+    }
+
     /**
      * Show list of popular questions
      *
@@ -106,63 +149,6 @@ class QuestionController extends Controller
         return view('questions.index', [
             'questions' => Auth::user()->favorites()->paginate(config('global.perPage')),
             'breadcrumb' => 'questions.favorites'
-        ]);
-    }
-
-    /**
-     * Show questions types as Free Response
-     * 
-     * @param  App\Question
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function showFreeResponseQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Question::latest('updated_at')->freeResponse()->paginate(config('global.perPage')),
-            'breadcrumbs' => 'questions.freeresponse'
-        ]);
-    }
-
-    /**
-     * Show questions types as Multiple Choice
-     * 
-     * @param  App\Question
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function showMultipleChoiceQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Question::latest('updated_at')->multipleChoice()->paginate(config('global.perPage')),
-            'breadcrumbs' => 'questions.multiplechoice'
-        ]);
-    }
-
-    /**
-     * Show questions belonging to logged user
-     * 
-     * @param  App\Question
-     * @return \Illuminate\Http\Response
-     */
-    public function showMyQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Auth::user()->questions()->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.mine'
-        ]);
-    }
-
-    /**
-     * Show logged user's questions and those for which the user has left a comment
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function showMyParticipation()
-    {
-        $question_ids = Auth::user()->comments->lists('question_id')->toArray();
-        $questions = Question::whereIn('id', $question_ids)->orWhere('user_id', Auth::user()->id);
-
-        return view('questions.index', [
-            'questions' => $questions->orderBy('created_at', 'desc')->paginate(config('global.perPage'))
         ]);
     }
 

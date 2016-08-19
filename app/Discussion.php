@@ -115,4 +115,10 @@ class Discussion extends Model implements Likeable
         return $query;
     }
 
+    public function scopeWithResponsesFrom($query, User $user)
+    {
+        $discussion_ids = $user->comments->lists('discussion_id')->toArray();
+
+        return Question::whereIn('id', $discussion_ids);
+    }
 }

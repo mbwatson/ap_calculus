@@ -34,7 +34,7 @@
 
     <td>
         <span class="meta">
-            @if ($question->type == 'Free Response')
+            @if ($question->type == 'free_response')
                 <span class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="Free Response"></span>
             @else
                 <span class="mdi mdi-format-list-bulleted" data-toggle="tooltip" data-placement="top" title="Multiple Choice"></span>

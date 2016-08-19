@@ -216,8 +216,8 @@ class Question extends Model implements Likeable
 
     // Array of database encoding of question types
     protected $types = [
-        1 => 'Free Response',
-        2 => 'Multiple Choice'
+        1 => 'free_response',
+        2 => 'multiple_choice'
     ];
 
     /**
@@ -234,14 +234,26 @@ class Question extends Model implements Likeable
     {
         $popularIds = DB::table('likes_counter')->select('likeable_id')
                                                 ->where('likeable_type', 'App\Question')
-                                                ->where('count', '>=', 'global.numberOfLikesToBePopular')
+                                                ->where('count', '>=', config('global.numberOfLikesToBePopular'))
                                                 ->lists('likeable_id');
-        
-        return Question::latest('created_at')->whereIn('id', $popularIds);
+
+        return Question::whereIn('id', $popularIds);
     }
 
     public function likers()
     {
         return User::whereIn('id', $this->likes()->lists('liked_by_id'));
+    }
+
+    public function scopeByUser($query, User $user)
+    {
+        return $user->questions();
+    }
+
+    public function scopeWithCommentsFrom($query, User $user)
+    {
+        $question_ids = $user->comments->lists('question_id')->toArray();
+
+        return Question::whereIn('id', $question_ids);
     }
 }

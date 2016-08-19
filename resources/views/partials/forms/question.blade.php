@@ -1,9 +1,9 @@
 <div class="row">
   <div class="btn-group col-md-5" data-toggle="buttons" style="display: flex;">
-      <label class="btn btn-primary {{ (isset($question->type) && $question->type == 'Free Response') ? 'active' : ''}}" style="flex: 1;">
+      <label class="btn btn-primary {{ (isset($question->type) && $question->type == 'free_response') ? 'active' : ''}}" style="flex: 1;">
           <input type="radio" name="type" autocomplete="off" value="1"  {{ (isset($question->type) && $question->type == 'Free Response') ? 'checked' : ''}}> <span class="fa fa-pencil-square-o"></span> Free Response
       </label>
-      <label class="btn btn-primary {{ (isset($question->type) && $question->type == 'Multiple Choice') ? 'active' : ''}}" style="flex: 1;">
+      <label class="btn btn-primary {{ (isset($question->type) && $question->type == 'multiple_choice') ? 'active' : ''}}" style="flex: 1;">
           <input type="radio" name="type" autocomplete="off" value="2" {{ (isset($question->type) && $question->type == 'Multiple Choice') ? 'checked' : ''}}> <span class="fa fa-list"></span> Multiple Choice
       </label>
   </div>

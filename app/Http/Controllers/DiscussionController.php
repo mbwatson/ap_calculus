@@ -16,10 +16,18 @@ class DiscussionController extends Controller
         View::share(['channels' => Channel::all()]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $filters = $request->only('group');
+
+        $discussions = Discussion::query();
+        if ($filters['group'] == 'mine')                { $discussions = Auth::user()->discussions(); }
+        if ($filters['group'] == 'my_contributions')    { $discussions = Discussion::withResponsesFrom(Auth::user()); }
+
         return view('discussions.index', [
-        	'discussions' => Discussion::latest()->paginate(config('global.perPage'))
+            'discussions' => $discussions->latest('created_at')->paginate(config('global.perPage')),
+            'breadcrumb' => 'discussions.index.all',
+            'filters' => $filters
         ]);
     }
 
@@ -134,7 +142,7 @@ class DiscussionController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function showMyParticipation()
+    public function showMyContributions()
     {
         $discussion_ids = Auth::user()->responses->lists('discussion_id')->toArray();
         $discussions = Discussion::whereIn('id', $discussion_ids)->orWhere('user_id', Auth::user()->id);

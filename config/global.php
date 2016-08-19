@@ -2,5 +2,5 @@
 
 return [
 	'perPage' => 10,
-	'numberOfLikesToBePopular' => 5
+	'numberOfLikesToBePopular' => 0
 ];

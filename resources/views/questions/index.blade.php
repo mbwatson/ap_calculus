@@ -25,16 +25,16 @@
                 <ul class="filters-list dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.index') }}">All Questions</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.mine') }}">My Questions</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.myparticipation') }}">My Participation</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.favorites') }}">My Favorites</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.popular') }}">Popular Questions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['group'] == 'mine') ? 'active' : ''}}" href="{{ route('questions.index', ['group' => 'mine'] + $filters) }}">My Questions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['group'] == 'my_contributions') ? 'active' : ''}}" href="{{ route('questions.index', ['group' => 'my_contributions'] + $filters) }}">My Contributions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['group'] == 'my_favorites') ? 'active' : ''}}" href="{{ route('questions.index', ['group' => 'my_favorites'] + $filters) }}">My Favorites</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['group'] == 'popular') ? 'active' : ''}}" href="{{ route('questions.index', ['group' => 'popular'] + $filters) }}">Popular Questions</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.active') }}">Calculator Active</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.calculator.inactive') }}">Calculator Inactive</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['calculator'] == 'active') ? 'active' : ''}}" href="{{ route('questions.index', ['calculator' => 'active'] + $filters) }}">Calculator Active</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['calculator'] == 'inactive') ? 'active' : ''}}" href="{{ route('questions.index', ['calculator' => 'inactive'] + $filters) }}">Calculator Inactive</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.freeresponse') }}">Free Response</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('questions.multiplechoice') }}">Multiple Choice</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['type'] == 'free_response') ? 'active' : ''}}" href="{{ route('questions.index', ['type' => 'free_response'] + $filters) }}">Free Response</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['type'] == 'multiple_choice') ? 'active' : ''}}" href="{{ route('questions.index', ['type' => 'multiple_choice'] + $filters) }}">Multiple Choice</a></li>
                 </ul>
             </div>
             <br />
@@ -56,7 +56,7 @@
                     </div>
                 @endif
             </div>
-            <center>{{ $questions->links() }}</center>
+            <center>{{ $questions->appends($filters)->links() }}</center>
         </div>
     </div>
 </div>

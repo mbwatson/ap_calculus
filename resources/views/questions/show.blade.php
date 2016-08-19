@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="meta">
-                        @if ($question->type == 'Free Response')
+                        @if ($question->type == 'free_response')
                             <i class="fa fa-pencil-square-o"></i> Free Response
                         @else
                             <i class="mdi mdi-format-list-bulleted mdi-18px"></i> Multiple Choice
@@ -110,7 +110,7 @@
         </div>
     </div>
 
-    <!-- questions List -->
+    <!-- Questions List -->
 
     @if (count($question->comments) > 0)
         @foreach ($question->comments as $comment)
@@ -120,11 +120,11 @@
 
     <!-- New question Form -->
 
-    {!! Form::open(['route' => 'questions.store', 'class' => 'question-form']) !!}
+    {!! Form::open(['route' => 'comments.store', 'class' => 'comment-form']) !!}
     {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => '5', 'placeholder' => 'I\'ve got something to say!']) !!}
     {!! Form::hidden('question_id', $question->id) !!}
     <br />
-    {!! Form::submit('Post question', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Post Comment', ['class' => 'btn btn-primary']) !!}
     {!! Form::close() !!}
 
 </div>
