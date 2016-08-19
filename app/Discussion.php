@@ -117,8 +117,8 @@ class Discussion extends Model implements Likeable
 
     public function scopeWithResponsesFrom($query, User $user)
     {
-        $discussion_ids = $user->comments->lists('discussion_id')->toArray();
+        $discussion_ids = $user->responses->lists('discussion_id')->toArray();
 
-        return Question::whereIn('id', $discussion_ids);
+        return Discussion::whereIn('id', $discussion_ids);
     }
 }
