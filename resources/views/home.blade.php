@@ -36,7 +36,7 @@
     
     <div class="row">
         <div class="col-xs-12 col-md-6">
-            <p class="fancy-heading"><span><i class="mdi mdi-comment-multiple-outline"></i>Latest Questions</span></p>
+            <p class="fancy-heading"><span><i class="mdi mdi-comment-question-outline"></i>Latest Questions</span></p>
             <div class="panel">
                 <table class="posts">
                     @foreach (App\Question::take(3)->orderBy('created_at', 'desc')->get() as $question)

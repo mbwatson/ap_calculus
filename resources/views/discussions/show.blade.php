@@ -1,3 +1,7 @@
+@if (isset($channels))
+    dd($channels);
+@endif
+
 @extends('layouts.master')
 
 @section('title', $discussion->title)
