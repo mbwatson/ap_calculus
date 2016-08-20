@@ -79,7 +79,7 @@
 
             <br /><br />
             
-            <p class="fancy-heading"><span><i class="mdi mdi-heart"></i>Recent Favorites</span></p>
+            <p class="fancy-heading"><span><i class="mdi mdi-heart-outline"></i>Recent Favorites</span></p>
             <div class="panel panel-default posts">
                 @if ($user->favorites->count() > 0)
                     @foreach ($user->recentFavorites(3)->get() as $question)
