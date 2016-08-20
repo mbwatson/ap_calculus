@@ -39,9 +39,6 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         $filters = $request->only('group', 'calculator', 'type');
-        $breadcrumb = 'questions.index.all';
-
-        $questions = Question::query();
         switch ($filters['group']) {
             case 'mine':
                 $questions = Auth::user()->questions();
@@ -59,6 +56,9 @@ class QuestionController extends Controller
                 $questions = Question::popular();
                 $breadcrumb = 'questions.popular';
                 break;
+            default:
+                $questions = Question::query();
+                $breadcrumb = 'questions.index.all';
         }
 
         if ($filters['calculator'] == 'active')     { $questions->calculatorActive(); }
