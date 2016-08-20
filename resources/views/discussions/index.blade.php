@@ -27,10 +27,13 @@
                     Filters
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['group'] == 'mine') ? 'active' : ''}}" href="{{ route('discussions.index', ['group' => 'mine'] + $filters) }}">My Discussions</a></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ ($filters['group'] == 'my_contributions') ? 'active' : ''}}" href="{{ route('discussions.index', ['group' => 'my_contributions'] + $filters) }}">My Contributions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ (isset($filters['group']) && $filters['group'] == 'mine') ? 'active' : ''}}"
+                            href="{{ route('discussions.index', ['group' => 'mine']) }}">My Discussions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ (isset($filters['group']) && $filters['group'] == 'my_contributions') ? 'active' : ''}}"
+                            href="{{ route('discussions.index', ['group' => 'my_contributions']) }}">My Contributions</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.popular') }}">Popular Discussions</a></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ (isset($filters['group']) && $filters['group'] == 'popular') ? 'active' : ''}}"
+                            href="{{ route('discussions.index', ['group' => 'popular']) }}">Popular Discussions</a></li>
                 </ul>
             </div>
             <br />

@@ -39,6 +39,7 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         $filters = $request->only('group', 'calculator', 'type');
+
         switch ($filters['group']) {
             case 'mine':
                 $questions = Auth::user()->questions();
@@ -75,73 +76,6 @@ class QuestionController extends Controller
     }
 
     /**
-     * Show list of calculator active questions
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showCalculatorActiveQuestions()
-    {
-        return view('questions.index', [
-            'questions' => Question::calculatorActive()->latest('created_at')->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.calculator.active'
-        ]);
-    }
-
-    /**
-     * Show list of calculator inactive questions
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showCalculatorInactiveQuestions()
-    {
-        return view('questions.index', [
-            'questions' => Question::calculatorInactive()->latest('created_at')->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.calculator.inactive'
-        ]);
-    }
-    
-    /**
-     * Show questions types as Free Response
-     * 
-     * @param  App\Question
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function showFreeResponseQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Question::latest('updated_at')->freeResponse()->paginate(config('global.perPage')),
-            'breadcrumbs' => 'questions.freeresponse'
-        ]);
-    }
-
-    /**
-     * Show questions types as Multiple Choice
-     * 
-     * @param  App\Question
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function showMultipleChoiceQuestions(Question $question)
-    {
-        return view('questions.index', [
-            'questions' => Question::latest('updated_at')->multipleChoice()->paginate(config('global.perPage')),
-            'breadcrumbs' => 'questions.multiplechoice'
-        ]);
-    }
-
-    /**
-     * Show list of popular questions
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showPopularQuestions()
-    {
-        return view('questions.index', [
-            'questions' => Question::popular()->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.popular'
-        ]);
-    }
-
-    /**
      * Show list of questions with specified standards
      * 
      * @param  Array
@@ -151,19 +85,6 @@ class QuestionController extends Controller
     {
         return view('questions.index', [
             'questions' => Question::latest('updated_at')->withStandards([$ids])->paginate(config('global.perPage'))
-        ]);
-    }
-
-    /**
-     * Show questions favorited by logged user
-     * 
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function showMyFavorites()
-    {
-        return view('questions.index', [
-            'questions' => Auth::user()->favorites()->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.favorites'
         ]);
     }
 
@@ -178,6 +99,17 @@ class QuestionController extends Controller
         $question->load('comments.user');
 
         return view('questions.show', ['question' => $question]);
+    }
+
+    /**
+     * Display printer-friendly output of question
+     * 
+     * @param  App\Question
+     * @return \Illuminate\Http\Response
+     */
+    public function showPrintable(Question $question)
+    {
+        return view('questions.showprintable', ['question' => $question]);
     }
 
     /**
@@ -272,17 +204,6 @@ class QuestionController extends Controller
         session()->flash('flash_message', 'Question successfully deleted!');
 
         return redirect()->route('questions.index');
-    }
-
-    /**
-     * Display printer-friendly output of question
-     * 
-     * @param  App\Question
-     * @return \Illuminate\Http\Response
-     */
-    public function showPrintable(Question $question)
-    {
-        return view('questions.showprintable', ['question' => $question]);
     }
 
 }

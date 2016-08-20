@@ -73,6 +73,11 @@ Breadcrumbs::register('discussions.mine', function($breadcrumbs) {
 	$breadcrumbs->push('My Discussions', route('discussions.mine'));
 });
 
+Breadcrumbs::register('discussions.mycontributions', function($breadcrumbs) {
+	$breadcrumbs->parent('discussions.index');
+	$breadcrumbs->push('Discussions to which I\'ve Contributed', route('discussions.index'));
+});
+
 Breadcrumbs::register('discussions.popular', function($breadcrumbs) {
 	$breadcrumbs->parent('discussions.index');
 	$breadcrumbs->push('Popular', route('discussions.popular'));

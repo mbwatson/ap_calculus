@@ -20,13 +20,27 @@ class DiscussionController extends Controller
     {
         $filters = $request->only('group');
 
-        $discussions = Discussion::query();
-        if ($filters['group'] == 'mine')                { $discussions = Auth::user()->discussions(); }
-        if ($filters['group'] == 'my_contributions')    { $discussions = Discussion::withResponsesFrom(Auth::user()); }
+        switch ($filters['group']) {
+            case 'mine':
+                $discussions = Auth::user()->discussions();
+                $breadcrumb = 'discussions.mine';
+                break;
+            case 'my_contributions':
+                $discussions = Discussion::withResponsesFrom(Auth::user());
+                $breadcrumb = 'discussions.mycontributions';
+                break;
+            case 'popular':
+                $discussions = Discussion::popular();
+                $breadcrumb = 'discussions.popular';
+                break;
+            default:
+                $discussions = Discussion::query();
+                $breadcrumb = 'discussions.index.all';
+        }
 
         return view('discussions.index', [
             'discussions' => $discussions->latest('created_at')->paginate(config('global.perPage')),
-            'breadcrumb' => 'discussions.index.all',
+            'breadcrumb' => $breadcrumb,
             'filters' => $filters
         ]);
     }
@@ -67,6 +81,13 @@ class DiscussionController extends Controller
         return view('discussions.show', [
         	'discussion' => $discussion
         ]);
+    }
+
+    public function showDiscussionsInChannel(Channel $channel)
+    {
+        return view('discussions.index', [
+            'discussions' => Discussion::latest('updated_at')->inChannel($channel)->paginate(config('global.perPage'))
+        ])->with('channel', $channel);
     }
 
     public function edit(Discussion $discussion)
@@ -115,54 +136,6 @@ class DiscussionController extends Controller
         session()->flash('flash_message', 'Discussion successfully deleted!');
 
         return redirect()->route('discussions.index');
-    }
-
-    public function showDiscussionsInChannel(Channel $channel)
-    {
-        return view('discussions.index', [
-            'discussions' => Discussion::latest('updated_at')->inChannel($channel)->paginate(config('global.perPage'))
-        ]);
-    }
-
-    /**
-     * Retrieve discussions I created
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function showMyDiscussions()
-    {
-        return view('discussions.index', [
-            'discussions' => Auth::user()->discussions()->paginate(config('global.perPage')),
-            'breadcrumb' => 'discussions.mine'
-        ]);
-    }
-
-    /**
-     * Retrieve the logged user's discussions and those for which the user has left a response
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function showMyContributions()
-    {
-        $discussion_ids = Auth::user()->responses->lists('discussion_id')->toArray();
-        $discussions = Discussion::whereIn('id', $discussion_ids)->orWhere('user_id', Auth::user()->id);
-
-        return view('discussions.index', [
-            'discussions' => $discussions->orderBy('created_at', 'desc')->paginate(config('global.perPage'))
-        ]);
-    }
-
-    /**
-     * Show list of popular discussions
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showPopularDiscussions()
-    {
-        return view('discussions.index', [
-            'discussions' => Discussion::popular()->paginate(config('global.perPage')),
-            'breadcrumb' => 'discussions.popular'
-        ]);
     }
 
 }
