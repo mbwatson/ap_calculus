@@ -192,7 +192,7 @@ What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
 				'id' => 13,
 				'type' => '2',
 				'calculator' => '0',
-				'title' => 'Partcle Motion',
+				'title' => 'Particle Motion',
 				'body' => '<p>For time $t \geq 0$, the velocity of a particle moving along the $x$-axis is given by $v(t) = (t-5)(t-2)^2$. At what values of $t$ is the acceleration of the particle equal to 0?</p>
 <p>(A) 2 only</p>
 <p>(B) 4 only</p>
