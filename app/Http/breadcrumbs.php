@@ -175,17 +175,22 @@ Breadcrumbs::register('questions.calculator.neutral', function($breadcrumbs) {
 
 Breadcrumbs::register('questions.mine', function($breadcrumbs) {
 	$breadcrumbs->parent('questions.index');
-	$breadcrumbs->push('My Questions', route('questions.mine'));
+	$breadcrumbs->push('My Questions', route('questions.index'));
+});
+
+Breadcrumbs::register('questions.mycontributions', function($breadcrumbs) {
+	$breadcrumbs->parent('questions.index');
+	$breadcrumbs->push('Questions to which I\'ve Contributed', route('questions.index'));
 });
 
 Breadcrumbs::register('questions.favorites', function($breadcrumbs) {
 	$breadcrumbs->parent('questions.index');
-	$breadcrumbs->push('My Favorites', route('questions.favorites'));
+	$breadcrumbs->push('My Favorites', route('questions.index'));
 });
 
 Breadcrumbs::register('questions.popular', function($breadcrumbs) {
 	$breadcrumbs->parent('questions.index');
-	$breadcrumbs->push('Popular', route('questions.popular'));
+	$breadcrumbs->push('Popular', route('questions.index'));
 });
 
 Breadcrumbs::register('questions.create', function($breadcrumbs) {

@@ -50,7 +50,6 @@ Route::group(['middleware' => 'auth'], function() {
 	// Channel Routes
 
 	Route::get('channels/{channel_id}/restore', 		[ 'uses' => 'ChannelController@restore', 	'as' => 'channels.restore' ]);
-	
 	Route::resource('channels', 'ChannelController');
 	
 	// Discussion Routes

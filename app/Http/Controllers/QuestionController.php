@@ -39,12 +39,27 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         $filters = $request->only('group', 'calculator', 'type');
+        $breadcrumb = 'questions.index.all';
 
         $questions = Question::query();
-        if ($filters['group'] == 'mine')                { $questions = Auth::user()->questions(); }
-        if ($filters['group'] == 'my_contributions')    { $questions = Question::withCommentsFrom(Auth::user()); }
-        if ($filters['group'] == 'my_favorites')        { $questions = Auth::user()->favorites(); }
-        if ($filters['group'] == 'popular')             { $questions = Question::popular(); }
+        switch ($filters['group']) {
+            case 'mine':
+                $questions = Auth::user()->questions();
+                $breadcrumb = 'questions.mine';
+                break;
+            case 'my_contributions':
+                $questions = Question::withCommentsFrom(Auth::user());
+                $breadcrumb = 'questions.mycontributions';
+                break;
+            case 'my_favorites':
+                $questions = Auth::user()->favorites();
+                $breadcrumb = 'questions.favorites';
+                break;
+            case 'popular':
+                $questions = Question::popular();
+                $breadcrumb = 'questions.popular';
+                break;
+        }
 
         if ($filters['calculator'] == 'active')     { $questions->calculatorActive(); }
         if ($filters['calculator'] == 'inactive')   { $questions->calculatorInactive(); }
@@ -54,7 +69,7 @@ class QuestionController extends Controller
         
         return view('questions.index', [
             'questions' => $questions->latest('created_at')->paginate(config('global.perPage')),
-            'breadcrumb' => 'questions.index.all',
+            'breadcrumb' => $breadcrumb,
             'filters' => $filters
         ]);
     }
