@@ -32,7 +32,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Show list of all questions
+     * Show list of questions
      *
      * @return \Illuminate\Http\Response
      */

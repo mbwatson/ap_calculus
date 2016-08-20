@@ -38,7 +38,7 @@
                         </div>
                     @endforeach
                     <div class="panel-body">
-                        <a href="{{ route('discussions.mine') }}" class="pull-right">View All</a>
+                        <a href="{{ route('questions.index', ['group' => 'mine']) }}" class="pull-right">View All</a>
                     </div>
                 @else
                     <div class="panel-body text-center">
@@ -68,7 +68,7 @@
                         </div>
                     @endforeach
                     <div class="panel-body">
-                        <a href="{{ route('questions.mine') }}" class="pull-right">View All</a>
+                        <a href="{{ route('questions.index', ['group' => 'mine']) }}" class="pull-right">View All</a>
                     </div>
                 @else
                     <div class="panel-body text-center">
@@ -98,7 +98,7 @@
                         </div>
                     @endforeach
                     <div class="panel-body">
-                        <a href="{{ route('questions.favorites') }}" class="pull-right">View All</a>
+                        <a href="{{ route('questions.index', ['group' => 'my_favorites']) }}" class="pull-right">View All</a>
                     </div>
                 @else
                     <div class="panel-body text-center">

@@ -5,7 +5,7 @@
 @section('question')
     <div class="text-center">
         <h3>{{ $question->title }}</h3>
-        <span class="text-muted">{{ $question->type }}</span><br />
+        <span class="text-muted">{{ ucwords(str_replace('_', ' ', $question->type)) }}</span><br />
         <span class="text-muted">Calculator {{ $question->calculator }}</span>
     </div>
     <br />
