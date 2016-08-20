@@ -48,6 +48,7 @@
                             </li>
                             <li>ability to flag all posts as spam</li>
                             <li>fix table seeders to not be so inefficient</li>
+                            <li>activity log</li>
                         </ul>
                     </div>
                 </div>
@@ -58,16 +59,14 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="panel-heading">
-                        frontend Improvements
+                        Frontend Improvements
                     </div>
                 
                     <div class="panel-body">
                         <ul>
-                            <li>more in sidebar; should it even exist?</li>
-                            <li>channels list layout/look</li>
+                            <li>channels list layout/look change? pills? tabs?</li>
                             <li>assistance for inexperienced $\LaTeX$ users</li>
                             <li>improve dashboard</li>
-                            <li>ajax for favorites and likes to update page and not redirect</li>
                         </ul>
                     </div>
                 </div>
