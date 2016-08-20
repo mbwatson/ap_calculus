@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="btn-group col-md-5" data-toggle="buttons" style="display: flex;">
+  <div class="btn-group col-md-4 col-md-offset-2" data-toggle="buttons" style="display: flex;">
       <label class="btn btn-primary {{ (isset($question->type) && $question->type == 'free_response') ? 'active' : ''}}" style="flex: 1;">
           <input type="radio" name="type" autocomplete="off" value="1"  {{ (isset($question->type) && $question->type == 'free_response') ? 'checked' : ''}}> <span class="fa fa-pencil-square-o"></span> Free Response
       </label>
@@ -18,17 +18,17 @@
 </div>
 <br />
 
-{!! Form::text('title', null, ['class' => 'form-control form-title', 'placeholder' => 'Enter Title Here']) !!}
 
 <div class="form-group">
     <div class="row" id="post">
-        <div class="col-xs-2 text-center">
+        <div class="col-xs-2 user-info text-center">
             <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
                 <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
                 <span class="username">{{ Auth::user()->name }}</span>
             </div>
         </div>
         <div class="col-xs-10">
+          {!! Form::text('title', null, ['class' => 'form-control form-title', 'placeholder' => 'Enter Title Here']) !!}
           {!! Form::textarea('body', null, ['id' => 'post-textarea', 'class' => 'form-control body']) !!}
 
           <br />
