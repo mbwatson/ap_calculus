@@ -34,6 +34,8 @@
                     <li role="separator" class="divider"></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ (isset($filters['group']) && $filters['group'] == 'popular') ? 'active' : ''}}"
                             href="{{ route('discussions.index', ['group' => 'popular']) }}">Popular Discussions</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="dropdown-item btn btn-link btn-xs btn-block" href="{{ route('discussions.index') }}">Reset</a></li>
                 </ul>
             </div>
             <br />
