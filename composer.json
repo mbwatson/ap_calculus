@@ -14,7 +14,8 @@
         "unisharp/laravel-filemanager": "^1.5",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "draperstudio/laravel-likeable": "^0.1.0",
-        "cviebrock/eloquent-sluggable": "^4.0"
+        "cviebrock/eloquent-sluggable": "^4.0",
+        "creativeorange/gravatar": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

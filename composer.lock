@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e6699c0a8a629b6ccb9a8c890abb984d",
-    "content-hash": "d80059dfaf752668aad76ffaad945b74",
+    "hash": "d6d959b0f05c2f3cccc308ebf75407bc",
+    "content-hash": "a3ff25bedba4c5752ed4adb9ea790168",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -124,6 +124,50 @@
                 "slugify"
             ],
             "time": "2016-08-09 20:10:17"
+        },
+        {
+            "name": "creativeorange/gravatar",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/creativeorange/gravatar.git",
+                "reference": "06cfcd2754fe0678298da1d244ab17231368d291"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/creativeorange/gravatar/zipball/06cfcd2754fe0678298da1d244ab17231368d291",
+                "reference": "06cfcd2754fe0678298da1d244ab17231368d291",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Creativeorange\\Gravatar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaco Tijssen",
+                    "email": "jaco@creativeorange.nl",
+                    "homepage": "https://www.creativeorange.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel 5.0, 5.1, 5.2 and 5.3 gravatar package for retrieving gravatar image URLs or checking the existance of an image.",
+            "keywords": [
+                "avatar",
+                "gravatar",
+                "laravel"
+            ],
+            "time": "2016-07-27 16:49:05"
         },
         {
             "name": "cviebrock/eloquent-sluggable",
