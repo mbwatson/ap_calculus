@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row profile">
             <div class="hidden-xs col-sm-3 text-center">
-                <img class="avatar" src="{{ url('/') }}/avatars/{{ $user->avatar }}">
+                <img class="avatar" src="{{ Gravatar::get($user->email) }}">
             </div>
             <div class="col-xs-12 col-sm-9 heading">
                 <h1>{{ $user->name }}</h1>
