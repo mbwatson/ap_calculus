@@ -82,7 +82,7 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="navbar-link"><a href="{{ url('standards') }}"><span class="mdi mdi-format-list-bulleted"></span>Overview</a></li>
-                                    <li class="navbar-link"><a href="{{ url('standards/mpacs') }}"><span class="mdi mdi-android-studio"></span>MPACs</a></li>
+                                    <li class="navbar-link"><a href="{{ url('standards/mpacs') }}"><span class="mdi mdi-math-compass"></span>MPACs</a></li>
                                     <li class="navbar-link"><a href="{{ url('standards/big-ideas') }}"><span class="mdi mdi-lightbulb"></span>Big Ideas</a></li>
                                 </ul>
                             </li>
