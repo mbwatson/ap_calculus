@@ -20,11 +20,9 @@
             </div>
         </div>
         <div class="row details">
-            <br /><br />
             <div class="col-xs-12 col-sm-9 col-sm-offset-3">
-                {{ $user->bio }}
+                <p style="margin: 25px 0;">{!! nl2br(e($user->bio)) !!}</p>
             </div>
-            <br /><br /><br /><br />
             <div class="hidden-xs col-sm-9 col-sm-offset-3" style="display: flex; justify-content: space-between;">
                 <span><i class="mdi mdi-comment-question-outline"></i> {{ $user->questions->count() }} {{ str_plural('question', $user->questions->count()) }}</span>
                 <span><i class="mdi mdi-comment-outline"></i> {{ $user->comments->count() }} {{ str_plural('comment', $user->comments->count()) }}</span>
