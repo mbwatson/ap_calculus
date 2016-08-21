@@ -26,6 +26,10 @@
 
 .navbar-auth {
 	margin-right: 32px;
+
+	.user-name {
+		font-weight: bold;
+	}
 }
 
 .navbar-links {
