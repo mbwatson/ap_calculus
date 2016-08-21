@@ -21,7 +21,7 @@
                     <div class="panel-body text-center">
                         <div class="{{ $user->isOnline() ? 'active' : '' }}-user">
                             <a href="{{ route('users.show', $user) }}">
-                                <img class="avatar" src="{{ url('/') }}/avatars/{{ $user->avatar }}"><br />
+                                <img class="avatar" src="{{ Gravatar::get($user->email) }}"><br />
                                 <span class="username">{{ $user->name }}</span>
                             </a>
                         </div>

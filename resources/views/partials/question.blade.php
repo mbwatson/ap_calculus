@@ -4,7 +4,7 @@
         <!-- User Info -->
         <div class="{{ $question->user->isOnline() ? 'active-' : '' }}user">
             <a href="{{ route('users.show', $question->user) }}">
-                <img class="avatar" src="{{ url('/') }}/avatars/{{ $question->user->avatar }}"><br />
+                <img class="avatar" src="{{ Gravatar::get($question->user->email) }}"><br />
                 <span class="username">{{ $question->user->name }}</span>
             </a>
         </div>

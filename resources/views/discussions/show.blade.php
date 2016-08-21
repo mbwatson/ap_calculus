@@ -33,7 +33,7 @@
                 <div class="col-md-2">
                     <div class="user-info {{ $discussion->user->isOnline() ? 'active-' : '' }}user text-center">
                         <a href="{{ route('users.show', $discussion->user) }}">
-                            <img class="avatar" src="{{ url('/') }}/avatars/{{ $discussion->user->avatar }}"><br />
+                            <img class="avatar" src="{{ Gravatar::get($discussion->user->email) }}"><br />
                             <span class="username">{{ $discussion->user->name }}</span>
                         </a>
                     </div>

@@ -16,7 +16,7 @@
                 <div class="hidden-xs col-md-2">
                     <div class="user-info {{ $question->user->isOnline() ? 'active-' : '' }}user text-center">
                         <a href="{{ route('users.show', $question->user) }}">
-                            <img class="avatar" src="{{ url('/') }}/avatars/{{ $question->user->avatar }}"><br />
+                            <img class="avatar" src="{{ Gravatar::get($question->user->email) }}"><br />
                             <span class="username">{{ $question->user->name }}</span>
                             <br /><br />
                             <span class="meta">

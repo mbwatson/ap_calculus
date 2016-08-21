@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-2">
                 <div class="{{ $comment->user->isOnline() ? 'active-' : '' }}user text-center">
                     <a href="{{ route('users.show', $comment->user) }}">
-                        <img class="avatar" src="{{ url('/') }}/avatars/{{ $comment->user->avatar }}"><br />
+                        <img class="avatar" src="{{ Gravatar::get($comment->user->email) }}"><br />
                         <span class="username">{{ $comment->user->name }}</span>
                     </a>
                 </div>

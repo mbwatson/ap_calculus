@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-2">
                 <div class="{{ $response->user->isOnline() ? 'active-' : '' }}user text-center">
                     <a href="{{ route('users.show', $response->user) }}">
-                        <img class="avatar" src="{{ url('/') }}/avatars/{{ $response->user->avatar }}"><br />
+                        <img class="avatar" src="{{ Gravatar::get($response->user->email) }}"><br />
                         <span class="username">{{ $response->user->name }}</span>
                     </a>
                 </div>

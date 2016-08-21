@@ -79,35 +79,6 @@ class AccountController extends Controller
         return redirect()->route('account.index');
     }
 
-    /**
-     * Handle upload of user avatar
-     *
-     * @param  array $request
-     * @return \Illuminate\Http\Response
-     */
-    public function update_avatar(Request $request)
-    {
-
-    	if ($request->hasFile('avatar')) {
-    		$avatar = $request->file('avatar');
-    		$newfilename = time() . '.' . $avatar->getClientOriginalExtension();
-    		Image::make($avatar)->fit(300, 300)->save(public_path('/avatars/' . $newfilename));
-
-    		// Delete old avatar image
-    		if (Auth::user()->avatar != 'default.jpg') {
-    			File::delete(public_path('/avatars/' . Auth::user()->avatar));
-    		}
-
-    		$user = Auth::user();
-    		$user->avatar = $newfilename;
-    		$user->save();
-
-            session()->flash('flash_message', 'Avatar successfully changed!');
-    	}
-
-    	return view('account.index', ['user' => Auth::user()]);
-    }
-
     public function toggleFavorite($id)
     {
         $question = Question::find($id);

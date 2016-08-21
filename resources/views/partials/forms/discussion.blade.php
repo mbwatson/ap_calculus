@@ -13,7 +13,7 @@
     <div class="row" id="post">
         <div class="col-xs-2 text-center">
             <div class="{{ Auth::user()->isOnline() ? 'active-' : '' }}user text-center">
-                <img class="avatar" src="{{ url('/') }}/avatars/{{ Auth::user()->avatar }}"><br />
+                <img class="avatar" src="{{ Gravatar::get(Auth::user()->email) }}"><br />
                 <span class="username">{{ Auth::user()->name }}</span>
             </div>
         </div>
