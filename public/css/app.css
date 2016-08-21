@@ -11813,7 +11813,9 @@ label,
   padding: 0; }
 
 button, .btn {
-  border-radius: 0; }
+  border-radius: 0;
+  transition: background-color 0.5s ease;
+  transition: color 0.5s ease; }
 
 .btn-white {
   background-color: #fff;

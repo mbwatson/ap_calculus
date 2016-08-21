@@ -10,21 +10,19 @@
 
 <div class="container">
 
-    <h1>Registered Users</h1>
+    <p class="fancy-heading"><span><i class="mdi mdi-account-multiple"></i>Users</span></p>
 
     <!-- Users List -->
     
     <div class="row">
         @foreach($users as $user)
-            <div class="col-xs-12 col-sm-4 col-md-2">
+            <div class="col-xs-6 col-sm-3 col-md-2 clear-fix">
                 <div class="panel panel-default">
-                    <div class="panel-body text-center">
-                        <div class="{{ $user->isOnline() ? 'active' : '' }}-user">
-                            <a href="{{ route('users.show', $user) }}">
-                                <img class="avatar" src="{{ Gravatar::get($user->email) }}"><br />
-                                <span class="username">{{ $user->name }}</span>
-                            </a>
-                        </div>
+                    <div class="panel-body text-center {{ $user->isOnline() ? 'active-' : '' }}user">
+                        <a href="{{ route('users.show', $user) }}">
+                            <img class="avatar" src="{{ Gravatar::get($user->email) }}"><br />
+                            <span class="username">{{ $user->name }}</span>
+                        </a>
                     </div>
                 </div>
             </div>
