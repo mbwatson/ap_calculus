@@ -26,7 +26,7 @@
                 <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Filters
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <ul class="filters-list dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ (isset($filters['group']) && $filters['group'] == 'mine') ? 'active' : ''}}"
                             href="{{ route('discussions.index', ['group' => 'mine']) }}">My Discussions</a></li>
                     <li><a class="dropdown-item btn btn-link btn-xs btn-block {{ (isset($filters['group']) && $filters['group'] == 'my_contributions') ? 'active' : ''}}"
