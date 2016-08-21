@@ -163,6 +163,7 @@ return [
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         DraperStudio\Likeable\ServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Creativeorange\Gravatar\GravatarServiceProvider::class,
     ],
 
     /*
@@ -209,10 +210,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
     ],
 
 ];
