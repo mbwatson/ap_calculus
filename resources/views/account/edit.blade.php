@@ -11,8 +11,11 @@
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-body profile">
-                <div class="col-xs-12 col-sm-3 text-center">
+                <div class="col-xs-12 col-sm-3 text-center user-info">
+                    <br />
                     <img class="avatar" src="{{ Gravatar::get($user->email) }}">
+                    <br /><br />
+                    This site uses <a href="http://en.gravatar.com" target="_blank">Gravatar</a>.
                 </div>
                 <div class="col-xs-12 col-md-9">
                     {!! Form::model($user, [ 'route' => ['account.update', $user], 'method' => 'PATCH' ]) !!}
