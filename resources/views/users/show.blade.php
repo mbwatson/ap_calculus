@@ -44,28 +44,24 @@
     <div class="activities">
         @foreach ($activities as $activity)
             <div class="row activity">
-                <div class="col-xs-2 text-center date">
-                    <h5>
-                        <i class="glyphicon glyphicon-calendar"></i> {{ $activity->created_at->toFormattedDateString() }}<br /><br />
-                    </h5>
+                <div class="col-xs-2 text-right date">
+                    <i class="mdi mdi-calendar"></i> {{ $activity->created_at->toFormattedDateString() }}
+                    <br /><br />
                 </div>
                 <div class="col-xs-9 col-xs-offset-1 details">
-                    <h5>
-                        @if (preg_match('/Question/', get_class($activity)))
-                            <span class="mdi mdi-comment-question-outline"></span>
-                            Posted a question titled <a href="{{ route('questions.show', $activity) }}">{{ $activity->title }}</a>
-                        @elseif (preg_match('/Comment/', get_class($activity)))
-                            <span class="mdi mdi-comment-outline"></span>
-                            Commented on the question <a href="{{ route('questions.show', $activity->question) }}">{{ $activity->question->title }}</a>
-                        @elseif (preg_match('/Discussion/', get_class($activity)))
-                            <span class="mdi mdi-forum"></span>
-                            Started a discussion called <a href="{{ route('discussions.show', $activity) }}">{{ $activity->title }}</a> in
-                        @elseif (preg_match('/Response/', get_class($activity)))
-                            <span class="mdi mdi-comment-text"></span>
-                            Contributed to the discussion <a href="{{ route('discussions.show', $activity->discussion) }}">{{ $activity->discussion->title }}</a>
-                        @endif
-                        &mdash; {{ $activity->created_at->diffForHumans() }}
-                    </h5>
+                    @if (preg_match('/Question/', get_class($activity)))
+                        <span class="mdi mdi-comment-question-outline"></span>
+                        Posted a question titled <a href="{{ route('questions.show', $activity) }}">{{ $activity->title }}</a>
+                    @elseif (preg_match('/Comment/', get_class($activity)))
+                        <span class="mdi mdi-comment-outline"></span>
+                        Commented on the question <a href="{{ route('questions.show', $activity->question) }}">{{ $activity->question->title }}</a>
+                    @elseif (preg_match('/Discussion/', get_class($activity)))
+                        <span class="mdi mdi-forum"></span>
+                        Started a discussion called <a href="{{ route('discussions.show', $activity) }}">{{ $activity->title }}</a>
+                    @elseif (preg_match('/Response/', get_class($activity)))
+                        <span class="mdi mdi-comment-text"></span>
+                        Contributed to the discussion <a href="{{ route('discussions.show', $activity->discussion) }}">{{ $activity->discussion->title }}</a>
+                    @endif
                 </div>
             </div>
         @endforeach

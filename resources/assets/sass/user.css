@@ -38,26 +38,6 @@
 
 	.activity {
 
-		.date {
-			height: 75px;
-			position: relative;
-		}
-
-		.date h5 {
-			background-color: #f5f5f1;
-			font-weight: 500;
-		}
-
-		.date:after {
-			content: "";
-			position: absolute;
-			z-index: -1;
-			left: 50%;
-			top: 20px;
-			bottom: 0;
-			border-left: 1px solid #d5d5d1;
-		}
-
 		div {
 			padding: 0;
 		}
