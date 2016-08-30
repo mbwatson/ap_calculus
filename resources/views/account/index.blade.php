@@ -57,7 +57,7 @@
                             <div class="col-xs-12 col-sm-11">
                                 <h4><a href="{{ route('questions.show', $question) }}">{{ $question->title }}</a></h4>
                                 <div class="meta">
-                                    Started {{ $question->created_at->diffForHumans() }}
+                                    Posted {{ $question->created_at->diffForHumans() }}
                                 </div>
                             </div>
                             <div class="hidden-xs col-sm-1">
@@ -72,7 +72,7 @@
                     </div>
                 @else
                     <div class="panel-body text-center">
-                        You have yet to start any discussions!
+                        You have yet to post any questions!
                     </div>
                 @endif
             </div>
