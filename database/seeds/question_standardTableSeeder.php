@@ -92,6 +92,19 @@ class question_standardTableSeeder extends Seeder {
 			[ 'question_id' => 16, 'standard_id' => 2 ],
 			[ 'question_id' => 16, 'standard_id' => 3 ],
 			[ 'question_id' => 16, 'standard_id' => 48 ],
+			[ 'question_id' => 17, 'standard_id' => 1 ],
+			[ 'question_id' => 17, 'standard_id' => 2 ],
+			[ 'question_id' => 17, 'standard_id' => 3 ],
+			[ 'question_id' => 17, 'standard_id' => 6 ],
+			[ 'question_id' => 17, 'standard_id' => 24 ],
+			[ 'question_id' => 17, 'standard_id' => 25 ],
+			[ 'question_id' => 17, 'standard_id' => 27 ],
+			[ 'question_id' => 17, 'standard_id' => 28 ],
+			[ 'question_id' => 18, 'standard_id' => 1 ],
+			[ 'question_id' => 18, 'standard_id' => 2 ],
+			[ 'question_id' => 18, 'standard_id' => 5 ],
+			[ 'question_id' => 18, 'standard_id' => 25 ],
+			[ 'question_id' => 18, 'standard_id' => 27 ],
 		);
 
 		DB::table('question_standard')->insert($seeds);
