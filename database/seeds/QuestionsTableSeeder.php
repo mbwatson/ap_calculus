@@ -253,8 +253,8 @@ What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
 				'calculator' => 0,
 				'title' => 'End Behavior Models',
 				'body' => '<p>Let $f$ be defined by $f(x) = x + e^{-x}$.</p>
-<p>(A) Show that $h(x) = e^{-x}$ is a left end behavior model for $f$.</p>
-<p>(B) Show that $g(x) = x$ is a right end behavior model for $f$.</p>',
+<p>(a) Show that $h(x) = e^{-x}$ is a left end behavior model for $f$.</p>
+<p>(b) Show that $g(x) = x$ is a right end behavior model for $f$.</p>',
 				'user_id' => '1',
 				'created_at' => Carbon::now()->addSecond(16)->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->addSecond(16)->format('Y-m-d H:i:s')
@@ -266,9 +266,9 @@ What is the value of $g\Big(\frac{1}{2}\Big) + g\'\Big(\frac{1}{2}\Big)$</p>
 				'title' => 'One-Sided Limits and the Greatest Integer Function',
 				'body' => '<p>Recall that $\lfloor x \rfloor$ denotes the greatest integer function, which gives the largest integer than is greater than or equal to $x$.</p>
 <p>Suppose $k$ is an integer.</p>
-<p>(A) Find the value of $\lim_{x \to k^-}\lfloor x \rfloor$.</p>
-<p>(B) Find the value of $\lim_{x \to k^+}\lfloor x \rfloor$.</p>
-<p>(C) Does $\lim_{x \to k} \lfloor x \rfloor$ exist? Explain why or why not.</p>',
+<p>(a) Find the value of $\lim_{x \to k^-}\lfloor x \rfloor$.</p>
+<p>(b) Find the value of $\lim_{x \to k^+}\lfloor x \rfloor$.</p>
+<p>(c) Does $\lim_{x \to k} \lfloor x \rfloor$ exist? Explain why or why not.</p>',
 				'user_id' => '1',
 				'created_at' => Carbon::now()->addSecond(17)->format('Y-m-d H:i:s'),
 				'updated_at' => Carbon::now()->addSecond(17)->format('Y-m-d H:i:s')
