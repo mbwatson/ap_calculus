@@ -18,12 +18,12 @@
                         <a href="{{ route('users.show', $question->user) }}">
                             <img class="avatar" src="{{ Gravatar::get($question->user->email) }}"><br />
                             <span class="username">{{ $question->user->name }}</span>
-                            <br /><br />
-                            <span class="meta">
-                                <i class="mdi mdi-calendar mdi-18px"></i>
-                                {{ $question->created_at->diffForHumans() }}
-                            </span>
                         </a>
+                        <br /><br />
+                        <span class="meta">
+                            <i class="mdi mdi-calendar mdi-18px"></i>
+                            {{ $question->created_at->diffForHumans() }}
+                        </span>
                     </div>
                 </div>
                 <div class="col-md-10">
